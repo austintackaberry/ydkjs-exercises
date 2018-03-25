@@ -1,18 +1,23 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import {List, ListItem} from 'material-ui/List';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <h1>YDKJS EXERCISES</h1>
+        <MuiThemeProvider>
+          <List>
+            <ListItem primaryText="Up & Going" />
+            <ListItem primaryText="Scope & Closures"/>
+            <ListItem primaryText="this & Object Prototypes" />
+            <ListItem primaryText="Types & Grammar" />
+            <ListItem primaryText="Async & Performance" />
+            <ListItem primaryText="ES6 & Beyond" />
+          </List>
+        </MuiThemeProvider>
       </div>
     );
   }
