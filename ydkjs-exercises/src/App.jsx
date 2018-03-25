@@ -1,23 +1,17 @@
 import React, { Component } from 'react';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import { List, ListItem } from 'material-ui/List';
+import UpGoing from './components/UpGoing';
+import Home from './components/Home';
+
+import { Route, Link } from 'react-router-dom';
 import './App.css';
 
 const App = () => (
   <div className="App">
-    <div>
+    <Link to="/">
       <h1>YDKJS EXERCISES</h1>
-      <MuiThemeProvider>
-        <List style={{ width: '30%', margin: '0 auto' }}>
-          <ListItem primaryText="Up & Going" />
-          <ListItem primaryText="Scope & Closures" />
-          <ListItem primaryText="this & Object Prototypes" />
-          <ListItem primaryText="Types & Grammar" />
-          <ListItem primaryText="Async & Performance" />
-          <ListItem primaryText="ES6 & Beyond" />
-        </List>
-      </MuiThemeProvider>
-    </div>
+    </Link>
+    <Route exact path="/" component={Home} />
+    <Route path="/upgoing" component={UpGoing} />
   </div>
 );
 
