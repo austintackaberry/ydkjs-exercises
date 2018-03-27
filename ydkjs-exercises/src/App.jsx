@@ -8,10 +8,10 @@ import './App.css';
 const App = () => (
   <div className="App">
     <Link to="/">
-      <h1>YDKJS EXERCISES</h1>
+      <h1 style={{ fontSize: '55px' }}>YDKJS EXERCISES</h1>
     </Link>
     <Route exact path="/" component={Home} />
-    <Route path="/upgoing" component={UpGoing} />
+    <Route path="/up-going" component={UpGoing} />
   </div>
 );
 

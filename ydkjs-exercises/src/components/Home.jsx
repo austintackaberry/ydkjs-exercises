@@ -5,19 +5,23 @@ import { Route, Link } from 'react-router-dom';
 
 class Home extends Component {
   render() {
+    const chapters = [
+      { url: '/up-going', name: 'Up & Going' },
+      { url: '/scope-closures', name: 'Scope & Closures' },
+      { url: '/this-object-prototypes', name: 'this & Object Prototypes' },
+      { url: '/types-grammar', name: 'Types & Grammar' },
+      { url: '/async-performance', name: 'Async & Performance' },
+      { url: '/es6-beyond', name: 'ES6 & Beyond' },
+    ];
     return (
       <div>
         <MuiThemeProvider>
           <List style={{ width: '30%', margin: '0 auto' }}>
-            <Link to="/upgoing">
-              <ListItem primaryText="Up & Going" />
-            </Link>
-
-            <ListItem primaryText="Scope & Closures" />
-            <ListItem primaryText="this & Object Prototypes" />
-            <ListItem primaryText="Types & Grammar" />
-            <ListItem primaryText="Async & Performance" />
-            <ListItem primaryText="ES6 & Beyond" />
+            {chapters.map(chapter => (
+              <Link to={chapter.url}>
+                <ListItem style={{ fontSize: '20px' }} primaryText={chapter.name} />
+              </Link>
+            ))}
           </List>
         </MuiThemeProvider>
       </div>
