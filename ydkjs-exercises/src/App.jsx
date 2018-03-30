@@ -7,7 +7,7 @@ import './App.css';
 
 const App = () => (
   <div className="App">
-    <Link to="/">
+    <Link style={{ textDecoration: 'none', color: 'black' }} to="/">
       <h1 style={{ fontSize: '55px' }}>YDKJS EXERCISES</h1>
     </Link>
     <Route exact path="/" component={Home} />

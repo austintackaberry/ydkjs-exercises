@@ -18,7 +18,7 @@ class Home extends Component {
         <MuiThemeProvider>
           <List style={{ width: '30%', margin: '0 auto' }}>
             {chapters.map(chapter => (
-              <Link to={chapter.url}>
+              <Link style={{ textDecoration: 'none' }} to={chapter.url}>
                 <ListItem style={{ fontSize: '30px' }} primaryText={chapter.name} />
               </Link>
             ))}
