@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
-import Fade from 'react-reveal/Fade';
+import AnimatedWrapper from './AnimatedWrapper';
 
-class UpGoing extends Component {
+class UpGoingComponent extends Component {
   render() {
-    return (
-      <Fade right>
-        <p>hello</p>
-      </Fade>
-    );
+    return <p className="page">hello</p>;
   }
 }
 
+const UpGoing = AnimatedWrapper(UpGoingComponent);
 export default UpGoing;

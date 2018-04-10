@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { List, ListItem } from 'material-ui/List';
 import { Route, Link } from 'react-router-dom';
+import AnimatedWrapper from './AnimatedWrapper';
 
-class Home extends Component {
+class HomeComponent extends Component {
   render() {
     const chapters = [
       { url: '/up-going', name: 'Up & Going' },
@@ -14,7 +15,7 @@ class Home extends Component {
       { url: '/es6-beyond', name: 'ES6 & Beyond' },
     ];
     return (
-      <div>
+      <div className="page">
         <MuiThemeProvider>
           <List style={{ width: '30%', margin: '0 auto' }}>
             {chapters.map(chapter => (
@@ -29,4 +30,5 @@ class Home extends Component {
   }
 }
 
+const Home = AnimatedWrapper(HomeComponent);
 export default Home;
