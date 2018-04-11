@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { List, ListItem } from 'material-ui/List';
 import { Route, Link } from 'react-router-dom';
-import AnimatedWrapper from './AnimatedWrapper';
 
-class HomeComponent extends Component {
+class Home extends Component {
   render() {
     const chapters = [
       { url: '/up-going', name: 'Up & Going' },
@@ -30,5 +29,4 @@ class HomeComponent extends Component {
   }
 }
 
-const Home = AnimatedWrapper(HomeComponent);
 export default Home;
