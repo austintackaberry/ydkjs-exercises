@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
@@ -2432,3 +2433,8 @@ In the future, we might start automatically compiling incompatible third-party m
 ## Something Missing?
 
 If you have ideas for more “How To” recipes that should be on this page, [let us know](https://github.com/facebookincubator/create-react-app/issues) or [contribute some!](https://github.com/facebookincubator/create-react-app/edit/master/packages/react-scripts/template/README.md)
+=======
+# ydkjs-exercises
+
+YDKJS is a great resource for learning the difficult parts of JavaScript such as closures, `this`, and promises. However, it can be difficult to test your learning as you work through it. ydkjs-exercises is a web app with exercises meant to help you find out what parts you understand and what parts you need to work on.
+>>>>>>> 72b35550868978cb84fbaf680707ad83984260ad
