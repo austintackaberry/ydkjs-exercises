@@ -8,8 +8,8 @@ import { IntlProvider, addLocaleData } from "react-intl";
 import en from "react-intl/locale-data/en";
 import es from "react-intl/locale-data/es";
 
-// Our translated strings
 // import localeData from "/build/locales/data.json";
+// Our translated strings
 
 addLocaleData([...en, ...es]);
 
@@ -31,11 +31,11 @@ const languageWithoutRegionCode = language.toLowerCase().split(/[_-]+/)[0];
 //   localeData.en;
 
 ReactDOM.render(
-  <BrowserRouter>
-    <IntlProvider locale={language}>
+  <IntlProvider locale={language}>
+    <BrowserRouter>
       <App />
-    </IntlProvider>
-  </BrowserRouter>,
+    </BrowserRouter>
+  </IntlProvider>,
   document.getElementById("root")
 );
 registerServiceWorker();
