@@ -5,6 +5,7 @@ import { List, ListItem } from "material-ui/List";
 
 class UpGoing extends Component {
   render() {
+    const { match } = this.props;
     return (
       <div className="UpGoing">
         <MuiThemeProvider>
@@ -12,7 +13,7 @@ class UpGoing extends Component {
             {[1, 2, 3].map(chapter => (
               <Link
                 style={{ textDecoration: "none" }}
-                to={"/up-going/ch" + chapter}
+                to={match.url + "/ch" + chapter}
               >
                 <ListItem
                   style={{ fontSize: "30px" }}
