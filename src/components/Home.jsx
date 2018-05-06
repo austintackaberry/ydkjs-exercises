@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import { List, ListItem } from "material-ui/List";
-import { Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class Home extends Component {
   render() {
