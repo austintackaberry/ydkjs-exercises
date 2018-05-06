@@ -8,7 +8,25 @@ import "./App.css";
 class App extends Component {
   render() {
     const books = [
-      { url: "/up-going", name: "Up & Going", id: "upGoing" },
+      {
+        url: "/up-going",
+        name: "Up & Going",
+        id: "upGoing",
+        chapters: [
+          {
+            number: 1,
+            title: "Chapter 1: Into Programming"
+          },
+          {
+            number: 2,
+            title: "Chapter 2: Into JavaScript"
+          },
+          {
+            number: 3,
+            title: "Chapter 3: Into YDKJS"
+          }
+        ]
+      },
       { url: "/scope-closures", name: "Scope & Closures", id: "scopeClosures" },
       {
         url: "/this-object-prototypes",

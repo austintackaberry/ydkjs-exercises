@@ -30,7 +30,9 @@ const language =
 ReactDOM.render(
   <IntlProvider locale={language}>
     <BrowserRouter>
-      <App />
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
     </BrowserRouter>
   </IntlProvider>,
   document.getElementById("root")

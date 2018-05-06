@@ -3,33 +3,18 @@ import { Link } from "react-router-dom";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import { List, ListItem } from "material-ui/List";
 
-class UpGoing extends Component {
+class BookHome extends Component {
   render() {
-    const { match } = this.props;
-
-    const upGoingChList = [
-      {
-        number: 1,
-        title: "Chapter 1: Into Programming"
-      },
-      {
-        number: 2,
-        title: "Chapter 2: Into JavaScript"
-      },
-      {
-        number: 3,
-        title: "Chapter 3: Into YDKJS"
-      }
-    ];
+    const { book } = this.props;
 
     return (
       <div className="UpGoing">
         <MuiThemeProvider>
           <List style={{ width: "40%", margin: "0 auto", textAlign: "left" }}>
-            {upGoingChList.map(chapter => (
+            {book.chapters.map(chapter => (
               <Link
                 style={{ textDecoration: "none" }}
-                to={match.url + "/ch" + chapter.number}
+                to={book.url + "/ch" + chapter.number}
               >
                 <ListItem
                   style={{ fontSize: "30px" }}
@@ -44,4 +29,4 @@ class UpGoing extends Component {
   }
 }
 
-export default UpGoing;
+export default BookHome;
