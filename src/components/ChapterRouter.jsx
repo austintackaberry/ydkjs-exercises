@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 class ChapterRouter extends Component {
   render() {
     const { chapter, bookUrl } = this.props;
+
     return (
       <div>
         <Link

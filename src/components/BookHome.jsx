@@ -14,7 +14,7 @@ class BookHome extends Component {
             {book.chapters.map(chapter => (
               <Link
                 style={{ textDecoration: "none" }}
-                to={book.url + "/ch" + chapter.number}
+                to={book.url + chapter.url}
               >
                 <ListItem
                   style={{ fontSize: "30px" }}

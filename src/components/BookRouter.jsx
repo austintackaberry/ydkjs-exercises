@@ -21,7 +21,7 @@ class BookRouter extends Component {
         {book.chapters.map(chapter => {
           return (
             <Route
-              path={book.url + "/ch" + chapter.number}
+              path={book.url + chapter.url}
               render={() => (
                 <ChapterRouter
                   bookId={book.id}
