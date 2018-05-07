@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import BookRouter from "./components/UpGoing/BookRouter";
+import BookRouter from "./components/BookRouter";
 import Home from "./components/Home";
 
 import { Route, Link } from "react-router-dom";
@@ -10,36 +10,43 @@ class App extends Component {
     const books = [
       {
         url: "/up-going",
-        name: "Up & Going",
+        title: "Up & Going",
         id: "upGoing",
         chapters: [
           {
             number: 1,
-            title: "Chapter 1: Into Programming"
+            title: "Chapter 1: Into Programming",
+            url: "/ch1"
           },
           {
             number: 2,
-            title: "Chapter 2: Into JavaScript"
+            title: "Chapter 2: Into JavaScript",
+            url: "/ch2"
           },
           {
             number: 3,
-            title: "Chapter 3: Into YDKJS"
+            title: "Chapter 3: Into YDKJS",
+            url: "/ch3"
           }
         ]
       },
-      { url: "/scope-closures", name: "Scope & Closures", id: "scopeClosures" },
+      {
+        url: "/scope-closures",
+        title: "Scope & Closures",
+        id: "scopeClosures"
+      },
       {
         url: "/this-object-prototypes",
-        name: "this & Object Prototypes",
+        title: "this & Object Prototypes",
         id: "thisObjectPrototypes"
       },
-      { url: "/types-grammar", name: "Types & Grammar", id: "typesGrammar" },
+      { url: "/types-grammar", title: "Types & Grammar", id: "typesGrammar" },
       {
         url: "/async-performance",
-        name: "Async & Performance",
+        title: "Async & Performance",
         id: "asyncPerformance"
       },
-      { url: "/es6-beyond", name: "ES6 & Beyond", id: "es6Beyond" }
+      { url: "/es6-beyond", title: "ES6 & Beyond", id: "es6Beyond" }
     ];
     return (
       <div className="App">

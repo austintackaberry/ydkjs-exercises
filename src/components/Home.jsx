@@ -14,7 +14,7 @@ class Home extends Component {
               <Link style={{ textDecoration: "none" }} to={book.url}>
                 <ListItem
                   style={{ fontSize: "30px" }}
-                  primaryText={book.name}
+                  primaryText={book.title}
                 />
               </Link>
             ))}

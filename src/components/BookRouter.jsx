@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import BookHome from "./BookHome.jsx";
-import UpGoingCh1 from "./UpGoingCh1.jsx";
-import UpGoingCh2 from "./UpGoingCh2.jsx";
-import UpGoingCh3 from "./UpGoingCh3.jsx";
 import { Route, Link } from "react-router-dom";
+import ChapterRouter from "./ChapterRouter";
 
 class BookRouter extends Component {
   render() {
@@ -11,7 +9,7 @@ class BookRouter extends Component {
     return (
       <div>
         <Link style={{ textDecoration: "none", color: "black" }} to={book.url}>
-          <h2 style={{ fontSize: "40px" }}>{book.name}</h2>
+          <h2 style={{ fontSize: "40px" }}>{book.title}</h2>
         </Link>
         <Route
           exact
@@ -20,9 +18,20 @@ class BookRouter extends Component {
             return <BookHome book={book} />;
           }}
         />
-        <Route path={book.url + "/ch1"} component={UpGoingCh1} />
-        <Route path={book.url + "/ch2"} component={UpGoingCh2} />
-        <Route path={book.url + "/ch3"} component={UpGoingCh3} />
+        {book.chapters.map(chapter => {
+          return (
+            <Route
+              path={book.url + "/ch" + chapter.number}
+              render={() => (
+                <ChapterRouter
+                  bookId={book.id}
+                  bookUrl={book.url}
+                  chapter={chapter}
+                />
+              )}
+            />
+          );
+        })}
       </div>
     );
   }
