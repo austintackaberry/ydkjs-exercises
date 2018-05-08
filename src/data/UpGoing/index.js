@@ -1,4 +1,4 @@
-import Ch1Questions from "./ch1";
+import { Ch1Questions } from "./ch1";
 
 module.exports = {
   UpGoingChapters: [

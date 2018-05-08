@@ -1,9 +1,12 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Route } from "react-router-dom";
+import ChapterHome from "./ChapterHome";
+import Question from "./Question";
 
 class ChapterRouter extends Component {
   render() {
     const { chapter, bookUrl } = this.props;
+    console.log(chapter);
 
     return (
       <div>
@@ -13,7 +16,27 @@ class ChapterRouter extends Component {
         >
           <h3 style={{ fontSize: "24px" }}>{chapter.title}</h3>
         </Link>
-        <p>hey</p>
+        <Route
+          exact
+          path={bookUrl + chapter.url}
+          render={() => {
+            return <ChapterHome currentUrl={bookUrl + chapter.url} />;
+          }}
+        />
+        {chapter.questions.map((question, index) => {
+          return (
+            <Route
+              path={bookUrl + chapter.url + "/" + (index + 1)}
+              render={() => (
+                <Question
+                  baseUrl={bookUrl + chapter.url}
+                  index={index + 1}
+                  question={question}
+                />
+              )}
+            />
+          );
+        })}
       </div>
     );
   }

@@ -7,6 +7,8 @@ import "./App.css";
 
 class App extends Component {
   render() {
+    console.log(books);
+
     return (
       <div className="App">
         <Link style={{ textDecoration: "none", color: "black" }} to="/">
