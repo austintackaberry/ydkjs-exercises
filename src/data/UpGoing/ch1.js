@@ -6,19 +6,19 @@ module.exports = {
       answers: [
         {
           answer: "one",
-          correct: false
+          isCorrect: false
         },
         {
           answer: "two",
-          correct: false
+          isCorrect: false
         },
         {
           answer: "three",
-          correct: false
+          isCorrect: false
         },
         {
           answer: "four",
-          correct: true
+          isCorrect: true
         }
       ]
     }

@@ -6,7 +6,6 @@ import Question from "./Question";
 class ChapterRouter extends Component {
   render() {
     const { chapter, bookUrl } = this.props;
-    console.log(chapter);
 
     return (
       <div>
