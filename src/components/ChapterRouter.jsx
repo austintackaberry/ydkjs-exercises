@@ -25,7 +25,7 @@ class ChapterRouter extends Component {
         {chapter.questions.map((question, index) => {
           return (
             <Route
-              path={bookUrl + chapter.url + "/" + (index + 1)}
+              path={bookUrl + chapter.url + "/q" + (index + 1)}
               render={() => (
                 <Question
                   baseUrl={bookUrl + chapter.url}

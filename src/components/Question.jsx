@@ -27,11 +27,11 @@ class Question extends Component {
     return (
       <div
         style={{
-          border: "1px solid black",
+          border: "2px solid black",
           borderRadius: "3px",
-          width: "50%",
+          width: "40%",
           margin: "auto",
-          padding: "10px"
+          padding: "20px"
         }}
       >
         <h4 style={{ margin: "0" }}>{question.question}</h4>

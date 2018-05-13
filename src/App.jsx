@@ -11,8 +11,8 @@ class App extends Component {
       <div className="App">
         <Link style={{ textDecoration: "none", color: "black" }} to="/">
           <h1 style={{ fontSize: "55px" }}>YDKJS EXERCISES</h1>
-          <Route exact path="/" render={() => <Home books={books} />} />
         </Link>
+        <Route exact path="/" render={() => <Home books={books} />} />
         {books.map(book => {
           return (
             <Route path={book.url} render={() => <BookRouter book={book} />} />
