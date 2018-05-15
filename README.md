@@ -34,6 +34,4 @@ Longer term goals are the following:
 
 This project is absolutely accepting pull requests (first-timers welcome!).
 
-If you are working on your first pull request, I highly recommend this free series: [How to Contribute to an Open Source Project on GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github).
-
-As of right now, we don't have any fancy git hooks or test coverage requirements. Check out [CONTRIBUTING.md](CONTRIBUTING.md) for a breakdown of the code.
+As of right now, we don't have any fancy git hooks or test coverage requirements. Check out [CONTRIBUTING.md](CONTRIBUTING.md) for more information and a breakdown of the code.
