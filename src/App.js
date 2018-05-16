@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import BookRouter from "./components/BookRouter";
 import Home from "./components/Home";
-import { books } from "./data";
+import books from "./data";
 import { Route, Link } from "react-router-dom";
 import "./App.css";
 

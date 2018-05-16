@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import BookHome from "./BookHome.jsx";
+import BookHome from "./BookHome";
 import { Route, Link } from "react-router-dom";
 import ChapterRouter from "./ChapterRouter";
 
