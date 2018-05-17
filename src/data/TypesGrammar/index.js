@@ -16,7 +16,7 @@ const TypesGrammarChapters = [
     url: "/ch4"
   },
   {
-    title: "Chapter 3: Grammar",
+    title: "Chapter 5: Grammar",
     url: "/ch5"
   }
 ];
