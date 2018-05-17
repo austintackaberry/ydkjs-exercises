@@ -14,7 +14,7 @@ Now for the code...
 
 All of the questions are stored in [src/data](src/data), imported into [App.js](src/App.jsx), and then sent to child components as needed. The Home page needs to know which books there are, each book page needs to know which chapters there are, and each chapter page needs to have the right list of questions.
 
-I tried to make the components as reusable as possible. If all the book pages and chapter pages have the same format (with different data), then it would be unnecessary to have a componet for every book and a component for every chapter.
+I tried to make the components as reusable as possible. If all the book pages and chapter pages have the same format (with different data), then it would be unnecessary to have a component for every book and a component for every chapter.
 
 We also don't need separate Route components in `App.jsx` for every single book and every single chapter...that would be a lot of routes. The basic format is that `App` handles all the routing, `Home` is the home page. `BookRouter` handles all the routing of each Book's children and `BookHome` renders each book page. `ChapterRouter` handles all the routing of each Chapter's routing and `ChapterHome` is tasked with rendering each chapter page.
 
