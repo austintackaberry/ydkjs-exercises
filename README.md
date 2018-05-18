@@ -1,4 +1,4 @@
-# YDKJS Exercises - ydkjs-exercises.firebaseapp.com
+# YDKJS Exercises - ydkjs-exercises.com
 
 Exercises built to help you test your knowledge as you read [You Don't Know JavaScript](https://github.com/getify/You-Dont-Know-JS).
 
