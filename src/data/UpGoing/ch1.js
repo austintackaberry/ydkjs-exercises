@@ -43,23 +43,24 @@ const Ch1Questions = [
   },
   {
     question: "What is a computer language (syntax)?",
-    answers:
-    {
-      answer: "The arrangement of words and phrases to create well-formed sentences.",
-      isCorrect: false
-    }
-    {
-      answer: "The rules for valid format and combinations of instructions.",
-      isCorrect: true
-    }
-    {
-      answer: "The use of words in a structured and conventional way.",
-      isCorrect: false
-    }
-    {
-      answer: "A system of communication",
-      isCorrect: false
-    }
+    answers: [
+      {
+        answer: "The arrangement of words and phrases to create well-formed sentences.",
+        isCorrect: false
+      },
+      {
+        answer: "The rules for valid format and combinations of instructions.",
+        isCorrect: true
+      },
+      {
+        answer: "The use of words in a structured and conventional way.",
+        isCorrect: false
+      },
+      {
+        answer: "A system of communication",
+        isCorrect: false
+      }
+    ]
   }
 ];
 
