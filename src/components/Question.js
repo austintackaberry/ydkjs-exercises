@@ -1,7 +1,19 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import FlatButton from "material-ui/FlatButton";
+
+const NavigationButton = (props) => withRouter(({ history }) => (
+  <MuiThemeProvider>
+    <FlatButton
+      backgroundColor="white"
+      hoverColor="#CCC"
+      label={props.label}
+      disabled={!props.enabled}
+      onClick={() => history.push(props.destination)}
+    />
+  </MuiThemeProvider>
+))(props);
 
 class Question extends Component {
   constructor() {
@@ -25,11 +37,19 @@ class Question extends Component {
   }
 
   render() {
-    const { question, baseUrl, index, navigation } = this.props;
-    const previousUrl = baseUrl + "/q" + (index - 1);
-    const nextUrl = baseUrl + "/q" + (index + 1);
+    const { question, baseUrl, index, numberOfQuestions } = this.props;
+    const navigation = {
+      previous: {
+        enabled: index > 1,
+        url: baseUrl + "/q" + (index - 1)
+      },
+      next: {
+        enabled: index < numberOfQuestions,
+        url: baseUrl + "/q" + (index + 1)
+      }
+    };
     return (
-      <MuiThemeProvider>
+      <React.Fragment>
         <div
           style={{
             border: "2px solid black",
@@ -86,25 +106,18 @@ class Question extends Component {
             justifyContent: "space-around"
           }}
         >
-          <FlatButton
-            backgroundColor="white"
-            hoverColor="#CCC"
-            containerElement={<Link to={previousUrl} />}
-            disabled={!navigation.previous}
-            linkButton={true}
+          <NavigationButton
             label="Previous"
+            destination={navigation.previous.url}
+            enabled={navigation.previous.enabled}
           />
-
-          <FlatButton
-            backgroundColor="white"
-            hoverColor="#CCC"
-            containerElement={<Link to={nextUrl} />}
-            disabled={!navigation.next}
-            linkButton={true}
+          <NavigationButton
             label="Next"
+            destination={navigation.next.url}
+            enabled={navigation.next.enabled}
           />
         </section>
-      </MuiThemeProvider>
+      </React.Fragment>
     );
   }
 }
