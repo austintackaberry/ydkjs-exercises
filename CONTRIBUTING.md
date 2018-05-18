@@ -50,8 +50,8 @@ There are no tests right now, so some basic unit testing would probably be a goo
 
 ### Adding features
 
-* Forward and Back buttons to navigate forward and backwards when answering questions
-* onSubmit, show the correct answer and explanation, also update the user state.
+* onSubmit, show the correct answer and update the user state.
+* Add explanations and a way to display them to the user
 
 ## Advanced / Comfortable with React / Have more time
 
