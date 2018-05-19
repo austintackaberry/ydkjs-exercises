@@ -31,6 +31,7 @@ class ChapterRouter extends Component {
                   baseUrl={bookUrl + chapter.url}
                   index={index + 1}
                   question={question}
+                  numberOfQuestions={chapter.questions.length}
                 />
               )}
             />
