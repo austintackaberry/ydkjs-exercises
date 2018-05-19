@@ -15,7 +15,11 @@ class App extends Component {
         <Route exact path="/" render={() => <Home books={books} />} />
         {books.map(book => {
           return (
-            <Route path={book.url} render={() => <BookRouter book={book} />} />
+            <Route
+              key={book.id}
+              path={book.url}
+              render={() => <BookRouter book={book} />}
+            />
           );
         })}
       </div>
