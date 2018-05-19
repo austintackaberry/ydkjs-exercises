@@ -51,7 +51,8 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
-    "translate": "node scripts/translate.js"
+    "translate": "node scripts/translate.js",
+    "lint": "eslint src"
   },
   "devDependencies": {
     "babel-plugin-react-intl": "^2.4.0",
