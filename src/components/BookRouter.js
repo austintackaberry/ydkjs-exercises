@@ -15,12 +15,13 @@ class BookRouter extends Component {
           exact
           path={book.url}
           render={() => {
-            return <BookHome book={book} />;
+            return <BookHome key={book.id} book={book} />;
           }}
         />
         {book.chapters.map(chapter => {
           return (
             <Route
+              key={book.id+chapter.url}
               path={book.url + chapter.url}
               render={() => (
                 <ChapterRouter

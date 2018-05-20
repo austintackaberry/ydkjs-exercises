@@ -11,7 +11,11 @@ class Home extends Component {
         <MuiThemeProvider>
           <List style={{ width: "40%", margin: "0 auto" }}>
             {books.map(book => (
-              <Link style={{ textDecoration: "none" }} to={book.url}>
+              <Link
+                key={book.id}
+                style={{ textDecoration: "none" }}
+                to={book.url}
+              >
                 <ListItem
                   style={{ fontSize: "30px" }}
                   primaryText={book.title}
