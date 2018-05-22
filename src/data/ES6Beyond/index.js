@@ -1,6 +1,6 @@
 const ES6BeyondChapters = [
   {
-    title: "ES? Now and Future",
+    title: "Chapter 1: ES? Now and Future",
     url: "/ch1"
   },
   {
