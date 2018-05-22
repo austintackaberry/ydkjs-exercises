@@ -65,7 +65,7 @@ class Question extends Component {
               style={{
                 display: "inline-block",
                 margin: "0 auto",
-                textAlign: "right",
+                textAlign: "left",
                 border: "none"
               }}
             >
@@ -76,16 +76,16 @@ class Question extends Component {
                       htmlFor={i}
                       style={{ display: "block", margin: "5px" }}
                     >
-                      {answer.answer}
                       <input
-                        type="radio"
-                        name={index}
-                        id={i}
-                        value={i}
-                        onChange={event => {
-                          this.handleChange(event);
-                        }}
+                      type="radio"
+                      name={index}
+                      id={i}
+                      value={i}
+                      onChange={event => {
+                        this.handleChange(event);
+                      }}
                       />
+                      {answer.answer}
                     </label>
                   </div>
                 );
