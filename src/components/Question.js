@@ -59,6 +59,7 @@ class Question extends Component {
             padding: "20px"
           }}
         >
+          <h3 style={{ margin: "10px" }}>{`Question ${ index } of ${ numberOfQuestions }`}</h3>
           <h4 style={{ margin: "0" }}>{question.question}</h4>
           <form onSubmit={event => this.handleSubmit(event)}>
             <fieldset
