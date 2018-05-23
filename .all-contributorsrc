@@ -24,6 +24,15 @@
         "infra",
         "review"
       ]
+    },
+    {
+      "login": "tlee38",
+      "name": "Thanakrit Lee",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/21210429?v=4",
+      "profile": "https://github.com/tlee38",
+      "contributions": [
+        "doc"
+      ]
     }
   ]
 }
