@@ -18,17 +18,13 @@ const NavigationButton = (props) => withRouter(({ history }) => (
 class Question extends Component {
   constructor() {
     super();
-    this.state = { userAnswerIndex: null };
+    this.state = { userAnswerIndex: null, answerSubmitted: null };
   }
 
   handleSubmit(event) {
-    const { question } = this.props;
-    const { userAnswerIndex } = this.state;
-    if (question.answers[userAnswerIndex].isCorrect) {
-      console.log("yay correct");
-    } else {
-      console.log("boo you bad");
-    }
+    this.setState({
+      answerSubmitted: true,
+    });
     event.preventDefault();
   }
 
@@ -37,6 +33,7 @@ class Question extends Component {
   }
 
   render() {
+    const { answerSubmitted, userAnswerIndex } = this.state;
     const { question, baseUrl, index, numberOfQuestions } = this.props;
     const navigation = {
       previous: {
@@ -48,6 +45,7 @@ class Question extends Component {
         url: baseUrl + "/q" + (index + 1)
       }
     };
+
     return (
       <React.Fragment>
         <div
@@ -71,6 +69,17 @@ class Question extends Component {
               }}
             >
               {question.answers.map((answer, i) => {
+                let answerColor;
+
+                if (answerSubmitted) {
+                  if (answer.isCorrect) {
+                    answerColor = {color: "green"};
+                  }
+                  if (userAnswerIndex == i && !answer.isCorrect) {
+                    answerColor = {color: "red"};
+                  }
+                }
+
                 return (
                   <div>
                     <label
@@ -86,7 +95,7 @@ class Question extends Component {
                         this.handleChange(event);
                       }}
                       />
-                      {answer.answer}
+                      <span style={answerColor}>{answer.answer}</span>
                     </label>
                   </div>
                 );
