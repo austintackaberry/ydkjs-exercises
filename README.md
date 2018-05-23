@@ -1,5 +1,7 @@
 # YDKJS Exercises - [ydkjs-exercises.com](https://ydkjs-exercises.com)
 
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
+
 Exercises built to help you test your knowledge as you read [You Don't Know JavaScript](https://github.com/getify/You-Dont-Know-JS).
 
 One of the top courses on Coursera, [Learning How to Learn](https://www.coursera.org/learn/learning-how-to-learn), asserts that you can trick yourself into thinking you are learning if you don't regularly test your knowledge. It is very easy to read YDKJS all the way through and think you know it all simply because you read it. These exercises are supposed to help you determine your strengths and your weaknesses.
@@ -12,26 +14,38 @@ This project was bootstrapped with create-react-app, and uses React Router for r
 
 The immediate next steps are the following:
 
-1. Create multiple choice questions for each chapter of each book
-2. Add in-depth explanations for each question
-3. Add app state, such that the user knows how well they are doing and what areas they should re-read
+1.  Create multiple choice questions for each chapter of each book
+2.  Add in-depth explanations for each question
+3.  Add app state, such that the user knows how well they are doing and what areas they should re-read
 
 ## Long Term Vision
 
 Longer term goals are the following:
 
-1. Have the questions be actual coding rather than multiple choice
-2. Curate external resources and recommend them to the user for material they need help with
-3. Add video explanations
+1.  Have the questions be actual coding rather than multiple choice
+2.  Curate external resources and recommend them to the user for material they need help with
+3.  Add video explanations
 
 ## Setting up the project locally
 
-1. Fork and clone the repo
-2. `$ npm install`
-3. `$ npm start`
+1.  Fork and clone the repo
+2.  `$ npm install`
+3.  `$ npm start`
 
 ## Contributing
 
 This project is absolutely accepting pull requests (first-timers welcome!).
 
 As of right now, we don't have any fancy git hooks or test coverage requirements. Check out [CONTRIBUTING.md](CONTRIBUTING.md) for more information and a breakdown of the code.
+
+## Contributors
+
+Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+| [<img src="https://avatars0.githubusercontent.com/u/29493001?v=4" width="100px;"/><br /><sub><b>Austin Tackaberry</b></sub>](https://austintackaberry.co)<br />[💬](#question-austintackaberry "Answering Questions") [🐛](https://github.com/austintackaberry/ydkjs-exercises/issues?q=author%3Aaustintackaberry "Bug reports") [💻](https://github.com/austintackaberry/ydkjs-exercises/commits?author=austintackaberry "Code") [🎨](#design-austintackaberry "Design") [📖](https://github.com/austintackaberry/ydkjs-exercises/commits?author=austintackaberry "Documentation") [🤔](#ideas-austintackaberry "Ideas, Planning, & Feedback") [🚇](#infra-austintackaberry "Infrastructure (Hosting, Build-Tools, etc)") [👀](#review-austintackaberry "Reviewed Pull Requests") |
+| :---: |
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!

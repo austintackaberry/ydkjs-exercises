@@ -1,0 +1,29 @@
+{
+  "projectName": "ydkjs-exercises",
+  "projectOwner": "austintackaberry",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "contributors": [
+    {
+      "login": "austintackaberry",
+      "name": "Austin Tackaberry",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/29493001?v=4",
+      "profile": "https://austintackaberry.co",
+      "contributions": [
+        "question",
+        "bug",
+        "code",
+        "design",
+        "doc",
+        "ideas",
+        "infra",
+        "review"
+      ]
+    }
+  ]
+}
