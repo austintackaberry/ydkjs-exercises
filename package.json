@@ -55,6 +55,7 @@
     "lint": "eslint src"
   },
   "devDependencies": {
+    "all-contributors-cli": "^4.11.1",
     "babel-plugin-react-intl": "^2.4.0",
     "babel-preset-env": "^1.6.1",
     "enzyme": "^3.3.0",
