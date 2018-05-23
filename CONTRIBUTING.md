@@ -6,6 +6,10 @@ We will accept all kinds of pull requests. Whether it is a grammar mistake in th
 
 **Also, if you see an open issue that you want to fix, make sure to drop a comment saying that you would like to take it on. If an issue has been claimed with no activity for 2 weeks, then someone else can claim it.**
 
+Feel free to add yourself to the list of contributors!
+
+Just execute `$ npm run contributors:add` and then follow the prompts.
+
 # Code Breakdown
 
 As of right now, this is a single page application that uses React Router for routing, and Material UI for styling. The idea is that you first click on the book you want, then you click on the chapter of that book which routes you to the first question for that chapter. You then start answering questions and move on to the next question until you are done with the questions for that chapter.
