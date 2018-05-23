@@ -1,6 +1,6 @@
 # YDKJS Exercises - [ydkjs-exercises.com](https://ydkjs-exercises.com)
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors)
 
 Exercises built to help you test your knowledge as you read [You Don't Know JavaScript](https://github.com/getify/You-Dont-Know-JS).
 
@@ -44,8 +44,8 @@ Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
-| [<img src="https://avatars0.githubusercontent.com/u/29493001?v=4" width="100px;"/><br /><sub><b>Austin Tackaberry</b></sub>](https://austintackaberry.co)<br />[💬](#question-austintackaberry "Answering Questions") [🐛](https://github.com/austintackaberry/ydkjs-exercises/issues?q=author%3Aaustintackaberry "Bug reports") [💻](https://github.com/austintackaberry/ydkjs-exercises/commits?author=austintackaberry "Code") [🎨](#design-austintackaberry "Design") [📖](https://github.com/austintackaberry/ydkjs-exercises/commits?author=austintackaberry "Documentation") [🤔](#ideas-austintackaberry "Ideas, Planning, & Feedback") [🚇](#infra-austintackaberry "Infrastructure (Hosting, Build-Tools, etc)") [👀](#review-austintackaberry "Reviewed Pull Requests") | [<img src="https://avatars0.githubusercontent.com/u/21210429?v=4" width="100px;"/><br /><sub><b>Thanakrit Lee</b></sub>](https://github.com/tlee38)<br />[📖](https://github.com/austintackaberry/ydkjs-exercises/commits?author=tlee38 "Documentation") | [<img src="https://avatars0.githubusercontent.com/u/29536549?v=4" width="100px;"/><br /><sub><b>Kevin Y. Kim</b></sub>](https://kevinyckim.netlify.com/)<br />[💻](https://github.com/austintackaberry/ydkjs-exercises/commits?author=kevinYCKim33 "Code") |
-| :---: | :---: | :---: |
+| [<img src="https://avatars0.githubusercontent.com/u/29493001?v=4" width="100px;"/><br /><sub><b>Austin Tackaberry</b></sub>](https://austintackaberry.co)<br />[💬](#question-austintackaberry "Answering Questions") [🐛](https://github.com/austintackaberry/ydkjs-exercises/issues?q=author%3Aaustintackaberry "Bug reports") [💻](https://github.com/austintackaberry/ydkjs-exercises/commits?author=austintackaberry "Code") [🎨](#design-austintackaberry "Design") [📖](https://github.com/austintackaberry/ydkjs-exercises/commits?author=austintackaberry "Documentation") [🤔](#ideas-austintackaberry "Ideas, Planning, & Feedback") [🚇](#infra-austintackaberry "Infrastructure (Hosting, Build-Tools, etc)") [👀](#review-austintackaberry "Reviewed Pull Requests") | [<img src="https://avatars0.githubusercontent.com/u/21210429?v=4" width="100px;"/><br /><sub><b>Thanakrit Lee</b></sub>](https://github.com/tlee38)<br />[📖](https://github.com/austintackaberry/ydkjs-exercises/commits?author=tlee38 "Documentation") | [<img src="https://avatars0.githubusercontent.com/u/29536549?v=4" width="100px;"/><br /><sub><b>Kevin Y. Kim</b></sub>](https://kevinyckim.netlify.com/)<br />[💻](https://github.com/austintackaberry/ydkjs-exercises/commits?author=kevinYCKim33 "Code") | [<img src="https://avatars0.githubusercontent.com/u/19591575?v=4" width="100px;"/><br /><sub><b>Asha20</b></sub>](https://github.com/Asha20)<br />[💻](https://github.com/austintackaberry/ydkjs-exercises/commits?author=Asha20 "Code") |
+| :---: | :---: | :---: | :---: |
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!
