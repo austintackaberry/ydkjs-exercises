@@ -22,16 +22,9 @@ class Question extends Component {
   }
 
   handleSubmit(event) {
-    const { question } = this.props;
-    const { userAnswerIndex } = this.state;
     this.setState({
       answerSubmitted: true,
     });
-    if (question.answers[userAnswerIndex].isCorrect) {
-      console.log("yay correct");
-    } else {
-      console.log("boo you bad");
-    }
     event.preventDefault();
   }
 
