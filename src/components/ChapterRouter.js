@@ -2,10 +2,35 @@ import React, { Component } from "react";
 import { Link, Route } from "react-router-dom";
 import ChapterHome from "./ChapterHome";
 import Question from "./Question";
+import NoQuestions from "./NoQuestions";
+
 
 class ChapterRouter extends Component {
   render() {
     const { chapter, bookUrl } = this.props;
+
+    let displayQuestions;
+    if (chapter.questions) {
+      displayQuestions = chapter.questions.map((question, index) => {
+        return (
+          <Route
+            path={bookUrl + chapter.url + "/q" + (index + 1)}
+            render={() => (
+              <Question
+                baseUrl={bookUrl + chapter.url}
+                index={index + 1}
+                question={question}
+                numberOfQuestions={chapter.questions.length}
+              />
+            )}
+          />
+        )
+      });
+    } else {
+      displayQuestions = (
+        <NoQuestions/>
+      );
+    }
 
     return (
       <div>
@@ -22,34 +47,7 @@ class ChapterRouter extends Component {
             return <ChapterHome currentUrl={bookUrl + chapter.url} />;
           }}
         />
-        {chapter.questions && chapter.questions.map((question, index) => {
-          return (
-            <Route
-              path={bookUrl + chapter.url + "/q" + (index + 1)}
-              render={() => (
-                <Question
-                  baseUrl={bookUrl + chapter.url}
-                  index={index + 1}
-                  question={question}
-                  numberOfQuestions={chapter.questions.length}
-                />
-              )}
-            />
-          );
-        })}
-        {!chapter.questions &&
-          <div>
-            <p>
-              There are currently no questions for this chapter :(,
-              but you can change that!
-            </p>
-
-            <p>
-              Feel free to submit a
-              pull request to this project <a href="https://github.com/austintackaberry/ydkjs-exercises">here</a>.
-            </p>
-          </div>
-        }
+        {displayQuestions}
       </div>
     );
   }
