@@ -18,12 +18,21 @@ const NavigationButton = (props) => withRouter(({ history }) => (
 class Question extends Component {
   constructor() {
     super();
-    this.state = { userAnswerIndex: null, answerSubmitted: null };
+    this.state = { userAnswerIndex: null, answerSubmitted: null, error: false };
   }
 
   handleSubmit(event) {
     this.setState({
       answerSubmitted: true,
+      error: false
+    });
+    event.preventDefault();
+  }
+
+  handleError(event) {
+    this.setState({
+      answerSubmitted: false,
+      error: true
     });
     event.preventDefault();
   }
@@ -54,12 +63,13 @@ class Question extends Component {
             borderRadius: "3px",
             width: "40%",
             margin: "auto",
-            padding: "20px"
+            padding: "20px",
+            position: "relative"
           }}
         >
           <h3 style={{ margin: "10px" }}>{`Question ${ index } of ${ numberOfQuestions }`}</h3>
           <h4 style={{ margin: "0" }}>{question.question}</h4>
-          <form onSubmit={event => this.handleSubmit(event)}>
+          <form onSubmit={userAnswerIndex != null ? event => this.handleSubmit(event): event => this.handleError(event)}>
             <fieldset
               style={{
                 display: "inline-block",
@@ -78,7 +88,7 @@ class Question extends Component {
                   if (userAnswerIndex == i && !answer.isCorrect) {
                     answerColor = {color: "red"};
                   }
-                }
+                } 
 
                 return (
                   <div>
@@ -105,7 +115,7 @@ class Question extends Component {
               Submit
             </button>
           </form>
-
+          {this.state.error ? <div style={{position: "absolute", left: "0", right: "0", bottom: "2px", fontSize: "14px"}}>*Please Select an Answer*</div> : null}
         </div>
         <section
           className="navigation"
