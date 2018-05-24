@@ -22,7 +22,7 @@ class ChapterRouter extends Component {
             return <ChapterHome currentUrl={bookUrl + chapter.url} />;
           }}
         />
-        {chapter.questions.map((question, index) => {
+        {chapter.questions && chapter.questions.map((question, index) => {
           return (
             <Route
               path={bookUrl + chapter.url + "/q" + (index + 1)}
@@ -37,6 +37,19 @@ class ChapterRouter extends Component {
             />
           );
         })}
+        {!chapter.questions &&
+          <div>
+            <p>
+              There are currently no questions for this chapter :(,
+              but you can change that!
+            </p>
+
+            <p>
+              Feel free to submit a
+              pull request to this project <a href="https://github.com/austintackaberry/ydkjs-exercises">here</a>.
+            </p>
+          </div>
+        }
       </div>
     );
   }
