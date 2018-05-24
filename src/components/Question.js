@@ -22,18 +22,17 @@ class Question extends Component {
   }
 
   handleSubmit(event) {
-    this.setState({
-      answerSubmitted: true,
-      error: false
-    });
-    event.preventDefault();
-  }
-
-  handleError(event) {
-    this.setState({
-      answerSubmitted: false,
-      error: true
-    });
+    if(this.state.userAnswerIndex !== null){
+      this.setState({
+        answerSubmitted: true,
+        error: false
+      });
+    } else if(this.state.userAnswerIndex === null){
+      this.setState({
+        answerSubmitted: false,
+        error: true
+      })
+    }
     event.preventDefault();
   }
 
@@ -69,7 +68,7 @@ class Question extends Component {
         >
           <h3 style={{ margin: "10px" }}>{`Question ${ index } of ${ numberOfQuestions }`}</h3>
           <h4 style={{ margin: "0" }}>{question.question}</h4>
-          <form onSubmit={userAnswerIndex != null ? event => this.handleSubmit(event): event => this.handleError(event)}>
+          <form onSubmit={event => this.handleSubmit(event)}>
             <fieldset
               style={{
                 display: "inline-block",
