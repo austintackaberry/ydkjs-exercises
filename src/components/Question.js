@@ -3,32 +3,40 @@ import { withRouter } from "react-router-dom";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import FlatButton from "material-ui/FlatButton";
 
-const NavigationButton = (props) => withRouter(({ history }) => (
-  <MuiThemeProvider>
-    <FlatButton
-      backgroundColor="white"
-      hoverColor="#CCC"
-      label={props.label}
-      disabled={!props.enabled}
-      onClick={() => history.push(props.destination)}
-    />
-  </MuiThemeProvider>
-))(props);
+const NavigationButton = props =>
+  withRouter(({ history }) => (
+    <MuiThemeProvider>
+      <FlatButton
+        backgroundColor="white"
+        hoverColor="#CCC"
+        label={props.label}
+        disabled={!props.enabled}
+        onClick={() => history.push(props.destination)}
+      />
+    </MuiThemeProvider>
+  ))(props);
 
 class Question extends Component {
   constructor() {
     super();
-    this.state = { userAnswerIndex: null, answerSubmitted: null };
+    this.state = { userAnswerIndex: null, answerSubmitted: null, error: false };
   }
 
   handleSubmit(event) {
-    this.setState({
-      answerSubmitted: true,
-    });
+    if (this.state.userAnswerIndex === null) {
+      this.setState({
+        error: true
+      });
+    } else {
+      this.setState({
+        answerSubmitted: true,
+        error: false
+      });
+    }
     event.preventDefault();
   }
 
-  handleChange(event) {
+  handleAnswerChange(event) {
     this.setState({ userAnswerIndex: event.target.value });
   }
 
@@ -54,10 +62,13 @@ class Question extends Component {
             borderRadius: "3px",
             width: "40%",
             margin: "auto",
-            padding: "20px"
+            padding: "20px",
+            position: "relative"
           }}
         >
-          <h3 style={{ margin: "10px" }}>{`Question ${ index } of ${ numberOfQuestions }`}</h3>
+          <h3
+            style={{ margin: "10px" }}
+          >{`Question ${index} of ${numberOfQuestions}`}</h3>
           <h4 style={{ margin: "0" }}>{question.question}</h4>
           <form onSubmit={event => this.handleSubmit(event)}>
             <fieldset
@@ -73,10 +84,10 @@ class Question extends Component {
 
                 if (answerSubmitted) {
                   if (answer.isCorrect) {
-                    answerColor = {color: "green"};
+                    answerColor = { color: "green" };
                   }
                   if (userAnswerIndex == i && !answer.isCorrect) {
-                    answerColor = {color: "red"};
+                    answerColor = { color: "red" };
                   }
                 }
 
@@ -87,13 +98,13 @@ class Question extends Component {
                       style={{ display: "block", margin: "5px" }}
                     >
                       <input
-                      type="radio"
-                      name={index}
-                      id={i}
-                      value={i}
-                      onChange={event => {
-                        this.handleChange(event);
-                      }}
+                        type="radio"
+                        name={index}
+                        id={i}
+                        value={i}
+                        onChange={event => {
+                          this.handleAnswerChange(event);
+                        }}
                       />
                       <span style={answerColor}>{answer.answer}</span>
                     </label>
@@ -101,11 +112,26 @@ class Question extends Component {
                 );
               })}
             </fieldset>
-            <button type="submit" style={{ display: "block", margin: "0 auto" }}>
+            <button
+              type="submit"
+              style={{ display: "block", margin: "0 auto" }}
+            >
               Submit
             </button>
           </form>
-
+          {this.state.error && (
+            <div
+              style={{
+                position: "absolute",
+                left: "0",
+                right: "0",
+                bottom: "2px",
+                fontSize: "14px"
+              }}
+            >
+              *Please Select an Answer*
+            </div>
+          )}
         </div>
         <section
           className="navigation"
