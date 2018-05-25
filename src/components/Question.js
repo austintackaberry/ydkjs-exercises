@@ -86,7 +86,7 @@ class Question extends Component {
                   if (answer.isCorrect) {
                     answerColor = { color: "green" };
                   }
-                  if (userAnswerIndex === i && !answer.isCorrect) {
+                  if (userAnswerIndex == i && !answer.isCorrect) {
                     answerColor = { color: "red" };
                   }
                 }
