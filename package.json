@@ -52,9 +52,12 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
     "translate": "node scripts/translate.js",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "contributors:add": "all-contributors add",
+    "contributors:generate": "all-contributors generate"
   },
   "devDependencies": {
+    "all-contributors-cli": "^4.11.1",
     "babel-plugin-react-intl": "^2.4.0",
     "babel-preset-env": "^1.6.1",
     "enzyme": "^3.3.0",

@@ -1,0 +1,102 @@
+{
+  "projectName": "ydkjs-exercises",
+  "projectOwner": "austintackaberry",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "contributors": [
+    {
+      "login": "austintackaberry",
+      "name": "Austin Tackaberry",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/29493001?v=4",
+      "profile": "https://austintackaberry.co",
+      "contributions": [
+        "question",
+        "bug",
+        "code",
+        "design",
+        "doc",
+        "ideas",
+        "infra",
+        "review"
+      ]
+    },
+    {
+      "login": "tlee38",
+      "name": "Thanakrit Lee",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/21210429?v=4",
+      "profile": "https://github.com/tlee38",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "kevinYCKim33",
+      "name": "Kevin Y. Kim",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/29536549?v=4",
+      "profile": "https://kevinyckim.netlify.com/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "Asha20",
+      "name": "Asha20",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/19591575?v=4",
+      "profile": "https://github.com/Asha20",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "elloo",
+      "name": "Ewe Lin Loo",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/13992168?v=4",
+      "profile": "https://github.com/elloo",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "rosaxny",
+      "name": "rosaxny",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/35818464?v=4",
+      "profile": "https://github.com/rosaxny",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "nikrb",
+      "name": "nik",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/16709534?v=4",
+      "profile": "https://github.com/nikrb",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "kozlowsm",
+      "name": "kozlowsm",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/22461040?v=4",
+      "profile": "https://github.com/kozlowsm",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "energydev",
+      "name": "energydev",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/12925952?v=4",
+      "profile": "https://github.com/energydev",
+      "contributions": [
+        "code",
+        "bug"
+      ]
+    }
+  ]
+}
