@@ -67,7 +67,8 @@
       "avatar_url": "https://avatars2.githubusercontent.com/u/35818464?v=4",
       "profile": "https://github.com/rosaxny",
       "contributions": [
-        "code"
+        "code",
+        "ideas"
       ]
     },
     {
@@ -76,7 +77,8 @@
       "avatar_url": "https://avatars3.githubusercontent.com/u/16709534?v=4",
       "profile": "https://github.com/nikrb",
       "contributions": [
-        "code"
+        "code",
+        "test"
       ]
     },
     {
@@ -95,7 +97,26 @@
       "profile": "https://github.com/energydev",
       "contributions": [
         "code",
-        "bug"
+        "bug",
+        "ideas"
+      ]
+    },
+    {
+      "login": "jarrodyellets",
+      "name": "Jarrod Yellets",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/32344277?v=4",
+      "profile": "http://www.jarrodyellets.com",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "IrritatedEllipses",
+      "name": "Chris",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/5775083?v=4",
+      "profile": "http://www.fullstackontherocks.com",
+      "contributions": [
+        "code"
       ]
     }
   ]
