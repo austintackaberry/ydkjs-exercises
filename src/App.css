@@ -1,16 +1,38 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 body {
-  background: #00d2ff;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #3a7bd5, #00d2ff);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #3a7bd5, #00d2ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */  
+  background: #00d2ff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #3a7bd5,
+    #00d2ff
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #3a7bd5,
+    #00d2ff
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+html,
+body,
+#root,
+.App {
+  height: 100%;
+}
+
+.main-content {
+  flex-grow: 1;
 }
 
 .Footer {
   font-style: italic;
-  font-size: .8em;
+  font-size: 0.8em;
   position: relative;
   text-align: center;
   margin: auto;
+  flex-grow: 0;
 }
