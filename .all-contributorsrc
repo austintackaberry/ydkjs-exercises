@@ -98,6 +98,15 @@
         "code",
         "bug"
       ]
+    },
+    {
+      "login": "jarrodyellets",
+      "name": "Jarrod Yellets",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/32344277?v=4",
+      "profile": "http://www.jarrodyellets.com",
+      "contributions": [
+        "code"
+      ]
     }
   ]
 }
