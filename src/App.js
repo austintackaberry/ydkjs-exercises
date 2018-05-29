@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import BookRouter from "./components/BookRouter";
 import Home from "./components/Home";
 import books from "./data";
+import Footer from "./components/Footer";
 import { Route, Link } from "react-router-dom";
 import "./App.css";
 
@@ -22,6 +23,7 @@ class App extends Component {
             />
           );
         })}
+        <Footer />
       </div>
     );
   }
