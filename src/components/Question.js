@@ -19,10 +19,11 @@ const NavigationButton = props =>
 class Question extends Component {
   constructor() {
     super();
-    this.state = { userAnswerIndex: null, answerSubmitted: null, error: false };
+    this.state = { userAnswerIndex: null, answerSubmitted: null, error: false, correctAnswer: null };
   }
 
   handleSubmit(event) {
+    let currentAnswer = this.props.question.answers[this.state.userAnswerIndex];
     if (this.state.userAnswerIndex === null) {
       this.setState({
         error: true
@@ -31,6 +32,8 @@ class Question extends Component {
       this.setState({
         answerSubmitted: true,
         error: false
+      }, () => {
+        currentAnswer.isCorrect ? this.handleCorrectAnswer(true) : this.handleCorrectAnswer(false);
       });
     }
     event.preventDefault();
@@ -38,6 +41,10 @@ class Question extends Component {
 
   handleAnswerChange(event) {
     this.setState({ userAnswerIndex: event.target.value });
+  }
+
+  handleCorrectAnswer(answer) {
+    this.setState({ correctAnswer: answer })
   }
 
   render() {
@@ -62,7 +69,7 @@ class Question extends Component {
             borderRadius: "3px",
             width: "40%",
             margin: "auto",
-            padding: "20px",
+            padding: "30px 20px",
             position: "relative"
           }}
         >
@@ -119,19 +126,20 @@ class Question extends Component {
               Submit
             </button>
           </form>
-          {this.state.error && (
             <div
               style={{
                 position: "absolute",
                 left: "0",
                 right: "0",
                 bottom: "2px",
-                fontSize: "14px"
+                fontSize: "18px",
+                fontWeight: "700"
               }}
             >
-              *Please Select an Answer*
+              {this.state.error && (<div>Please Select an Answer</div>)}
+              {this.state.correctAnswer && (<div>Correct!</div>)}
+              {this.state.correctAnswer === false && (<div>Incorrect</div>)}
             </div>
-          )}
         </div>
         <section
           className="navigation"
@@ -146,11 +154,13 @@ class Question extends Component {
             label="Previous"
             destination={navigation.previous.url}
             enabled={navigation.previous.enabled}
+            onClick={() => {this.handleCorrectAnswer(null)}}
           />
           <NavigationButton
             label="Next"
             destination={navigation.next.url}
             enabled={navigation.next.enabled}
+            onClick={() => {this.handleCorrectAnswer(null)}}
           />
         </section>
       </React.Fragment>
