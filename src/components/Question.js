@@ -33,7 +33,7 @@ class Question extends Component {
         answerSubmitted: true,
         error: false
       }, () => {
-        currentAnswer.isCorrect ? this.handleCorrectAnswer(true) : this.handleCorrectAnswer(false);
+        currentAnswer.isCorrect ? this.setState({correctAnswer: true}) : this.setState({correctAnswer: false});
       });
     }
     event.preventDefault();
@@ -41,10 +41,6 @@ class Question extends Component {
 
   handleAnswerChange(event) {
     this.setState({ userAnswerIndex: event.target.value });
-  }
-
-  handleCorrectAnswer(answer) {
-    this.setState({ correctAnswer: answer })
   }
 
   render() {
@@ -60,6 +56,17 @@ class Question extends Component {
         url: baseUrl + "/q" + (index + 1)
       }
     };
+    let message;
+    
+    if (this.state.error) {
+      message = "Please select an answer";
+    } else if (this.state.correctAnswer) {
+      message = "Correct!";
+    } else if (this.state.correctAnswer === false) {
+      message = "Incorrect";
+    } else {
+      message = "";
+    }
 
     return (
       <React.Fragment>
@@ -136,9 +143,7 @@ class Question extends Component {
                 fontWeight: "700"
               }}
             >
-              {this.state.error && (<div>Please Select an Answer</div>)}
-              {this.state.correctAnswer && (<div>Correct!</div>)}
-              {this.state.correctAnswer === false && (<div>Incorrect</div>)}
+              {message}
             </div>
         </div>
         <section
@@ -154,13 +159,11 @@ class Question extends Component {
             label="Previous"
             destination={navigation.previous.url}
             enabled={navigation.previous.enabled}
-            onClick={() => {this.handleCorrectAnswer(null)}}
           />
           <NavigationButton
             label="Next"
             destination={navigation.next.url}
             enabled={navigation.next.enabled}
-            onClick={() => {this.handleCorrectAnswer(null)}}
           />
         </section>
       </React.Fragment>
