@@ -31,9 +31,8 @@ class Question extends Component {
     } else {
       this.setState({
         answerSubmitted: true,
-        error: false
-      }, () => {
-        currentAnswer.isCorrect ? this.setState({correctAnswer: true}) : this.setState({correctAnswer: false});
+        error: false,
+        correctAnswer: currentAnswer.isCorrect
       });
     }
     event.preventDefault();
@@ -64,9 +63,7 @@ class Question extends Component {
       message = "Correct!";
     } else if (this.state.correctAnswer === false) {
       message = "Incorrect";
-    } else {
-      message = "";
-    }
+    } 
 
     return (
       <React.Fragment>
