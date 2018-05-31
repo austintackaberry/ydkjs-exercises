@@ -32,7 +32,7 @@ class Question extends Component {
       this.setState({
         answerSubmitted: true,
         error: false,
-        correctAnswer: currentAnswer.isCorrect
+        correctAnswer: this.props.question.correctAnswerId === currentAnswer.id
       });
     }
     event.preventDefault();
@@ -96,16 +96,16 @@ class Question extends Component {
                 let answerColor;
 
                 if (answerSubmitted) {
-                  if (answer.isCorrect) {
+                  if (question.correctAnswerId === answer.id) {
                     answerColor = { color: "green" };
                   }
-                  if (userAnswerIndex == i && !answer.isCorrect) {
+                  if (userAnswerIndex == answer.id && !(question.correctAnswerId === answer.id)) {
                     answerColor = { color: "red" };
                   }
                 }
 
                 return (
-                  <div>
+                  <div key={answer.id}>
                     <label
                       htmlFor={i}
                       style={{ display: "block", margin: "5px" }}
@@ -114,12 +114,12 @@ class Question extends Component {
                         type="radio"
                         name={index}
                         id={i}
-                        value={i}
+                        value={answer.id}
                         onChange={event => {
                           this.handleAnswerChange(event);
                         }}
                       />
-                      <span style={answerColor}>{answer.answer}</span>
+                      <span style={answerColor}>{answer.text}</span>
                     </label>
                   </div>
                 );
