@@ -19,10 +19,11 @@ const NavigationButton = props =>
 class Question extends Component {
   constructor() {
     super();
-    this.state = { userAnswerIndex: null, answerSubmitted: null, error: false };
+    this.state = { userAnswerIndex: null, answerSubmitted: null, error: false, correctAnswer: null };
   }
 
   handleSubmit(event) {
+    let currentAnswer = this.props.question.answers[this.state.userAnswerIndex];
     if (this.state.userAnswerIndex === null) {
       this.setState({
         error: true
@@ -30,7 +31,8 @@ class Question extends Component {
     } else {
       this.setState({
         answerSubmitted: true,
-        error: false
+        error: false,
+        correctAnswer: currentAnswer.isCorrect
       });
     }
     event.preventDefault();
@@ -53,6 +55,15 @@ class Question extends Component {
         url: baseUrl + "/q" + (index + 1)
       }
     };
+    let message;
+    
+    if (this.state.error) {
+      message = "Please select an answer";
+    } else if (this.state.correctAnswer) {
+      message = "Correct!";
+    } else if (this.state.correctAnswer === false) {
+      message = "Incorrect";
+    } 
 
     return (
       <React.Fragment>
@@ -62,7 +73,7 @@ class Question extends Component {
             borderRadius: "3px",
             width: "40%",
             margin: "auto",
-            padding: "20px",
+            padding: "30px 20px",
             position: "relative"
           }}
         >
@@ -119,19 +130,18 @@ class Question extends Component {
               Submit
             </button>
           </form>
-          {this.state.error && (
             <div
               style={{
                 position: "absolute",
                 left: "0",
                 right: "0",
                 bottom: "2px",
-                fontSize: "14px"
+                fontSize: "18px",
+                fontWeight: "700"
               }}
             >
-              *Please Select an Answer*
+              {message}
             </div>
-          )}
         </div>
         <section
           className="navigation"
