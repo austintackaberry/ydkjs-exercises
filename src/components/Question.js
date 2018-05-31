@@ -73,8 +73,10 @@ class Question extends Component {
             borderRadius: "3px",
             width: "40%",
             margin: "auto",
-            padding: "30px 20px",
-            position: "relative"
+            padding: "20px",
+            position: "relative",
+            height: "18em",
+            padding: "30px 20px"
           }}
         >
           <h3
