@@ -63,7 +63,8 @@ class Question extends Component {
             width: "40%",
             margin: "auto",
             padding: "20px",
-            position: "relative"
+            position: "relative",
+            height: "18em",
           }}
         >
           <h3
