@@ -60,6 +60,7 @@
     "all-contributors-cli": "^4.11.1",
     "babel-plugin-react-intl": "^2.4.0",
     "babel-preset-env": "^1.7.0",
+    "cz-conventional-changelog": "^2.1.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "jest": "^23.1.0",
@@ -106,5 +107,10 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
