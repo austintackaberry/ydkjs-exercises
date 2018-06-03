@@ -27,7 +27,6 @@
     "file-loader": "1.1.5",
     "fs-extra": "3.0.1",
     "html-webpack-plugin": "2.29.0",
-    "jest": "20.0.4",
     "material-ui": "^0.20.0",
     "object-assign": "4.1.1",
     "postcss-flexbugs-fixes": "3.2.0",
@@ -51,6 +50,7 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
+    "test:cov": "node scripts/test.js --env=jsdom --coverage && codecov",
     "translate": "node scripts/translate.js",
     "lint": "eslint src",
     "contributors:add": "all-contributors add",
@@ -59,14 +59,17 @@
   "devDependencies": {
     "all-contributors-cli": "^4.11.1",
     "babel-plugin-react-intl": "^2.4.0",
-    "babel-preset-env": "^1.6.1",
+    "babel-preset-env": "^1.7.0",
     "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1"
+    "enzyme-adapter-react-16": "^1.1.1",
+    "jest": "^23.1.0",
+    "jest-cli": "^23.1.0"
   },
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,mjs}"
     ],
+    "coverageDirectory": "./coverage/",
     "setupFiles": [
       "<rootDir>/config/polyfills.js"
     ],
