@@ -19,7 +19,12 @@ const NavigationButton = props =>
 class Question extends Component {
   constructor() {
     super();
-    this.state = { userAnswerIndex: null, answerSubmitted: null, error: false, correctAnswer: null };
+    this.state = {
+      userAnswerIndex: null,
+      answerSubmitted: null,
+      error: false,
+      correctAnswer: null
+    };
   }
 
   handleSubmit(event) {
@@ -56,14 +61,14 @@ class Question extends Component {
       }
     };
     let message;
-    
+
     if (this.state.error) {
       message = "Please select an answer";
     } else if (this.state.correctAnswer) {
       message = "Correct!";
     } else if (this.state.correctAnswer === false) {
       message = "Incorrect";
-    } 
+    }
 
     return (
       <React.Fragment>
@@ -73,7 +78,6 @@ class Question extends Component {
             borderRadius: "3px",
             width: "40%",
             margin: "auto",
-            padding: "20px",
             position: "relative",
             height: "18em",
             padding: "30px 20px"
@@ -99,7 +103,10 @@ class Question extends Component {
                   if (question.correctAnswerId === answer.id) {
                     answerColor = { color: "green" };
                   }
-                  if (userAnswerIndex == answer.id && !(question.correctAnswerId === answer.id)) {
+                  if (
+                    userAnswerIndex == answer.id &&
+                    !(question.correctAnswerId === answer.id)
+                  ) {
                     answerColor = { color: "red" };
                   }
                 }
@@ -132,18 +139,18 @@ class Question extends Component {
               Submit
             </button>
           </form>
-            <div
-              style={{
-                position: "absolute",
-                left: "0",
-                right: "0",
-                bottom: "2px",
-                fontSize: "18px",
-                fontWeight: "700"
-              }}
-            >
-              {message}
-            </div>
+          <div
+            style={{
+              position: "absolute",
+              left: "0",
+              right: "0",
+              bottom: "2px",
+              fontSize: "18px",
+              fontWeight: "700"
+            }}
+          >
+            {message}
+          </div>
         </div>
         <section
           className="navigation"
