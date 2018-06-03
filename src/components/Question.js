@@ -19,7 +19,12 @@ const NavigationButton = props =>
 class Question extends Component {
   constructor() {
     super();
-    this.state = { userAnswerIndex: null, answerSubmitted: null, error: false, correctAnswer: null };
+    this.state = {
+      userAnswerIndex: null,
+      answerSubmitted: null,
+      error: false,
+      correctAnswer: null
+    };
   }
 
   handleSubmit(event) {
@@ -32,7 +37,7 @@ class Question extends Component {
       this.setState({
         answerSubmitted: true,
         error: false,
-        correctAnswer: currentAnswer.isCorrect
+        correctAnswer: this.props.question.correctAnswerId === currentAnswer.id
       });
     }
     event.preventDefault();
@@ -56,14 +61,14 @@ class Question extends Component {
       }
     };
     let message;
-    
+
     if (this.state.error) {
       message = "Please select an answer";
     } else if (this.state.correctAnswer) {
       message = "Correct!";
     } else if (this.state.correctAnswer === false) {
       message = "Incorrect";
-    } 
+    }
 
     return (
       <React.Fragment>
@@ -73,7 +78,6 @@ class Question extends Component {
             borderRadius: "3px",
             width: "40%",
             margin: "auto",
-            padding: "20px",
             position: "relative",
             height: "18em",
             padding: "30px 20px"
@@ -96,16 +100,19 @@ class Question extends Component {
                 let answerColor;
 
                 if (answerSubmitted) {
-                  if (answer.isCorrect) {
+                  if (question.correctAnswerId === answer.id) {
                     answerColor = { color: "green" };
                   }
-                  if (userAnswerIndex == i && !answer.isCorrect) {
+                  if (
+                    userAnswerIndex == answer.id &&
+                    !(question.correctAnswerId === answer.id)
+                  ) {
                     answerColor = { color: "red" };
                   }
                 }
 
                 return (
-                  <div>
+                  <div key={answer.id}>
                     <label
                       htmlFor={i}
                       style={{ display: "block", margin: "5px" }}
@@ -114,12 +121,12 @@ class Question extends Component {
                         type="radio"
                         name={index}
                         id={i}
-                        value={i}
+                        value={answer.id}
                         onChange={event => {
                           this.handleAnswerChange(event);
                         }}
                       />
-                      <span style={answerColor}>{answer.answer}</span>
+                      <span style={answerColor}>{answer.text}</span>
                     </label>
                   </div>
                 );
@@ -132,18 +139,18 @@ class Question extends Component {
               Submit
             </button>
           </form>
-            <div
-              style={{
-                position: "absolute",
-                left: "0",
-                right: "0",
-                bottom: "2px",
-                fontSize: "18px",
-                fontWeight: "700"
-              }}
-            >
-              {message}
-            </div>
+          <div
+            style={{
+              position: "absolute",
+              left: "0",
+              right: "0",
+              bottom: "2px",
+              fontSize: "18px",
+              fontWeight: "700"
+            }}
+          >
+            {message}
+          </div>
         </div>
         <section
           className="navigation"

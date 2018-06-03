@@ -11,20 +11,27 @@ class ChapterRouter extends Component {
     const { chapter, bookUrl } = this.props;
 
     let displayQuestions;
+    let chapterPath = bookUrl + chapter.url;
+
     if (chapter.questions) {
       displayQuestions = chapter.questions.map((question, index) => {
+
+        let questionPath = chapterPath + "/q" + (index + 1);
+
         return (
-          <Route
-            path={bookUrl + chapter.url + "/q" + (index + 1)}
-            render={() => (
-              <Question
-                baseUrl={bookUrl + chapter.url}
-                index={index + 1}
-                question={question}
-                numberOfQuestions={chapter.questions.length}
-              />
-            )}
-          />
+          <div key={questionPath}>
+            <Route 
+              path={questionPath}
+              render={() => (
+                <Question
+                  baseUrl={chapterPath}
+                  index={index + 1}
+                  question={question}
+                  numberOfQuestions={chapter.questions.length}
+                />
+              )}
+            />
+          </div>
         )
       });
     } else {
@@ -34,19 +41,19 @@ class ChapterRouter extends Component {
     }
 
     return (
-      <div>
+      <div key={chapterPath}>
         <Link
           style={{ textDecoration: "none", color: "black" }}
-          to={bookUrl + chapter.url}
+          to={chapterPath}
         >
           <h3 style={{ fontSize: "24px" }}>{chapter.title}</h3>
         </Link>
         <Switch>
           <Route
             exact
-            path={bookUrl + chapter.url}
+            path={chapterPath}
             render={() => {
-              return <ChapterHome currentUrl={bookUrl + chapter.url} />;
+              return <ChapterHome currentUrl={chapterPath} />;
             }}
           />
           {displayQuestions}
