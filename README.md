@@ -1,7 +1,8 @@
 # YDKJS Exercises - [ydkjs-exercises.com](https://ydkjs-exercises.com)
 
 [![All Contributors](https://img.shields.io/badge/all_contributors-12-orange.svg?style=flat-square)](#contributors)
-[![coverage](https://codecov.io/gh/austintackaberry/ydkjs-exercises/branch/master/graph/badge.svg)](https://codecov.io/gh/austintackaberry/ydkjs-exercises)
+[![Build Status](https://travis-ci.org/austintackaberry/ydkjs-exercises.svg?branch=master)](https://travis-ci.org/austintackaberry/ydkjs-exercises)
+[![codecov](https://codecov.io/gh/austintackaberry/ydkjs-exercises/branch/master/graph/badge.svg)](https://codecov.io/gh/austintackaberry/ydkjs-exercises)
 
 Exercises built to help you test your knowledge as you read [You Don't Know JavaScript](https://github.com/getify/You-Dont-Know-JS).
 
