@@ -1,5 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
+import { score } from "../score-context";
 
 import Question from "../components/Question";
 
@@ -19,8 +20,16 @@ const question = {
 const baseUrl = "/up-going/ch1";
 const index = 1;
 const numberOfQuestions = 6;
+const updateScore = jest.fn();
 
-const test_props = { question, baseUrl, index, numberOfQuestions };
+const test_props = {
+  question,
+  baseUrl,
+  index,
+  numberOfQuestions,
+  score,
+  updateScore
+};
 
 it("should render question", () => {
   const comp = shallow(<Question {...test_props} />);
