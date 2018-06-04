@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import BookHome from "./BookHome";
 import { Route, Link, Switch } from "react-router-dom";
-import NoMatch from './NoMatch';
+import NoMatch from "./NoMatch";
 import ChapterRouter from "./ChapterRouter";
 
 class BookRouter extends Component {
@@ -20,14 +20,15 @@ class BookRouter extends Component {
               return <BookHome key={book.id} book={book} />;
             }}
           />
-          {book.chapters.map(chapter => {
+          {book.chapters.map((chapter, index) => {
             return (
               <Route
-                key={book.id+chapter.url}
+                key={index}
                 path={book.url + chapter.url}
                 render={() => (
                   <ChapterRouter
                     bookId={book.id}
+                    chapterId={index}
                     bookUrl={book.url}
                     chapter={chapter}
                   />
@@ -35,7 +36,7 @@ class BookRouter extends Component {
               />
             );
           })}
-          <Route component={NoMatch}/>
+          <Route component={NoMatch} />
         </Switch>
       </div>
     );
