@@ -8,11 +8,13 @@ const UpGoingChapters = [
   },
   {
     title: "Chapter 2: Into JavaScript",
-    url: "/ch2"
+    url: "/ch2",
+    questions: []
   },
   {
     title: "Chapter 3: Into YDKJS",
-    url: "/ch3"
+    url: "/ch3",
+    questions: []
   }
 ];
 

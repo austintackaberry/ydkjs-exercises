@@ -19,10 +19,44 @@ const NavigationButton = props =>
 class Question extends Component {
   constructor() {
     super();
-    this.state = { userAnswerIndex: null, answerSubmitted: null, error: false };
+    this.state = {
+      userAnswerIndex: null,
+      answerSubmitted: null,
+      error: false,
+      correctAnswer: null
+    };
+  }
+
+  calcNewScore(isCorrect) {
+    const { updateScore, score, bookId, chapterId, index } = this.props;
+    const questionIndex = index - 1;
+    const newScore = score.map((book, index) => {
+      if (index === bookId) {
+        return {
+          title: book.title,
+          chapters: book.chapters.map((chapter, index) => {
+            if (index === chapterId) {
+              return {
+                title: chapter.title,
+                questions: chapter.questions.map((question, index) => {
+                  if (questionIndex === index) {
+                    return { answered: true, correct: isCorrect };
+                  }
+                  return { answered: false };
+                })
+              };
+            }
+            return chapter;
+          })
+        };
+      }
+      return book;
+    });
+    updateScore(newScore);
   }
 
   handleSubmit(event) {
+    let currentAnswer = this.props.question.answers[this.state.userAnswerIndex];
     if (this.state.userAnswerIndex === null) {
       this.setState({
         error: true
@@ -30,14 +64,21 @@ class Question extends Component {
     } else {
       this.setState({
         answerSubmitted: true,
-        error: false
+        error: false,
+        correctAnswer: this.props.question.correctAnswerId === currentAnswer.id
       });
+      this.calcNewScore(
+        this.props.question.correctAnswerId === currentAnswer.id
+      );
     }
     event.preventDefault();
   }
 
   handleAnswerChange(event) {
-    this.setState({ userAnswerIndex: event.target.value });
+    this.setState({
+      userAnswerIndex: event.target.value,
+      answerSubmitted: null
+    });
   }
 
   render() {
@@ -53,6 +94,15 @@ class Question extends Component {
         url: baseUrl + "/q" + (index + 1)
       }
     };
+    let message;
+
+    if (this.state.error) {
+      message = "Please select an answer";
+    } else if (this.state.correctAnswer) {
+      message = "Correct!";
+    } else if (this.state.correctAnswer === false) {
+      message = "Incorrect";
+    }
 
     return (
       <React.Fragment>
@@ -62,8 +112,9 @@ class Question extends Component {
             borderRadius: "3px",
             width: "40%",
             margin: "auto",
-            padding: "20px",
-            position: "relative"
+            position: "relative",
+            height: "18em",
+            padding: "30px 20px"
           }}
         >
           <h3
@@ -83,16 +134,19 @@ class Question extends Component {
                 let answerColor;
 
                 if (answerSubmitted) {
-                  if (answer.isCorrect) {
+                  if (question.correctAnswerId === answer.id) {
                     answerColor = { color: "green" };
                   }
-                  if (userAnswerIndex == i && !answer.isCorrect) {
+                  if (
+                    userAnswerIndex == answer.id &&
+                    !(question.correctAnswerId === answer.id)
+                  ) {
                     answerColor = { color: "red" };
                   }
                 }
 
                 return (
-                  <div>
+                  <div key={answer.id}>
                     <label
                       htmlFor={i}
                       style={{ display: "block", margin: "5px" }}
@@ -101,12 +155,12 @@ class Question extends Component {
                         type="radio"
                         name={index}
                         id={i}
-                        value={i}
+                        value={answer.id}
                         onChange={event => {
                           this.handleAnswerChange(event);
                         }}
                       />
-                      <span style={answerColor}>{answer.answer}</span>
+                      <span style={answerColor}>{answer.text}</span>
                     </label>
                   </div>
                 );
@@ -119,19 +173,18 @@ class Question extends Component {
               Submit
             </button>
           </form>
-          {this.state.error && (
-            <div
-              style={{
-                position: "absolute",
-                left: "0",
-                right: "0",
-                bottom: "2px",
-                fontSize: "14px"
-              }}
-            >
-              *Please Select an Answer*
-            </div>
-          )}
+          <div
+            style={{
+              position: "absolute",
+              left: "0",
+              right: "0",
+              bottom: "2px",
+              fontSize: "18px",
+              fontWeight: "700"
+            }}
+          >
+            {message}
+          </div>
         </div>
         <section
           className="navigation"
