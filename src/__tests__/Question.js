@@ -79,9 +79,9 @@ it("should render question", () => {
 
 it("should set answer state", () => {
   const comp = shallow(<Question {...test_props} />);
-  expect(comp.instance().state.userAnswerIndex).toBeNull();
+  expect(comp.instance().state.userAnswerId).toBeNull();
   comp.instance().handleAnswerChange({ target: { value: 2 } });
-  expect(comp.instance().state.userAnswerIndex).toBe(2);
+  expect(comp.instance().state.userAnswerId).toBe(2);
 });
 
 it("should set error on submit if answer not selected", () => {
@@ -98,7 +98,7 @@ it("should set correct answer to green on submit", () => {
   comp.instance().handleAnswerChange({ target: { value: 3 } });
   comp.instance().handleSubmit({ preventDefault: () => {} });
   expect(comp.instance().state.error).toBe(false);
-  expect(comp.instance().state.userAnswerIndex).toBe(3);
+  expect(comp.instance().state.userAnswerId).toBe(3);
   expect(comp.instance().props.question.correctAnswerId).toBe(3);
   return Promise.resolve().then(() => {
     comp.update();
@@ -116,7 +116,7 @@ it("should set incorrect answer to red and correct answer to green on submit", (
   comp.instance().handleAnswerChange({ target: { value: 3 } });
   comp.instance().handleSubmit({ preventDefault: () => {} });
   expect(comp.instance().state.error).toBe(false);
-  expect(comp.instance().state.userAnswerIndex).toBe(3);
+  expect(comp.instance().state.userAnswerId).toBe(3);
   expect(comp.instance().state.answerSubmitted).toBe(true);
   return Promise.resolve().then(() => {
     comp.update();
