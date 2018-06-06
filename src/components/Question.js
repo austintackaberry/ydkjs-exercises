@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
-import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
-import FlatButton from "material-ui/FlatButton";
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import FlatButton from 'material-ui/FlatButton';
 
 const NavigationButton = props =>
   withRouter(({ history }) => (
@@ -26,7 +26,7 @@ class Question extends Component {
       userAnswerId: null,
       answerSubmitted: null,
       error: false,
-      correctAnswer: null
+      correctAnswer: null,
     };
   }
 
@@ -46,11 +46,11 @@ class Question extends Component {
                     return { answered: true, correct: isCorrect };
                   }
                   return { answered: false };
-                })
+                }),
               };
             }
             return chapter;
-          })
+          }),
         };
       }
       return book;
@@ -62,13 +62,13 @@ class Question extends Component {
     let currentAnswer = this.props.question.answers[this.state.userAnswerId];
     if (this.state.userAnswerId === null) {
       this.setState({
-        error: true
+        error: true,
       });
     } else {
       this.setState({
         answerSubmitted: true,
         error: false,
-        correctAnswer: this.props.question.correctAnswerId === currentAnswer.id
+        correctAnswer: this.props.question.correctAnswerId === currentAnswer.id,
       });
       this.calcNewScore(
         this.props.question.correctAnswerId === currentAnswer.id
@@ -80,7 +80,7 @@ class Question extends Component {
   handleAnswerChange(event) {
     this.setState({
       userAnswerId: event.target.value,
-      answerSubmitted: null
+      answerSubmitted: null,
     });
   }
 
@@ -90,47 +90,47 @@ class Question extends Component {
     const navigation = {
       previous: {
         enabled: index > 1,
-        url: baseUrl + "/q" + (index - 1)
+        url: baseUrl + '/q' + (index - 1),
       },
       next: {
         enabled: index < numberOfQuestions,
-        url: baseUrl + "/q" + (index + 1)
-      }
+        url: baseUrl + '/q' + (index + 1),
+      },
     };
     let message;
 
     if (this.state.error) {
-      message = "Please select an answer";
+      message = 'Please select an answer';
     } else if (this.state.correctAnswer) {
-      message = "Correct!";
+      message = 'Correct!';
     } else if (this.state.correctAnswer === false) {
-      message = "Incorrect";
+      message = 'Incorrect';
     }
 
     return (
       <React.Fragment>
         <div
           style={{
-            border: "2px solid black",
-            borderRadius: "3px",
-            width: "40%",
-            margin: "auto",
-            position: "relative",
-            height: "18em",
-            padding: "30px 20px"
+            border: '2px solid black',
+            borderRadius: '3px',
+            width: '40%',
+            margin: 'auto',
+            position: 'relative',
+            height: '18em',
+            padding: '30px 20px',
           }}
         >
           <h3
-            style={{ margin: "10px" }}
+            style={{ margin: '10px' }}
           >{`Question ${index} of ${numberOfQuestions}`}</h3>
-          <h4 style={{ margin: "0" }}>{question.question}</h4>
+          <h4 style={{ margin: '0' }}>{question.question}</h4>
           <form onSubmit={event => this.handleSubmit(event)}>
             <fieldset
               style={{
-                display: "inline-block",
-                margin: "0 auto",
-                textAlign: "left",
-                border: "none"
+                display: 'inline-block',
+                margin: '0 auto',
+                textAlign: 'left',
+                border: 'none',
               }}
             >
               {question.answers.map((answer, i) => {
@@ -138,13 +138,13 @@ class Question extends Component {
 
                 if (answerSubmitted) {
                   if (question.correctAnswerId === answer.id) {
-                    answerColor = { color: "green" };
+                    answerColor = { color: 'green' };
                   }
                   if (
                     userAnswerId == answer.id &&
                     !(question.correctAnswerId === answer.id)
                   ) {
-                    answerColor = { color: "red" };
+                    answerColor = { color: 'red' };
                   }
                 }
 
@@ -152,7 +152,7 @@ class Question extends Component {
                   <div key={answer.id}>
                     <label
                       htmlFor={i}
-                      style={{ display: "block", margin: "5px" }}
+                      style={{ display: 'block', margin: '5px' }}
                     >
                       <input
                         type="radio"
@@ -171,19 +171,19 @@ class Question extends Component {
             </fieldset>
             <button
               type="submit"
-              style={{ display: "block", margin: "0 auto" }}
+              style={{ display: 'block', margin: '0 auto' }}
             >
               Submit
             </button>
           </form>
           <div
             style={{
-              position: "absolute",
-              left: "0",
-              right: "0",
-              bottom: "2px",
-              fontSize: "18px",
-              fontWeight: "700"
+              position: 'absolute',
+              left: '0',
+              right: '0',
+              bottom: '2px',
+              fontSize: '18px',
+              fontWeight: '700',
             }}
           >
             {message}
@@ -192,10 +192,10 @@ class Question extends Component {
         <section
           className="navigation"
           style={{
-            display: "flex",
-            width: "40%",
-            margin: "1em auto",
-            justifyContent: "space-around"
+            display: 'flex',
+            width: '40%',
+            margin: '1em auto',
+            justifyContent: 'space-around',
           }}
         >
           <NavigationButton

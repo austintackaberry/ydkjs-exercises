@@ -1,13 +1,13 @@
-import React, { Component } from "react";
-import BookRouter from "./components/BookRouter";
-import Home from "./components/Home";
-import books from "./data";
-import Footer from "./components/Footer";
-import NoMatch from "./components/NoMatch";
-import { Switch, Route, Link } from "react-router-dom";
-import "./App.css";
+import React, { Component } from 'react';
+import BookRouter from './components/BookRouter';
+import Home from './components/Home';
+import books from './data';
+import Footer from './components/Footer';
+import NoMatch from './components/NoMatch';
+import { Switch, Route, Link } from 'react-router-dom';
+import './App.css';
 
-import { ScoreContext, score } from "./score-context";
+import { ScoreContext, score } from './score-context';
 
 class App extends Component {
   constructor() {
@@ -20,7 +20,7 @@ class App extends Component {
     // be passed down into the context provider
     this.state = {
       score: [...score],
-      updateScore: this.updateScore
+      updateScore: this.updateScore,
     };
   }
   render() {
@@ -28,8 +28,8 @@ class App extends Component {
       <ScoreContext.Provider value={this.state}>
         <div className="App">
           <div className="main-content">
-            <Link style={{ textDecoration: "none", color: "black" }} to="/">
-              <h1 style={{ fontSize: "55px" }}>YDKJS EXERCISES</h1>
+            <Link style={{ textDecoration: 'none', color: 'black' }} to="/">
+              <h1 style={{ fontSize: '55px' }}>YDKJS EXERCISES</h1>
             </Link>
             <Switch>
               <Route exact path="/" render={() => <Home books={books} />} />
