@@ -18,27 +18,26 @@ class ChapterRouter extends Component {
         let questionPath = chapterPath + "/q" + (index + 1);
 
         return (
-          <div key={questionPath}>
-            <Route
-              path={questionPath}
-              render={() => (
-                <ScoreContext.Consumer>
-                  {({ score, updateScore }) => (
-                    <Question
-                      bookId={bookId}
-                      chapterId={chapterId}
-                      baseUrl={chapterPath}
-                      index={index + 1}
-                      question={question}
-                      numberOfQuestions={chapter.questions.length}
-                      score={score}
-                      updateScore={updateScore}
-                    />
-                  )}
-                </ScoreContext.Consumer>
-              )}
-            />
-          </div>
+          <Route
+            key={questionPath}
+            path={questionPath}
+            render={() => (
+              <ScoreContext.Consumer>
+                {({ score, updateScore }) => (
+                  <Question
+                    bookId={bookId}
+                    chapterId={chapterId}
+                    baseUrl={chapterPath}
+                    index={index + 1}
+                    question={question}
+                    numberOfQuestions={chapter.questions.length}
+                    score={score}
+                    updateScore={updateScore}
+                  />
+                )}
+              </ScoreContext.Consumer>
+            )}
+          />
         );
       });
     } else {
@@ -46,7 +45,7 @@ class ChapterRouter extends Component {
     }
 
     return (
-      <div key={chapterPath}>
+      <div>
         <Link
           style={{ textDecoration: "none", color: "black" }}
           to={chapterPath}

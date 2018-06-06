@@ -3,36 +3,28 @@ import { shallow } from "enzyme";
 import { score } from "../score-context";
 
 import Question from "../components/Question";
+import books from "../data";
 
-const question = {
-  question: "How many expressions are in the following statement: a = b * 2; ?",
-  orderedById: true,
-  answers: [
-    { text: "one", id: 0 },
-    { text: "two", id: 1 },
-    { text: "three", id: 2 },
-    { text: "four", id: 3 }
-  ],
-  correctAnswerId: 3,
-  explanation:
-    "explain why other answers are wrong and why this answer is the best answer"
-};
+const upGoingCh1Q1 = books[0].chapters[0].questions[0];
+const upGoingCh1Q2 = books[0].chapters[0].questions[1];
 const baseUrl = "/up-going/ch1";
 const index = 1;
 const numberOfQuestions = 6;
 const updateScore = jest.fn();
 
-const test_props = {
-  question,
-  baseUrl,
-  index,
-  numberOfQuestions,
-  score,
-  updateScore
+const generateTestProps = question => {
+  return {
+    question,
+    baseUrl,
+    index,
+    numberOfQuestions,
+    score,
+    updateScore
+  };
 };
 
-it("should render question", () => {
-  const comp = shallow(<Question {...test_props} />);
+it("should render question 1", () => {
+  const comp = shallow(<Question {...generateTestProps(upGoingCh1Q1)} />);
 
   expect(
     comp
@@ -77,15 +69,44 @@ it("should render question", () => {
   expect(comp.find("NavigationButton").length).toBe(2);
 });
 
+it("should render question 2", () => {
+  const comp = shallow(<Question {...generateTestProps(upGoingCh1Q2)} />);
+
+  expect(
+    comp
+      .find("h3")
+      .at(0)
+      .text()
+  ).toBe("Question 1 of 6");
+  expect(
+    comp
+      .find("h4")
+      .at(0)
+      .text()
+  ).toBe("What is a computer program (source code / code)?");
+  expect(comp.find("label").length).toBe(4);
+  expect(comp.find('input[type="radio"]').length).toBe(4);
+  expect(comp.find("span").length).toBe(4);
+  expect(
+    comp
+      .find("span")
+      .at(0)
+      .text()
+  ).toBe(
+    "A set of special instructions to tell the computer what tasks to perform."
+  );
+  expect(comp.find("button").length).toBe(1);
+  expect(comp.find("NavigationButton").length).toBe(2);
+});
 it("should set answer state", () => {
-  const comp = shallow(<Question {...test_props} />);
+  const comp = shallow(<Question {...generateTestProps(upGoingCh1Q1)} />);
   expect(comp.instance().state.userAnswerId).toBeNull();
   comp.instance().handleAnswerChange({ target: { value: 2 } });
   expect(comp.instance().state.userAnswerId).toBe(2);
 });
 
 it("should set error on submit if answer not selected", () => {
-  const comp = shallow(<Question {...test_props} />);
+  const comp = shallow(<Question {...generateTestProps(upGoingCh1Q1)} />);
   expect(comp.instance().state.error).toBe(false);
   comp.instance().handleSubmit({
     preventDefault: () => {}
@@ -94,7 +115,7 @@ it("should set error on submit if answer not selected", () => {
 });
 
 it("should set correct answer to green on submit", () => {
-  const comp = shallow(<Question {...test_props} />);
+  const comp = shallow(<Question {...generateTestProps(upGoingCh1Q1)} />);
   comp.instance().handleAnswerChange({ target: { value: 3 } });
   comp.instance().handleSubmit({ preventDefault: () => {} });
   expect(comp.instance().state.error).toBe(false);
@@ -112,7 +133,7 @@ it("should set correct answer to green on submit", () => {
 });
 
 it("should set incorrect answer to red and correct answer to green on submit", () => {
-  const comp = shallow(<Question {...test_props} />);
+  const comp = shallow(<Question {...generateTestProps(upGoingCh1Q1)} />);
   comp.instance().handleAnswerChange({ target: { value: 3 } });
   comp.instance().handleSubmit({ preventDefault: () => {} });
   expect(comp.instance().state.error).toBe(false);

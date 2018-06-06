@@ -11,7 +11,10 @@ const NavigationButton = props =>
         hoverColor="#CCC"
         label={props.label}
         disabled={!props.enabled}
-        onClick={() => history.push(props.destination)}
+        onClick={() => {
+          debugger;
+          history.push(props.destination);
+        }}
       />
     </MuiThemeProvider>
   ))(props);
