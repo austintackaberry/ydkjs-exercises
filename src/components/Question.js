@@ -20,7 +20,7 @@ class Question extends Component {
   constructor() {
     super();
     this.state = {
-      userAnswerIndex: null,
+      userAnswerId: null,
       answerSubmitted: null,
       error: false,
       correctAnswer: null
@@ -56,8 +56,8 @@ class Question extends Component {
   }
 
   handleSubmit(event) {
-    let currentAnswer = this.props.question.answers[this.state.userAnswerIndex];
-    if (this.state.userAnswerIndex === null) {
+    let currentAnswer = this.props.question.answers[this.state.userAnswerId];
+    if (this.state.userAnswerId === null) {
       this.setState({
         error: true
       });
@@ -76,13 +76,13 @@ class Question extends Component {
 
   handleAnswerChange(event) {
     this.setState({
-      userAnswerIndex: event.target.value,
+      userAnswerId: event.target.value,
       answerSubmitted: null
     });
   }
 
   render() {
-    const { answerSubmitted, userAnswerIndex } = this.state;
+    const { answerSubmitted, userAnswerId } = this.state;
     const { question, baseUrl, index, numberOfQuestions } = this.props;
     const navigation = {
       previous: {
@@ -138,7 +138,7 @@ class Question extends Component {
                     answerColor = { color: "green" };
                   }
                   if (
-                    userAnswerIndex == answer.id &&
+                    userAnswerId == answer.id &&
                     !(question.correctAnswerId === answer.id)
                   ) {
                     answerColor = { color: "red" };
