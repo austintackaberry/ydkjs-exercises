@@ -25,6 +25,18 @@ it('should render the book chapters', () => {
   const comp = shallow(<BookHome book={book} />);
   expect(comp.find('List').length).toBe(1);
   expect(comp.find('Link').length).toBe(2);
+  expect(
+    comp
+      .find('Link')
+      .at(0)
+      .prop('to')
+  ).toBe('/up-going/ch1');
+  expect(
+    comp
+      .find('Link')
+      .at(0)
+      .prop('to')
+  ).toBe('/up-going/ch1');
   expect(comp.find('ListItem').length).toBe(2);
   expect(
     comp
