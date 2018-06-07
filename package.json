@@ -54,7 +54,7 @@
     "test:cov": "node scripts/test.js --env=jsdom --coverage && codecov",
     "translate": "node scripts/translate.js",
     "lintold": "eslint src",
-    "lint": "prettier \"src/**/*\" --write && eslint src",
+    "lint": "eslint src",
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate",
     "precommit": "pretty-quick --staged"
