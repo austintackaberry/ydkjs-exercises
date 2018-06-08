@@ -12,7 +12,6 @@ const NavigationButton = props =>
         label={props.label}
         disabled={!props.enabled}
         onClick={() => {
-          debugger;
           history.push(props.destination);
         }}
       />
@@ -26,7 +25,8 @@ class Question extends Component {
       userAnswerId: null,
       answerSubmitted: null,
       error: false,
-      correctAnswer: null
+      correctAnswer: null,
+      explanationRequested: false
     };
   }
 
@@ -80,12 +80,19 @@ class Question extends Component {
   handleAnswerChange(event) {
     this.setState({
       userAnswerId: event.target.value,
-      answerSubmitted: null
+      answerSubmitted: null,
+      correctAnswer: null,
+    });
+  }
+
+  handleExplanationRequest(event) {
+    this.setState({
+      explanationRequested: true,
     });
   }
 
   render() {
-    const { answerSubmitted, userAnswerId } = this.state;
+    const { answerSubmitted, userAnswerId, explanationRequested } = this.state;
     const { question, baseUrl, index, numberOfQuestions } = this.props;
     const navigation = {
       previous: {
@@ -97,14 +104,25 @@ class Question extends Component {
         url: baseUrl + "/q" + (index + 1)
       }
     };
-    let message;
 
+    let message;
     if (this.state.error) {
       message = "Please select an answer";
     } else if (this.state.correctAnswer) {
       message = "Correct!";
     } else if (this.state.correctAnswer === false) {
-      message = "Incorrect";
+      message = "Incorrect! Try Again!";
+    }
+
+    let explanation;
+    if (answerSubmitted) {
+      if (explanationRequested) {
+        explanation = <div>{question.explanation}</div>
+      } else {
+      explanation = <button onClick={(event) => this.handleExplanationRequest()}>
+        See Explanation
+        </button>
+      }
     }
 
     return (
@@ -134,20 +152,6 @@ class Question extends Component {
               }}
             >
               {question.answers.map((answer, i) => {
-                let answerColor;
-
-                if (answerSubmitted) {
-                  if (question.correctAnswerId === answer.id) {
-                    answerColor = { color: "green" };
-                  }
-                  if (
-                    userAnswerId == answer.id &&
-                    !(question.correctAnswerId === answer.id)
-                  ) {
-                    answerColor = { color: "red" };
-                  }
-                }
-
                 return (
                   <div key={answer.id}>
                     <label
@@ -163,7 +167,7 @@ class Question extends Component {
                           this.handleAnswerChange(event);
                         }}
                       />
-                      <span style={answerColor}>{answer.text}</span>
+                      {answer.text}
                     </label>
                   </div>
                 );
@@ -175,6 +179,7 @@ class Question extends Component {
             >
               Submit
             </button>
+            {explanation}
           </form>
           <div
             style={{
