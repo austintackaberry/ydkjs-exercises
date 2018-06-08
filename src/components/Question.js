@@ -152,6 +152,18 @@ class Question extends Component {
               }}
             >
               {question.answers.map((answer, i) => {
+                let answerColor;
+                if (answerSubmitted) {
+                  if (question.correctAnswerId === answer.id) {
+                    answerColor = { color: 'green' };
+                  }
+                  if (
+                    userAnswerId == answer.id &&
+                    !(question.correctAnswerId === answer.id)
+                  ) {
+                    answerColor = { color: 'red' };
+                  }
+                }
                 return (
                   <div key={answer.id}>
                     <label
@@ -167,7 +179,7 @@ class Question extends Component {
                           this.handleAnswerChange(event);
                         }}
                       />
-                      {answer.text}
+                      <span style={answerColor}>{answer.text}</span>
                     </label>
                   </div>
                 );
