@@ -117,9 +117,9 @@ class Question extends Component {
     let explanation;
     if (answerSubmitted) {
       if (explanationRequested) {
-        explanation = <div>{question.explanation}</div>
+        explanation = <div className="explanation">{question.explanation}</div>
       } else {
-      explanation = <button onClick={(event) => this.handleExplanationRequest()}>
+      explanation = <button className="explanationButton" onClick={(event) => this.handleExplanationRequest()}>
         See Explanation
         </button>
       }
