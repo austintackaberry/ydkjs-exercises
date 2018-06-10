@@ -1,5 +1,5 @@
-import books from "./data";
-import React from "react";
+import books from './data';
+import React from 'react';
 
 export const score = books.map(book => {
   return {
@@ -9,13 +9,13 @@ export const score = books.map(book => {
         title: chapter.title,
         questions: chapter.questions.map(question => {
           return { answered: false };
-        })
+        }),
       };
-    })
+    }),
   };
 });
 
 export const ScoreContext = React.createContext({
   score: [...score],
-  updateScore: () => {}
+  updateScore: () => {},
 });

@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import { Link, Route, Switch } from "react-router-dom";
-import NoMatch from "./NoMatch";
-import ChapterHome from "./ChapterHome";
-import Question from "./Question";
-import NoQuestions from "./NoQuestions";
-import { ScoreContext } from "../score-context";
+import React, { Component } from 'react';
+import { Link, Route, Switch } from 'react-router-dom';
+import NoMatch from './NoMatch';
+import ChapterHome from './ChapterHome';
+import Question from './Question';
+import NoQuestions from './NoQuestions';
+import { ScoreContext } from '../score-context';
 
 class ChapterRouter extends Component {
   render() {
@@ -15,7 +15,7 @@ class ChapterRouter extends Component {
 
     if (chapter.questions) {
       displayQuestions = chapter.questions.map((question, index) => {
-        let questionPath = chapterPath + "/q" + (index + 1);
+        let questionPath = chapterPath + '/q' + (index + 1);
 
         return (
           <Route
@@ -47,10 +47,10 @@ class ChapterRouter extends Component {
     return (
       <div>
         <Link
-          style={{ textDecoration: "none", color: "black" }}
+          style={{ textDecoration: 'none', color: 'black' }}
           to={chapterPath}
         >
-          <h3 style={{ fontSize: "24px" }}>{chapter.title}</h3>
+          <h3 style={{ fontSize: '24px' }}>{chapter.title}</h3>
         </Link>
         <Switch>
           <Route
