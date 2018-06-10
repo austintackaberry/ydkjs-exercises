@@ -12,7 +12,6 @@ const NavigationButton = props =>
         label={props.label}
         disabled={!props.enabled}
         onClick={() => {
-          debugger;
           history.push(props.destination);
         }}
       />
@@ -27,6 +26,7 @@ class Question extends Component {
       answerSubmitted: null,
       error: false,
       correctAnswer: null,
+      explanationRequested: false
     };
   }
 
@@ -81,11 +81,19 @@ class Question extends Component {
     this.setState({
       userAnswerId: event.target.value,
       answerSubmitted: null,
+
+      correctAnswer: null,
+    });
+  }
+
+  toggleExplanationRequest() {
+    this.setState({
+      explanationRequested: !this.state.explanationRequested,
     });
   }
 
   render() {
-    const { answerSubmitted, userAnswerId } = this.state;
+    const { answerSubmitted, userAnswerId, explanationRequested } = this.state;
     const { question, baseUrl, index, numberOfQuestions } = this.props;
     const navigation = {
       previous: {
@@ -97,14 +105,14 @@ class Question extends Component {
         url: baseUrl + '/q' + (index + 1),
       },
     };
-    let message;
 
+    let message;
     if (this.state.error) {
       message = 'Please select an answer';
     } else if (this.state.correctAnswer) {
       message = 'Correct!';
     } else if (this.state.correctAnswer === false) {
-      message = 'Incorrect';
+      message = "Incorrect! Try Again!";
     }
 
     return (
@@ -135,7 +143,6 @@ class Question extends Component {
             >
               {question.answers.map((answer, i) => {
                 let answerColor;
-
                 if (answerSubmitted) {
                   if (question.correctAnswerId === answer.id) {
                     answerColor = { color: 'green' };
@@ -147,7 +154,6 @@ class Question extends Component {
                     answerColor = { color: 'red' };
                   }
                 }
-
                 return (
                   <div key={answer.id}>
                     <label
@@ -175,6 +181,29 @@ class Question extends Component {
             >
               Submit
             </button>
+            {answerSubmitted && explanationRequested &&
+              <div>
+                <button
+                  className="explanationButton"
+                  onClick={(event) => this.toggleExplanationRequest()}
+                >
+                  Hide Explanation
+                </button>
+                <div className="explanation">
+                  {question.explanation}
+                </div>
+              </div>
+            }
+
+            {answerSubmitted && !explanationRequested &&
+              <button
+                className="explanationButton"
+                onClick={(event) => this.toggleExplanationRequest()}
+              >
+                See Explanation
+              </button>
+            }
+
           </form>
           <div
             style={{
