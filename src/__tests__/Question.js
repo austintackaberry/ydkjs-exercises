@@ -150,8 +150,7 @@ it("should set incorrect answer to red and correct answer to green on submit", (
   });
 });
 
-//Show Explanation Button should pop up when users submit an answer
-it("should render 'Show Explanation' button on submit", () => {
+it("should not display explanations on submitting an answer", () => {
   const comp = shallow(<Question {...generateTestProps(upGoingCh1Q1)} />);
   comp.instance().handleAnswerChange({ target: { value: 3 } });
   comp.instance().handleSubmit({ preventDefault: () => {} });
@@ -159,29 +158,17 @@ it("should render 'Show Explanation' button on submit", () => {
   expect(comp.instance().state.userAnswerId).toBe(3);
   expect(comp.instance().state.answerSubmitted).toBe(true);
   expect(comp.instance().state.explanationRequested).toBe(false);
-  return Promise.resolve().then(() => {
-    comp.update();
-    expect(comp.find("button.explanationButton").length).toBe(1);
-    expect(comp.find("div.explanation").length).toBe(0);
-  });
 });
 
-//Clicking on Explanation Button toggles explanation display
-it("should display explanations on clicking 'Show Explanation'", () => {
+it("should be able to toggle explanations upon request", () => {
   const comp = shallow(<Question {...generateTestProps(upGoingCh1Q1)} />);
   comp.instance().handleAnswerChange({ target: { value: 3 } });
   comp.instance().handleSubmit({ preventDefault: () => {} });
   expect(comp.instance().state.error).toBe(false);
   expect(comp.instance().state.userAnswerId).toBe(3);
   expect(comp.instance().state.answerSubmitted).toBe(true);
-  return Promise.resolve().then(() => {
-    comp.update();
-    expect(comp.find("button.explanationButton").length).toBe(1);
-  }).then(() => {
-    comp.instance().handleExplanationRequest();
-  }).then(() => {
-    comp.update();
-    expect(comp.find("button.explanationButton").length).toBe(0);
-    expect(comp.find("div.explanation").length).toBe(1);
-  })
+  comp.instance().toggleExplanationRequest();
+  expect(comp.instance().state.explanationRequested).toBe(true);
+  comp.instance().toggleExplanationRequest();
+  expect(comp.instance().state.explanationRequested).toBe(false);
 });
