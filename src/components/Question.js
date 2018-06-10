@@ -183,11 +183,12 @@ class Question extends Component {
             {answerSubmitted && explanationRequested &&
               <div>
                 <button
+                  className="explanationButton"
                   onClick={(event) => this.toggleExplanationRequest()}
                 >
                   Hide Explanation
                 </button>
-                <div>
+                <div className="explanation">
                   {question.explanation}
                 </div>
               </div>
@@ -195,6 +196,7 @@ class Question extends Component {
 
             {answerSubmitted && !explanationRequested &&
               <button
+                className="explanationButton"
                 onClick={(event) => this.toggleExplanationRequest()}
               >
                 See Explanation
