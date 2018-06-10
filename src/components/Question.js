@@ -85,9 +85,9 @@ class Question extends Component {
     });
   }
 
-  handleExplanationRequest(event) {
+  toggleExplanationRequest() {
     this.setState({
-      explanationRequested: true,
+      explanationRequested: !this.state.explanationRequested,
     });
   }
 
@@ -112,17 +112,6 @@ class Question extends Component {
       message = "Correct!";
     } else if (this.state.correctAnswer === false) {
       message = "Incorrect! Try Again!";
-    }
-
-    let explanation;
-    if (answerSubmitted) {
-      if (explanationRequested) {
-        explanation = <div className="explanation">{question.explanation}</div>
-      } else {
-      explanation = <button className="explanationButton" onClick={(event) => this.handleExplanationRequest()}>
-        See Explanation
-        </button>
-      }
     }
 
     return (
@@ -191,7 +180,27 @@ class Question extends Component {
             >
               Submit
             </button>
-            {explanation}
+            {answerSubmitted && explanationRequested &&
+              <div>
+                <button
+                  onClick={(event) => this.toggleExplanationRequest()}
+                >
+                  Hide Explanation
+                </button>
+                <div>
+                  {question.explanation}
+                </div>
+              </div>
+            }
+
+            {answerSubmitted && !explanationRequested &&
+              <button
+                onClick={(event) => this.toggleExplanationRequest()}
+              >
+                See Explanation
+              </button>
+            }
+
           </form>
           <div
             style={{
