@@ -53,7 +53,7 @@ class ChapterRouter extends Component {
           <h3 style={{ fontSize: '24px' }}>
             {chapter.title}
             <h6>
-              Full explanations here:{' '}
+              Full explanations here:
               <a target="_blank" href={chapter.chapterLink}>
                 GitHub link to the chapter
               </a>
