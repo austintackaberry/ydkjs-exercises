@@ -54,9 +54,7 @@ class ChapterRouter extends Component {
             {chapter.title}
             <h6>
               Full explanations here:
-              <a target="_blank" href={chapter.chapterLink}>
-                GitHub link to the chapter
-              </a>
+              <a href={chapter.chapterLink}> GitHub link to the chapter</a>
             </h6>
           </h3>
         </Link>
