@@ -41,21 +41,6 @@ const Ch2Questions = [
             Dot notation is shorter and generally easier to read, and is thus preferred when possible.`,
   },
   {
-    question:
-      'What is the operator that can be used to find out the type of a value?',
-    orderedById: true,
-    answers: [
-      { text: 'var', id: 0 },
-      { text: 'obj', id: 1 },
-      { text: 'typeof', id: 2 },
-      { text: 'return', id: 3 },
-    ],
-    correctAnswerId: 2,
-    explanation: `JavaScript provides a typeof operator that can examine a value and tell you what type it is.
-             The return value from the typeof operator is always one of six (seven as of ES6! - the "symbol" type) string values. 
-             That is, typeof "abc" returns "string", not string.`,
-  },
-  {
     question: 'What is the main difference between an array and an object?',
     orderedById: true,
     answers: [
