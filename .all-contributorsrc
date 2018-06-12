@@ -22,7 +22,8 @@
         "doc",
         "ideas",
         "infra",
-        "review"
+        "review",
+        "test"
       ]
     },
     {
@@ -67,7 +68,8 @@
       "avatar_url": "https://avatars2.githubusercontent.com/u/35818464?v=4",
       "profile": "https://github.com/rosaxny",
       "contributions": [
-        "code"
+        "code",
+        "ideas"
       ]
     },
     {
@@ -76,7 +78,11 @@
       "avatar_url": "https://avatars3.githubusercontent.com/u/16709534?v=4",
       "profile": "https://github.com/nikrb",
       "contributions": [
-        "code"
+        "code",
+        "test",
+        "ideas",
+        "question",
+        "review"
       ]
     },
     {
@@ -95,7 +101,44 @@
       "profile": "https://github.com/energydev",
       "contributions": [
         "code",
-        "bug"
+        "bug",
+        "ideas"
+      ]
+    },
+    {
+      "login": "jarrodyellets",
+      "name": "Jarrod Yellets",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/32344277?v=4",
+      "profile": "http://www.jarrodyellets.com",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "IrritatedEllipses",
+      "name": "Chris",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/5775083?v=4",
+      "profile": "http://www.fullstackontherocks.com",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "nutgaard",
+      "name": "Nicklas Utgaard",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1413417?v=4",
+      "profile": "https://github.com/nutgaard",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "jrobind",
+      "name": "James Robinson",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/30320536?v=4",
+      "profile": "https://jrobind.github.io",
+      "contributions": [
+        "code"
       ]
     }
   ]

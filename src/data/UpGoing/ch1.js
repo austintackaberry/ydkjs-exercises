@@ -1,130 +1,137 @@
 const Ch1Questions = [
   {
-    question: "How many expressions are in the following statement: a = b * 2;",
+    question:
+      'How many expressions are in the following statement: a = b * 2; ?',
+    orderedById: true,
     answers: [
-      {
-        answer: "one",
-        isCorrect: false
-      },
-      {
-        answer: "two",
-        isCorrect: false
-      },
-      {
-        answer: "three",
-        isCorrect: false
-      },
-      {
-        answer: "four",
-        isCorrect: true
-      }
-    ]
+      { text: 'one', id: 0 },
+      { text: 'two', id: 1 },
+      { text: 'three', id: 2 },
+      { text: 'four', id: 3 },
+    ],
+    correctAnswerId: 3,
+    explanation: `This statement has four expressions in it:
+      2 is a literal value expression; 
+      b is a variable expression, which means to retrieve its current value; 
+      b * 2 is an arithmetic expression, which means to do the multiplication; 
+      a = b * 2 is an assignment expression, which means to assign the result of the b * 2 expression to the variable a.`,
   },
   {
-    question: "What is a computer program (source code / code)?",
+    question: 'What is a computer program (source code / code)?',
+    orderedById: false,
     answers: [
       {
-        answer: "A set of special instructions to tell the computer what tasks to perform.",
-        isCorrect: true
+        text:
+          'A set of special instructions to tell the computer what tasks to perform.',
+        id: 0,
       },
+      { text: 'A planned series of future events or performances.', id: 1 },
       {
-        answer: "A planned series of future events or performances.",
-        isCorrect: false
+        text:
+          'A sheet or booklet giving details of items or performers at an event or performance.',
+        id: 2,
       },
-      {
-        answer: "A sheet or booklet giving details of items or performers at an event or performance.",
-        isCorrect: false
-      },
-      {
-        answer: "A plan of action to accomplish a specified end.",
-        isCorrect: false
-      }
-    ]
+      { text: 'A plan of action to accomplish a specified end.', id: 3 },
+    ],
+    correctAnswerId: 0,
+    explanation: `A program, often referred to as source code or just code, is a set of special instructions to tell the computer what tasks 
+      to perform. Usually code is saved in a text file, although with JavaScript you can also type code directly into a developer 
+      console in a browser.`,
   },
   {
-    question: "What is a computer language (syntax)?",
+    question: 'What is a computer language (syntax)?',
+    orderedById: false,
     answers: [
       {
-        answer: "The arrangement of words and phrases to create well-formed sentences.",
-        isCorrect: false
+        text:
+          'The arrangement of words and phrases to create well-formed sentences.',
+        id: 0,
       },
       {
-        answer: "The rules for valid format and combinations of instructions.",
-        isCorrect: true
+        text: 'The rules for valid format and combinations of instructions.',
+        id: 1,
       },
-      {
-        answer: "The use of words in a structured and conventional way.",
-        isCorrect: false
-      },
-      {
-        answer: "A system of communication",
-        isCorrect: false
-      }
-    ]
+      { text: 'The use of words in a structured and conventional way.', id: 2 },
+      { text: 'A system of communication.', id: 3 },
+    ],
+    correctAnswerId: 1,
+    explanation: `The rules for valid format and combinations of instructions is called a computer language, sometimes referred to as its syntax, 
+      much the same as English tells you how to spell words and how to create valid sentences using words and punctuation.`,
   },
   {
-    question: "What is an expression?",
+    question: 'What is an expression?',
+    orderedById: false,
     answers: [
+      { text: "The action of making known one's thoughts or feelings.", id: 0 },
+      { text: 'Values that are included directly in the source code.', id: 1 },
       {
-        answer: "The action of making known one's thoughts or feelings.",
-        isCorrect: false
+        text:
+          'Any reference to a variable or value OR a set of variable(s) and value(s) combined with operators.',
+        id: 2,
       },
       {
-        answer: "Values that are included directly in the source code.",
-        isCorrect: false
+        text: 'A statement that performs actions with values and variables.',
+        id: 3,
       },
-      {
-        answer: "Any reference to a variable or value OR a set of variable(s) and value(s) combined with operators.",
-        isCorrect: true
-      },
-      {
-        answer: "A statement that performs actions with values and variables.",
-        isCorrect: false
-      }
-    ]
+    ],
+    correctAnswerId: 2,
+    explanation: `Statements are made up of one or more expressions. 
+      An expression is any reference to a variable or value, or a set of variable(s) and value(s) combined with operators.`,
   },
   {
-    question: "Interpreting the code is when... ?",
+    question: 'Interpreting the code is when... ?',
+    orderedById: false,
     answers: [
+      { text: 'Changes to values are tracked as your program runs.', id: 0 },
       {
-        answer: "Changes to values are tracked as your program runs.",
-        isCorrect: false
+        text:
+          'Actions are performed with values and variables such as assignment and mathematic multiplication.',
+        id: 1,
       },
       {
-        answer: "Actions are performed with values and variables such as assignment and mathematic multiplication.",
-        isCorrect: false
+        text:
+          "The translation of commands is done ahead of time so when the program is executed, what's running is the already translated computer instructions.",
+        id: 2,
       },
       {
-        answer: "The translation of commands is done ahead of time so when the program is executed, what's running is the already translated computer instructions.",
-        isCorrect: false
+        text:
+          'Translation of commands is typically done from top to bottom, line by line, every time the program is run.',
+        id: 3,
       },
-      {
-        answer: "Translation of commands is typically done from top to bottom, line by line, every time the program is run.",
-        isCorrect: true
-      }
-    ]
+    ],
+    correctAnswerId: 3,
+    explanation: `Statements like a = b * 2 are helpful for developers when reading and writing, but are not actually in a form the computer can 
+      directly understand. So a special utility on the computer (either an interpreter or a compiler) is used to translate the code you 
+      write into commands a computer can understand.
+      For some computer languages, this translation of commands is typically done from top to bottom, line by line, every time the program
+       is run, which is usually called interpreting the code.`,
   },
   {
-    question: "Compiling is when... ?",
+    question: 'Compiling is when... ?',
+    orderedById: false,
     answers: [
       {
-        answer: "The translation of commands is done ahead of time so when the program is executed, what's running is the already translated computer instructions.",
-        isCorrect: true
+        text:
+          "The translation of commands is done ahead of time so when the program is executed, what's running is the already translated computer instructions.",
+        id: 0,
+      },
+      { text: 'Changes to values are tracked as your program runs.', id: 1 },
+      {
+        text:
+          'Actions are performed with values and variables such as assignment and mathematic multiplication.',
+        id: 2,
       },
       {
-        answer: "Changes to values are tracked as your program runs.",
-        isCorrect: false
+        text:
+          'Translation of commands is typically done from top to bottom, line by line, every time the program is run.',
+        id: 3,
       },
-      {
-        answer: "Actions are performed with values and variables such as assignment and mathematic multiplication.",
-        isCorrect: false
-      },
-      {
-        answer: "Translation of commands is typically done from top to bottom, line by line, every time the program is run.",
-        isCorrect: false
-      }   
-    ]
-  }
+    ],
+    correctAnswerId: 0,
+    explanation: `It's typically asserted that JavaScript is interpreted, because your JavaScript source code is processed each time it's run. 
+      But that's not entirely accurate. The JavaScript engine actually compiles the program on the fly and then immediately runs the 
+      compiled code.`,
+  },
 ];
 
 export default Ch1Questions;

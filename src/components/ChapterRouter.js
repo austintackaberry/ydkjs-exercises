@@ -1,53 +1,72 @@
-import React, { Component } from "react";
-import { Link, Route } from "react-router-dom";
-import ChapterHome from "./ChapterHome";
-import Question from "./Question";
-import NoQuestions from "./NoQuestions";
-
+import React, { Component } from 'react';
+import { Link, Route, Switch } from 'react-router-dom';
+import NoMatch from './NoMatch';
+import ChapterHome from './ChapterHome';
+import Question from './Question';
+import NoQuestions from './NoQuestions';
+import { ScoreContext } from '../score-context';
 
 class ChapterRouter extends Component {
   render() {
-    const { chapter, bookUrl } = this.props;
+    const { chapter, bookUrl, bookId, chapterId } = this.props;
 
     let displayQuestions;
+    let chapterPath = bookUrl + chapter.url;
+
     if (chapter.questions) {
       displayQuestions = chapter.questions.map((question, index) => {
+        let questionPath = chapterPath + '/q' + (index + 1);
+
         return (
           <Route
-            path={bookUrl + chapter.url + "/q" + (index + 1)}
+            key={questionPath}
+            path={questionPath}
             render={() => (
-              <Question
-                baseUrl={bookUrl + chapter.url}
-                index={index + 1}
-                question={question}
-                numberOfQuestions={chapter.questions.length}
-              />
+              <ScoreContext.Consumer>
+                {({ score, updateScore }) => (
+                  <Question
+                    bookId={bookId}
+                    chapterId={chapterId}
+                    baseUrl={chapterPath}
+                    index={index + 1}
+                    question={question}
+                    numberOfQuestions={chapter.questions.length}
+                    score={score}
+                    updateScore={updateScore}
+                  />
+                )}
+              </ScoreContext.Consumer>
             )}
           />
-        )
+        );
       });
     } else {
-      displayQuestions = (
-        <NoQuestions/>
-      );
+      displayQuestions = <NoQuestions />;
     }
 
     return (
       <div>
         <Link
-          style={{ textDecoration: "none", color: "black" }}
-          to={bookUrl + chapter.url}
+          style={{ textDecoration: 'none', color: 'black' }}
+          to={chapterPath}
         >
-          <h3 style={{ fontSize: "24px" }}>{chapter.title}</h3>
+          <h3 style={{ fontSize: '24px' }}>{chapter.title}</h3>
+          <h6>
+            More information here:
+            <a href={chapter.chapterLink}> GitHub link to the chapter</a>
+          </h6>
         </Link>
-        <Route
-          exact
-          path={bookUrl + chapter.url}
-          render={() => {
-            return <ChapterHome currentUrl={bookUrl + chapter.url} />;
-          }}
-        />
-        {displayQuestions}
+        <Switch>
+          <Route
+            exact
+            path={chapterPath}
+            render={() => {
+              return <ChapterHome currentUrl={chapterPath} />;
+            }}
+          />
+          {displayQuestions}
+          <Route component={NoMatch} />
+        </Switch>
       </div>
     );
   }
