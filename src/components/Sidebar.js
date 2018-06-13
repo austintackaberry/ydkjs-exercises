@@ -12,7 +12,7 @@ class Sidebar extends Component {
       0
     );
 
-    const debugScoreDisplay = `You've answered ${debugCurrentScore} of ${debugTotalScore} questions. Time to dive in!`;
+    const debugScoreDisplay = `You've answered ${debugCurrentScore} of ${debugTotalScore} questions correctly. Time to dive in!`;
 
     return (
       <div className="sidebar">
