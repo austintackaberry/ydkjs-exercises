@@ -13,22 +13,19 @@ export const score = books.map(book => {
       };
     }),
     getAnswered: function() {
-      return this.chapters
-        .map(chapter => {
-          return chapter.questions
-            .map(question => {
-              return question.answered ? 1 : 0;
-            })
-            .reduce((x, y) => x + y, 0);
-        })
-        .reduce((x, y) => x + y, 0);
+      return this.chapters.reduce((acc, ch) => {
+        return (
+          acc +
+          ch.questions.reduce((acc, qn) => {
+            return acc + (qn.answered ? 1 : 0);
+          }, 0)
+        );
+      }, 0);
     },
     getPossible: function() {
-      return this.chapters
-        .map(chapter => {
-          return chapter.questions.length;
-        })
-        .reduce((x, y) => x + y);
+      return this.chapters.reduce((acc, ch) => {
+        return acc + ch.questions.length;
+      }, 0);
     },
   };
 });
