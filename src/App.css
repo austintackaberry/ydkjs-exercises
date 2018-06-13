@@ -25,15 +25,8 @@ body,
 
 .App {
   position: relative;
-  margin: 0 auto;
+  margin-left: 10vw;
   height: 100%;
-  transition: 0.1s ease-in-out;
-}
-
-.App.shift-right {
-  margin-left: 250px;
-  height: 100%;
-  transition: 0.2s ease-in-out;
 }
 
 .main-content {

@@ -28,11 +28,10 @@ class App extends Component {
   render() {
     return (
       <ScoreContext.Provider value={this.state}>
-        <div className={this.state.sidebar ? 'App shift-right' : 'App'}>
+        <div className="App">
           <Sidebar
-            score={this.state.score}
-            show={this.state.sidebar}
-            toggle={e => this.setState({ sidebar: !this.state.sidebar })}
+            score={score}
+            debugIncrementScore={() => this.setState({ score: score + 1 })}
           />
           <div className="main-content">
             <Link style={{ textDecoration: 'none', color: 'black' }} to="/">
