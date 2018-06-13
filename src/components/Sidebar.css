@@ -1,0 +1,19 @@
+.Sidebar-hidden {
+  width: 0;
+  background-color: white;
+  z-index: 99999;
+  transition: width 0.1s ease-in-out;
+}
+
+.Sidebar-show {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+  width: 250px;
+  height: 100%;
+  z-index: 99999;
+
+  -moz-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}

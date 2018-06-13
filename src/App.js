@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import BookRouter from './components/BookRouter';
 import Home from './components/Home';
+import Sidebar from './components/Sidebar';
 import books from './data';
 import Footer from './components/Footer';
 import NoMatch from './components/NoMatch';
@@ -20,13 +21,19 @@ class App extends Component {
     // be passed down into the context provider
     this.state = {
       score: [...score],
+      sidebar: true,
       updateScore: this.updateScore,
     };
   }
   render() {
     return (
       <ScoreContext.Provider value={this.state}>
-        <div className="App">
+        <div className={this.state.sidebar ? 'App shift-right' : 'App'}>
+          <Sidebar
+            score={this.state.score}
+            show={this.state.sidebar}
+            toggle={e => this.setState({ sidebar: !this.state.sidebar })}
+          />
           <div className="main-content">
             <Link style={{ textDecoration: 'none', color: 'black' }} to="/">
               <h1 style={{ fontSize: '55px' }}>YDKJS EXERCISES</h1>
