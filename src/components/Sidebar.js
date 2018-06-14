@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { List, ListItem } from 'material-ui/List';
+import Divider from 'material-ui/Divider';
 import { Link } from 'react-router-dom';
 import './Sidebar.css';
 
@@ -16,7 +17,7 @@ class Sidebar extends Component {
     return (
       <div className="sidebar">
         <MuiThemeProvider>
-          <List style={{ width: '80%', margin: '0 auto' }}>
+          <List style={{ width: '100%', margin: '0 auto' }}>
             <ListItem
               style={{
                 fontSize: '16px',
@@ -30,6 +31,8 @@ class Sidebar extends Component {
               primaryText={scoreDisplay}
             />
           </List>
+
+          <Divider />
 
           <List style={{ width: '100%', margin: '0 auto' }}>
             <ListItem
