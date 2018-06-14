@@ -13,6 +13,7 @@ import { ScoreContext, score } from './score-context';
 class App extends Component {
   constructor() {
     super();
+
     this.updateScore = newScore => {
       this.setState({ score: newScore });
     };
@@ -20,8 +21,7 @@ class App extends Component {
     // State also contains the updater function so it will
     // be passed down into the context provider
     this.state = {
-      score: [...score],
-      sidebar: true,
+      score,
       updateScore: this.updateScore,
     };
   }
@@ -29,7 +29,7 @@ class App extends Component {
     return (
       <ScoreContext.Provider value={this.state}>
         <div className="App">
-          <Sidebar score={score} />
+          <Sidebar books={books} score={score} />
           <div className="main-content">
             <Link style={{ textDecoration: 'none', color: 'black' }} to="/">
               <h1 style={{ fontSize: '55px' }}>YDKJS EXERCISES</h1>

@@ -1,27 +1,59 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { List, ListItem } from 'material-ui/List';
+import { Link } from 'react-router-dom';
 import './Sidebar.css';
 
 class Sidebar extends Component {
   render() {
-    const debugCurrentScore =
-      this.props.score.reduce((acc, book) => acc + book.getAnswered(), 0) || 0;
-    const debugTotalScore = this.props.score.reduce(
-      (acc, book) => acc + book.getPossible(),
-      0
-    );
+    const books = this.props.books;
+    const score = this.props.score;
+    const currentScore = score.current;
+    const possibleScore = score.possible;
 
-    const debugScoreDisplay = `You've answered ${debugCurrentScore} of ${debugTotalScore} questions correctly. Time to dive in!`;
+    const scoreDisplay = `You've answered ${currentScore} of ${possibleScore} questions correctly. Time to dive in!`;
 
     return (
       <div className="sidebar">
         <MuiThemeProvider>
           <List style={{ width: '80%', margin: '0 auto' }}>
             <ListItem
-              style={{ fontSize: '12px', lineHeight: '12px' }}
-              primaryText={debugScoreDisplay}
+              style={{
+                fontSize: '16px',
+                fontWeight: 'bold',
+                lineHeight: '16px',
+              }}
+              primaryText="Progress"
             />
+            <ListItem
+              style={{ fontSize: '12px', lineHeight: '12px' }}
+              primaryText={scoreDisplay}
+            />
+          </List>
+
+          <List style={{ width: '100%', margin: '0 auto' }}>
+            <ListItem
+              style={{
+                fontSize: '16px',
+                fontWeight: 'bold',
+                lineHeight: '16px',
+              }}
+              primaryText="Books"
+            />
+            {books.map(book => (
+              <Link
+                key={book.id}
+                style={{ textDecoration: 'none' }}
+                to={book.url}
+              >
+                <ListItem
+                  style={{ fontSize: '12px', lineHeight: '12px' }}
+                  primaryText={`${book.title} (${
+                    score.books[book.id].current
+                  }/${score.books[book.id].possible})`}
+                />
+              </Link>
+            ))}
           </List>
         </MuiThemeProvider>
       </div>
