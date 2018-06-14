@@ -26,14 +26,14 @@ class Question extends Component {
       answerSubmitted: null,
       error: false,
       correctAnswer: null,
-      explanationRequested: false
+      explanationRequested: false,
     };
   }
 
   calcNewScore(isCorrect) {
     const { updateScore, score, bookId, chapterId, index } = this.props;
     const questionIndex = index - 1;
-    const newScore = score.map((book, index) => {
+    const newScore = score.books.map((book, index) => {
       if (index === bookId) {
         return {
           title: book.title,
@@ -112,7 +112,7 @@ class Question extends Component {
     } else if (this.state.correctAnswer) {
       message = 'Correct!';
     } else if (this.state.correctAnswer === false) {
-      message = "Incorrect! Try Again!";
+      message = 'Incorrect! Try Again!';
     }
 
     return (
@@ -181,29 +181,28 @@ class Question extends Component {
             >
               Submit
             </button>
-            {answerSubmitted && explanationRequested &&
-              <div>
+            {answerSubmitted &&
+              explanationRequested && (
+                <div>
+                  <button
+                    className="explanationButton"
+                    onClick={event => this.toggleExplanationRequest()}
+                  >
+                    Hide Explanation
+                  </button>
+                  <div className="explanation">{question.explanation}</div>
+                </div>
+              )}
+
+            {answerSubmitted &&
+              !explanationRequested && (
                 <button
                   className="explanationButton"
-                  onClick={(event) => this.toggleExplanationRequest()}
+                  onClick={event => this.toggleExplanationRequest()}
                 >
-                  Hide Explanation
+                  See Explanation
                 </button>
-                <div className="explanation">
-                  {question.explanation}
-                </div>
-              </div>
-            }
-
-            {answerSubmitted && !explanationRequested &&
-              <button
-                className="explanationButton"
-                onClick={(event) => this.toggleExplanationRequest()}
-              >
-                See Explanation
-              </button>
-            }
-
+              )}
           </form>
           <div
             style={{
