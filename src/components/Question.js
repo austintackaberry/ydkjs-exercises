@@ -200,7 +200,7 @@ class Question extends Component {
                   className="explanationButton"
                   onClick={event => this.toggleExplanationRequest()}
                 >
-                  See Explanation
+                  Show Explanation
                 </button>
               )}
           </form>
