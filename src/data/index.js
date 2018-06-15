@@ -36,9 +36,6 @@ const books = [
     title: 'ES6 & Beyond',
     chapters: ES6BeyondChapters,
   },
-].map((book, i) => {
-  book.id = i;
-  return book;
-});
+];
 
 export default books;

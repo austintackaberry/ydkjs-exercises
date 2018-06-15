@@ -51,9 +51,9 @@ class Sidebar extends Component {
               >
                 <ListItem
                   style={{ fontSize: '12px', lineHeight: '12px' }}
-                  primaryText={`${book.title} (${
-                    score.books[book.id].current
-                  }/${score.books[book.id].possible})`}
+                  primaryText={`${book.title} (${score.book.current}/${
+                    score.book.possible
+                  })`}
                 />
               </Link>
             ))}
