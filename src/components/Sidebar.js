@@ -43,7 +43,7 @@ class Sidebar extends Component {
               }}
               primaryText="Books"
             />
-            {books.map(book => (
+            {books.map((book, index) => (
               <Link
                 key={book.id}
                 style={{ textDecoration: 'none' }}
@@ -51,8 +51,8 @@ class Sidebar extends Component {
               >
                 <ListItem
                   style={{ fontSize: '12px', lineHeight: '12px' }}
-                  primaryText={`${book.title} (${score.book.current}/${
-                    score.book.possible
+                  primaryText={`${book.title} (${score.books[index].current}/${
+                    score.books[index].possible
                   })`}
                 />
               </Link>
