@@ -1,8 +1,12 @@
+import Ch1Questions from './ch1';
+
 const ScopeClosuresChapters = [
   {
     title: 'Chapter 1: What is Scope?',
     url: '/ch1',
-    questions: [],
+    questions: Ch1Questions,
+    chapterLink: 'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch1.md'
+    
   },
   {
     title: 'Chapter 2: Lexical Scope',
