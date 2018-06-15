@@ -5,7 +5,7 @@ import TypesGrammarChapters from './TypesGrammar';
 import AsyncPerformanceChapters from './AsyncPerformance';
 import ES6BeyondChapters from './ES6Beyond';
 
-const booksNoId = [
+const books = [
   {
     url: '/up-going',
     title: 'Up & Going',
@@ -36,9 +36,7 @@ const booksNoId = [
     title: 'ES6 & Beyond',
     chapters: ES6BeyondChapters,
   },
-];
-
-const books = booksNoId.map((book, i) => {
+].map((book, i) => {
   book.id = i;
   return book;
 });
