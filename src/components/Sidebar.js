@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { List, ListItem } from 'material-ui/List';
 import Divider from 'material-ui/Divider';
@@ -61,5 +62,10 @@ class Sidebar extends Component {
     );
   }
 }
+
+Sidebar.propTypes = {
+  books: PropTypes.array.isRequired,
+  score: PropTypes.object.isRequired,
+};
 
 export default Sidebar;

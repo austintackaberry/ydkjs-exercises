@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { List, ListItem } from 'material-ui/List';
@@ -29,5 +30,9 @@ class BookHome extends Component {
     );
   }
 }
+
+BookHome.propTypes = {
+  book: PropTypes.object.isRequired,
+};
 
 export default BookHome;
