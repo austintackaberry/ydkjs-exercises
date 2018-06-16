@@ -30,11 +30,9 @@ class Sidebar extends Component {
               style={{ fontSize: '12px', lineHeight: '12px' }}
               primaryText={scoreDisplay}
             />
-          </List>
 
-          <Divider />
+            <Divider />
 
-          <List style={{ width: '100%', margin: '0 auto' }}>
             <ListItem
               style={{
                 fontSize: '16px',
