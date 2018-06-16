@@ -9,6 +9,8 @@ const upGoingCh1Q1 = books[0].chapters[0].questions[0];
 const upGoingCh1Q2 = books[0].chapters[0].questions[1];
 const baseUrl = '/up-going/ch1';
 const index = 1;
+const bookId = 0;
+const chapterId = 0;
 const numberOfQuestions = 6;
 const updateScore = jest.fn();
 
@@ -17,6 +19,8 @@ const generateTestProps = question => {
     question,
     baseUrl,
     index,
+    bookId,
+    chapterId,
     numberOfQuestions,
     score,
     updateScore,
@@ -160,32 +164,37 @@ it("should render 'Show Explanation' button on submit", () => {
   expect(comp.instance().state.explanationRequested).toBe(false);
   return Promise.resolve().then(() => {
     comp.update();
-    expect(comp.find("button.explanationButton").length).toBe(1);
-    expect(comp.find("div.explanation").length).toBe(0);
+    expect(comp.find('button.explanationButton').length).toBe(1);
+    expect(comp.find('div.explanation').length).toBe(0);
   });
 });
 
-it("should toggle explanations on clicking explanation button", () => {
+it('should toggle explanations on clicking explanation button', () => {
   const comp = shallow(<Question {...generateTestProps(upGoingCh1Q1)} />);
   comp.instance().handleAnswerChange({ target: { value: 3 } });
   comp.instance().handleSubmit({ preventDefault: () => {} });
   expect(comp.instance().state.error).toBe(false);
   expect(comp.instance().state.userAnswerId).toBe(3);
   expect(comp.instance().state.answerSubmitted).toBe(true);
-  return Promise.resolve().then(() => {
-    comp.update();
-    expect(comp.find("button.explanationButton").length).toBe(1);
-  }).then(() => {
-    comp.instance().toggleExplanationRequest();
-  }).then(() => {
-    comp.update();
-    expect(comp.find("button.explanationButton").length).toBe(1);
-    expect(comp.find("div.explanation").length).toBe(1);
-  }).then(() => {
-    comp.instance().toggleExplanationRequest();
-  }).then(() => {
-    comp.update();
-    expect(comp.find("button.explanationButton").length).toBe(1);
-    expect(comp.find("div.explanation").length).toBe(0);
-  })
+  return Promise.resolve()
+    .then(() => {
+      comp.update();
+      expect(comp.find('button.explanationButton').length).toBe(1);
+    })
+    .then(() => {
+      comp.instance().toggleExplanationRequest();
+    })
+    .then(() => {
+      comp.update();
+      expect(comp.find('button.explanationButton').length).toBe(1);
+      expect(comp.find('div.explanation').length).toBe(1);
+    })
+    .then(() => {
+      comp.instance().toggleExplanationRequest();
+    })
+    .then(() => {
+      comp.update();
+      expect(comp.find('button.explanationButton').length).toBe(1);
+      expect(comp.find('div.explanation').length).toBe(0);
+    });
 });
