@@ -33,7 +33,13 @@ class Question extends Component {
   calcNewScore(isCorrect) {
     const { updateScore, score, bookId, chapterId, index } = this.props;
     const questionIndex = index - 1;
-    const newScore = score.books.map((book, index) => {
+
+    /* check if current question was already answered correctly */
+    const alreadyAnswered =
+      score.books[bookId].chapters[chapterId].questions[questionIndex].answered;
+
+    let newScore = score;
+    const newBookScore = score.books.map((book, index) => {
       if (index === bookId) {
         return {
           title: book.title,
@@ -43,18 +49,30 @@ class Question extends Component {
                 title: chapter.title,
                 questions: chapter.questions.map((question, index) => {
                   if (questionIndex === index) {
-                    return { answered: true, correct: isCorrect };
+                    return {
+                      answered: isCorrect || question.answered,
+                    };
                   }
-                  return { answered: false };
+                  return { answered: question.answered };
                 }),
               };
             }
             return chapter;
           }),
+          current:
+            isCorrect && !alreadyAnswered ? book.current + 1 : book.current,
+          possible: book.possible,
         };
       }
       return book;
     });
+
+    /* update current book score */
+    newScore.books = newBookScore;
+
+    /* update total score */
+    newScore.current =
+      isCorrect && !alreadyAnswered ? newScore.current + 1 : newScore.current;
     updateScore(newScore);
   }
 
@@ -65,13 +83,18 @@ class Question extends Component {
         error: true,
       });
     } else {
-      this.setState({
-        answerSubmitted: true,
-        error: false,
-        correctAnswer: this.props.question.correctAnswerId === currentAnswer.id,
-      });
-      this.calcNewScore(
-        this.props.question.correctAnswerId === currentAnswer.id
+      this.setState(
+        {
+          answerSubmitted: true,
+          error: false,
+          correctAnswer:
+            this.props.question.correctAnswerId === currentAnswer.id,
+        },
+        () => {
+          this.calcNewScore(
+            this.props.question.correctAnswerId === currentAnswer.id
+          );
+        }
       );
     }
     event.preventDefault();
@@ -81,7 +104,6 @@ class Question extends Component {
     this.setState({
       userAnswerId: event.target.value,
       answerSubmitted: null,
-
       correctAnswer: null,
     });
   }
