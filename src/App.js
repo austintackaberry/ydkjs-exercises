@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import BookRouter from './components/BookRouter';
 import Home from './components/Home';
+import Sidebar from './components/Sidebar';
 import books from './data';
 import Footer from './components/Footer';
 import NoMatch from './components/NoMatch';
@@ -12,6 +13,7 @@ import { ScoreContext, score } from './score-context';
 class App extends Component {
   constructor() {
     super();
+
     this.updateScore = newScore => {
       this.setState({ score: newScore });
     };
@@ -19,7 +21,7 @@ class App extends Component {
     // State also contains the updater function so it will
     // be passed down into the context provider
     this.state = {
-      score: [...score],
+      score,
       updateScore: this.updateScore,
     };
   }
@@ -27,6 +29,7 @@ class App extends Component {
     return (
       <ScoreContext.Provider value={this.state}>
         <div className="App">
+          <Sidebar books={books} score={score} />
           <div className="main-content">
             <Link style={{ textDecoration: 'none', color: 'black' }} to="/">
               <h1 style={{ fontSize: '55px' }}>YDKJS EXERCISES</h1>
