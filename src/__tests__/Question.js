@@ -136,21 +136,21 @@ it('should set correct answer to green on submit', () => {
   });
 });
 
-it('should set incorrect answer to red and correct answer to green on submit', () => {
+it('should set incorrect answer to red', () => {
   const comp = shallow(<Question {...generateTestProps(upGoingCh1Q1)} />);
-  comp.instance().handleAnswerChange({ target: { value: 3 } });
+  comp.instance().handleAnswerChange({ target: { value: 2 } });
   comp.instance().handleSubmit({ preventDefault: () => {} });
   expect(comp.instance().state.error).toBe(false);
-  expect(comp.instance().state.userAnswerId).toBe(3);
+  expect(comp.instance().state.userAnswerId).toBe(2);
   expect(comp.instance().state.answerSubmitted).toBe(true);
   return Promise.resolve().then(() => {
     comp.update();
     expect(
       comp
         .find('span')
-        .at(3)
+        .at(2)
         .html()
-    ).toMatch(/color:green/);
+    ).toMatch(/color:red/);
   });
 });
 
