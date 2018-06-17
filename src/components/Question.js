@@ -166,7 +166,10 @@ class Question extends Component {
               {question.answers.map((answer, i) => {
                 let answerColor;
                 if (answerSubmitted) {
-                  if (question.correctAnswerId === answer.id) {
+                  if (
+                    userAnswerId == answer.id &&
+                    (question.correctAnswerId === answer.id)
+                  ) {
                     answerColor = { color: 'green' };
                   }
                   if (
