@@ -10,18 +10,21 @@ const booksWithIdsMapped = books.map((book, index) => {
   book.id = index;
   return book;
 });
-const fiveBooks = [1, 2, 3, 4, 5].map(book => {
+
+const randomBooks = Array.from(
+  Array(Math.floor(Math.random() * 100)).keys()
+).map(book => {
   return {
-    id: 5,
+    id: book,
     url: 'url',
     title: 'title',
     chapters: null,
   };
 });
-const scoreForFiveBooks = {
-  books: fiveBooks,
-  current: 5,
-  possible: 5,
+const randomScore = {
+  books: randomBooks,
+  current: 0,
+  possible: 0,
 };
 
 it('should render the sidebar', () => {
@@ -34,6 +37,6 @@ it('should render a link to each book', () => {
   const comp = shallow(<Sidebar books={booksWithIdsMapped} score={score} />);
   expect(comp.find(Link)).toHaveLength(booksWithIdsMapped.length);
 
-  const five = shallow(<Sidebar books={fiveBooks} score={scoreForFiveBooks} />);
-  expect(five.find(Link)).toHaveLength(5);
+  const five = shallow(<Sidebar books={randomBooks} score={randomScore} />);
+  expect(five.find(Link)).toHaveLength(randomBooks.length);
 });
