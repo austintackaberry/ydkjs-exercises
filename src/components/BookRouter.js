@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import BookHome from './BookHome';
 import { Route, Link, Switch } from 'react-router-dom';
 import NoMatch from './NoMatch';
 import ChapterRouter from './ChapterRouter';
 
 class BookRouter extends Component {
+  static propTypes = {
+    book: PropTypes.object.isRequired,
+  };
   render() {
     const { book } = this.props;
     return (

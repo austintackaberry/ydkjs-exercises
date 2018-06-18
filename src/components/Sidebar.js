@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { List, ListItem } from 'material-ui/List';
 import Divider from 'material-ui/Divider';
@@ -6,6 +7,10 @@ import { Link } from 'react-router-dom';
 import './Sidebar.css';
 
 class Sidebar extends Component {
+  static propTypes = {
+    books: PropTypes.array.isRequired,
+    score: PropTypes.object.isRequired,
+  };
   render() {
     const books = this.props.books;
     const score = this.props.score;
