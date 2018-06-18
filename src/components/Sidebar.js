@@ -7,6 +7,10 @@ import { Link } from 'react-router-dom';
 import './Sidebar.css';
 
 class Sidebar extends Component {
+  static propTypes = {
+    books: PropTypes.array.isRequired,
+    score: PropTypes.object.isRequired,
+  };
   render() {
     const books = this.props.books;
     const score = this.props.score;
@@ -62,10 +66,5 @@ class Sidebar extends Component {
     );
   }
 }
-
-Sidebar.propTypes = {
-  books: PropTypes.array.isRequired,
-  score: PropTypes.object.isRequired,
-};
 
 export default Sidebar;

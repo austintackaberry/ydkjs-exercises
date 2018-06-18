@@ -5,6 +5,9 @@ import { List, ListItem } from 'material-ui/List';
 import { Link } from 'react-router-dom';
 
 class Home extends Component {
+  static propTypes = {
+    books: PropTypes.array.isRequired,
+  };
   render() {
     const { books } = this.props;
     return (
@@ -29,9 +32,5 @@ class Home extends Component {
     );
   }
 }
-
-Home.propTypes = {
-  books: PropTypes.array.isRequired,
-};
 
 export default Home;

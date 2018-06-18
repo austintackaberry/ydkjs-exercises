@@ -6,6 +6,9 @@ import NoMatch from './NoMatch';
 import ChapterRouter from './ChapterRouter';
 
 class BookRouter extends Component {
+  static propTypes = {
+    book: PropTypes.object.isRequired,
+  };
   render() {
     const { book } = this.props;
     return (
@@ -43,9 +46,5 @@ class BookRouter extends Component {
     );
   }
 }
-
-BookRouter.propTypes = {
-  book: PropTypes.object.isRequired,
-};
 
 export default BookRouter;

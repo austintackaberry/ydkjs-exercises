@@ -20,6 +20,16 @@ const NavigationButton = props =>
   ))(props);
 
 class Question extends Component {
+  static propTypes = {
+    baseUrl: PropTypes.string.isRequired,
+    bookId: PropTypes.number.isRequired,
+    chapterId: PropTypes.number.isRequired,
+    index: PropTypes.number.isRequired,
+    numberOfQuestions: PropTypes.number.isRequired,
+    question: PropTypes.object.isRequired,
+    score: PropTypes.object.isRequired,
+    updateScore: PropTypes.func.isRequired,
+  };
   constructor() {
     super();
     this.state = {
@@ -264,16 +274,5 @@ class Question extends Component {
     );
   }
 }
-
-Question.propTypes = {
-  baseUrl: PropTypes.string.isRequired,
-  bookId: PropTypes.number.isRequired,
-  chapterId: PropTypes.number.isRequired,
-  index: PropTypes.number.isRequired,
-  numberOfQuestions: PropTypes.number.isRequired,
-  question: PropTypes.object.isRequired,
-  score: PropTypes.object.isRequired,
-  updateScore: PropTypes.func.isRequired,
-};
 
 export default Question;

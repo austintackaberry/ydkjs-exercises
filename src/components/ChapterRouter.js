@@ -8,6 +8,12 @@ import NoQuestions from './NoQuestions';
 import { ScoreContext } from '../score-context';
 
 class ChapterRouter extends Component {
+  static propTypes = {
+    bookId: PropTypes.number.isRequired,
+    bookUrl: PropTypes.string.isRequired,
+    chapter: PropTypes.object.isRequired,
+    chapterId: PropTypes.number.isRequired,
+  };
   render() {
     const { chapter, bookUrl, bookId, chapterId } = this.props;
 
@@ -72,12 +78,5 @@ class ChapterRouter extends Component {
     );
   }
 }
-
-ChapterRouter.propTypes = {
-  bookId: PropTypes.number.isRequired,
-  bookUrl: PropTypes.string.isRequired,
-  chapter: PropTypes.object.isRequired,
-  chapterId: PropTypes.number.isRequired,
-};
 
 export default ChapterRouter;

@@ -5,6 +5,9 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { List, ListItem } from 'material-ui/List';
 
 class BookHome extends Component {
+  static propTypes = {
+    book: PropTypes.object.isRequired,
+  };
   render() {
     const { book } = this.props;
 
@@ -30,9 +33,5 @@ class BookHome extends Component {
     );
   }
 }
-
-BookHome.propTypes = {
-  book: PropTypes.object.isRequired,
-};
 
 export default BookHome;
