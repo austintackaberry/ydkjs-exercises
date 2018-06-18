@@ -5,6 +5,7 @@ export const List = styled.ul`
   margin: 0 auto;
   list-style: none;
 `;
+List.displayName = 'List';
 
 export const ListItem = styled.li`
   fontsize: 25px;
@@ -15,3 +16,4 @@ export const ListItem = styled.li`
     background-color: rgba(200, 200, 200, 0.5);
   }
 `;
+ListItem.displayName = 'ListItem';
