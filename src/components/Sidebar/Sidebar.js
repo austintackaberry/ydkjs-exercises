@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { List, ListItem, ListItemTitle, Divider, Wrapper } from './styled';
 import { Link } from 'react-router-dom';
 
 class Sidebar extends Component {
+  static propTypes = {
+    books: PropTypes.array.isRequired,
+    score: PropTypes.object.isRequired,
+  };
   render() {
     const books = this.props.books;
     const score = this.props.score;

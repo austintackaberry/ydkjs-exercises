@@ -22,7 +22,8 @@ const chapter = {
   questions,
 };
 const bookUrl = '/up-going';
-const bookId = 'upGoing';
+const bookId = 0;
+const chapterId = 0;
 
 const chapterWithoutQuestions = {
   title: 'Chapter 1: Into Programming',
@@ -31,7 +32,12 @@ const chapterWithoutQuestions = {
 
 it('should render the chapters', () => {
   const comp = shallow(
-    <ChapterRouter bookId={bookId} bookUrl={bookUrl} chapter={chapter} />
+    <ChapterRouter
+      bookId={bookId}
+      bookUrl={bookUrl}
+      chapter={chapter}
+      chapterId={chapterId}
+    />
   );
   expect(
     comp
@@ -66,6 +72,7 @@ it('should render no questions if chapter has none', () => {
       bookId={bookId}
       bookUrl={bookUrl}
       chapter={chapterWithoutQuestions}
+      chapterId={chapterId}
     />
   );
   expect(

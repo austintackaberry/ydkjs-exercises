@@ -9,6 +9,7 @@
     "babel-eslint": "7.2.3",
     "babel-jest": "20.0.3",
     "babel-loader": "^7.1.4",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-react-app": "^3.1.1",
     "babel-runtime": "6.26.0",
     "case-sensitive-paths-webpack-plugin": "2.1.1",
@@ -109,7 +110,10 @@
     ]
   },
   "babel": {
-    "presets": "./.babelrc.js"
+    "presets": "./.babelrc.js",
+    "plugins": [
+      "transform-class-properties"
+    ]
   },
   "config": {
     "commitizen": {

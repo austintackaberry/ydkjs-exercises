@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { List, ListItem } from './styled';
 
 class BookHome extends Component {
+  static propTypes = {
+    book: PropTypes.object.isRequired,
+  };
   render() {
     const { book } = this.props;
 
