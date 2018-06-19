@@ -11,19 +11,17 @@ class BookHome extends Component {
     const { book } = this.props;
 
     return (
-      <div className="UpGoing">
-        <List style={{ width: '40%', margin: '0 auto', textAlign: 'center' }}>
-          {book.chapters.map(chapter => (
-            <Link
-              key={book.id + chapter.url}
-              style={{ textDecoration: 'none' }}
-              to={book.url + chapter.url}
-            >
-              <ListItem>{chapter.title}</ListItem>
-            </Link>
-          ))}
-        </List>
-      </div>
+      <List>
+        {book.chapters.map(chapter => (
+          <Link
+            key={book.id + chapter.url}
+            style={{ textDecoration: 'none' }}
+            to={book.url + chapter.url}
+          >
+            <ListItem>{chapter.title}</ListItem>
+          </Link>
+        ))}
+      </List>
     );
   }
 }

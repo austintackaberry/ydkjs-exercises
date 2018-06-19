@@ -4,6 +4,7 @@ export const List = styled.ul`
   width: 40%;
   margin: 0 auto;
   list-style: none;
+  padding: 0;
 `;
 List.displayName = 'List';
 
