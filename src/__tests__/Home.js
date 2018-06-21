@@ -21,6 +21,7 @@ const books = [
 it('should render Home view', () => {
   const comp = shallow(<Home books={books} />);
   expect(comp.find('Link').length).toBe(2);
+  expect(comp.find('ListItem').length).toBe(2);
   expect(
     comp
       .find('Link')
@@ -37,12 +38,14 @@ it('should render Home view', () => {
     comp
       .find('ListItem')
       .at(0)
-      .prop('primaryText')
+      .children()
+      .text()
   ).toBe('Up & Going');
   expect(
     comp
       .find('ListItem')
       .at(1)
-      .prop('primaryText')
+      .children()
+      .text()
   ).toBe('Scope & Closures');
 });

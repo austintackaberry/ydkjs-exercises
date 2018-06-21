@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+
 import { score } from '../score-context';
 
 import Question from '../components/Question';
@@ -29,17 +30,16 @@ const generateTestProps = question => {
 
 it('should render question 1', () => {
   const comp = shallow(<Question {...generateTestProps(upGoingCh1Q1)} />);
-
   expect(
     comp
-      .find('h3')
-      .at(0)
+      .find('Header3')
+      .children()
       .text()
   ).toBe('Question 1 of 6');
   expect(
     comp
-      .find('h4')
-      .at(0)
+      .find('Header4')
+      .children()
       .text()
   ).toBe('How many expressions are in the following statement: a = b * 2; ?');
   expect(comp.find('label').length).toBe(4);
@@ -69,7 +69,7 @@ it('should render question 1', () => {
       .at(3)
       .text()
   ).toBe('four');
-  expect(comp.find('button').length).toBe(1);
+  expect(comp.find('SubmitButton').length).toBe(1);
   expect(comp.find('NavigationButton').length).toBe(2);
 });
 
@@ -78,14 +78,14 @@ it('should render question 2', () => {
 
   expect(
     comp
-      .find('h3')
-      .at(0)
+      .find('Header3')
+      .children()
       .text()
   ).toBe('Question 1 of 6');
   expect(
     comp
-      .find('h4')
-      .at(0)
+      .find('Header4')
+      .children()
       .text()
   ).toBe('What is a computer program (source code / code)?');
   expect(comp.find('label').length).toBe(4);
@@ -99,7 +99,7 @@ it('should render question 2', () => {
   ).toBe(
     'A set of special instructions to tell the computer what tasks to perform.'
   );
-  expect(comp.find('button').length).toBe(1);
+  expect(comp.find('SubmitButton').length).toBe(1);
   expect(comp.find('NavigationButton').length).toBe(2);
 });
 it('should set answer state', () => {

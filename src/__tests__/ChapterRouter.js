@@ -2,8 +2,6 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import ChapterRouter from '../components/ChapterRouter';
-// eslint-disable-next-line no-unused-vars
-import NoQuestions from '../components/NoQuestions';
 
 const questions = [
   {
