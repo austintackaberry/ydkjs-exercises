@@ -9,7 +9,7 @@ const Ch2Questions = [
       { text: 'undefined, string literal, object', id: 3 },
     ],
     correctAnswerId: 1,
-    explanation: `JavaScript has typed values, not typed variables. The following built-in types are available: 
+    explanation: `JavaScript has typed values, not typed variables. The following built-in types are available:
             string, number, boolean, null and undefined, object, symbol (new to ES6)`,
   },
   {
@@ -24,7 +24,7 @@ const Ch2Questions = [
     ],
     correctAnswerId: 2,
     explanation: `JavaScript provides a typeof operator that can examine a value and tell you what type it is.
-             The return value from the typeof operator is always one of six (seven as of ES6! - the "symbol" type) string values. 
+             The return value from the typeof operator is always one of six (seven as of ES6! - the "symbol" type) string values.
              That is, typeof "abc" returns "string", not string.`,
   },
   {
@@ -37,7 +37,7 @@ const Ch2Questions = [
       { text: 'the same as in an array', id: 3 },
     ],
     correctAnswerId: 0,
-    explanation: `Properties can either be accessed with dot notation (i.e., obj.a) or bracket notation (i.e., obj["a"]). 
+    explanation: `Properties can either be accessed with dot notation (i.e., obj.a) or bracket notation (i.e., obj["a"]).
             Dot notation is shorter and generally easier to read, and is thus preferred when possible.`,
   },
   {
@@ -58,7 +58,7 @@ const Ch2Questions = [
       },
     ],
     correctAnswerId: 2,
-    explanation: `An array is an object that holds values (of any type) not particularly in named properties/keys, but rather in numerically 
+    explanation: `An array is an object that holds values (of any type) not particularly in named properties/keys, but rather in numerically
             indexed positions. Languages that start counting at zero, like JS does, use 0 as the index of the first element in the array.`,
   },
   {
@@ -71,7 +71,7 @@ const Ch2Questions = [
       { text: 'length', id: 3 },
     ],
     correctAnswerId: 3,
-    explanation: `Because arrays are special objects (as typeof implies), they can also have properties, including the automatically 
+    explanation: `Because arrays are special objects (as typeof implies), they can also have properties, including the automatically
             updated length property.`,
   },
   {
@@ -84,9 +84,9 @@ const Ch2Questions = [
       { text: 'to find out the count of properties', id: 3 },
     ],
     correctAnswerId: 2,
-    explanation: `You theoretically could use an array as a normal object with your own named properties, or you could use an object but 
-            only give it numeric properties (0, 1, etc.) similar to an array. However, this would generally be considered improper 
-            usage of the respective types. The best and most natural approach is to use arrays for numerically positioned values 
+    explanation: `You theoretically could use an array as a normal object with your own named properties, or you could use an object but
+            only give it numeric properties (0, 1, etc.) similar to an array. However, this would generally be considered improper
+            usage of the respective types. The best and most natural approach is to use arrays for numerically positioned values
             and use objects for named properties.`,
   },
   {
@@ -100,8 +100,8 @@ const Ch2Questions = [
       { text: 'equal and unequal', id: 3 },
     ],
     correctAnswerId: 1,
-    explanation: `Coercion comes in two forms in JavaScript: explicit and implicit. Explicit coercion is simply that you can see 
-            obviously from the code that a conversion from one type to another will occur, whereas implicit coercion is when the 
+    explanation: `Coercion comes in two forms in JavaScript: explicit and implicit. Explicit coercion is simply that you can see
+            obviously from the code that a conversion from one type to another will occur, whereas implicit coercion is when the
             type conversion can happen as more of a non-obvious side effect of some other operation.`,
   },
   {
@@ -115,10 +115,10 @@ const Ch2Questions = [
       { text: 'false / false', id: 3 },
     ],
     correctAnswerId: 1,
-    explanation: `== checks for value equality with coercion allowed, and === checks for value equality without allowing coercion; 
-            === is often called "strict equality" for this reason. In the a == b comparison, JS notices that the types do not match, 
-            so it goes through an ordered series of steps to coerce one or both values to a different type until the types match, 
-            where then a simple value equality can be checked. The a === b produces false, because the coercion is not allowed, so 
+    explanation: `== checks for value equality with coercion allowed, and === checks for value equality without allowing coercion;
+            === is often called "strict equality" for this reason. In the a == b comparison, JS notices that the types do not match,
+            so it goes through an ordered series of steps to coerce one or both values to a different type until the types match,
+            where then a simple value equality can be checked. The a === b produces false, because the coercion is not allowed, so
             the simple value comparison obviously fails. `,
   },
   {
@@ -139,7 +139,7 @@ const Ch2Questions = [
       { text: 'it makes the code easier to maintain', id: 3 },
     ],
     correctAnswerId: 2,
-    explanation: `If you try to set a variable that hasn't been declared, you'll either end up creating a variable in the top-level global 
+    explanation: `If you try to set a variable that hasn't been declared, you'll either end up creating a variable in the top-level global
             scope (bad!) or getting an error, depending on "strict mode" (see "Strict Mode").`,
   },
   {
@@ -153,8 +153,8 @@ const Ch2Questions = [
       { text: 'a < 20 ? false : true', id: 3 },
     ],
     correctAnswerId: 0,
-    explanation: `Another form of conditional in JavaScript is the "conditional operator," often called the "ternary operator." 
-            It's like a more concise form of a single if..else statement. If the test expression evaluates as true, the first clause 
+    explanation: `Another form of conditional in JavaScript is the "conditional operator," often called the "ternary operator."
+            It's like a more concise form of a single if..else statement. If the test expression evaluates as true, the first clause
             (true) results, otherwise the second clause (false) results.`,
   },
 ];
