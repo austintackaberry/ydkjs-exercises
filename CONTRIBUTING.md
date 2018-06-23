@@ -1,3 +1,10 @@
+# General Philosophy
+
+Marginal improvements are better than nothing. In order to not discourage people from contributing, in most cases, there will
+not be a ton of back and forth on a pull request. Some feedback might be provided to help you for the future, but most pull
+requests will be merged. If a contributor's solution is less than ideal, then someone else can come in and improve it. 
+For example, you don't need to add tests for your bug fix if you don't want to. If you have any questions at all, feel free to open an issue! 
+
 # Pull Requests
 
 If you are working on your first pull request, I highly recommend this free series: [How to Contribute to an Open Source Project on GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github).

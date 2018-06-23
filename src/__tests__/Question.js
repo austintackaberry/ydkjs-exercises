@@ -1,130 +1,200 @@
-import React from "react";
-import { shallow } from "enzyme";
-import { score } from "../score-context";
+import React from 'react';
+import { shallow } from 'enzyme';
 
-import Question from "../components/Question";
+import { score } from '../score-context';
 
-const question = {
-  question: "How many expressions are in the following statement: a = b * 2; ?",
-  orderedById: true,
-  answers: [
-    { text: "one", id: 0 },
-    { text: "two", id: 1 },
-    { text: "three", id: 2 },
-    { text: "four", id: 3 }
-  ],
-  correctAnswerId: 3,
-  explanation:
-    "explain why other answers are wrong and why this answer is the best answer"
-};
-const baseUrl = "/up-going/ch1";
+import Question from '../components/Question';
+import books from '../data';
+
+const upGoingCh1Q1 = books[0].chapters[0].questions[0];
+const upGoingCh1Q2 = books[0].chapters[0].questions[1];
+const baseUrl = '/up-going/ch1';
 const index = 1;
+const bookId = 0;
+const chapterId = 0;
 const numberOfQuestions = 6;
 const updateScore = jest.fn();
 
-const test_props = {
-  question,
-  baseUrl,
-  index,
-  numberOfQuestions,
-  score,
-  updateScore
+const generateTestProps = question => {
+  return {
+    question,
+    baseUrl,
+    index,
+    bookId,
+    chapterId,
+    numberOfQuestions,
+    score,
+    updateScore,
+  };
 };
 
-it("should render question", () => {
-  const comp = shallow(<Question {...test_props} />);
-
+it('should render question 1', () => {
+  const comp = shallow(<Question {...generateTestProps(upGoingCh1Q1)} />);
   expect(
     comp
-      .find("h3")
-      .at(0)
+      .find('Header3')
+      .children()
       .text()
-  ).toBe("Question 1 of 6");
+  ).toBe('Question 1 of 6');
   expect(
     comp
-      .find("h4")
-      .at(0)
+      .find('Header4')
+      .children()
       .text()
-  ).toBe("How many expressions are in the following statement: a = b * 2; ?");
-  expect(comp.find("label").length).toBe(4);
+  ).toBe('How many expressions are in the following statement: a = b * 2; ?');
+  expect(comp.find('label').length).toBe(4);
   expect(comp.find('input[type="radio"]').length).toBe(4);
-  expect(comp.find("span").length).toBe(4);
+  expect(comp.find('span').length).toBe(4);
   expect(
     comp
-      .find("span")
+      .find('span')
       .at(0)
       .text()
-  ).toBe("one");
+  ).toBe('one');
   expect(
     comp
-      .find("span")
+      .find('span')
       .at(1)
       .text()
-  ).toBe("two");
+  ).toBe('two');
   expect(
     comp
-      .find("span")
+      .find('span')
       .at(2)
       .text()
-  ).toBe("three");
+  ).toBe('three');
   expect(
     comp
-      .find("span")
+      .find('span')
       .at(3)
       .text()
-  ).toBe("four");
-  expect(comp.find("button").length).toBe(1);
-  expect(comp.find("NavigationButton").length).toBe(2);
+  ).toBe('four');
+  expect(comp.find('SubmitButton').length).toBe(1);
+  expect(comp.find('NavigationButton').length).toBe(2);
 });
 
-it("should set answer state", () => {
-  const comp = shallow(<Question {...test_props} />);
-  expect(comp.instance().state.userAnswerIndex).toBeNull();
+it('should render question 2', () => {
+  const comp = shallow(<Question {...generateTestProps(upGoingCh1Q2)} />);
+
+  expect(
+    comp
+      .find('Header3')
+      .children()
+      .text()
+  ).toBe('Question 1 of 6');
+  expect(
+    comp
+      .find('Header4')
+      .children()
+      .text()
+  ).toBe('What is a computer program (source code / code)?');
+  expect(comp.find('label').length).toBe(4);
+  expect(comp.find('input[type="radio"]').length).toBe(4);
+  expect(comp.find('span').length).toBe(4);
+  expect(
+    comp
+      .find('span')
+      .at(0)
+      .text()
+  ).toBe(
+    'A set of special instructions to tell the computer what tasks to perform.'
+  );
+  expect(comp.find('SubmitButton').length).toBe(1);
+  expect(comp.find('NavigationButton').length).toBe(2);
+});
+it('should set answer state', () => {
+  const comp = shallow(<Question {...generateTestProps(upGoingCh1Q1)} />);
+  expect(comp.instance().state.userAnswerId).toBeNull();
   comp.instance().handleAnswerChange({ target: { value: 2 } });
-  expect(comp.instance().state.userAnswerIndex).toBe(2);
+  expect(comp.instance().state.userAnswerId).toBe(2);
 });
 
-it("should set error on submit if answer not selected", () => {
-  const comp = shallow(<Question {...test_props} />);
+it('should set error on submit if answer not selected', () => {
+  const comp = shallow(<Question {...generateTestProps(upGoingCh1Q1)} />);
   expect(comp.instance().state.error).toBe(false);
   comp.instance().handleSubmit({
-    preventDefault: () => {}
+    preventDefault: () => {},
   });
   expect(comp.instance().state.error).toBe(true);
 });
 
-it("should set correct answer to green on submit", () => {
-  const comp = shallow(<Question {...test_props} />);
+it('should set correct answer to green on submit', () => {
+  const comp = shallow(<Question {...generateTestProps(upGoingCh1Q1)} />);
   comp.instance().handleAnswerChange({ target: { value: 3 } });
   comp.instance().handleSubmit({ preventDefault: () => {} });
   expect(comp.instance().state.error).toBe(false);
-  expect(comp.instance().state.userAnswerIndex).toBe(3);
+  expect(comp.instance().state.userAnswerId).toBe(3);
   expect(comp.instance().props.question.correctAnswerId).toBe(3);
   return Promise.resolve().then(() => {
     comp.update();
     expect(
       comp
-        .find("span")
+        .find('span')
         .at(3)
         .html()
     ).toMatch(/color:green/);
   });
 });
 
-it("should set incorrect answer to red and correct answer to green on submit", () => {
-  const comp = shallow(<Question {...test_props} />);
-  comp.instance().handleAnswerChange({ target: { value: 3 } });
+it('should set incorrect answer to red', () => {
+  const comp = shallow(<Question {...generateTestProps(upGoingCh1Q1)} />);
+  comp.instance().handleAnswerChange({ target: { value: 2 } });
   comp.instance().handleSubmit({ preventDefault: () => {} });
   expect(comp.instance().state.error).toBe(false);
-  expect(comp.instance().state.userAnswerIndex).toBe(3);
+  expect(comp.instance().state.userAnswerId).toBe(2);
   expect(comp.instance().state.answerSubmitted).toBe(true);
   return Promise.resolve().then(() => {
     comp.update();
     expect(
       comp
-        .find("span")
-        .at(3)
+        .find('span')
+        .at(2)
         .html()
-    ).toMatch(/color:green/);
+    ).toMatch(/color:red/);
   });
+});
+
+it("should render 'Show Explanation' button on submit", () => {
+  const comp = shallow(<Question {...generateTestProps(upGoingCh1Q1)} />);
+  comp.instance().handleAnswerChange({ target: { value: 3 } });
+  comp.instance().handleSubmit({ preventDefault: () => {} });
+  expect(comp.instance().state.error).toBe(false);
+  expect(comp.instance().state.userAnswerId).toBe(3);
+  expect(comp.instance().state.answerSubmitted).toBe(true);
+  expect(comp.instance().state.explanationRequested).toBe(false);
+  return Promise.resolve().then(() => {
+    comp.update();
+    expect(comp.find('button.explanationButton').length).toBe(1);
+    expect(comp.find('div.explanation').length).toBe(0);
+  });
+});
+
+it('should toggle explanations on clicking explanation button', () => {
+  const comp = shallow(<Question {...generateTestProps(upGoingCh1Q1)} />);
+  comp.instance().handleAnswerChange({ target: { value: 3 } });
+  comp.instance().handleSubmit({ preventDefault: () => {} });
+  expect(comp.instance().state.error).toBe(false);
+  expect(comp.instance().state.userAnswerId).toBe(3);
+  expect(comp.instance().state.answerSubmitted).toBe(true);
+  return Promise.resolve()
+    .then(() => {
+      comp.update();
+      expect(comp.find('button.explanationButton').length).toBe(1);
+    })
+    .then(() => {
+      comp.instance().toggleExplanationRequest();
+    })
+    .then(() => {
+      comp.update();
+      expect(comp.find('button.explanationButton').length).toBe(1);
+      expect(comp.find('div.explanation').length).toBe(1);
+    })
+    .then(() => {
+      comp.instance().toggleExplanationRequest();
+    })
+    .then(() => {
+      comp.update();
+      expect(comp.find('button.explanationButton').length).toBe(1);
+      expect(comp.find('div.explanation').length).toBe(0);
+    });
 });

@@ -19,12 +19,18 @@ body {
 
 html,
 body,
-#root,
+#root {
+  height: 100%;
+}
+
 .App {
+  position: relative;
+  margin-left: 15vw;
   height: 100%;
 }
 
 .main-content {
+  position: relative;
   flex-grow: 1;
 }
 
@@ -35,4 +41,8 @@ body,
   text-align: center;
   margin: auto;
   flex-grow: 0;
+}
+
+a {
+  outline: none;
 }

@@ -9,6 +9,7 @@
     "babel-eslint": "7.2.3",
     "babel-jest": "20.0.3",
     "babel-loader": "^7.1.4",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-react-app": "^3.1.1",
     "babel-runtime": "6.26.0",
     "case-sensitive-paths-webpack-plugin": "2.1.1",
@@ -28,7 +29,6 @@
     "file-loader": "^1.1.11",
     "fs-extra": "3.0.1",
     "html-webpack-plugin": "^3.2.0",
-    "material-ui": "^0.20.1",
     "object-assign": "4.1.1",
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "2.0.8",
@@ -40,6 +40,7 @@
     "react-router-dom": "^4.2.2",
     "react-transition-group": "^2.3.0",
     "style-loader": "0.19.0",
+    "styled-components": "^3.3.2",
     "sw-precache-webpack-plugin": "^0.11.5",
     "url-loader": "0.6.2",
     "webpack": "^3.12.0",
@@ -53,9 +54,11 @@
     "test": "node scripts/test.js --env=jsdom",
     "test:cov": "node scripts/test.js --env=jsdom --coverage && codecov",
     "translate": "node scripts/translate.js",
+    "lintold": "eslint src",
     "lint": "eslint src",
     "contributors:add": "all-contributors add",
-    "contributors:generate": "all-contributors generate"
+    "contributors:generate": "all-contributors generate",
+    "precommit": "pretty-quick --staged"
   },
   "devDependencies": {
     "all-contributors-cli": "^4.11.1",
@@ -64,13 +67,20 @@
     "cz-conventional-changelog": "^2.1.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "husky": "^0.14.3",
     "jest": "^23.1.0",
-    "jest-cli": "^23.1.0"
+    "jest-cli": "^23.1.0",
+    "prettier": "^1.13.4",
+    "pretty-quick": "^1.6.0"
   },
   "jest": {
-    "collectCoverageFrom": ["src/**/*.{js,jsx,mjs}"],
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,mjs}"
+    ],
     "coverageDirectory": "./coverage/",
-    "setupFiles": ["<rootDir>/config/polyfills.js"],
+    "setupFiles": [
+      "<rootDir>/config/polyfills.js"
+    ],
     "setupTestFrameworkScriptFile": "<rootDir>/config/jest/setupTests.js",
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.{js,jsx,mjs}",
@@ -81,10 +91,11 @@
     "transform": {
       "^.+\\.(js|jsx|mjs)$": "<rootDir>/node_modules/babel-jest",
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
-      "^(?!.*\\.(js|jsx|mjs|css|json)$)":
-        "<rootDir>/config/jest/fileTransform.js"
+      "^(?!.*\\.(js|jsx|mjs|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
     },
-    "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"],
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"
+    ],
     "moduleNameMapper": {
       "^react-native$": "react-native-web"
     },
@@ -99,7 +110,10 @@
     ]
   },
   "babel": {
-    "presets": "./.babelrc.js"
+    "presets": "./.babelrc.js",
+    "plugins": [
+      "transform-class-properties"
+    ]
   },
   "config": {
     "commitizen": {
