@@ -1,13 +1,13 @@
 const Ch1Questions = [
   {
     question:
-      'How many expressions are there in the following statement: a = b * 2; ?',
+      'How many expressions are in the following statement: a = b * 2; ?',
     orderedById: true,
     answers: [
-      { text: 'One', id: 0 },
-      { text: 'Two', id: 1 },
-      { text: 'Three', id: 2 },
-      { text: 'Four', id: 3 },
+      { text: 'one', id: 0 },
+      { text: 'two', id: 1 },
+      { text: 'three', id: 2 },
+      { text: 'four', id: 3 },
     ],
     correctAnswerId: 3,
     explanation: `This statement has four expressions in it:
