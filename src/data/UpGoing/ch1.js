@@ -453,7 +453,7 @@ const Ch1Questions = [
         id: 3,
       },
     ],
-    correctAnswerId: 0,
+    correctAnswerId: 1,
     explanation: `Repeating a set of actions until a certain condition fails -- in other words, repeating only while the condition holds -- 
     is the job of programming loops. Loops can take different forms, but they all satisfy this basic behavior.`,
   },
