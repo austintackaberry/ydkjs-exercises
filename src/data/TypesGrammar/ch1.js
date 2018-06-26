@@ -10,10 +10,11 @@ const Ch1Questions = [
       { text: 'long', id: 4 },
     ],
     correctAnswerId: 2,
-    explanation: `Unlike many coding languages, JavaScript has only one primitve numerical type: number. This is used for both integers and floating point values.`,
+    explanation:
+      'Unlike many coding languages, JavaScript has only one primitve numerical type: `number`. This is used for both integers and floating point values.',
   },
   {
-    question: 'What is the output of console.log(typeof [])?',
+    question: 'What is the output of `console.log(typeof [])`?',
     orderedById: true,
     answers: [
       { text: 'undefined', id: 0 },
@@ -22,7 +23,8 @@ const Ch1Questions = [
       { text: 'array', id: 3 },
     ],
     correctAnswerId: 1,
-    explanation: `In JavaScript, arrays are a type of object. There is no "array" type.`,
+    explanation:
+      'In JavaScript, arrays are a type of `object`. There is no "array" type.',
   },
 ];
 

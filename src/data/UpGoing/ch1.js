@@ -11,10 +11,10 @@ const Ch1Questions = [
     ],
     correctAnswerId: 3,
     explanation: `This statement has four expressions in it:
-      2 is a literal value expression; 
-      b is a variable expression, which means to retrieve its current value; 
-      b * 2 is an arithmetic expression, which means to do the multiplication; 
-      a = b * 2 is an assignment expression, which means to assign the result of the b * 2 expression to the variable a.`,
+      2 is a literal value expression;
+      b is a variable expression, which means to retrieve its current value;
+      b \* 2 is an arithmetic expression, which means to do the multiplication;
+      a = b \* 2 is an assignment expression, which means to assign the result of the b \* 2 expression to the variable a.`,
   },
   {
     question: 'What is a computer program (source code / code)?',
@@ -34,8 +34,8 @@ const Ch1Questions = [
       { text: 'A plan of action to accomplish a specified end.', id: 3 },
     ],
     correctAnswerId: 0,
-    explanation: `A program, often referred to as source code or just code, is a set of special instructions to tell the computer what tasks 
-      to perform. Usually code is saved in a text file, although with JavaScript you can also type code directly into a developer 
+    explanation: `A program, often referred to as source code or just code, is a set of special instructions to tell the computer what tasks
+      to perform. Usually code is saved in a text file, although with JavaScript you can also type code directly into a developer
       console in a browser.`,
   },
   {
@@ -55,7 +55,7 @@ const Ch1Questions = [
       { text: 'A system of communication.', id: 3 },
     ],
     correctAnswerId: 1,
-    explanation: `The rules for valid format and combinations of instructions is called a computer language, sometimes referred to as its syntax, 
+    explanation: `The rules for valid format and combinations of instructions is called a computer language, sometimes referred to as its syntax,
       much the same as English tells you how to spell words and how to create valid sentences using words and punctuation.`,
   },
   {
@@ -75,7 +75,7 @@ const Ch1Questions = [
       },
     ],
     correctAnswerId: 2,
-    explanation: `Statements are made up of one or more expressions. 
+    explanation: `Statements are made up of one or more expressions.
       An expression is any reference to a variable or value, or a set of variable(s) and value(s) combined with operators.`,
   },
   {
@@ -100,8 +100,8 @@ const Ch1Questions = [
       },
     ],
     correctAnswerId: 3,
-    explanation: `Statements like a = b * 2 are helpful for developers when reading and writing, but are not actually in a form the computer can 
-      directly understand. So a special utility on the computer (either an interpreter or a compiler) is used to translate the code you 
+    explanation: `Statements like a = b \* 2 are helpful for developers when reading and writing, but are not actually in a form the computer can
+      directly understand. So a special utility on the computer (either an interpreter or a compiler) is used to translate the code you
       write into commands a computer can understand.
       For some computer languages, this translation of commands is typically done from top to bottom, line by line, every time the program
        is run, which is usually called interpreting the code.`,
@@ -128,8 +128,8 @@ const Ch1Questions = [
       },
     ],
     correctAnswerId: 0,
-    explanation: `It's typically asserted that JavaScript is interpreted, because your JavaScript source code is processed each time it's run. 
-      But that's not entirely accurate. The JavaScript engine actually compiles the program on the fly and then immediately runs the 
+    explanation: `It's typically asserted that JavaScript is interpreted, because your JavaScript source code is processed each time it's run.
+      But that's not entirely accurate. The JavaScript engine actually compiles the program on the fly and then immediately runs the
       compiled code.`,
   },
 ];

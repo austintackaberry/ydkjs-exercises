@@ -5,12 +5,16 @@ import {
   Fieldset,
   FlatButton,
   Header3,
-  Header4,
+  // Header4,
   MessageWrapper,
   Section,
   SubmitButton,
   Wrapper,
 } from './styled';
+
+import './styles.css';
+
+const ReactMarkdown = require('react-markdown');
 
 const NavigationButton = props =>
   withRouter(({ history }) => (
@@ -157,7 +161,7 @@ class Question extends Component {
       <React.Fragment>
         <Wrapper>
           <Header3>{`Question ${index} of ${numberOfQuestions}`}</Header3>
-          <Header4>{question.question}</Header4>
+          <ReactMarkdown source={question.question} />
           <form onSubmit={event => this.handleSubmit(event)}>
             <Fieldset>
               {question.answers.map((answer, i) => {
@@ -178,20 +182,21 @@ class Question extends Component {
                 }
                 return (
                   <div key={answer.id}>
-                    <label
-                      htmlFor={i}
-                      style={{ display: 'block', margin: '5px' }}
-                    >
-                      <input
-                        type="radio"
-                        name={index}
-                        id={i}
-                        value={answer.id}
-                        onChange={event => {
-                          this.handleAnswerChange(event);
-                        }}
-                      />
-                      <span style={answerColor}>{answer.text}</span>
+                    <label htmlFor={i}>
+                      <span>
+                        <input
+                          type="radio"
+                          name={index}
+                          id={i}
+                          value={answer.id}
+                          onChange={event => {
+                            this.handleAnswerChange(event);
+                          }}
+                        />
+                      </span>
+                      <span className="test" style={answerColor}>
+                        <ReactMarkdown source={answer.text} />
+                      </span>
                     </label>
                   </div>
                 );
@@ -207,7 +212,9 @@ class Question extends Component {
                   >
                     Hide Explanation
                   </button>
-                  <div className="explanation">{question.explanation}</div>
+                  <div className="explanation">
+                    <ReactMarkdown source={question.explanation} />
+                  </div>
                 </div>
               )}
 

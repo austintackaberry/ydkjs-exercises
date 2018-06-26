@@ -48,10 +48,10 @@ export const Header3 = styled.h3`
 `;
 Header3.displayName = 'Header3';
 
-export const Header4 = styled.h4`
-  margin: 0;
-`;
-Header4.displayName = 'Header4';
+// export const Header4 = styled.h4`
+//   margin: 0;
+// `;
+// Header4.displayName = 'Header4';
 
 export const FlatButton = styled.button`
   background-color: lightgrey;
