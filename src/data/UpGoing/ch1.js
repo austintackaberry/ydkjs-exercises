@@ -1,13 +1,13 @@
 const Ch1Questions = [
   {
     question:
-      'How many expressions are in the following statement: a = b * 2; ?',
+      'How many expressions are there in the following statement: a = b * 2; ?',
     orderedById: true,
     answers: [
-      { text: 'one', id: 0 },
-      { text: 'two', id: 1 },
-      { text: 'three', id: 2 },
-      { text: 'four', id: 3 },
+      { text: 'One', id: 0 },
+      { text: 'Two', id: 1 },
+      { text: 'Three', id: 2 },
+      { text: 'Four', id: 3 },
     ],
     correctAnswerId: 3,
     explanation: `This statement has four expressions in it:
@@ -132,6 +132,358 @@ const Ch1Questions = [
       But that's not entirely accurate. The JavaScript engine actually compiles the program on the fly and then immediately runs the 
       compiled code.`,
   },
+  {
+    question:
+      'Which of these next expressions has exactly one literal value, one variable, and one operator?',
+    orderedById: false,
+    answers: [
+      {
+        text: 'var even = 4 ;',
+        id: 0,
+      },
+      {
+        text: 'var farm = "cat" + "dog" + "cow" ; ',
+        id: 1,
+      },
+      {
+        text: 'var counter = 1 ;',
+        id: 2,
+      },
+      {
+        text: 'var bool = 5 > minimum ;',
+        id: 3,
+      },
+    ],
+    correctAnswerId: 0,
+    explanation: `Characters like = and * are called operators. They perform actions with the values and variables such as assignment and mathematic multiplication.
+    Variables are like simple boxes you can store any of your stuff in, and should be declared before they are used. In programs, variables hold values to be used by the program. 
+    By contrast to variables, literal values are the value itself. For example, 4 or 'cat' is a literal value. In other words, it stands alone without being stored in a variable.`,
+  },
+  {
+    question:
+      'Which of these next statements is NOT true about alert() and console.log()? Remember, you can open the console in your browser and experiment.',
+    orderedById: false,
+    answers: [
+      {
+        text:
+          'Using alert() will block your user from interacting with your web page until the alert is closed.',
+        id: 0,
+      },
+      {
+        text: 'The user cannot view more than one alert() message at a time.',
+        id: 1,
+      },
+      {
+        text:
+          'The user cannot view more than one console.log() message at a time.',
+        id: 2,
+      },
+      {
+        text:
+          'console.log() statements often have an interactive pointer to the line of code that issued the logged statement.',
+        id: 3,
+      },
+    ],
+    correctAnswerId: 2,
+    explanation: `This statement is not true, because the console can display many log() messages simultaneously (unlike the alert() method, which only displays one at a time). 
+    This is what makes console.log() a great tool for debugging your code, and for finding out what's going on under the hood.`,
+  },
+  {
+    question: 'Which is the correct way to get input from the user?',
+    orderedById: false,
+    answers: [
+      {
+        text: 'var age = console.log("What is your name? ");',
+        id: 0,
+      },
+      {
+        text: 'var age = alert("What is your name? ");',
+        id: 1,
+      },
+      {
+        text: 'var age = console.get("What is your name? ");',
+        id: 2,
+      },
+      {
+        text: 'var age = prompt("What is your name? ");',
+        id: 3,
+      },
+    ],
+    correctAnswerId: 2,
+    explanation: `The prompt() method displays a dialog box that prompts the visitor for input.
+    A prompt box is often used if you want the user to input a value before entering a page.
+    The prompt() method returns the input value if the user clicks "OK". If the user clicks "cancel" the method returns null.`,
+  },
+  {
+    question:
+      'Fill in the blanks: In the expression "var num = 20; ", the operator = is used to ______ the literal value 20 to the _______ num. The keyword var is used to _______ the variable. ',
+    orderedById: false,
+    answers: [
+      {
+        text: 'assign, variable, declare',
+        id: 0,
+      },
+      {
+        text: 'assign, variable, increase',
+        id: 1,
+      },
+      {
+        text: 'declare, variable, introduce',
+        id: 2,
+      },
+      {
+        text: 'introduce, variable, declare',
+        id: 3,
+      },
+    ],
+    correctAnswerId: 0,
+    explanation: `In the expression "var num = 20; ", the operator = is used to assign the literal value 20 to the variable num. The keyword var is used to declare the variable. `,
+  },
+  {
+    question: 'Which of these next expressions is NOT a compound assignment?',
+    orderedById: false,
+    answers: [
+      {
+        text: 'var even *= 2; ',
+        id: 0,
+      },
+      {
+        text: 'var counter = 1; ',
+        id: 1,
+      },
+      {
+        text: 'var diff -= 2; ',
+        id: 2,
+      },
+      {
+        text: 'b == a; ',
+        id: 3,
+      },
+    ],
+    correctAnswerId: 3,
+    explanation: `Compound Assignment examples: 
+    +=, -=, *=, and /= are compound operators that combine a math operation with assignment, as in a += 2 (same as a = a + 2). 
+    The double equal sign == is used to check equality.`,
+  },
+  {
+    question:
+      'Which of these next equations will output the boolean value false? Remember, you can open the console in your browser and experiment.',
+    orderedById: false,
+    answers: [
+      {
+        text: '99 === Number("99"); ',
+        id: 0,
+      },
+      {
+        text: '-"99" == 99; ',
+        id: 1,
+      },
+      {
+        text: '-"99" == -99.00; ',
+        id: 2,
+      },
+      {
+        text: '99 == "99.00"; ',
+        id: 3,
+      },
+    ],
+    correctAnswerId: 1,
+    explanation: `When we use the == loose equals operator to make the comparison like "99.00" == 99.00, 
+    JavaScript will convert the left-hand side "99.99" to its number equivalent 99.99. 
+    The comparison then becomes 99.99 == 99.99, which is of course true.
+    This is even true when the negative sign is outside of the double quotes, like so: -"99" == -99.00; . 
+    However, comparing negative and positive values returns false even when using the loose equals (==).`,
+  },
+  {
+    question: 'Which of these next statements is false?',
+    orderedById: false,
+    answers: [
+      {
+        text:
+          'The if statement requires an expression that can be treated as either true or false. ',
+        id: 0,
+      },
+      {
+        text:
+          'You can provide an alternative if the condition is not true, called an else clause.',
+        id: 1,
+      },
+      {
+        text:
+          'JavaScript defines a list of specific values that are considered "falsy" (e.g: 0, ""). Any other value not on the "falsy" list is automatically "truthy" (e.g: 99.99, "free")',
+        id: 2,
+      },
+      {
+        text:
+          'The code: "if true { console.log("this is true!"); }" is writtent in valid syntax and will print out the string.',
+        id: 3,
+      },
+    ],
+    correctAnswerId: 3,
+    explanation: `JavaScript requires wrapping the conditional in parentheses, otherwise it returns a syntax error. 
+    You can test this by running the code "if true { console.log("this is true!"); }" in your browser console. 
+    Remember to also try running the same code with parentheses around the conditional.`,
+  },
+    {
+      question:
+        'Which of these next statements is NOT an example of how functions improve our code?',
+      orderedById: false,
+      answers: [
+        {
+          text:
+            'Functions allow us to split our code into reusable pieces which saves time and energy.',
+          id: 0,
+        },
+        {
+          text: 'Functions make our code more readable.',
+          id: 1,
+        },
+        {
+          text:
+            'Each function gets its own scope, which includes a collection of variables as well as the rules for how those variables are accessed. This allows us to be in better control of our variables and prevent bugs.',
+          id: 2,
+        },
+        {
+          text:
+            'All functions use loops (for, while, or do...while), which shorten our code significantly. ',
+          id: 3,
+        },
+      ],
+      correctAnswerId: 3,
+      explanation: `A function does not have to include a loop in order to save us time and make our code more readable. 
+      Some functions only have one line of code, for example console.log() (as shown in the chapter's examples)`,
+    },
+    {
+      question:
+        'Fill in the blank: You need _______ to perform actions on values.',
+      orderedById: false,
+      answers: [
+        {
+          text: 'operators',
+          id: 0,
+        },
+        {
+          text: 'values',
+          id: 1,
+        },
+        {
+          text: 'types',
+        id: 2,
+      },
+      {
+        text: 'variables',
+        id: 3,
+      },
+    ],
+    correctAnswerId: 0,
+    explanation: `The =, +, /, and * characters are examples of operators. 
+    They perform actions with the values and variables such as assignment, summation, division and mathematic multiplication.`,
+  },
+  {
+    question:
+      'Fill in the blank: You need _______ to store data (aka state) during the execution of your program.',
+    orderedById: false,
+    answers: [
+      {
+        text: 'variables',
+        id: 0,
+      },
+      {
+        text: 'functions',
+        id: 1,
+      },
+      {
+        text: 'loops',
+        id: 2,
+      },
+      {
+        text: 'if statements',
+        id: 3,
+      },
+    ],
+    correctAnswerId: 0,
+    explanation: `Variables are like simple boxes you can store any of your stuff in. 
+    In programs, variables hold values (like the number 42) to be used by the program. 
+    Think of them as symbolic placeholders for the values themselves.`,
+  },
+  {
+    question: 'You need _______ like _______ to make decisions.',
+    orderedById: false,
+    answers: [
+      {
+        text: 'conditionals, if statements',
+        id: 0,
+      },
+      {
+        text: 'functions, scope',
+        id: 1,
+      },
+      {
+        text: 'loops, do...while',
+        id: 2,
+      },
+      {
+        text: 'strings, "Hello, Worlds"',
+        id: 3,
+      },
+    ],
+    correctAnswerId: 0,
+    explanation: `Conditionals are just simple "yes or no" questions used to make decisions.
+    Does my account have enough balance to purchase this?. The most common conditional is an if statement.`,
+  },
+  {
+    question:
+      'You need _______ to repeat tasks until a condition stops being true.',
+    orderedById: false,
+    answers: [
+      {
+        text: 'conditionals',
+        id: 0,
+      },
+      {
+        text: 'loops',
+        id: 1,
+      },
+      {
+        text: 'variables',
+        id: 2,
+      },
+      {
+        text: 'operators',
+        id: 3,
+      },
+    ],
+    correctAnswerId: 1,
+    explanation: `Repeating a set of actions until a certain condition fails -- in other words, repeating only while the condition holds -- 
+    is the job of programming loops. Loops can take different forms, but they all satisfy this basic behavior.`,
+  },
+  {
+    question:
+      'You need _______ to organize your code into logical and reusable chunks.',
+    orderedById: false,
+    answers: [
+      {
+        text: 'conditionals',
+        id: 0,
+      },
+      {
+        text: 'loops',
+        id: 1,
+      },
+      {
+        text: 'functions',
+        id: 2,
+      },
+      {
+        text: 'operators',
+        id: 3,
+      },
+    ],
+    correctAnswerId: 2,
+    explanation: `A function is generally a named section of code that can be "called" by name, and the code inside it will be run each time. 
+    Functions are often used for code that you plan to call multiple times, but they can also be useful just to organize related bits of code into named collections, even if you only plan to call them once.`,
+  },
+
 ];
 
 export default Ch1Questions;
