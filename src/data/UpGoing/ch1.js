@@ -209,7 +209,7 @@ const Ch1Questions = [
         id: 3,
       },
     ],
-    correctAnswerId: 2,
+    correctAnswerId: 3,
     explanation: `The prompt() method displays a dialog box that prompts the visitor for input.
     A prompt box is often used if you want the user to input a value before entering a page.
     The prompt() method returns the input value if the user clicks "OK". If the user clicks "cancel" the method returns null.`,
@@ -324,50 +324,50 @@ const Ch1Questions = [
     You can test this by running the code "if true { console.log("this is true!"); }" in your browser console. 
     Remember to also try running the same code with parentheses around the conditional.`,
   },
-    {
-      question:
-        'Which of these next statements is NOT an example of how functions improve our code?',
-      orderedById: false,
-      answers: [
-        {
-          text:
-            'Functions allow us to split our code into reusable pieces which saves time and energy.',
-          id: 0,
-        },
-        {
-          text: 'Functions make our code more readable.',
-          id: 1,
-        },
-        {
-          text:
-            'Each function gets its own scope, which includes a collection of variables as well as the rules for how those variables are accessed. This allows us to be in better control of our variables and prevent bugs.',
-          id: 2,
-        },
-        {
-          text:
-            'All functions use loops (for, while, or do...while), which shorten our code significantly. ',
-          id: 3,
-        },
-      ],
-      correctAnswerId: 3,
-      explanation: `A function does not have to include a loop in order to save us time and make our code more readable. 
+  {
+    question:
+      'Which of these next statements is NOT an example of how functions improve our code?',
+    orderedById: false,
+    answers: [
+      {
+        text:
+          'Functions allow us to split our code into reusable pieces which saves time and energy.',
+        id: 0,
+      },
+      {
+        text: 'Functions make our code more readable.',
+        id: 1,
+      },
+      {
+        text:
+          'Each function gets its own scope, which includes a collection of variables as well as the rules for how those variables are accessed. This allows us to be in better control of our variables and prevent bugs.',
+        id: 2,
+      },
+      {
+        text:
+          'All functions use loops (for, while, or do...while), which shorten our code significantly. ',
+        id: 3,
+      },
+    ],
+    correctAnswerId: 3,
+    explanation: `A function does not have to include a loop in order to save us time and make our code more readable. 
       Some functions only have one line of code, for example console.log() (as shown in the chapter's examples)`,
-    },
-    {
-      question:
-        'Fill in the blank: You need _______ to perform actions on values.',
-      orderedById: false,
-      answers: [
-        {
-          text: 'operators',
-          id: 0,
-        },
-        {
-          text: 'values',
-          id: 1,
-        },
-        {
-          text: 'types',
+  },
+  {
+    question:
+      'Fill in the blank: You need _______ to perform actions on values.',
+    orderedById: false,
+    answers: [
+      {
+        text: 'operators',
+        id: 0,
+      },
+      {
+        text: 'values',
+        id: 1,
+      },
+      {
+        text: 'types',
         id: 2,
       },
       {
@@ -385,7 +385,7 @@ const Ch1Questions = [
     orderedById: false,
     answers: [
       {
-        text: 'variables',
+        text: 'loops',
         id: 0,
       },
       {
@@ -393,7 +393,7 @@ const Ch1Questions = [
         id: 1,
       },
       {
-        text: 'loops',
+        text: 'variables',
         id: 2,
       },
       {
@@ -401,7 +401,7 @@ const Ch1Questions = [
         id: 3,
       },
     ],
-    correctAnswerId: 0,
+    correctAnswerId: 2,
     explanation: `Variables are like simple boxes you can store any of your stuff in. 
     In programs, variables hold values (like the number 42) to be used by the program. 
     Think of them as symbolic placeholders for the values themselves.`,
@@ -411,7 +411,7 @@ const Ch1Questions = [
     orderedById: false,
     answers: [
       {
-        text: 'conditionals, if statements',
+        text: 'loops, do...while',
         id: 0,
       },
       {
@@ -419,7 +419,7 @@ const Ch1Questions = [
         id: 1,
       },
       {
-        text: 'loops, do...while',
+        text: 'conditionals, if statements',
         id: 2,
       },
       {
@@ -427,7 +427,7 @@ const Ch1Questions = [
         id: 3,
       },
     ],
-    correctAnswerId: 0,
+    correctAnswerId: 2,
     explanation: `Conditionals are just simple "yes or no" questions used to make decisions.
     Does my account have enough balance to purchase this?. The most common conditional is an if statement.`,
   },
@@ -437,7 +437,7 @@ const Ch1Questions = [
     orderedById: false,
     answers: [
       {
-        text: 'conditionals',
+        text: 'variables',
         id: 0,
       },
       {
@@ -445,7 +445,7 @@ const Ch1Questions = [
         id: 1,
       },
       {
-        text: 'variables',
+        text: 'conditionals',
         id: 2,
       },
       {
@@ -483,7 +483,6 @@ const Ch1Questions = [
     explanation: `A function is generally a named section of code that can be "called" by name, and the code inside it will be run each time. 
     Functions are often used for code that you plan to call multiple times, but they can also be useful just to organize related bits of code into named collections, even if you only plan to call them once.`,
   },
-
 ];
 
 export default Ch1Questions;
