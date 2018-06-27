@@ -10,6 +10,8 @@ const Ch1Questions = [
       { text: 'long', id: 4 },
     ],
     correctAnswerId: 2,
+    moreInfoUrl:
+      'https://github.com/getify/You-Dont-Know-JS/blob/master/types%20%26%20grammar/ch1.md#values-as-types',
     explanation: `Unlike many coding languages, JavaScript has only one primitve numerical type: number. This is used for both integers and floating point values.`,
   },
   {
@@ -22,6 +24,8 @@ const Ch1Questions = [
       { text: 'array', id: 3 },
     ],
     correctAnswerId: 1,
+    moreInfoUrl:
+      'https://github.com/getify/You-Dont-Know-JS/blob/master/types%20%26%20grammar/ch1.md#built-in-types',
     explanation: `In JavaScript, arrays are a type of object. There is no "array" type.`,
   },
 ];
