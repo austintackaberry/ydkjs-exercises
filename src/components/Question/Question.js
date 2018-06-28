@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import {
   Fieldset,
   FlatButton,
@@ -43,6 +43,7 @@ class Question extends Component {
       error: false,
       correctAnswer: null,
       explanationRequested: false,
+      moreInfoUrl: null,
     };
   }
 
@@ -207,7 +208,17 @@ class Question extends Component {
                   >
                     Hide Explanation
                   </button>
-                  <div className="explanation">{question.explanation}</div>
+                  <div className="explanation">
+                    {question.explanation}
+                    <br />
+                    <a
+                      href={question.moreInfoUrl}
+                      target="_blank"
+                      style={{ textDecoration: 'underline', color: 'blue' }}
+                    >
+                      Github link to the chapter section
+                    </a>
+                  </div>
                 </div>
               )}
 
