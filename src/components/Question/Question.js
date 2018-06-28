@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { withRouter, Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import {
   Fieldset,
   FlatButton,
@@ -43,7 +43,6 @@ class Question extends Component {
       error: false,
       correctAnswer: null,
       explanationRequested: false,
-      moreInfoUrl: null,
     };
   }
 
