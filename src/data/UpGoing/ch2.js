@@ -41,6 +41,8 @@ const Ch2Questions = [
       { text: 'number', id: 3 },
     ],
     correctAnswerId: 1,
+    moreInfoUrl:
+      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md#values--types',
     explanation: `typeof null is an interesting case, because it errantly returns "object", when you'd expect it to return "null" 
     (just like 'typeof undefined' returns 'undefined'). You can run this command in your console and see for yourself.`,
   },
@@ -55,6 +57,8 @@ const Ch2Questions = [
       { text: 'Syntax error', id: 3 },
     ],
     correctAnswerId: 0,
+    moreInfoUrl:
+      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md#arrays',
     explanation: `Arrays are special objects, so the typeof of both expressions are 'objects' and the return value is 'true'.
     Run both expressions in your console to see that the return value of 'typeof [1,2,3]' and 'typeof {1, 2, 3}' is 'object'.`,
   },
@@ -156,6 +160,8 @@ const Ch2Questions = [
       { text: 'var b= String( 5 )', id: 3 },
     ],
     correctAnswerId: 1,
+    moreInfoUrl:
+      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md#coercion',
     explanation: `Implicit coercion is when the type conversion can happen as more of a non-obvious side effect of some other operation, 
     such as multiplication by 1 in the second answer.`,
   },
@@ -223,6 +229,8 @@ const Ch2Questions = [
       },
     ],
     correctAnswerId: 2,
+    moreInfoUrl:
+      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md#equality',
     explanation: `You should avoid using == and use === in these incidents: 
     (1) If either value (aka side) in a comparison could be the true or false value.
     (2) If either value in a comparison could be of these specific values: 0, "", or [] -- empty array. 
@@ -256,6 +264,8 @@ const Ch2Questions = [
       { text: 'var $amount;', id: 3 },
     ],
     correctAnswerId: 2,
+    moreInfoUrl:
+      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md#variables',
     explanation: `An identifier must start with a-z, A-Z, $, or _. 
     It can then contain any of those characters plus the numerals 0-9.`,
   },
@@ -285,6 +295,8 @@ const Ch2Questions = [
       },
     ],
     correctAnswerId: 3,
+    moreInfoUrl:
+      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md#nested-scopes',
     explanation: `When you declare a variable, it is available anywhere in that scope, as well as any lower/inner scopes.
     This means that if you declare a function within a function, the outer function is able to access the vairables declared inside it's child function. 
     However, the child/inner function cannot access it's parent/outer function's scope.`,
@@ -300,6 +312,8 @@ const Ch2Questions = [
       { text: 'TypeError', id: 3 },
     ],
     correctAnswerId: 1,
+    moreInfoUrl:
+      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md#nested-scopes',
     explanation: `If you try to access a variable's value in a scope where it's not available, you'll get a ReferenceError thrown.
     The ReferenceError object represents an error when a non-existent variable is referenced.
     If you try to set a variable that hasn't been declared, you'll either end up creating a variable in the top-level global scope (bad!) or getting an error (depending on "strict mode"). 
@@ -331,6 +345,8 @@ const Ch2Questions = [
       },
     ],
     correctAnswerId: 2,
+    moreInfoUrl:
+      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md#strict-mode',
     explanation: `To invoke strict mode for an entire script, put the exact statement "use strict";`,
   },
   {
@@ -343,6 +359,8 @@ const Ch2Questions = [
       { text: '(function IIFE(){ console.log( "Hello!" ); })();', id: 3 },
     ],
     correctAnswerId: 3,
+    moreInfoUrl:
+      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md#immediately-invoked-function-expressions-iifes',
     explanation: `Immediately Invoked Function Expressions (IIFE) is a way to execute a function expression.
     It requires an outer set of parentheses ( .. ) that surrounds the function expression.
     It also requires a final set of parentheses at the end of the expression, which is what actually executes the function expression referenced immediately before it.`,
@@ -373,6 +391,8 @@ const Ch2Questions = [
       },
     ],
     correctAnswerId: 1,
+    moreInfoUrl:
+      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md#polyfilling',
     explanation: `The word "polyfill" is an invented term used to refer to taking the definition of a newer feature and producing a piece of code that's equivalent to the behavior, but is able to run in older JS environments.
     For example, ES6 defines a utility called Number.isNaN(..) to provide an accurate non-buggy check for NaN values, deprecating the original isNaN(..) utility. 
     But it's easy to polyfill that utility so that you can start using it in your code regardless of whether the end user is in an ES6 browser or not.`,
@@ -403,6 +423,8 @@ const Ch2Questions = [
       },
     ],
     correctAnswerId: 3,
+    moreInfoUrl:
+      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md#transpiling',
     explanation: `Transpiling is using a tool that converts your newer code into older code equivalents. The term combines the terms for transforming + compiling. 
     Essentially, your source code is authored in the new syntax form, but what you deploy to the browser is the transpiled code in old syntax form. 
     You typically insert the transpiler into your build process, similar to your code linter or your minifier.`,
