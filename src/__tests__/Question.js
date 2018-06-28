@@ -35,7 +35,7 @@ it('should render question 1', () => {
       .find('Header3')
       .children()
       .text()
-  ).toBe('Question 1 of 19');
+  ).toBe('Question 1 of 6');
   expect(
     comp
       .find('Header4')
@@ -83,7 +83,7 @@ it('should render question 2', () => {
       .find('Header3')
       .children()
       .text()
-  ).toBe('Question 1 of 19');
+  ).toBe('Question 1 of 6');
   expect(
     comp
       .find('Header4')
