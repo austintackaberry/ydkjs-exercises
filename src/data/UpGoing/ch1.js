@@ -158,7 +158,7 @@ const Ch1Questions = [
         id: 1,
       },
       {
-        text: 'var counter = 1 ;',
+        text: 'var counter += 1 ;',
         id: 2,
       },
       {
