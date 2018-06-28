@@ -3,10 +3,9 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   border: 2px solid black;
   border-radius: 3px;
-  width: 40%;
+  width: 80%;
   margin: auto;
   position: relative;
-  height: 18em;
   padding: 30px 20px;
 `;
 Wrapper.displayName = 'Wrapper';
