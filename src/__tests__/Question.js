@@ -41,7 +41,9 @@ it('should render question 1', () => {
       .find('Header4')
       .children()
       .text()
-  ).toBe('How many expressions are in the following statement: a = b * 2; ?');
+  ).toBe(
+    'How many expressions are there in the following statement: a = b * 2; ?'
+  );
   expect(comp.find('label').length).toBe(4);
   expect(comp.find('input[type="radio"]').length).toBe(4);
   expect(comp.find('span').length).toBe(4);
@@ -50,25 +52,25 @@ it('should render question 1', () => {
       .find('span')
       .at(0)
       .text()
-  ).toBe('one');
+  ).toBe('One');
   expect(
     comp
       .find('span')
       .at(1)
       .text()
-  ).toBe('two');
+  ).toBe('Two');
   expect(
     comp
       .find('span')
       .at(2)
       .text()
-  ).toBe('three');
+  ).toBe('Three');
   expect(
     comp
       .find('span')
       .at(3)
       .text()
-  ).toBe('four');
+  ).toBe('Four');
   expect(comp.find('SubmitButton').length).toBe(1);
   expect(comp.find('NavigationButton').length).toBe(2);
 });
