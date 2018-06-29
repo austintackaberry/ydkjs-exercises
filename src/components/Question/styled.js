@@ -3,8 +3,9 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   border: 2px solid black;
   border-radius: 3px;
-  width: 80%;
+  width: 100%;
   margin: auto;
+  min-height: 16em;
   position: relative;
   padding: 30px 20px;
 `;
