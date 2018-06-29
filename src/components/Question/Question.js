@@ -207,7 +207,17 @@ class Question extends Component {
                   >
                     Hide Explanation
                   </button>
-                  <div className="explanation">{question.explanation}</div>
+                  <div className="explanation">
+                    {question.explanation}
+                    <br />
+                    <a
+                      href={question.moreInfoUrl}
+                      target="_blank"
+                      style={{ textDecoration: 'underline', color: 'blue' }}
+                    >
+                      Github link to the chapter section
+                    </a>
+                  </div>
                 </div>
               )}
 
