@@ -2,17 +2,16 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import ChapterRouter from '../components/ChapterRouter';
-// eslint-disable-next-line no-unused-vars
-import NoQuestions from '../components/NoQuestions';
 
 const questions = [
   {
-    question: 'How many expressions are in the following statement: a = b * 2;',
+    question:
+      'How many expressions are there in the following statement: a = b * 2;',
     answers: [
-      { answer: 'one', isCorrect: false },
-      { answer: 'two', isCorrect: false },
-      { answer: 'three', isCorrect: false },
-      { answer: 'four', isCorrect: true },
+      { answer: 'One', isCorrect: false },
+      { answer: 'Two', isCorrect: false },
+      { answer: 'Three', isCorrect: false },
+      { answer: 'Four', isCorrect: true },
     ],
   },
 ];

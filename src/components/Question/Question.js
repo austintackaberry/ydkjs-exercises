@@ -1,22 +1,27 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import FlatButton from 'material-ui/FlatButton';
+import {
+  Fieldset,
+  FlatButton,
+  Header3,
+  Header4,
+  MessageWrapper,
+  Section,
+  SubmitButton,
+  Wrapper,
+} from './styled';
 
 const NavigationButton = props =>
   withRouter(({ history }) => (
-    <MuiThemeProvider>
-      <FlatButton
-        backgroundColor="white"
-        hoverColor="#CCC"
-        label={props.label}
-        disabled={!props.enabled}
-        onClick={() => {
-          history.push(props.destination);
-        }}
-      />
-    </MuiThemeProvider>
+    <FlatButton
+      disabled={!props.enabled}
+      onClick={() => {
+        history.push(props.destination);
+      }}
+    >
+      {props.label}
+    </FlatButton>
   ))(props);
 
 class Question extends Component {
@@ -150,36 +155,17 @@ class Question extends Component {
 
     return (
       <React.Fragment>
-        <div
-          style={{
-            border: '2px solid black',
-            borderRadius: '3px',
-            width: '40%',
-            margin: 'auto',
-            position: 'relative',
-            height: '18em',
-            padding: '30px 20px',
-          }}
-        >
-          <h3
-            style={{ margin: '10px' }}
-          >{`Question ${index} of ${numberOfQuestions}`}</h3>
-          <h4 style={{ margin: '0' }}>{question.question}</h4>
+        <Wrapper>
+          <Header3>{`Question ${index} of ${numberOfQuestions}`}</Header3>
+          <Header4>{question.question}</Header4>
           <form onSubmit={event => this.handleSubmit(event)}>
-            <fieldset
-              style={{
-                display: 'inline-block',
-                margin: '0 auto',
-                textAlign: 'left',
-                border: 'none',
-              }}
-            >
+            <Fieldset>
               {question.answers.map((answer, i) => {
                 let answerColor;
                 if (answerSubmitted) {
                   if (
                     userAnswerId == answer.id &&
-                    (question.correctAnswerId === answer.id)
+                    question.correctAnswerId === answer.id
                   ) {
                     answerColor = { color: 'green' };
                   }
@@ -210,13 +196,8 @@ class Question extends Component {
                   </div>
                 );
               })}
-            </fieldset>
-            <button
-              type="submit"
-              style={{ display: 'block', margin: '0 auto' }}
-            >
-              Submit
-            </button>
+            </Fieldset>
+            <SubmitButton type="submit">Submit</SubmitButton>
             {answerSubmitted &&
               explanationRequested && (
                 <div>
@@ -226,7 +207,17 @@ class Question extends Component {
                   >
                     Hide Explanation
                   </button>
-                  <div className="explanation">{question.explanation}</div>
+                  <div className="explanation">
+                    {question.explanation}
+                    <br />
+                    <a
+                      href={question.moreInfoUrl}
+                      target="_blank"
+                      style={{ textDecoration: 'underline', color: 'blue' }}
+                    >
+                      Github link to the chapter section
+                    </a>
+                  </div>
                 </div>
               )}
 
@@ -240,28 +231,10 @@ class Question extends Component {
                 </button>
               )}
           </form>
-          <div
-            style={{
-              position: 'absolute',
-              left: '0',
-              right: '0',
-              bottom: '2px',
-              fontSize: '18px',
-              fontWeight: '700',
-            }}
-          >
-            {message}
-          </div>
-        </div>
-        <section
-          className="navigation"
-          style={{
-            display: 'flex',
-            width: '40%',
-            margin: '1em auto',
-            justifyContent: 'space-around',
-          }}
-        >
+          <MessageWrapper>{message}</MessageWrapper>
+        </Wrapper>
+        {/* className="navigation" */}
+        <Section>
           <NavigationButton
             label="Previous"
             destination={navigation.previous.url}
@@ -272,7 +245,7 @@ class Question extends Component {
             destination={navigation.next.url}
             enabled={navigation.next.enabled}
           />
-        </section>
+        </Section>
       </React.Fragment>
     );
   }

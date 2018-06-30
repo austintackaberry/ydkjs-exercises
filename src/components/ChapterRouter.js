@@ -53,16 +53,17 @@ class ChapterRouter extends Component {
 
     return (
       <div>
-        <Link
-          style={{ textDecoration: 'none', color: 'black' }}
-          to={chapterPath}
-        >
-          <h3 style={{ fontSize: '24px' }}>{chapter.title}</h3>
-          <h6>
-            More information here:
+        <h3 style={{ fontSize: '24px' }}>{chapter.title}</h3>
+        <h6>
+          More information here:
+          <Link
+            style={{ textDecoration: 'none', color: 'black' }}
+            to={chapterPath}
+          >
+            {' '}
             <a href={chapter.chapterLink}> GitHub link to the chapter</a>
-          </h6>
-        </Link>
+          </Link>
+        </h6>
         <Switch>
           <Route
             exact
