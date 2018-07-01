@@ -14,8 +14,6 @@ class Sidebar extends Component {
     const score = this.props.score;
     const scoreAnswered = score.correct + score.incorrect;
     const scorePct = Math.round((100 * score.correct) / scoreAnswered) || 0;
-    // const scoreDisplay =
-    //   `You've answered ${ score.correct } out of ${ scoreAnswered } (${ scorePct }%). ${ score.possible - scoreAnswered } left to answer.`;
 
     return (
       <Wrapper>
