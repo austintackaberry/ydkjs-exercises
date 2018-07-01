@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Link, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import NoMatch from './NoMatch';
 import ChapterHome from './ChapterHome';
 import Question from './Question';
@@ -54,16 +54,6 @@ class ChapterRouter extends Component {
     return (
       <div>
         <h3 style={{ fontSize: '24px' }}>{chapter.title}</h3>
-        <h6>
-          More information here:
-          <Link
-            style={{ textDecoration: 'none', color: 'black' }}
-            to={chapterPath}
-          >
-            {' '}
-            <a href={chapter.chapterLink}> GitHub link to the chapter</a>
-          </Link>
-        </h6>
         <Switch>
           <Route
             exact

@@ -213,9 +213,9 @@ class Question extends Component {
                     <a
                       href={question.moreInfoUrl}
                       target="_blank"
-                      style={{ textDecoration: 'underline', color: 'blue' }}
+                      style={{ textDecoration: 'underline', color: 'black' }}
                     >
-                      Github link to the chapter section
+                      More information here
                     </a>
                   </div>
                 </div>

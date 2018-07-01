@@ -38,12 +38,6 @@ it('should render the chapters', () => {
       chapterId={chapterId}
     />
   );
-  expect(
-    comp
-      .find('Link')
-      .at(0)
-      .prop('to')
-  ).toBe(bookUrl + chapter.url);
   expect(comp.find('h3').length).toBe(1);
   expect(
     comp
@@ -74,12 +68,7 @@ it('should render no questions if chapter has none', () => {
       chapterId={chapterId}
     />
   );
-  expect(
-    comp
-      .find('Link')
-      .at(0)
-      .prop('to')
-  ).toBe(bookUrl + chapter.url);
+
   expect(comp.find('h3').length).toBe(1);
   expect(
     comp
