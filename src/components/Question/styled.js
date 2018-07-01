@@ -10,6 +10,7 @@ export const Wrapper = styled.div`
   min-height: 16em;
   position: relative;
   padding: 20px 10px;
+;
 Wrapper.displayName = 'Wrapper';
 
 export const MessageWrapper = styled.div`
