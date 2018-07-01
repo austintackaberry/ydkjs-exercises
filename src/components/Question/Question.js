@@ -50,64 +50,65 @@ class Question extends Component {
     const { updateScore, score, bookId, chapterId, index } = this.props;
     const questionIndex = index - 1;
 
+    /* eslint-disable no-unused-vars */
+    const CORRECT = 'CORRECT'
+    const INCORRECT = 'INCORRECT'
+    const UNANSWERED = 'UNANSWERED'
+    /* eslint-enable no-unused-vars */
+
     /* check if current question was already answered correctly */
-    const alreadyAnswered =
-      score.books[bookId].chapters[chapterId].questions[questionIndex].answered;
-    const alreadyCorrect =
-      score.books[bookId].chapters[chapterId].questions[questionIndex].correct;
+    const prevStatus = score.books[bookId].chapters[chapterId].questions[questionIndex].status;
 
     /* calculate the numeric score difference 
      * based on current score state */
-    const scoreDiff = {
-      correct: isCorrect && !alreadyCorrect ? 1 : 0,
-      incorrect: alreadyCorrect
-        ? 0 // previously answered correctly
-        : alreadyAnswered
-          ? isCorrect
-            ? -1 // previously answered, correct answer given
-            : 0 // previously answered, incorrect answer given
-          : isCorrect
-            ? 0 // first attempt, correct answer given
-            : 1, // first attempt, incorrect answer given
-    };
-
-    // return a new score object
-    // NOTE: possible bug; if we declare `newScore` by initializing to
-    // `score`'s properties ( newScore = { books: ..., } etc. )
-    // vs. initializing it as it is below (line 80)
-    // the result is that the newScore object doesn't actually
-    // get updated
-    const newScore = score;
-
-    /* update current book score */
-    newScore.books = score.books.map((book, index) => {
-      if (index === bookId) {
-        return {
-          title: book.title,
-          chapters: book.chapters.map((chapter, index) => {
-            if (index === chapterId) {
-              return {
-                title: chapter.title,
-                questions: chapter.questions.map((question, index) => {
-                  if (questionIndex === index) {
-                    return {
-                      answered: true || question.answered,
-                      correct: isCorrect,
-                    };
-                  }
-                  return question;
-                }),
-              };
-            }
-            return chapter;
-          }),
-          correct: book.correct + scoreDiff.correct,
-          incorrect: book.incorrect + scoreDiff.incorrect,
-          possible: book.possible,
+    let scoreDiff = {}
+    switch( prevStatus ) {
+      case CORRECT:
+        scoreDiff = { correct: 0, incorrect: 0, };
+        break;
+      case INCORRECT:
+        scoreDiff = {
+          correct: isCorrect ? 1 : 0,
+          incorrect: isCorrect ? -1 : 0,
         };
-      }
-      return book;
-    });
+        break;
+      case UNANSWERED:
+        scoreDiff = {
+          correct: isCorrect ? 1 : 0,
+          incorrect: isCorrect ? 0 : 1,
+        };
+        break;
+      default:
+        break;
+    }
+
+    const newScore = {
+      ...score, 
+      books: score.books.map((book, index) => {
+        if (index === bookId) {
+          return {
+            ...book,
+            chapters: book.chapters.map((chapter, index) => {
+              if (index === chapterId) {
+                return {
+                  ...chapter,
+                  questions: chapter.questions.map((question, index) => {
+                    if (questionIndex === index) {
+                      return {
+                        status: isCorrect ? CORRECT : INCORRECT
+                      };
+                    }
+                    return question
+                  })
+                }
+              }
+              return chapter
+            })
+          }
+        }
+        return book
+      }),
+    }
 
     /* update total score */
     newScore.correct = newScore.correct + scoreDiff.correct;
