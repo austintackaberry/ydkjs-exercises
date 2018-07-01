@@ -215,7 +215,7 @@ class Question extends Component {
                       target="_blank"
                       style={{ textDecoration: 'underline', color: 'blue' }}
                     >
-                      Github link to the chapter section
+                      More information here
                     </a>
                   </div>
                 </div>

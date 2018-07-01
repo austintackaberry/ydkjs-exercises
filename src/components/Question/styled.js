@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   margin: auto;
   position: relative;
   height: 18em;
-  padding: 30px 20px;
+  padding: 20px 20px;
 `;
 Wrapper.displayName = 'Wrapper';
 
