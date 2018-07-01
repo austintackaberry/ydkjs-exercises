@@ -53,9 +53,34 @@ class Question extends Component {
     /* check if current question was already answered correctly */
     const alreadyAnswered =
       score.books[bookId].chapters[chapterId].questions[questionIndex].answered;
+    const alreadyCorrect =
+      score.books[bookId].chapters[chapterId].questions[questionIndex].correct;
 
-    let newScore = score;
-    const newBookScore = score.books.map((book, index) => {
+    /* calculate the numeric score difference 
+     * based on current score state */
+    const scoreDiff = {
+      correct: isCorrect && !alreadyCorrect ? 1 : 0,
+      incorrect: alreadyCorrect
+        ? 0 // previously answered correctly
+        : alreadyAnswered
+          ? isCorrect
+            ? -1 // previously answered, correct answer given
+            : 0 // previously answered, incorrect answer given
+          : isCorrect
+            ? 0 // first attempt, correct answer given
+            : 1, // first attempt, incorrect answer given
+    };
+
+    // return a new score object
+    // NOTE: possible bug; if we declare `newScore` by initializing to
+    // `score`'s properties ( newScore = { books: ..., } etc. )
+    // vs. initializing it as it is below (line 80)
+    // the result is that the newScore object doesn't actually
+    // get updated
+    const newScore = score;
+
+    /* update current book score */
+    newScore.books = score.books.map((book, index) => {
       if (index === bookId) {
         return {
           title: book.title,
@@ -66,29 +91,27 @@ class Question extends Component {
                 questions: chapter.questions.map((question, index) => {
                   if (questionIndex === index) {
                     return {
-                      answered: isCorrect || question.answered,
+                      answered: true || question.answered,
+                      correct: isCorrect,
                     };
                   }
-                  return { answered: question.answered };
+                  return question;
                 }),
               };
             }
             return chapter;
           }),
-          current:
-            isCorrect && !alreadyAnswered ? book.current + 1 : book.current,
+          correct: book.correct + scoreDiff.correct,
+          incorrect: book.incorrect + scoreDiff.incorrect,
           possible: book.possible,
         };
       }
       return book;
     });
 
-    /* update current book score */
-    newScore.books = newBookScore;
-
     /* update total score */
-    newScore.current =
-      isCorrect && !alreadyAnswered ? newScore.current + 1 : newScore.current;
+    newScore.correct = newScore.correct + scoreDiff.correct;
+    newScore.incorrect = newScore.incorrect + scoreDiff.incorrect;
     updateScore(newScore);
   }
 

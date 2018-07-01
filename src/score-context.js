@@ -8,15 +8,23 @@ const bookScores = books.map(book => {
       return {
         title: chapter.title,
         questions: chapter.questions.map(question => {
-          return { answered: false };
+          return { answered: false, correct: false };
         }),
       };
     }),
-    current: book.chapters.reduce((acc, ch) => {
+    correct: book.chapters.reduce((acc, ch) => {
       return (
         acc +
         ch.questions.reduce((acc, qn) => {
-          return acc + (qn.answered ? 1 : 0);
+          return acc + (qn.answered && qn.correct ? 1 : 0);
+        }, 0)
+      );
+    }, 0),
+    incorrect: book.chapters.reduce((acc, ch) => {
+      return (
+        acc +
+        ch.questions.reduce((acc, qn) => {
+          return acc + (qn.answered && !qn.correct ? 1 : 0);
         }, 0)
       );
     }, 0),
@@ -28,9 +36,13 @@ const bookScores = books.map(book => {
 
 export const score = {
   books: bookScores,
-  current:
+  correct:
     bookScores.reduce((acc, book) => {
-      return acc + book.current;
+      return acc + book.correct;
+    }, 0) || 0,
+  incorrect:
+    bookScores.reduce((acc, book) => {
+      return acc + book.incorrect;
     }, 0) || 0,
   possible:
     bookScores.reduce((acc, book) => {
