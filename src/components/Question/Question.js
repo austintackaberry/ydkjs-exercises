@@ -213,7 +213,7 @@ class Question extends Component {
                     <a
                       href={question.moreInfoUrl}
                       target="_blank"
-                      style={{ textDecoration: 'underline', color: 'blue' }}
+                      style={{ textDecoration: 'underline', color: 'black' }}
                     >
                       More information here
                     </a>
