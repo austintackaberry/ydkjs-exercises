@@ -5,12 +5,13 @@ import ChapterRouter from '../components/ChapterRouter';
 
 const questions = [
   {
-    question: 'How many expressions are in the following statement: a = b * 2;',
+    question:
+      'How many expressions are there in the following statement: a = b * 2;',
     answers: [
-      { answer: 'one', isCorrect: false },
-      { answer: 'two', isCorrect: false },
-      { answer: 'three', isCorrect: false },
-      { answer: 'four', isCorrect: true },
+      { answer: 'One', isCorrect: false },
+      { answer: 'Two', isCorrect: false },
+      { answer: 'Three', isCorrect: false },
+      { answer: 'Four', isCorrect: true },
     ],
   },
 ];
@@ -37,12 +38,6 @@ it('should render the chapters', () => {
       chapterId={chapterId}
     />
   );
-  expect(
-    comp
-      .find('Link')
-      .at(0)
-      .prop('to')
-  ).toBe(bookUrl + chapter.url);
   expect(comp.find('h3').length).toBe(1);
   expect(
     comp
@@ -73,12 +68,7 @@ it('should render no questions if chapter has none', () => {
       chapterId={chapterId}
     />
   );
-  expect(
-    comp
-      .find('Link')
-      .at(0)
-      .prop('to')
-  ).toBe(bookUrl + chapter.url);
+
   expect(comp.find('h3').length).toBe(1);
   expect(
     comp
