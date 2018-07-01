@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
   margin: auto;
   min-height: 16em;
   position: relative;
-  padding: 30px 10px;
+  padding: 20px 10px;
 `;
 Wrapper.displayName = 'Wrapper';
 
