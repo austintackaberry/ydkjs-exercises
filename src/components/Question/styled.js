@@ -1,13 +1,15 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  border: 2px solid black;
+  background-color: rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
   border-radius: 3px;
-  width: 40%;
+  width: 100%;
+  max-width: 800px;
   margin: auto;
+  min-height: 16em;
   position: relative;
-  height: 18em;
-  padding: 20px 20px;
+  padding: 20px 10px;
 `;
 Wrapper.displayName = 'Wrapper';
 
