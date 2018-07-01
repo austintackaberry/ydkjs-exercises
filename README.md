@@ -10,15 +10,17 @@ One of the top courses on Coursera, [Learning How to Learn](https://www.coursera
 
 ## Current Status
 
-This project was bootstrapped with create-react-app, and uses React Router for routing and Material UI for styling. The project is in its infancy as only the basic architecture and routing has been set up.
+This project was bootstrapped with create-react-app, and uses React Router for routing and styled components for styling. The project is active and growing! We are currently growing our state management system as well as the number of exercises.
+
+Join us on Discord! https://discord.gg/F9Cs5tW
 
 ## Short Term Vision
 
 The immediate next steps are the following:
 
-1.  Create multiple choice questions for each chapter of each book
+1.  Create 10 multiple choice questions for each chapter of each book
 2.  Add in-depth explanations for each question
-3.  Add app state, such that the user knows how well they are doing and what areas they should re-read
+3.  Make the app state persistent
 
 ## Long Term Vision
 
@@ -38,7 +40,7 @@ Longer term goals are the following:
 
 This project is absolutely accepting pull requests (first-timers welcome!).
 
-As of right now, we don't have any fancy git hooks or test coverage requirements. Check out [CONTRIBUTING.md](CONTRIBUTING.md) for more information and a breakdown of the code.
+Check out [CONTRIBUTING.md](CONTRIBUTING.md) for more information and a breakdown of the code.
 
 ## Contributors
 
