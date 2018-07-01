@@ -50,21 +50,20 @@ class Question extends Component {
     const { updateScore, score, bookId, chapterId, index } = this.props;
     const questionIndex = index - 1;
 
-    /* eslint-disable no-unused-vars */
-    const CORRECT = 'CORRECT'
-    const INCORRECT = 'INCORRECT'
-    const UNANSWERED = 'UNANSWERED'
-    /* eslint-enable no-unused-vars */
+    const CORRECT = 'CORRECT';
+    const INCORRECT = 'INCORRECT';
+    const UNANSWERED = 'UNANSWERED';
 
     /* check if current question was already answered correctly */
-    const prevStatus = score.books[bookId].chapters[chapterId].questions[questionIndex].status;
+    const prevStatus =
+      score.books[bookId].chapters[chapterId].questions[questionIndex].status;
 
-    /* calculate the numeric score difference 
+    /* calculate numeric score difference 
      * based on current score state */
-    let scoreDiff = {}
-    switch( prevStatus ) {
+    let scoreDiff = {};
+    switch (prevStatus) {
       case CORRECT:
-        scoreDiff = { correct: 0, incorrect: 0, };
+        scoreDiff = { correct: 0, incorrect: 0 };
         break;
       case INCORRECT:
         scoreDiff = {
@@ -83,7 +82,7 @@ class Question extends Component {
     }
 
     const newScore = {
-      ...score, 
+      ...score,
       books: score.books.map((book, index) => {
         if (index === bookId) {
           return {
@@ -95,20 +94,20 @@ class Question extends Component {
                   questions: chapter.questions.map((question, index) => {
                     if (questionIndex === index) {
                       return {
-                        status: isCorrect ? CORRECT : INCORRECT
+                        status: isCorrect ? CORRECT : INCORRECT,
                       };
                     }
-                    return question
-                  })
-                }
+                    return question;
+                  }),
+                };
               }
-              return chapter
-            })
-          }
+              return chapter;
+            }),
+          };
         }
-        return book
+        return book;
       }),
-    }
+    };
 
     /* update total score */
     newScore.correct = newScore.correct + scoreDiff.correct;
