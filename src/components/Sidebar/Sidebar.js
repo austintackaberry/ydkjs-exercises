@@ -9,6 +9,26 @@ class Sidebar extends Component {
     books: PropTypes.array.isRequired,
     score: PropTypes.object.isRequired,
   };
+
+  getBookScores(book) {
+    const CORRECT = 'CORRECT';
+    return {
+      correct:
+        book.chapters.reduce((b, ch) => {
+          return (
+            b +
+            ch.questions.reduce((acc, qn) => {
+              return acc + (qn.status === CORRECT ? 1 : 0);
+            }, 0)
+          );
+        }, 0) || 0,
+      possible:
+        book.chapters.reduce((b, ch) => {
+          return b + ch.questions.length;
+        }, 0) || 0,
+    };
+  }
+
   render() {
     const books = this.props.books;
     const score = this.props.score;
@@ -43,8 +63,8 @@ class Sidebar extends Component {
               to={book.url}
             >
               <ListItem>
-                {`${book.title} (${score.books[index].correct}/
-                  ${score.books[index].possible})`}
+                {`${book.title} (${this.getBookScores(book).correct} /
+                  ${this.getBookScores(book).possible})`}
               </ListItem>
             </Link>
           ))}
