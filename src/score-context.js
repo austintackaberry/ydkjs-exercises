@@ -1,11 +1,9 @@
 import books from './data';
 import React from 'react';
 
-/* eslint-disable no-unused-vars */
 const CORRECT = 'CORRECT';
 const INCORRECT = 'INCORRECT';
 const UNANSWERED = 'UNANSWERED';
-/* eslint-enable no-unused-vars */
 
 const bookScores = books.map(book => {
   return {
@@ -31,7 +29,7 @@ export const score = {
           return (
             b +
             ch.questions.reduce((acc, qn) => {
-              return acc + (qn.answered && qn.correct ? 1 : 0);
+              return acc + (qn.status === CORRECT ? 1 : 0);
             }, 0)
           );
         }, 0)
@@ -45,7 +43,7 @@ export const score = {
           return (
             b +
             ch.questions.reduce((acc, qn) => {
-              return acc + (qn.answered && !qn.correct ? 1 : 0);
+              return acc + (qn.status === INCORRECT ? 1 : 0);
             }, 0)
           );
         }, 0)
