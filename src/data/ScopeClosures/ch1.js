@@ -158,7 +158,7 @@ const Ch1Questions = [
     correctAnswerId: 3,
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch1.md#compiler-speak',
-    explanation: `LHS stands for "left hand side", and RHS stands for "right hand side". For a = b, the RHS looks for the value of b, and the LHS looks for the location of a in memory, so that it can update its value.`,
+    explanation: `LHS stands for "left hand side", and RHS stands for "right hand side". For a = b, the RHS looks for the value of b, and the LHS looks for the location of "a" in memory, so that it can update its value.`,
   },
   {
     question: `How many LHS look-ups are in the code below:
