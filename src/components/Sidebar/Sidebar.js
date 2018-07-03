@@ -30,8 +30,8 @@ class Sidebar extends Component {
   }
 
   render() {
-    const books = this.props.books;
     const score = this.props.score;
+    const books = this.props.books;
     const scoreAnswered = score.correct + score.incorrect;
     const scorePct = Math.round((100 * score.correct) / scoreAnswered) || 0;
 
@@ -63,8 +63,10 @@ class Sidebar extends Component {
               to={book.url}
             >
               <ListItem>
-                {`${book.title} (${this.getBookScores(book).correct} /
-                  ${this.getBookScores(book).possible})`}
+                {`${book.title} (${
+                  this.getBookScores(score.books[index]).correct
+                } /
+                  ${this.getBookScores(score.books[index]).possible})`}
               </ListItem>
             </Link>
           ))}
