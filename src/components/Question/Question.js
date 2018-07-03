@@ -63,18 +63,20 @@ class Question extends Component {
     let scoreDiff = {};
     switch (prevStatus) {
       case CORRECT:
-        scoreDiff = { correct: 0, incorrect: 0 };
+        scoreDiff = { correct: 0, incorrect: 0, set: CORRECT };
         break;
       case INCORRECT:
         scoreDiff = {
           correct: isCorrect ? 1 : 0,
           incorrect: isCorrect ? -1 : 0,
+          set: isCorrect ? CORRECT : INCORRECT,
         };
         break;
       case UNANSWERED:
         scoreDiff = {
           correct: isCorrect ? 1 : 0,
           incorrect: isCorrect ? 0 : 1,
+          set: isCorrect ? CORRECT : INCORRECT,
         };
         break;
       default:
@@ -94,7 +96,7 @@ class Question extends Component {
                   questions: chapter.questions.map((question, index) => {
                     if (questionIndex === index) {
                       return {
-                        status: isCorrect ? CORRECT : INCORRECT,
+                        status: scoreDiff.set,
                       };
                     }
                     return question;
