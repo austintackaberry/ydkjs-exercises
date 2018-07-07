@@ -1,6 +1,10 @@
 import books from './data';
 import React from 'react';
 
+const CORRECT = 'CORRECT';
+const INCORRECT = 'INCORRECT';
+const UNANSWERED = 'UNANSWERED';
+
 const bookScores = books.map(book => {
   return {
     title: book.title,
@@ -8,33 +12,51 @@ const bookScores = books.map(book => {
       return {
         title: chapter.title,
         questions: chapter.questions.map(question => {
-          return { answered: false };
+          return { status: UNANSWERED };
         }),
       };
     }),
-    current: book.chapters.reduce((acc, ch) => {
-      return (
-        acc +
-        ch.questions.reduce((acc, qn) => {
-          return acc + (qn.answered ? 1 : 0);
-        }, 0)
-      );
-    }, 0),
-    possible: book.chapters.reduce((acc, ch) => {
-      return acc + ch.questions.length;
-    }, 0),
   };
 });
 
 export const score = {
   books: bookScores,
-  current:
-    bookScores.reduce((acc, book) => {
-      return acc + book.current;
+  correct:
+    bookScores.reduce((a, book) => {
+      return (
+        a +
+        book.chapters.reduce((b, ch) => {
+          return (
+            b +
+            ch.questions.reduce((acc, qn) => {
+              return acc + (qn.status === CORRECT ? 1 : 0);
+            }, 0)
+          );
+        }, 0)
+      );
+    }, 0) || 0,
+  incorrect:
+    bookScores.reduce((a, book) => {
+      return (
+        a +
+        book.chapters.reduce((b, ch) => {
+          return (
+            b +
+            ch.questions.reduce((acc, qn) => {
+              return acc + (qn.status === INCORRECT ? 1 : 0);
+            }, 0)
+          );
+        }, 0)
+      );
     }, 0) || 0,
   possible:
-    bookScores.reduce((acc, book) => {
-      return acc + book.possible;
+    bookScores.reduce((a, book) => {
+      return (
+        a +
+        book.chapters.reduce((b, ch) => {
+          return b + ch.questions.length;
+        }, 0)
+      );
     }, 0) || 0,
 };
 
