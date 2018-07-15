@@ -14,7 +14,7 @@ const Ch2Questions = [
     answers: [
       { text: 'number', id: 0 },
       { text: 'NaN', id: 1 },
-      { text: '***undefined***', id: 2 },
+      { text: '*undefined*', id: 2 },
       { text: 'null', id: 3 },
     ],
     correctAnswerId: 0,
