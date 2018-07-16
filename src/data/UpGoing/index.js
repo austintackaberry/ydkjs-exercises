@@ -16,13 +16,6 @@ const UpGoingChapters = [
     chapterLink:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md',
   },
-  {
-    title: 'Chapter 3: Into YDKJS',
-    url: '/ch3',
-    questions: [],
-    chapterLink:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch3.md',
-  },
 ];
 
 export default UpGoingChapters;

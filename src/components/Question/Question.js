@@ -54,45 +54,70 @@ class Question extends Component {
     const { updateScore, score, bookId, chapterId, index } = this.props;
     const questionIndex = index - 1;
 
+    const CORRECT = 'CORRECT';
+    const INCORRECT = 'INCORRECT';
+    const UNANSWERED = 'UNANSWERED';
+
     /* check if current question was already answered correctly */
-    const alreadyAnswered =
-      score.books[bookId].chapters[chapterId].questions[questionIndex].answered;
+    const prevStatus =
+      score.books[bookId].chapters[chapterId].questions[questionIndex].status;
 
-    let newScore = score;
-    const newBookScore = score.books.map((book, index) => {
-      if (index === bookId) {
-        return {
-          title: book.title,
-          chapters: book.chapters.map((chapter, index) => {
-            if (index === chapterId) {
-              return {
-                title: chapter.title,
-                questions: chapter.questions.map((question, index) => {
-                  if (questionIndex === index) {
-                    return {
-                      answered: isCorrect || question.answered,
-                    };
-                  }
-                  return { answered: question.answered };
-                }),
-              };
-            }
-            return chapter;
-          }),
-          current:
-            isCorrect && !alreadyAnswered ? book.current + 1 : book.current,
-          possible: book.possible,
+    /* calculate numeric score difference
+     * based on current score state */
+    let scoreDiff = {};
+    switch (prevStatus) {
+      case CORRECT:
+        scoreDiff = { correct: 0, incorrect: 0, set: CORRECT };
+        break;
+      case INCORRECT:
+        scoreDiff = {
+          correct: isCorrect ? 1 : 0,
+          incorrect: isCorrect ? -1 : 0,
+          set: isCorrect ? CORRECT : INCORRECT,
         };
-      }
-      return book;
-    });
+        break;
+      case UNANSWERED:
+        scoreDiff = {
+          correct: isCorrect ? 1 : 0,
+          incorrect: isCorrect ? 0 : 1,
+          set: isCorrect ? CORRECT : INCORRECT,
+        };
+        break;
+      default:
+        break;
+    }
 
-    /* update current book score */
-    newScore.books = newBookScore;
+    const newScore = {
+      ...score,
+      books: score.books.map((book, index) => {
+        if (index === bookId) {
+          return {
+            ...book,
+            chapters: book.chapters.map((chapter, index) => {
+              if (index === chapterId) {
+                return {
+                  ...chapter,
+                  questions: chapter.questions.map((question, index) => {
+                    if (questionIndex === index) {
+                      return {
+                        status: scoreDiff.set,
+                      };
+                    }
+                    return question;
+                  }),
+                };
+              }
+              return chapter;
+            }),
+          };
+        }
+        return book;
+      }),
+    };
 
     /* update total score */
-    newScore.current =
-      isCorrect && !alreadyAnswered ? newScore.current + 1 : newScore.current;
+    newScore.correct = newScore.correct + scoreDiff.correct;
+    newScore.incorrect = newScore.incorrect + scoreDiff.incorrect;
     updateScore(newScore);
   }
 
@@ -214,6 +239,14 @@ class Question extends Component {
                   </button>
                   <div className="explanation">
                     <ReactMarkdown source={question.explanation} />
+                    <br />
+                    <a
+                      href={question.moreInfoUrl}
+                      target="_blank"
+                      style={{ textDecoration: 'underline', color: 'black' }}
+                    >
+                      More information here
+                    </a>
                   </div>
                 </div>
               )}

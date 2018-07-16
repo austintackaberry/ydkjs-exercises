@@ -5,6 +5,8 @@ const Ch2Questions = [
     orderedById: true,
     answers: [{ text: 'True', id: 0 }, { text: 'False', id: 1 }],
     correctAnswerId: 1,
+    moreInfoUrl:
+      'https://github.com/getify/You-Dont-Know-JS/blob/master/types%20%26%20grammar/ch2.md#arrays',
     explanation:
       'In JS, arrays are simple containers that can hold any combination of types, including all primitive types, objects, other arrays, and even functions.',
   },

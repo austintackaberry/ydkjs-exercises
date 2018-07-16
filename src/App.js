@@ -29,7 +29,7 @@ class App extends Component {
     return (
       <ScoreContext.Provider value={this.state}>
         <div className="App">
-          <Sidebar books={books} score={score} />
+          <Sidebar books={books} score={this.state.score} />
           <div className="main-content">
             <Link style={{ textDecoration: 'none', color: 'black' }} to="/">
               <h1 style={{ fontSize: '55px' }}>YDKJS EXERCISES</h1>
