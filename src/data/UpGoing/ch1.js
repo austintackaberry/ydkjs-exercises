@@ -1,7 +1,7 @@
 const Ch1Questions = [
   {
     question:
-      'How many expressions are there in the following statement: a = b * 2; ?',
+      'How many expressions are there in the following statement: `a = b * 2;` ?',
     orderedById: true,
     answers: [
       { text: 'One', id: 0 },

@@ -5,7 +5,7 @@ import {
   Fieldset,
   FlatButton,
   Header3,
-  // Header4,
+  QuestionStyle,
   MessageWrapper,
   Section,
   SubmitButton,
@@ -186,7 +186,9 @@ class Question extends Component {
       <React.Fragment>
         <Wrapper>
           <Header3>{`Question ${index} of ${numberOfQuestions}`}</Header3>
-          <ReactMarkdown source={question.question} />
+          <QuestionStyle>
+            <ReactMarkdown source={question.question} />
+          </QuestionStyle>
           <form onSubmit={event => this.handleSubmit(event)}>
             <Fieldset>
               {question.answers.map((answer, i) => {

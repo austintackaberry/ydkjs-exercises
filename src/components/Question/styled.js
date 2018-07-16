@@ -50,10 +50,15 @@ export const Header3 = styled.h3`
 `;
 Header3.displayName = 'Header3';
 
-// export const Header4 = styled.h4`
-//   margin: 0;
-// `;
-// Header4.displayName = 'Header4';
+export const QuestionStyle = styled.h4`
+  margin: 0;
+  code {
+    background-color: #808080ad;
+    padding: 3px;
+    border-radius: 2px;
+  }
+`;
+QuestionStyle.displayName = 'QuestionStyle';
 
 export const FlatButton = styled.button`
   background-color: lightgrey;
