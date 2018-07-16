@@ -38,38 +38,36 @@ it('should render question 1', () => {
   ).toBe('Question 1 of 6');
   expect(
     comp
-      .find('Header4')
-      .children()
-      .text()
-  ).toBe(
-    'How many expressions are there in the following statement: a = b * 2; ?'
-  );
+      .find('ReactMarkdown')
+      .first()
+      .props().source
+  ).toBe(upGoingCh1Q1.question);
   expect(comp.find('label').length).toBe(4);
   expect(comp.find('input[type="radio"]').length).toBe(4);
-  expect(comp.find('span').length).toBe(4);
+  expect(comp.find('span').length).toBe(8);
   expect(
     comp
-      .find('span')
-      .at(0)
-      .text()
+      .find('ReactMarkdown')
+      .at(1)
+      .props().source
   ).toBe('One');
   expect(
     comp
-      .find('span')
-      .at(1)
-      .text()
+      .find('ReactMarkdown')
+      .at(2)
+      .props().source
   ).toBe('Two');
   expect(
     comp
-      .find('span')
-      .at(2)
-      .text()
+      .find('ReactMarkdown')
+      .at(3)
+      .props().source
   ).toBe('Three');
   expect(
     comp
-      .find('span')
-      .at(3)
-      .text()
+      .find('ReactMarkdown')
+      .at(4)
+      .props().source
   ).toBe('Four');
   expect(comp.find('SubmitButton').length).toBe(1);
   expect(comp.find('NavigationButton').length).toBe(2);
@@ -86,18 +84,18 @@ it('should render question 2', () => {
   ).toBe('Question 1 of 6');
   expect(
     comp
-      .find('Header4')
-      .children()
-      .text()
-  ).toBe('What is a computer program (source code / code)?');
+      .find('ReactMarkdown')
+      .first()
+      .props().source
+  ).toBe(upGoingCh1Q2.question);
   expect(comp.find('label').length).toBe(4);
   expect(comp.find('input[type="radio"]').length).toBe(4);
-  expect(comp.find('span').length).toBe(4);
+  expect(comp.find('span').length).toBe(8);
   expect(
     comp
-      .find('span')
-      .at(0)
-      .text()
+      .find('ReactMarkdown')
+      .at(1)
+      .props().source
   ).toBe(
     'A set of special instructions to tell the computer what tasks to perform.'
   );
@@ -132,7 +130,7 @@ it('should set correct answer to green on submit', () => {
     expect(
       comp
         .find('span')
-        .at(3)
+        .at(7)
         .html()
     ).toMatch(/color:green/);
   });
@@ -150,7 +148,7 @@ it('should set incorrect answer to red', () => {
     expect(
       comp
         .find('span')
-        .at(2)
+        .at(5)
         .html()
     ).toMatch(/color:red/);
   });
