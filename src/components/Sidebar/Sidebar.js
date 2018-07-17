@@ -57,11 +57,7 @@ class Sidebar extends Component {
 
           <ListItemTitle>Books</ListItemTitle>
           {books.map((book, index) => (
-            <Link
-              key={book.id}
-              style={{ textDecoration: 'none' }}
-              to={book.url}
-            >
+            <Link key={index} style={{ textDecoration: 'none' }} to={book.url}>
               <ListItem>
                 {`${book.title} (${
                   this.getBookScores(score.books[index]).correct

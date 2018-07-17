@@ -11,18 +11,19 @@ const Ch2Questions = [
       'In JS, arrays are simple containers that can hold any combination of types, including all primitive types, objects, other arrays, and even functions.',
   },
   {
-    question: 'What is the output of console.log(typeof NaN)?',
+    question: 'What is the output of `console.log(typeof NaN)`?',
     orderedById: true,
     answers: [
       { text: 'number', id: 0 },
       { text: 'NaN', id: 1 },
-      { text: 'undefined', id: 2 },
+      { text: '*undefined*', id: 2 },
       { text: 'null', id: 3 },
     ],
     correctAnswerId: 0,
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/types%20%26%20grammar/ch2.md#special-numbers',
-    explanation: `An oddity of JavaScript, the property NaN ("not a number") is actually of type "number".`,
+    explanation:
+      'An oddity of JavaScript, the property `NaN` ("not a number") is actually of type "number".',
   },
 ];
 
