@@ -58,7 +58,7 @@ const randomizeQuestion = question => {
 books.forEach(b =>
   b.chapters.forEach(c =>
     c.questions.forEach(q => {
-      if (!q.shouldBeRandomized) {
+      if (q.shouldBeRandomized) {
         q = randomizeQuestion(q);
       }
     })
