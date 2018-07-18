@@ -38,4 +38,31 @@ const books = [
   },
 ];
 
+//*************
+
+const randomizeQuestion = question => {
+  let currentIdx = question.answers.length,
+    tempValue,
+    randIdx;
+  while (currentIdx) {
+    randIdx = Math.floor(Math.random() * currentIdx);
+    currentIdx--;
+
+    tempValue = question.answers[currentIdx];
+    question.answers[currentIdx] = question.answers[randIdx];
+    question.answers[randIdx] = tempValue;
+  }
+  return question;
+};
+
+books.forEach(b =>
+  b.chapters.forEach(c =>
+    c.questions.forEach(q => {
+      if (!q.shouldBeRandomized) {
+        q = randomizeQuestion(q);
+      }
+    })
+  )
+);
+
 export default books;

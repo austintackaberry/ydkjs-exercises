@@ -122,7 +122,10 @@ class Question extends Component {
   }
 
   handleSubmit(event) {
-    let currentAnswer = this.props.question.answers[this.state.userAnswerId];
+    let currentAnswer = this.props.question.answers.find(
+      a => a.id == this.state.userAnswerId
+    );
+
     if (this.state.userAnswerId === null) {
       this.setState({
         error: true,
@@ -179,6 +182,7 @@ class Question extends Component {
     } else if (this.state.correctAnswer) {
       message = 'Correct!';
     } else if (this.state.correctAnswer === false) {
+      // not undefined
       message = 'Incorrect! Try Again!';
     }
 

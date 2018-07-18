@@ -1,7 +1,7 @@
 const Ch1Questions = [
   {
     question: 'What gives a program state?',
-    orderedById: true,
+    shouldBeRandomized: false,
     answers: [
       { text: 'The ability for a program to execute', id: 0 },
       { text: 'The abiliy for a program to be compiled', id: 1 },
@@ -14,14 +14,14 @@ const Ch1Questions = [
     correctAnswerId: 2,
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch1.md#chapter-1-what-is-scope',
-    explanation: `A program is described as stateful if it is designed to remember preceding events or user interactions. 
+    explanation: `A program is described as stateful if it is designed to remember preceding events or user interactions.
                     The remembered information is called the state. Without state, a program could perform some tasks, but
                     they would be extremely limited in functionality.`,
   },
   {
     question:
       'In a traditional compiled-language process, what is the correct order of the three main steps a program will undergo before executing?',
-    orderedById: true,
+    shouldBeRandomized: false,
     answers: [
       { text: 'Tokenizing/Lexing, Parsing, Code-Generation', id: 0 },
       { text: 'Tokenizing/Lexing, Code-Generation, Parsing', id: 1 },
@@ -38,7 +38,7 @@ const Ch1Questions = [
   {
     question:
       'In a traditional compiled-language process, during which phase is a string of characters broken into meaningful chunks?',
-    orderedById: true,
+    shouldBeRandomized: false,
     answers: [
       { text: 'Code-generation phase', id: 0 },
       { text: 'Parsing phase', id: 1 },
@@ -54,7 +54,7 @@ const Ch1Questions = [
   },
   {
     question: 'Which of the following is the responsibility of Scope?',
-    orderedById: true,
+    shouldBeRandomized: false,
     answers: [
       { text: 'Parsing and code-generation', id: 0 },
       {
@@ -82,7 +82,7 @@ const Ch1Questions = [
   {
     question:
       "Two distinct actions are taken for a variable assignment such as 'var a = 2; '",
-    orderedById: true,
+    shouldBeRandomized: false,
     answers: [
       {
         text:
@@ -108,12 +108,12 @@ const Ch1Questions = [
     correctAnswerId: 2,
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch1.md#back--forth',
-    explanation: `Two distinct actions are taken for a variable assignment: First, Compiler declares a variable (if not previously declared in the current scope), 
+    explanation: `Two distinct actions are taken for a variable assignment: First, Compiler declares a variable (if not previously declared in the current scope),
     and second, when executing, Engine looks up the variable in Scope and assigns to it, if found.`,
   },
   {
     question: 'Which of these next statements are true?',
-    orderedById: true,
+    shouldBeRandomized: false,
     answers: [
       {
         text:
@@ -146,7 +146,7 @@ const Ch1Questions = [
   {
     question:
       'Which of these next statements is true for traversing nested Scope?',
-    orderedById: true,
+    shouldBeRandomized: false,
     answers: [
       {
         text:
@@ -172,12 +172,12 @@ const Ch1Questions = [
     correctAnswerId: 3,
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch1.md#nested-scope',
-    explanation: `Engine starts at the currently executing Scope, looks for the variable there, then if not found, keeps going up one level, and so on. 
+    explanation: `Engine starts at the currently executing Scope, looks for the variable there, then if not found, keeps going up one level, and so on.
     If the outermost global scope is reached, the search stops, whether it finds the variable or not.`,
   },
   {
     question: 'Why does it matter whether we call it LHS or RHS?',
-    orderedById: true,
+    shouldBeRandomized: false,
     answers: [
       {
         text:
@@ -203,14 +203,14 @@ const Ch1Questions = [
     correctAnswerId: 2,
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch1.md#errors',
-    explanation: `The names matter because these two types of look-ups behave differently in the circumstance where the variable has not yet been declared 
-    (is not found in any consulted Scope). If an RHS look-up fails to ever find a variable, this results in a ReferenceError being thrown by the Engine. 
-    By contrast, if the Engine is performing an LHS look-up and arrives at the top floor (global Scope) without finding it, 
+    explanation: `The names matter because these two types of look-ups behave differently in the circumstance where the variable has not yet been declared
+    (is not found in any consulted Scope). If an RHS look-up fails to ever find a variable, this results in a ReferenceError being thrown by the Engine.
+    By contrast, if the Engine is performing an LHS look-up and arrives at the top floor (global Scope) without finding it,
     and if the program is not running in "Strict Mode", then the global Scope will create a new variable of that name in the global scope.`,
   },
   {
     question: 'What is Parsing?',
-    orderedById: false,
+    shouldBeRandomized: true,
     answers: [
       { text: 'Taking a string and converting it into tokens', id: 0 },
       {
@@ -235,7 +235,7 @@ const Ch1Questions = [
   },
   {
     question: 'What is the responsibility of a JavaScript engine?',
-    orderedById: false,
+    shouldBeRandomized: true,
     answers: [
       {
         text: 'Handling all the dirty work of parsing and code-generation',
@@ -262,7 +262,7 @@ const Ch1Questions = [
   },
   {
     question: 'What is the difference between an LHS lookup and an RHS lookup?',
-    orderedById: false,
+    shouldBeRandomized: true,
     answers: [
       {
         text: 'LHS lookups search for variables whereas RHS search for values',
@@ -295,11 +295,11 @@ const Ch1Questions = [
       var b = a;
       return a + b;
     }
-    
+
     var c = foo( 2 );
-    
+
     `,
-    orderedById: true,
+    shouldBeRandomized: false,
     answers: [
       {
         text: '1',
@@ -329,11 +329,11 @@ const Ch1Questions = [
       var b = a;
       return a + b;
     }
-    
+
     var c = foo( 2 );
-    
+
     `,
-    orderedById: true,
+    shouldBeRandomized: false,
     answers: [
       {
         text: '1',
@@ -359,7 +359,7 @@ const Ch1Questions = [
   },
   {
     question: `If an RHS look-up fails to find a variable, what kind of error is thrown?`,
-    orderedById: false,
+    shouldBeRandomized: true,
     answers: [
       {
         text: 'SyntaxError',
