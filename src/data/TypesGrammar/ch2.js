@@ -12,6 +12,7 @@ const Ch2Questions = [
   },
   {
     question: 'What is the output of `console.log(typeof NaN)`?',
+    shouldBeRandomized: true,
     answers: [
       { text: 'number', id: 0 },
       { text: 'NaN', id: 1 },
