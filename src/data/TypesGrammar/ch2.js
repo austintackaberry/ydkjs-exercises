@@ -2,7 +2,7 @@ const Ch2Questions = [
   {
     question:
       'True of False: Once a JS array is assigned data of a particular type, it can only hold data of that type.',
-    orderedById: true,
+    shouldBeRandomized: false,
     answers: [{ text: 'True', id: 0 }, { text: 'False', id: 1 }],
     correctAnswerId: 1,
     moreInfoUrl:
@@ -12,7 +12,7 @@ const Ch2Questions = [
   },
   {
     question: 'What is the output of `console.log(typeof NaN)`?',
-    orderedById: true,
+    shouldBeRandomized: true,
     answers: [
       { text: 'number', id: 0 },
       { text: 'NaN', id: 1 },

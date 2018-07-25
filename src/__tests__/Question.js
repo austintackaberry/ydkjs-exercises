@@ -7,7 +7,7 @@ import Question from '../components/Question';
 import books from '../data';
 
 const upGoingCh1Q1 = books[0].chapters[0].questions[0];
-const upGoingCh1Q2 = books[0].chapters[0].questions[1];
+const typesGrammarCh2Q1 = books[3].chapters[1].questions[0];
 const baseUrl = '/up-going/ch1';
 const index = 1;
 const bookId = 0;
@@ -74,8 +74,7 @@ it('should render question 1', () => {
 });
 
 it('should render question 2', () => {
-  const comp = shallow(<Question {...generateTestProps(upGoingCh1Q2)} />);
-
+  const comp = shallow(<Question {...generateTestProps(typesGrammarCh2Q1)} />);
   expect(
     comp
       .find('Header3')
@@ -87,18 +86,16 @@ it('should render question 2', () => {
       .find('ReactMarkdown')
       .first()
       .props().source
-  ).toBe(upGoingCh1Q2.question);
-  expect(comp.find('label').length).toBe(4);
-  expect(comp.find('input[type="radio"]').length).toBe(4);
-  expect(comp.find('span').length).toBe(8);
+  ).toBe(typesGrammarCh2Q1.question);
+  expect(comp.find('label').length).toBe(2);
+  expect(comp.find('input[type="radio"]').length).toBe(2);
+  expect(comp.find('span').length).toBe(4);
   expect(
     comp
       .find('ReactMarkdown')
       .at(1)
       .props().source
-  ).toBe(
-    'A set of special instructions to tell the computer what tasks to perform.'
-  );
+  ).toBe('True');
   expect(comp.find('SubmitButton').length).toBe(1);
   expect(comp.find('NavigationButton').length).toBe(2);
 });

@@ -2,7 +2,7 @@ const Ch1Questions = [
   {
     question:
       'How many expressions are there in the following statement: `a = b * 2;` ?',
-    orderedById: true,
+    shouldBeRandomized: false,
     answers: [
       { text: 'One', id: 0 },
       { text: 'Two', id: 1 },
@@ -15,12 +15,12 @@ const Ch1Questions = [
     explanation: `This statement has four expressions in it:
       2 is a literal value expression;
       b is a variable expression, which means to retrieve its current value;
-      b \* 2 is an arithmetic expression, which means to do the multiplication;
-      a = b \* 2 is an assignment expression, which means to assign the result of the b \* 2 expression to the variable a.`,
+      b \\* 2 is an arithmetic expression, which means to do the multiplication;
+      a = b \\* 2 is an assignment expression, which means to assign the result of the b \\* 2 expression to the variable a.`,
   },
   {
     question: 'What is a computer program (source code / code)?',
-    orderedById: false,
+    shouldBeRandomized: true,
     answers: [
       {
         text:
@@ -45,7 +45,7 @@ const Ch1Questions = [
   },
   {
     question: 'What is a computer language (syntax)?',
-    orderedById: false,
+    shouldBeRandomized: true,
     answers: [
       {
         text:
@@ -67,7 +67,7 @@ const Ch1Questions = [
   },
   {
     question: 'What is an expression?',
-    orderedById: false,
+    shouldBeRandomized: true,
     answers: [
       { text: "The action of making known one's thoughts or feelings.", id: 0 },
       { text: 'Values that are included directly in the source code.', id: 1 },
@@ -89,7 +89,7 @@ const Ch1Questions = [
   },
   {
     question: 'Interpreting the code is when... ?',
-    orderedById: false,
+    shouldBeRandomized: true,
     answers: [
       { text: 'Changes to values are tracked as your program runs.', id: 0 },
       {
@@ -109,7 +109,7 @@ const Ch1Questions = [
       },
     ],
     correctAnswerId: 3,
-    explanation: `Statements like a = b \* 2 are helpful for developers when reading and writing, but are not actually in a form the computer can
+    explanation: `Statements like a = b \\* 2 are helpful for developers when reading and writing, but are not actually in a form the computer can
       directly understand. So a special utility on the computer (either an interpreter or a compiler) is used to translate the code you
       write into commands a computer can understand.
       For some computer languages, this translation of commands is typically done from top to bottom, line by line, every time the program
@@ -119,7 +119,7 @@ const Ch1Questions = [
   },
   {
     question: 'Compiling is when... ?',
-    orderedById: false,
+    shouldBeRandomized: true,
     answers: [
       {
         text:
@@ -148,7 +148,7 @@ const Ch1Questions = [
   {
     question:
       'Which of these next expressions has exactly one literal value, one variable, and one operator?',
-    orderedById: false,
+    shouldBeRandomized: true,
     answers: [
       {
         text: 'var even = 4 ;',
@@ -177,7 +177,7 @@ const Ch1Questions = [
   {
     question:
       'Which of these next statements is NOT true about alert() and console.log()? Remember, you can open the console in your browser and experiment.',
-    orderedById: false,
+    shouldBeRandomized: true,
     answers: [
       {
         text:
@@ -207,7 +207,7 @@ const Ch1Questions = [
   },
   {
     question: 'Which is the correct way to get input from the user?',
-    orderedById: false,
+    shouldBeRandomized: true,
     answers: [
       {
         text: 'var age = console.log("What is your name? ");',
@@ -236,7 +236,7 @@ const Ch1Questions = [
   {
     question:
       'Fill in the blanks: In the expression "var num = 20; ", the operator = is used to ______ the literal value 20 to the _______ num. The keyword var is used to _______ the variable. ',
-    orderedById: false,
+    shouldBeRandomized: true,
     answers: [
       {
         text: 'assign, variable, declare',
@@ -262,7 +262,7 @@ const Ch1Questions = [
   },
   {
     question: 'Which of these next expressions is NOT a compound assignment?',
-    orderedById: false,
+    shouldBeRandomized: true,
     answers: [
       {
         text: 'var even *= 2; ',
@@ -291,7 +291,7 @@ const Ch1Questions = [
   {
     question:
       'Which of these next equations will output the boolean value false? Remember, you can open the console in your browser and experiment.',
-    orderedById: false,
+    shouldBeRandomized: true,
     answers: [
       {
         text: '99 === Number("99"); ',
@@ -321,7 +321,7 @@ const Ch1Questions = [
   },
   {
     question: 'Which of these next statements is false?',
-    orderedById: false,
+    shouldBeRandomized: true,
     answers: [
       {
         text:
@@ -354,7 +354,7 @@ const Ch1Questions = [
   {
     question:
       'Which of these next statements is NOT an example of how functions improve our code?',
-    orderedById: false,
+    shouldBeRandomized: true,
     answers: [
       {
         text:
@@ -385,7 +385,7 @@ const Ch1Questions = [
   {
     question:
       'Fill in the blank: You need _______ to perform actions on values.',
-    orderedById: false,
+    shouldBeRandomized: true,
     answers: [
       {
         text: 'operators',
@@ -413,7 +413,7 @@ const Ch1Questions = [
   {
     question:
       'Fill in the blank: You need _______ to store data (aka state) during the execution of your program.',
-    orderedById: false,
+    shouldBeRandomized: true,
     answers: [
       {
         text: 'loops',
@@ -441,7 +441,7 @@ const Ch1Questions = [
   },
   {
     question: 'You need _______ like _______ to make decisions.',
-    orderedById: false,
+    shouldBeRandomized: true,
     answers: [
       {
         text: 'loops, do...while',
@@ -469,7 +469,7 @@ const Ch1Questions = [
   {
     question:
       'You need _______ to repeat tasks until a condition stops being true.',
-    orderedById: false,
+    shouldBeRandomized: true,
     answers: [
       {
         text: 'variables',
@@ -497,7 +497,7 @@ const Ch1Questions = [
   {
     question:
       'You need _______ to organize your code into logical and reusable chunks.',
-    orderedById: false,
+    shouldBeRandomized: true,
     answers: [
       {
         text: 'conditionals',
