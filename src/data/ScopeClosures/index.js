@@ -1,5 +1,6 @@
 import Ch1Questions from './ch1';
 import Ch2Questions from './ch2';
+import Ch3Questions from './ch3';
 
 const ScopeClosuresChapters = [
   {
@@ -19,17 +20,23 @@ const ScopeClosuresChapters = [
   {
     title: 'Chapter 3: Function vs Block Scope',
     url: '/ch3',
-    questions: [],
+    questions: Ch3Questions,
+    chapterLink:
+      'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch3.md',
   },
   {
     title: 'Chapter 4: Hoisting',
     url: '/ch4',
     questions: [],
+    chapterLink:
+      'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch4.md',
   },
   {
     title: 'Chapter 5: Scope Closures',
     url: '/ch5',
     questions: [],
+    chapterLink:
+      'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch5.md',
   },
 ];
 

@@ -140,8 +140,6 @@ ${'```'}
   {
     question: `What is logged to the console when the following code is executed:
 ${'```js'}
-
-
 function bar(b) {
     function baz(a) {
         console.log(a)
@@ -166,6 +164,38 @@ ${'```'}
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch2.md#lex-time',
     explanation: `We first call \`foo\` with a value of 4. Inside \`foo\`, \`a\`'s value is changed from 4 to 5. We then try to call \`baz\`. \`baz\` is not in \`foo\`'s scope, so the engine looks at the outer scope, the global scope. It does not find \`baz\`, so it throws a \`ReferenceError\`.`,
+  },
+  {
+    question: `Which two mechanisms in JavaScript can "cheat" lexical scope?`,
+    shouldBeRandomized: true,
+    answers: [
+      { text: '`eval` and `with`', id: 0 },
+      { text: '`eval` and `innerHTML`', id: 1 },
+      { text: '`this` and `with`', id: 2 },
+      { text: '`this` and `eval`', id: 3 },
+    ],
+    correctAnswerId: 0,
+    moreInfoUrl:
+      'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch2.md#review-tldr',
+    explanation: ` \`with\` and \`eval\` are the only mechanisms that allow code to be executed dynamically which means they can "cheat" lexical scope.`,
+  },
+  {
+    question: `There are two mechanisms in JavaScript that can "cheat" lexical scope. Why should they not be used?`,
+    shouldBeRandomized: true,
+    answers: [
+      { text: 'There is no reason to not use them', id: 0 },
+      {
+        text:
+          'They prevent the engine from using some or all of its optimizations',
+        id: 1,
+      },
+      { text: 'They are not readable', id: 2 },
+      { text: 'They are not implemented in all browsers', id: 3 },
+    ],
+    correctAnswerId: 0,
+    moreInfoUrl:
+      'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch2.md#performance',
+    explanation: `If the Engine finds an \`eval(..)\` or \`with\` in the code, it essentially has to assume that all its awareness of identifier location may be invalid, because it cannot know at lexing time exactly what code you may pass to \`eval(..)\` to modify the lexical scope, or the contents of the object you may pass to \`with\` to create a new lexical scope to be consulted.`,
   },
 ];
 
