@@ -42,6 +42,9 @@ export const Fieldset = styled.fieldset`
   margin: 0 auto;
   text-align: left;
   border: none;
+  div {
+    margin: 7px;
+  }
 `;
 Fieldset.displayName = 'Fieldset';
 
@@ -52,10 +55,18 @@ Header3.displayName = 'Header3';
 
 export const QuestionStyle = styled.h4`
   margin: 0;
-  code {
-    background-color: #808080ad;
-    padding: 3px;
-    border-radius: 2px;
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    pre {
+      flex-grow: 0;
+      code {
+        display: block;
+        text-align: left;
+      }
+    }
   }
 `;
 QuestionStyle.displayName = 'QuestionStyle';
