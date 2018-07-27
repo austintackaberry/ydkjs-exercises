@@ -2,6 +2,7 @@ import Ch1Questions from './ch1';
 import Ch2Questions from './ch2';
 import Ch3Questions from './ch3';
 import Ch4Questions from './ch4';
+import Ch5Questions from './ch5';
 
 const ScopeClosuresChapters = [
   {
@@ -35,7 +36,7 @@ const ScopeClosuresChapters = [
   {
     title: 'Chapter 5: Scope Closures',
     url: '/ch5',
-    questions: [],
+    questions: Ch5Questions,
     chapterLink:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch5.md',
   },
