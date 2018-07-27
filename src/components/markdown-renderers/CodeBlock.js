@@ -17,7 +17,11 @@ export default class CodeBlock extends React.PureComponent {
     const { language, value } = this.props;
 
     return (
-      <SyntaxHighlighter style={tomorrowNightEighties} language={language}>
+      <SyntaxHighlighter
+        style={tomorrowNightEighties}
+        customStyle={{ borderRadius: '2px' }}
+        language={language}
+      >
         {value}
       </SyntaxHighlighter>
     );

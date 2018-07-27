@@ -13,10 +13,10 @@ import {
 } from './styled';
 
 import './styles.css';
-import CodeBlock from '../helpers/CodeBlock';
-import CodeInline from '../helpers/CodeInline';
-import Root from '../helpers/Root';
-import Paragraph from '../helpers/Paragraph';
+import CodeBlock from '../markdown-renderers/CodeBlock';
+import CodeInline from '../markdown-renderers/CodeInline';
+import Root from '../markdown-renderers/Root';
+import Paragraph from '../markdown-renderers/Paragraph';
 const ReactMarkdown = require('react-markdown');
 
 const NavigationButton = props =>

@@ -19,7 +19,11 @@ export default class CodeInline extends React.PureComponent {
     return (
       <SyntaxHighlighter
         style={tomorrowNightEighties}
-        customStyle={{ display: 'inline', padding: '0.3em' }}
+        customStyle={{
+          display: 'inline',
+          padding: '0.3em',
+          borderRadius: '1px',
+        }}
         language={language}
       >
         {value}
