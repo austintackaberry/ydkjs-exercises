@@ -63,7 +63,6 @@ export const QuestionStyle = styled.h4`
     pre {
       flex-grow: 0;
       code {
-        display: block;
         text-align: left;
       }
     }
