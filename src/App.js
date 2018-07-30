@@ -14,16 +14,15 @@ class App extends Component {
   constructor() {
     super();
 
+    // updateScore needs to be defined here, not in score-context.js
+    // because it needs to setState
     this.updateScore = newScore => {
       window.localStorage.setItem('score', JSON.stringify(newScore));
       this.setState({ score: newScore });
     };
 
-    // State also contains the updater function so it will
-    // be passed down into the context provider
     this.state = {
       score,
-      updateScore: this.updateScore,
     };
   }
   componentDidMount() {
@@ -36,7 +35,9 @@ class App extends Component {
 
   render() {
     return (
-      <ScoreContext.Provider value={this.state}>
+      <ScoreContext.Provider
+        value={{ score: this.state.score, updateScore: this.updateScore }}
+      >
         <div className="App">
           <Sidebar books={books} score={this.state.score} />
           <div className="main-content">
