@@ -13,7 +13,10 @@ import {
 } from './styled';
 
 import './styles.css';
-
+import CodeBlock from '../markdown-renderers/CodeBlock';
+import CodeInline from '../markdown-renderers/CodeInline';
+import Root from '../markdown-renderers/Root';
+import Paragraph from '../markdown-renderers/Paragraph';
 const ReactMarkdown = require('react-markdown');
 
 const NavigationButton = props =>
@@ -191,7 +194,13 @@ class Question extends Component {
         <Wrapper>
           <Header3>{`Question ${index} of ${numberOfQuestions}`}</Header3>
           <QuestionStyle>
-            <ReactMarkdown source={question.question} />
+            <ReactMarkdown
+              renderers={{
+                code: CodeBlock,
+                inlineCode: CodeInline,
+              }}
+              source={question.question}
+            />
           </QuestionStyle>
           <form onSubmit={event => this.handleSubmit(event)}>
             <Fieldset>
@@ -213,20 +222,37 @@ class Question extends Component {
                 }
                 return (
                   <div key={answer.id}>
-                    <label htmlFor={i}>
-                      <span>
+                    <label
+                      style={{
+                        display: 'flex',
+                        flexDirection: 'row',
+                        alignItems: 'center',
+                        justifyContent: 'flex-start',
+                      }}
+                      htmlFor={i}
+                    >
+                      <div style={{ height: '13px' }}>
                         <input
                           type="radio"
                           name={index}
                           id={i}
                           value={answer.id}
+                          style={{ marginTop: '0' }}
                           onChange={event => {
                             this.handleAnswerChange(event);
                           }}
                         />
-                      </span>
-                      <span className="test" style={answerColor}>
-                        <ReactMarkdown source={answer.text} />
+                      </div>
+                      <span style={answerColor}>
+                        <ReactMarkdown
+                          renderers={{
+                            code: CodeBlock,
+                            inlineCode: CodeInline,
+                            root: Root,
+                            paragraph: Paragraph,
+                          }}
+                          source={answer.text}
+                        />
                       </span>
                     </label>
                   </div>
@@ -244,7 +270,13 @@ class Question extends Component {
                     Hide Explanation
                   </button>
                   <div className="explanation">
-                    <ReactMarkdown source={question.explanation} />
+                    <ReactMarkdown
+                      renderers={{
+                        code: CodeBlock,
+                        inlineCode: CodeInline,
+                      }}
+                      source={question.explanation}
+                    />
                     <br />
                     <a
                       href={question.moreInfoUrl}

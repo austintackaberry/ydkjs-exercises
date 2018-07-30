@@ -44,7 +44,6 @@ it('should render question 1', () => {
   ).toBe(upGoingCh1Q1.question);
   expect(comp.find('label').length).toBe(4);
   expect(comp.find('input[type="radio"]').length).toBe(4);
-  expect(comp.find('span').length).toBe(8);
   expect(
     comp
       .find('ReactMarkdown')
@@ -89,7 +88,6 @@ it('should render question 2', () => {
   ).toBe(typesGrammarCh2Q1.question);
   expect(comp.find('label').length).toBe(2);
   expect(comp.find('input[type="radio"]').length).toBe(2);
-  expect(comp.find('span').length).toBe(4);
   expect(
     comp
       .find('ReactMarkdown')
@@ -127,7 +125,7 @@ it('should set correct answer to green on submit', () => {
     expect(
       comp
         .find('span')
-        .at(7)
+        .at(3)
         .html()
     ).toMatch(/color:green/);
   });
@@ -145,7 +143,7 @@ it('should set incorrect answer to red', () => {
     expect(
       comp
         .find('span')
-        .at(5)
+        .at(2)
         .html()
     ).toMatch(/color:red/);
   });
