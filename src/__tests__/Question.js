@@ -14,9 +14,6 @@ const bookId = 0;
 const chapterId = 0;
 const numberOfQuestions = 6;
 const updateScore = jest.fn();
-const window = {
-  localStorage: { getItem: val => null, setItem: (str1, str2) => {} },
-};
 
 const generateTestProps = question => {
   return {
