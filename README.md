@@ -10,17 +10,19 @@ One of the top courses on Coursera, [Learning How to Learn](https://www.coursera
 
 ## Current Status
 
-This project was bootstrapped with create-react-app, and uses React Router for routing and styled components for styling. The project is active and growing! We are currently growing our state management system as well as the number of exercises.
+This project was bootstrapped with create-react-app, and uses React Router for routing and styled components for styling. The project is active and growing! Our biggest effort currently is growing our number of exercises.
 
 Join us on Discord! https://discord.gg/F9Cs5tW
+
+Users, lurkers, contributers, everyone is welcome!
 
 ## Short Term Vision
 
 The immediate next steps are the following:
 
 1.  Create 10 multiple choice questions for each chapter of each book
-2.  Add in-depth explanations for each question
-3.  Make the app state persistent
+2.  Improve the mobile experience
+3.  Improve sidebar
 
 ## Long Term Vision
 
@@ -28,7 +30,7 @@ Longer term goals are the following:
 
 1.  Have the questions be actual coding rather than multiple choice
 2.  Curate external resources and recommend them to the user for material they need help with
-3.  Add video explanations
+3.  Analyze user competency and give recommendations accordingly
 
 ## Setting up the project locally
 
