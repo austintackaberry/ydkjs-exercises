@@ -15,6 +15,7 @@ class App extends Component {
     super();
 
     this.updateScore = newScore => {
+      window.localStorage.setItem('score', JSON.stringify(newScore));
       this.setState({ score: newScore });
     };
 
@@ -25,6 +26,14 @@ class App extends Component {
       updateScore: this.updateScore,
     };
   }
+  componentDidMount() {
+    let score = window.localStorage.getItem('score');
+    if (score) {
+      score = JSON.parse(score);
+      this.setState({ score });
+    }
+  }
+
   render() {
     return (
       <ScoreContext.Provider value={this.state}>
