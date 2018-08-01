@@ -58,7 +58,7 @@ class Question extends Component {
     const { updateScore, score, bookId, chapterId, index } = this.props;
     const questionIndex = index - 1;
 
-    /* check if current question was already answered correctly */
+    // Check if current question was already answered correctly
     const prevStatus =
       score.books[bookId].chapters[chapterId].questions[questionIndex].status;
 
