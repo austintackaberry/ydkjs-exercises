@@ -13,7 +13,11 @@ import {
 } from './styled';
 
 import './styles.css';
-
+import CodeBlock from '../markdown-renderers/CodeBlock';
+import CodeInline from '../markdown-renderers/CodeInline';
+import Root from '../markdown-renderers/Root';
+import Paragraph from '../markdown-renderers/Paragraph';
+import { getNewScore } from '../../helpers/helpers';
 const ReactMarkdown = require('react-markdown');
 
 const NavigationButton = props =>
@@ -54,75 +58,27 @@ class Question extends Component {
     const { updateScore, score, bookId, chapterId, index } = this.props;
     const questionIndex = index - 1;
 
-    const CORRECT = 'CORRECT';
-    const INCORRECT = 'INCORRECT';
-    const UNANSWERED = 'UNANSWERED';
-
-    /* check if current question was already answered correctly */
+    // Check if current question was already answered correctly
     const prevStatus =
       score.books[bookId].chapters[chapterId].questions[questionIndex].status;
 
-    /* calculate numeric score difference
-     * based on current score state */
-    let scoreDiff = {};
-    switch (prevStatus) {
-      case CORRECT:
-        scoreDiff = { correct: 0, incorrect: 0, set: CORRECT };
-        break;
-      case INCORRECT:
-        scoreDiff = {
-          correct: isCorrect ? 1 : 0,
-          incorrect: isCorrect ? -1 : 0,
-          set: isCorrect ? CORRECT : INCORRECT,
-        };
-        break;
-      case UNANSWERED:
-        scoreDiff = {
-          correct: isCorrect ? 1 : 0,
-          incorrect: isCorrect ? 0 : 1,
-          set: isCorrect ? CORRECT : INCORRECT,
-        };
-        break;
-      default:
-        break;
-    }
+    const newScore = getNewScore({
+      prevStatus,
+      isCorrect,
+      score,
+      bookId,
+      chapterId,
+      questionIndex,
+    });
 
-    const newScore = {
-      ...score,
-      books: score.books.map((book, index) => {
-        if (index === bookId) {
-          return {
-            ...book,
-            chapters: book.chapters.map((chapter, index) => {
-              if (index === chapterId) {
-                return {
-                  ...chapter,
-                  questions: chapter.questions.map((question, index) => {
-                    if (questionIndex === index) {
-                      return {
-                        status: scoreDiff.set,
-                      };
-                    }
-                    return question;
-                  }),
-                };
-              }
-              return chapter;
-            }),
-          };
-        }
-        return book;
-      }),
-    };
-
-    /* update total score */
-    newScore.correct = newScore.correct + scoreDiff.correct;
-    newScore.incorrect = newScore.incorrect + scoreDiff.incorrect;
     updateScore(newScore);
   }
 
   handleSubmit(event) {
-    let currentAnswer = this.props.question.answers[this.state.userAnswerId];
+    let currentAnswer = this.props.question.answers.find(
+      a => a.id == this.state.userAnswerId
+    );
+
     if (this.state.userAnswerId === null) {
       this.setState({
         error: true,
@@ -179,6 +135,7 @@ class Question extends Component {
     } else if (this.state.correctAnswer) {
       message = 'Correct!';
     } else if (this.state.correctAnswer === false) {
+      // not undefined
       message = 'Incorrect! Try Again!';
     }
 
@@ -187,7 +144,13 @@ class Question extends Component {
         <Wrapper>
           <Header3>{`Question ${index} of ${numberOfQuestions}`}</Header3>
           <QuestionStyle>
-            <ReactMarkdown source={question.question} />
+            <ReactMarkdown
+              renderers={{
+                code: CodeBlock,
+                inlineCode: CodeInline,
+              }}
+              source={question.question}
+            />
           </QuestionStyle>
           <form onSubmit={event => this.handleSubmit(event)}>
             <Fieldset>
@@ -209,20 +172,37 @@ class Question extends Component {
                 }
                 return (
                   <div key={answer.id}>
-                    <label htmlFor={i}>
-                      <span>
+                    <label
+                      style={{
+                        display: 'flex',
+                        flexDirection: 'row',
+                        alignItems: 'center',
+                        justifyContent: 'flex-start',
+                      }}
+                      htmlFor={i}
+                    >
+                      <div style={{ height: '13px' }}>
                         <input
                           type="radio"
                           name={index}
                           id={i}
                           value={answer.id}
+                          style={{ marginTop: '0' }}
                           onChange={event => {
                             this.handleAnswerChange(event);
                           }}
                         />
-                      </span>
-                      <span className="test" style={answerColor}>
-                        <ReactMarkdown source={answer.text} />
+                      </div>
+                      <span style={answerColor}>
+                        <ReactMarkdown
+                          renderers={{
+                            code: CodeBlock,
+                            inlineCode: CodeInline,
+                            root: Root,
+                            paragraph: Paragraph,
+                          }}
+                          source={answer.text}
+                        />
                       </span>
                     </label>
                   </div>
@@ -240,7 +220,13 @@ class Question extends Component {
                     Hide Explanation
                   </button>
                   <div className="explanation">
-                    <ReactMarkdown source={question.explanation} />
+                    <ReactMarkdown
+                      renderers={{
+                        code: CodeBlock,
+                        inlineCode: CodeInline,
+                      }}
+                      source={question.explanation}
+                    />
                     <br />
                     <a
                       href={question.moreInfoUrl}

@@ -1,9 +1,9 @@
 import books from './data';
 import React from 'react';
 
-const CORRECT = 'CORRECT';
-const INCORRECT = 'INCORRECT';
 const UNANSWERED = 'UNANSWERED';
+
+// Initialize bookScores
 
 const bookScores = books.map(book => {
   return {
@@ -19,36 +19,12 @@ const bookScores = books.map(book => {
   };
 });
 
+// Initialize score
+
 export const score = {
   books: bookScores,
-  correct:
-    bookScores.reduce((a, book) => {
-      return (
-        a +
-        book.chapters.reduce((b, ch) => {
-          return (
-            b +
-            ch.questions.reduce((acc, qn) => {
-              return acc + (qn.status === CORRECT ? 1 : 0);
-            }, 0)
-          );
-        }, 0)
-      );
-    }, 0) || 0,
-  incorrect:
-    bookScores.reduce((a, book) => {
-      return (
-        a +
-        book.chapters.reduce((b, ch) => {
-          return (
-            b +
-            ch.questions.reduce((acc, qn) => {
-              return acc + (qn.status === INCORRECT ? 1 : 0);
-            }, 0)
-          );
-        }, 0)
-      );
-    }, 0) || 0,
+  correct: 0,
+  incorrect: 0,
   possible:
     bookScores.reduce((a, book) => {
       return (
