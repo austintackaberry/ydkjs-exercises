@@ -32,7 +32,7 @@ const NavigationButton = props =>
     </FlatButton>
   ))(props);
 
-class Question extends Component {
+export class Question extends Component {
   static propTypes = {
     baseUrl: PropTypes.string.isRequired,
     bookId: PropTypes.number.isRequired,
@@ -120,28 +120,43 @@ class Question extends Component {
   }
 
   handleKeyDown(event) {
+    /* don't trigger navigation if the current url isn't a question */
+    const pathname = this.props.history.location.pathname;
+    if (!pathname.match(/\/ch\d\/q\d/)) return false;
+
+    /* assign navigation variables */
     const ARROW_LEFT = 'ArrowLeft';
     const ARROW_RIGHT = 'ArrowRight';
     const { previous, next } = this.state.navigation;
+
+    /* handle navigation */
     switch (event.key) {
       case ARROW_LEFT:
+        event.preventDefault();
         previous.enabled
           ? this.props.history.push(previous.url)
-          : window.addEventListener('keydown', e => this.handleKeyDown(e), {
-              once: true,
-            });
+          : window.addEventListener(
+              'keydown',
+              event => this.handleKeyDown(event),
+              { once: true }
+            );
         break;
       case ARROW_RIGHT:
+        event.preventDefault();
         next.enabled
           ? this.props.history.push(next.url)
-          : window.addEventListener('keydown', e => this.handleKeyDown(e), {
-              once: true,
-            });
+          : window.addEventListener(
+              'keydown',
+              event => this.handleKeyDown(event),
+              { once: true }
+            );
         break;
       default:
+        window.addEventListener('keydown', event => this.handleKeyDown(event), {
+          once: true,
+        });
         break;
     }
-    event.preventDefault();
   }
 
   toggleExplanationRequest() {
@@ -149,9 +164,14 @@ class Question extends Component {
       explanationRequested: !this.state.explanationRequested,
     });
   }
-
   componentDidMount() {
-    window.addEventListener('keydown', e => this.handleKeyDown(e), {
+    /**
+     * register a keydown listener on the window that propagates exactly once
+     * to prevent unnecessary key repeats
+     * have to re-register the listener if this.props.history.push() is not fired
+     * see handleKeyDown()
+     */
+    window.addEventListener('keydown', event => this.handleKeyDown(event), {
       once: true,
     });
   }
