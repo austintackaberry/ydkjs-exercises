@@ -175,6 +175,9 @@ export class Question extends Component {
       once: true,
     });
   }
+  componentWillUnmount() {
+    window.removeEventListener('keydown', event => this.handleKeyDown(event));
+  }
 
   render() {
     const { answerSubmitted, userAnswerId, explanationRequested } = this.state;
