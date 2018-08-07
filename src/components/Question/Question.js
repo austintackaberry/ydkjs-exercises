@@ -130,20 +130,16 @@ export class Question extends Component {
     };
 
     /* handle navigation */
-    try {
+    if (actions.hasOwnProperty(event.key)) {
       const { route } = actions[event.key];
       if (route.enabled) {
         this.props.history.push(route.url);
         return;
       }
-    } catch (TypeError) {
-      /* if a key besides left/right arrow is pressed, carry on to next line */
     }
 
     /* re-register listener if navigation did not occur */
-    window.addEventListener('keydown', this.handleKeyDown, {
-      once: true,
-    });
+    window.addEventListener('keydown', this.handleKeyDown);
   }
 
   toggleExplanationRequest() {
@@ -158,9 +154,7 @@ export class Question extends Component {
      * have to re-register the listener if this.props.history.push() is not fired
      * see handleKeyDown()
      */
-    window.addEventListener('keydown', this.handleKeyDown, {
-      once: true,
-    });
+    window.addEventListener('keydown', this.handleKeyDown);
   }
   componentWillUnmount() {
     window.removeEventListener('keydown', this.handleKeyDown);
