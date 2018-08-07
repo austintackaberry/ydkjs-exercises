@@ -62,6 +62,8 @@ export class Question extends Component {
         },
       },
     };
+
+    this.handleKeyDown = this.handleKeyDown.bind(this);
   }
 
   calcNewScore(isCorrect) {
@@ -120,43 +122,28 @@ export class Question extends Component {
   }
 
   handleKeyDown(event) {
-    /* don't trigger navigation if the current url isn't a question */
-    const pathname = this.props.history.location.pathname;
-    if (!pathname.match(/\/ch\d\/q\d/)) return false;
-
     /* assign navigation variables */
-    const ARROW_LEFT = 'ArrowLeft';
-    const ARROW_RIGHT = 'ArrowRight';
     const { previous, next } = this.state.navigation;
+    const actions = {
+      ArrowLeft: { route: previous },
+      ArrowRight: { route: next },
+    };
 
     /* handle navigation */
-    switch (event.key) {
-      case ARROW_LEFT:
-        event.preventDefault();
-        previous.enabled
-          ? this.props.history.push(previous.url)
-          : window.addEventListener(
-              'keydown',
-              event => this.handleKeyDown(event),
-              { once: true }
-            );
-        break;
-      case ARROW_RIGHT:
-        event.preventDefault();
-        next.enabled
-          ? this.props.history.push(next.url)
-          : window.addEventListener(
-              'keydown',
-              event => this.handleKeyDown(event),
-              { once: true }
-            );
-        break;
-      default:
-        window.addEventListener('keydown', event => this.handleKeyDown(event), {
-          once: true,
-        });
-        break;
+    try {
+      const { route } = actions[event.key];
+      if (route.enabled) {
+        this.props.history.push(route.url);
+        return;
+      }
+    } catch (TypeError) {
+      /* if a key besides left/right arrow is pressed, carry on to next line */
     }
+
+    /* re-register listener if navigation did not occur */
+    window.addEventListener('keydown', this.handleKeyDown, {
+      once: true,
+    });
   }
 
   toggleExplanationRequest() {
@@ -171,12 +158,12 @@ export class Question extends Component {
      * have to re-register the listener if this.props.history.push() is not fired
      * see handleKeyDown()
      */
-    window.addEventListener('keydown', event => this.handleKeyDown(event), {
+    window.addEventListener('keydown', this.handleKeyDown, {
       once: true,
     });
   }
   componentWillUnmount() {
-    window.removeEventListener('keydown', event => this.handleKeyDown(event));
+    window.removeEventListener('keydown', this.handleKeyDown);
   }
 
   render() {
