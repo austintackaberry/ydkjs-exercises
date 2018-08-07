@@ -1,8 +1,28 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { List, ListItem, ListItemTitle, Divider, Wrapper } from './styled';
-import { Link } from 'react-router-dom';
+import {
+  List,
+  ListItem,
+  ListItemTitle,
+  Divider,
+  Wrapper,
+  FlatButton,
+} from './styled';
+import { Link, withRouter } from 'react-router-dom';
 import ProgressBar from '../ProgressBar';
+
+const ResetButton = props =>
+  withRouter(({ history }) => (
+    <FlatButton
+      onClick={() => {
+        localStorage.clear();
+        history.push('/');
+        document.location.reload();
+      }}
+    >
+      Reset Progress
+    </FlatButton>
+  ))(props);
 
 class Sidebar extends Component {
   static propTypes = {
@@ -67,6 +87,9 @@ class Sidebar extends Component {
             </Link>
           ))}
         </List>
+        <section>
+          <ResetButton />
+        </section>
       </Wrapper>
     );
   }
