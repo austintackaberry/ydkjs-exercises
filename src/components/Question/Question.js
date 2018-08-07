@@ -148,12 +148,6 @@ export class Question extends Component {
     });
   }
   componentDidMount() {
-    /**
-     * register a keydown listener on the window that propagates exactly once
-     * to prevent unnecessary key repeats
-     * have to re-register the listener if this.props.history.push() is not fired
-     * see handleKeyDown()
-     */
     window.addEventListener('keydown', this.handleKeyDown);
   }
   componentWillUnmount() {
