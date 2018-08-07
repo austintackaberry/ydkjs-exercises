@@ -216,6 +216,7 @@ class Question extends Component {
                   <button
                     className="explanationButton"
                     onClick={event => this.toggleExplanationRequest()}
+                    style={{ margin: '4px auto' }}
                   >
                     Hide Explanation
                   </button>
@@ -244,6 +245,7 @@ class Question extends Component {
                 <button
                   className="explanationButton"
                   onClick={event => this.toggleExplanationRequest()}
+                  style={{ margin: '4px auto' }}
                 >
                   Show Explanation
                 </button>
