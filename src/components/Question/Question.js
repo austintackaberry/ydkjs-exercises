@@ -32,7 +32,7 @@ const NavigationButton = props =>
     </FlatButton>
   ))(props);
 
-class Question extends Component {
+export class Question extends Component {
   static propTypes = {
     baseUrl: PropTypes.string.isRequired,
     bookId: PropTypes.number.isRequired,
@@ -43,15 +43,27 @@ class Question extends Component {
     score: PropTypes.object.isRequired,
     updateScore: PropTypes.func.isRequired,
   };
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       userAnswerId: null,
       answerSubmitted: null,
       error: false,
       correctAnswer: null,
       explanationRequested: false,
+      navigation: {
+        previous: {
+          enabled: this.props.index > 1,
+          url: this.props.baseUrl + '/q' + (this.props.index - 1),
+        },
+        next: {
+          enabled: this.props.index < this.props.numberOfQuestions,
+          url: this.props.baseUrl + '/q' + (this.props.index + 1),
+        },
+      },
     };
+
+    this.handleKeyDown = this.handleKeyDown.bind(this);
   }
 
   calcNewScore(isCorrect) {
@@ -109,26 +121,43 @@ class Question extends Component {
     });
   }
 
+  handleKeyDown(event) {
+    /* assign navigation variables */
+    const { previous, next } = this.state.navigation;
+    const actions = {
+      ArrowLeft: { route: previous },
+      ArrowRight: { route: next },
+    };
+
+    /* handle navigation */
+    if (actions.hasOwnProperty(event.key)) {
+      const { route } = actions[event.key];
+      if (route.enabled) {
+        this.props.history.push(route.url);
+        return;
+      }
+    }
+
+    /* re-register listener if navigation did not occur */
+    window.addEventListener('keydown', this.handleKeyDown);
+  }
+
   toggleExplanationRequest() {
     this.setState({
       explanationRequested: !this.state.explanationRequested,
     });
   }
+  componentDidMount() {
+    window.addEventListener('keydown', this.handleKeyDown);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('keydown', this.handleKeyDown);
+  }
 
   render() {
     const { answerSubmitted, userAnswerId, explanationRequested } = this.state;
-    const { question, baseUrl, index, numberOfQuestions } = this.props;
-    const navigation = {
-      previous: {
-        enabled: index > 1,
-        url: baseUrl + '/q' + (index - 1),
-      },
-      next: {
-        enabled: index < numberOfQuestions,
-        url: baseUrl + '/q' + (index + 1),
-      },
-    };
-
+    const { question, numberOfQuestions, index } = this.props;
+    const navigation = this.state.navigation;
     let message;
     if (this.state.error) {
       message = 'Please select an answer';
@@ -271,4 +300,5 @@ class Question extends Component {
   }
 }
 
-export default Question;
+const QuestionWithRouter = withRouter(Question);
+export default QuestionWithRouter;

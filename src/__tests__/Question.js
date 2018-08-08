@@ -1,9 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-
 import { score } from '../score-context';
-
-import Question from '../components/Question';
+import { Question } from '../components/Question';
 import books from '../data';
 
 const upGoingCh1Q1 = books[0].chapters[0].questions[0];
