@@ -70,3 +70,9 @@ export const getNewScore = ({
   newScore.incorrect = newScore.incorrect + scoreDiff.incorrect;
   return newScore;
 };
+
+export const reinitializeScore = newScore => {
+  newScore.correct = 0;
+  newScore.incorrect = 0;
+  return newScore;
+};
