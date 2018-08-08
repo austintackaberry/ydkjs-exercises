@@ -10,14 +10,14 @@ import {
 } from './styled';
 import { Link, withRouter } from 'react-router-dom';
 import ProgressBar from '../ProgressBar';
+import { reinitializeScore } from '../../helpers/helpers';
 
 const ResetButton = props =>
-  withRouter(({ history }) => (
+  withRouter(({ history, resetScore }) => (
     <FlatButton
       onClick={() => {
-        localStorage.clear();
+        resetScore();
         history.push('/');
-        document.location.reload();
       }}
     >
       Reset Progress
@@ -28,6 +28,14 @@ class Sidebar extends Component {
   static propTypes = {
     books: PropTypes.array.isRequired,
     score: PropTypes.object.isRequired,
+    updateScore: PropTypes.func.isRequired,
+  };
+
+  resetScore = () => {
+    const { score, updateScore } = this.props;
+    // console.log(score.books);
+    const newScore = reinitializeScore(score);
+    updateScore(newScore);
   };
 
   getBookScores(book) {
@@ -88,7 +96,7 @@ class Sidebar extends Component {
           ))}
         </List>
         <section>
-          <ResetButton />
+          <ResetButton resetScore={this.resetScore} />
         </section>
       </Wrapper>
     );

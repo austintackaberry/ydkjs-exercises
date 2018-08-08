@@ -71,8 +71,21 @@ export const getNewScore = ({
   return newScore;
 };
 
+//Restart Score
+
 export const reinitializeScore = newScore => {
   newScore.correct = 0;
   newScore.incorrect = 0;
+
+  newScore.books.forEach(book => {
+    book.chapters.forEach(chapter => {
+      chapter.questions.forEach(question => {
+        if (question.status === 'CORRECT') {
+          question.status = 'UNANSWERED';
+        }
+      });
+    });
+  });
+
   return newScore;
 };
