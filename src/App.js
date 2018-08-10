@@ -39,11 +39,11 @@ class App extends Component {
         value={{ score: this.state.score, updateScore: this.updateScore }}
       >
         <div className="App">
-          <ScoreContext.Consumer>
-            {({ score, updateScore }) => (
-              <Sidebar books={books} score={score} updateScore={updateScore} />
-            )}
-          </ScoreContext.Consumer>
+          <Sidebar
+            books={books}
+            score={this.state.score}
+            updateScore={this.updateScore}
+          />
           <div className="main-content">
             <Link style={{ textDecoration: 'none', color: 'black' }} to="/">
               <h1 style={{ fontSize: '55px' }}>YDKJS EXERCISES</h1>

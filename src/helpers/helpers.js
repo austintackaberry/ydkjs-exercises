@@ -80,9 +80,7 @@ export const reinitializeScore = newScore => {
   newScore.books.forEach(book => {
     book.chapters.forEach(chapter => {
       chapter.questions.forEach(question => {
-        if (question.status === 'CORRECT') {
-          question.status = 'UNANSWERED';
-        }
+        question.status = 'UNANSWERED';
       });
     });
   });

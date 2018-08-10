@@ -33,7 +33,6 @@ class Sidebar extends Component {
 
   resetScore = () => {
     const { score, updateScore } = this.props;
-    // console.log(score.books);
     const newScore = reinitializeScore(score);
     updateScore(newScore);
   };
