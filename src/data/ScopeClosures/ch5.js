@@ -60,5 +60,80 @@ ${'```'}
       'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch5.md#nitty-gritty',
     explanation: `\`foo\` returns the function \`bar\` which is assigned to \`baz\`. \`bar\` still has access to a in \`foo\` even after \`foo\` has been called because of closure.`,
   },
+  {
+    question: `When is closure observed?`,
+    questionId: 'Y978oS5NQMr0PHld59po',
+    shouldBeRandomized: true,
+    answers: [
+      {
+        text: 'When functions are passed around as variables and then executed',
+        id: 0,
+      },
+      { text: 'When `this` is used in a function', id: 1 },
+      { text: 'When shadowing occurs', id: 2 },
+      {
+        text: 'When arrow functions are executed',
+        id: 3,
+      },
+    ],
+    correctAnswerId: 0,
+    moreInfoUrl:
+      'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch5.md#nitty-gritty',
+    explanation: `Because closure is just a function accessing lexical scope when it's executed outside of its lexical scope, that can only happen if the function is passed around as a variable`,
+  },
+  {
+    question: `Is closure observed when the code below is executed:
+${'```'}
+function wait(message) {
+
+  setTimeout( function timer(){
+    console.log( message );
+  }, 1000 );
+
+}
+
+wait( "Hello!" );
+${'```'}
+    `,
+    questionId: 'N73X0YmuT2uB6tOnN8Sx',
+    shouldBeRandomized: false,
+    answers: [
+      {
+        text: 'Yes',
+        id: 0,
+      },
+      { text: 'No', id: 1 },
+    ],
+    correctAnswerId: 0,
+    moreInfoUrl:
+      'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch5.md#now-i-can-see',
+    explanation: `\`wait\` gets executed immediately, but \`timer\` executes every 1000ms, and it still can access \`message\`.`,
+  },
+  {
+    question: `What happens when this code is executed:
+${'```'}
+for (var i=1; i<=5; i++) {
+  setTimeout( function timer(){
+    console.log( i );
+  }, i*1000 );
+}
+${'```'}
+    `,
+    questionId: 'ygptM8kOJlCNPvp9iU7E',
+    shouldBeRandomized: true,
+    answers: [
+      {
+        text: '6 is printed 5 times all at 6 seconds',
+        id: 0,
+      },
+      { text: '6 is printed 5 times at one second intervals', id: 1 },
+      { text: '1, 2, 3, 4, 5 are printed all at 6 seconds', id: 2 },
+      { text: '1, 2, 3, 4, 5 are printed each at one second intervals', id: 3 },
+    ],
+    correctAnswerId: 1,
+    moreInfoUrl:
+      'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch5.md#loops-closure',
+    explanation: ` \`setTimeout\` is executed immediately which means the \`i\` in \`i*1000\` is what you would expect. However, \`timer\` does not get executed immediately. By the time \`timer\` is executed, the loop is finished, and \`i\` has a value of 6.`,
+  },
 ];
 export default Ch5Questions;

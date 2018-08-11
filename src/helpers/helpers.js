@@ -89,7 +89,7 @@ export const reinitializeScore = newScore => {
   return newScore;
 };
 
-const createScoreMap = score => {
+export const createScoreMap = score => {
   return score.books.reduce((acc, book) => {
     book.chapters.forEach(chapter => {
       chapter.questions.forEach(question => {
