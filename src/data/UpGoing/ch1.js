@@ -2,6 +2,7 @@ const Ch1Questions = [
   {
     question:
       'How many expressions are there in the following statement: `a = b * 2;` ?',
+    questionId: 'Wdbb9JW9sN2oYU1dcTHB',
     shouldBeRandomized: false,
     answers: [
       { text: 'One', id: 0 },
@@ -20,6 +21,7 @@ const Ch1Questions = [
   },
   {
     question: 'What is a computer program (source code / code)?',
+    questionId: '0kMgoiRFhdMGoZGPREgy',
     shouldBeRandomized: true,
     answers: [
       {
@@ -45,6 +47,7 @@ const Ch1Questions = [
   },
   {
     question: 'What is a computer language (syntax)?',
+    questionId: 'arLlte0WGjBfHdtP4cc3',
     shouldBeRandomized: true,
     answers: [
       {
@@ -67,6 +70,7 @@ const Ch1Questions = [
   },
   {
     question: 'What is an expression?',
+    questionId: 'SyrKBdRNm8qnRnMBbbIq',
     shouldBeRandomized: true,
     answers: [
       { text: "The action of making known one's thoughts or feelings.", id: 0 },
@@ -89,6 +93,7 @@ const Ch1Questions = [
   },
   {
     question: 'Interpreting the code is when... ?',
+    questionId: 'DdMUZgJYx4MWFIDrvERZ',
     shouldBeRandomized: true,
     answers: [
       { text: 'Changes to values are tracked as your program runs.', id: 0 },
@@ -119,6 +124,7 @@ const Ch1Questions = [
   },
   {
     question: 'Compiling is when... ?',
+    questionId: 'vUTGAhPHQ04YbJyL2bIn',
     shouldBeRandomized: true,
     answers: [
       {
@@ -148,6 +154,7 @@ const Ch1Questions = [
   {
     question:
       'Which of these next expressions has exactly one literal value, one variable, and one operator?',
+    questionId: 'WXDAKz3JrrVyrZ9jyvKT',
     shouldBeRandomized: true,
     answers: [
       {
@@ -177,6 +184,7 @@ const Ch1Questions = [
   {
     question:
       'Which of these next statements is NOT true about alert() and console.log()? Remember, you can open the console in your browser and experiment.',
+    questionId: 'O5a9FcYfysMIlnCglUfK',
     shouldBeRandomized: true,
     answers: [
       {
@@ -207,6 +215,7 @@ const Ch1Questions = [
   },
   {
     question: 'Which is the correct way to get input from the user?',
+    questionId: 'JKQnIvClbwetSWw9L09F',
     shouldBeRandomized: true,
     answers: [
       {
@@ -236,6 +245,7 @@ const Ch1Questions = [
   {
     question:
       'Fill in the blanks: In the expression "var num = 20; ", the operator = is used to ______ the literal value 20 to the _______ num. The keyword var is used to _______ the variable. ',
+    questionId: 'zRcsGCwSLJGzFuxbIbrD',
     shouldBeRandomized: true,
     answers: [
       {
@@ -262,6 +272,7 @@ const Ch1Questions = [
   },
   {
     question: 'Which of these next expressions is NOT a compound assignment?',
+    questionId: '6MbAIQi1P0UgAazCImSM',
     shouldBeRandomized: true,
     answers: [
       {
@@ -291,6 +302,7 @@ const Ch1Questions = [
   {
     question:
       'Which of these next equations will output the boolean value false? Remember, you can open the console in your browser and experiment.',
+    questionId: 'JdFJJbwrqFkeuJIKI8rM',
     shouldBeRandomized: true,
     answers: [
       {
@@ -321,6 +333,7 @@ const Ch1Questions = [
   },
   {
     question: 'Which of these next statements is false?',
+    questionId: 'WfYtOiRdq3ka12suPaZi',
     shouldBeRandomized: true,
     answers: [
       {
@@ -354,6 +367,7 @@ const Ch1Questions = [
   {
     question:
       'Which of these next statements is NOT an example of how functions improve our code?',
+    questionId: 'tLjdPnckzEpzxDj4bs9C',
     shouldBeRandomized: true,
     answers: [
       {
@@ -385,6 +399,7 @@ const Ch1Questions = [
   {
     question:
       'Fill in the blank: You need _______ to perform actions on values.',
+    questionId: 'f2v9MPqpQs0JEaMnVJjS',
     shouldBeRandomized: true,
     answers: [
       {
@@ -413,6 +428,7 @@ const Ch1Questions = [
   {
     question:
       'Fill in the blank: You need _______ to store data (aka state) during the execution of your program.',
+    questionId: 'Lm2dlA3e3Kr5cHhfa1Eg',
     shouldBeRandomized: true,
     answers: [
       {
@@ -441,6 +457,7 @@ const Ch1Questions = [
   },
   {
     question: 'You need _______ like _______ to make decisions.',
+    questionId: 'HO6TLxfyBRvysdmA72RR',
     shouldBeRandomized: true,
     answers: [
       {
@@ -469,6 +486,7 @@ const Ch1Questions = [
   {
     question:
       'You need _______ to repeat tasks until a condition stops being true.',
+    questionId: '5inbO1OYyYBMNkdvqGnF',
     shouldBeRandomized: true,
     answers: [
       {
@@ -497,6 +515,7 @@ const Ch1Questions = [
   {
     question:
       'You need _______ to organize your code into logical and reusable chunks.',
+    questionId: 'OaslHejOxZmz4rfKSfGz',
     shouldBeRandomized: true,
     answers: [
       {

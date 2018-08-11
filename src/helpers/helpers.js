@@ -1,3 +1,7 @@
+const CORRECT = 'CORRECT';
+const INCORRECT = 'INCORRECT';
+const UNANSWERED = 'UNANSWERED';
+
 export const getNewScore = ({
   prevStatus,
   isCorrect,
@@ -6,10 +10,6 @@ export const getNewScore = ({
   chapterId,
   questionIndex,
 }) => {
-  const CORRECT = 'CORRECT';
-  const INCORRECT = 'INCORRECT';
-  const UNANSWERED = 'UNANSWERED';
-
   let scoreDiff = {};
   switch (prevStatus) {
     case CORRECT:
@@ -50,6 +50,7 @@ export const getNewScore = ({
                   if (questionIndex === index) {
                     return {
                       status: scoreDiff.set,
+                      questionId: question.questionId,
                     };
                   }
                   return question;
@@ -80,10 +81,61 @@ export const reinitializeScore = newScore => {
   newScore.books.forEach(book => {
     book.chapters.forEach(chapter => {
       chapter.questions.forEach(question => {
-        question.status = 'UNANSWERED';
+        question.status = UNANSWERED;
       });
     });
   });
 
+  return newScore;
+};
+
+export const createScoreMap = score => {
+  return score.books.reduce((acc, book) => {
+    book.chapters.forEach(chapter => {
+      chapter.questions.forEach(question => {
+        acc[question.questionId] = question;
+      });
+    });
+    return acc;
+  }, {});
+};
+
+/*
+
+Merge localStorage score with new initialized score.
+This isn't straightforward because the new intialized state
+should not overwrite the old state if questions are
+re-arranged or if new questions are added.
+
+*/
+
+export const mergeScores = ({ lsScore, newScore }) => {
+  const lsScoreMap = createScoreMap(lsScore);
+  let correct = 0;
+  let incorrect = 0;
+  newScore.books = newScore.books.map(book => {
+    return {
+      ...book,
+      chapters: book.chapters.map(chapter => {
+        return {
+          ...chapter,
+          questions: chapter.questions.map(question => {
+            if (question.questionId in lsScoreMap) {
+              if (lsScoreMap[question.questionId].status === INCORRECT) {
+                incorrect++;
+              }
+              if (lsScoreMap[question.questionId].status === CORRECT) {
+                correct++;
+              }
+              return lsScoreMap[question.questionId];
+            }
+            return question;
+          }),
+        };
+      }),
+    };
+  });
+  newScore.correct = correct;
+  newScore.incorrect = incorrect;
   return newScore;
 };

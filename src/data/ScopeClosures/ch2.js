@@ -1,6 +1,7 @@
 const Ch2Questions = [
   {
     question: 'When is scoping determined in JavaScript?',
+    questionId: 'sHdc0pwtUUaKAEQPErQo',
     shouldBeRandomized: true,
     answers: [
       { text: 'At author-time', id: 0 },
@@ -24,6 +25,7 @@ function foo(a) {
 foo( 2 );
 ${'```'}
     `,
+    questionId: '2CAjGHEG3DvpmjgVje0F',
     shouldBeRandomized: true,
     answers: [
       { text: '`2 4 12`', id: 0 },
@@ -50,6 +52,7 @@ const a = 1
 foo();
 ${'```'}
     `,
+    questionId: 'DpWaV7KlSdyHzU7eg2UY',
     shouldBeRandomized: false,
     answers: [
       { text: '`undefined`', id: 0 },
@@ -75,6 +78,7 @@ function foo() {
 foo();
 ${'```'}
     `,
+    questionId: 'JvRx9TArKCYdoBXBzkHN',
     shouldBeRandomized: false,
     answers: [
       { text: '`undefined`', id: 0 },
@@ -101,6 +105,7 @@ function foo() {
 foo();
 ${'```'}
     `,
+    questionId: 'W03hO2GqPSsPM2rI1Ium',
     shouldBeRandomized: false,
     answers: [
       { text: '`undefined`', id: 0 },
@@ -125,6 +130,7 @@ function bar() {
 }
 ${'```'}
     `,
+    questionId: 'MocNDOmweVA02PzqJsOQ',
     shouldBeRandomized: true,
     answers: [
       { text: '`undefined`', id: 0 },
@@ -153,6 +159,7 @@ function foo(a) {
 foo(4);
 ${'```'}
     `,
+    questionId: 'nBTrlZr4sUq0FsDaiToa',
     shouldBeRandomized: true,
     answers: [
       { text: '`undefined`', id: 0 },
@@ -167,6 +174,7 @@ ${'```'}
   },
   {
     question: `Which two mechanisms in JavaScript can "cheat" lexical scope?`,
+    questionId: 'gbwVLppPBTODdzlZeqH3',
     shouldBeRandomized: true,
     answers: [
       { text: '`eval` and `with`', id: 0 },
@@ -181,6 +189,7 @@ ${'```'}
   },
   {
     question: `There are two mechanisms in JavaScript that can "cheat" lexical scope. Why should they not be used?`,
+    questionId: 'MtRzxo7UUHil5a6Nfu8c',
     shouldBeRandomized: true,
     answers: [
       { text: 'There is no reason to not use them', id: 0 },

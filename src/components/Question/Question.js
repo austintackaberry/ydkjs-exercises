@@ -39,7 +39,15 @@ export class Question extends Component {
     chapterId: PropTypes.number.isRequired,
     index: PropTypes.number.isRequired,
     numberOfQuestions: PropTypes.number.isRequired,
-    question: PropTypes.object.isRequired,
+    question: PropTypes.shape({
+      question: PropTypes.string.isRequired,
+      questionId: PropTypes.string.isRequired,
+      shouldBeRandomized: PropTypes.bool.isRequired,
+      answers: PropTypes.array.isRequired,
+      correctAnswerId: PropTypes.number.isRequired,
+      moreInfoUrl: PropTypes.string.isRequired,
+      explanation: PropTypes.string.isRequired,
+    }).isRequired,
     score: PropTypes.object.isRequired,
     updateScore: PropTypes.func.isRequired,
   };

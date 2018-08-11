@@ -1,6 +1,7 @@
 const Ch1Questions = [
   {
     question: 'What gives a program state?',
+    questionId: 'VZwCST0WyEIUQYvUE6KU',
     shouldBeRandomized: false,
     answers: [
       { text: 'The ability for a program to execute', id: 0 },
@@ -21,6 +22,7 @@ const Ch1Questions = [
   {
     question:
       'In a traditional compiled-language process, what is the correct order of the three main steps a program will undergo before executing?',
+    questionId: 'jSYBDPCqlwv8ZrZGHvAw',
     shouldBeRandomized: false,
     answers: [
       { text: 'Tokenizing/Lexing, Parsing, Code-Generation', id: 0 },
@@ -38,6 +40,7 @@ const Ch1Questions = [
   {
     question:
       'In a traditional compiled-language process, during which phase is a string of characters broken into meaningful chunks?',
+    questionId: 'jur05a1YBHYX85whROMF',
     shouldBeRandomized: false,
     answers: [
       { text: 'Code-generation phase', id: 0 },
@@ -54,6 +57,7 @@ const Ch1Questions = [
   },
   {
     question: 'Which of the following is the responsibility of Scope?',
+    questionId: 's9D398qeGLpug0SSfQOs',
     shouldBeRandomized: false,
     answers: [
       { text: 'Parsing and code-generation', id: 0 },
@@ -82,6 +86,7 @@ const Ch1Questions = [
   {
     question:
       "Two distinct actions are taken for a variable assignment such as 'var a = 2; '",
+    questionId: 'dD9jisRqzgTC2oKTACTS',
     shouldBeRandomized: false,
     answers: [
       {
@@ -113,6 +118,7 @@ const Ch1Questions = [
   },
   {
     question: 'Which of these next statements are true?',
+    questionId: 'qKyC5jIwSluNdBgBodAW',
     shouldBeRandomized: false,
     answers: [
       {
@@ -146,6 +152,7 @@ const Ch1Questions = [
   {
     question:
       'Which of these next statements is true for traversing nested Scope?',
+    questionId: 'gH3E86se9GXXpWJvxW2e',
     shouldBeRandomized: false,
     answers: [
       {
@@ -177,6 +184,7 @@ const Ch1Questions = [
   },
   {
     question: 'Why does it matter whether we call it LHS or RHS?',
+    questionId: 'F65nDl791y7QRfBSE7Tq',
     shouldBeRandomized: false,
     answers: [
       {
@@ -210,6 +218,7 @@ const Ch1Questions = [
   },
   {
     question: 'What is Parsing?',
+    questionId: 'FfDoQtMBOaFAyFmGBIDe',
     shouldBeRandomized: true,
     answers: [
       { text: 'Taking a string and converting it into tokens', id: 0 },
@@ -235,6 +244,7 @@ const Ch1Questions = [
   },
   {
     question: 'What is the responsibility of a JavaScript engine?',
+    questionId: '9yhxzvgu71NjZhC46soN',
     shouldBeRandomized: true,
     answers: [
       {
@@ -262,6 +272,7 @@ const Ch1Questions = [
   },
   {
     question: 'What is the difference between an LHS lookup and an RHS lookup?',
+    questionId: 'qhtuUqyMS6d4r6F67wKx',
     shouldBeRandomized: true,
     answers: [
       {
@@ -299,6 +310,7 @@ const Ch1Questions = [
     var c = foo( 2 );
 
     `,
+    questionId: 'qJye44oG77frNCWMzhKV',
     shouldBeRandomized: false,
     answers: [
       {
@@ -333,6 +345,7 @@ const Ch1Questions = [
     var c = foo( 2 );
 
     `,
+    questionId: 'VIlFAV1xDf5EBxW6hYGs',
     shouldBeRandomized: false,
     answers: [
       {
@@ -359,6 +372,7 @@ const Ch1Questions = [
   },
   {
     question: `If an RHS look-up fails to find a variable, what kind of error is thrown?`,
+    questionId: 'vKlM2DHJyc8mpQORzeVV',
     shouldBeRandomized: true,
     answers: [
       {
