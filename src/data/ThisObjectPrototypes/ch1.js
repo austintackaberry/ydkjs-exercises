@@ -102,7 +102,7 @@ const Ch1Questions = [
   },
   {
     question: `\`this\` is actually a binding that is made when a function is invoked`,
-    questionId: 'xSQLd5HMVCcEaxDBMppV',
+    questionId: 'kfO4HXJNbw3pbZAgKTeK',
     shouldBeRandomized: false,
     answers: [
       {
