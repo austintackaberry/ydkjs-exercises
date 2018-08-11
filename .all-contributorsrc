@@ -160,6 +160,51 @@
         "design",
         "code"
       ]
+    },
+    {
+      "login": "oliverJurgen",
+      "name": "oliverJurgen",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/31285416?v=4",
+      "profile": "https://github.com/oliverJurgen",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "kevinsmithwebdev",
+      "name": "Kevin Smith",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/25860552?v=4",
+      "profile": "http://kevinsmithwebdev.com",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "esthercuan",
+      "name": "Maria Esther Cuan",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/5061542?v=4",
+      "profile": "http://esthercuan.com",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "mdncs",
+      "name": "mdncs",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/34404655?v=4",
+      "profile": "https://github.com/mdncs",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "mkozlows21",
+      "name": "mkozlows21",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/10067675?v=4",
+      "profile": "https://github.com/mkozlows21",
+      "contributions": [
+        "code"
+      ]
     }
   ]
 }
