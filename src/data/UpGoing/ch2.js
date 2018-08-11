@@ -1,6 +1,7 @@
 const Ch2Questions = [
   {
     question: 'Which of the following are ALL built-in types of values?',
+    questionId: 'leOlkX8knO7YPxijZryq',
     shouldBeRandomized: false,
     answers: [
       { text: 'string, operator, boolean', id: 0 },
@@ -17,6 +18,7 @@ const Ch2Questions = [
   {
     question:
       'What is the operator that can be used to find out the type of a value?',
+    questionId: 'IUAAVvd4jgoDxIs8cQih',
     shouldBeRandomized: false,
     answers: [
       { text: 'var', id: 0 },
@@ -33,6 +35,7 @@ const Ch2Questions = [
   },
   {
     question: 'What is the return value of: typeof null?',
+    questionId: 'ejGyTF0mYJ1Z90lnzk55',
     shouldBeRandomized: false,
     answers: [
       { text: 'boolean', id: 0 },
@@ -49,6 +52,7 @@ const Ch2Questions = [
   {
     question:
       "What is the return value of: typeof [1,2,3] === typeof {val: 'a', val: 'b', val: 'c'}; ?",
+    questionId: '6jXvxXQQTnwPLsSayrJS',
     shouldBeRandomized: false,
     answers: [
       { text: 'true', id: 0 },
@@ -64,6 +68,7 @@ const Ch2Questions = [
   },
   {
     question: 'In which ways can properties be accessed in an object?',
+    questionId: 'm3SMrBwpfwBRFfuQFJHy',
     shouldBeRandomized: false,
     answers: [
       { text: 'with dot notation OR bracket notation', id: 0 },
@@ -79,6 +84,7 @@ const Ch2Questions = [
   },
   {
     question: 'What is the main difference between an array and an object?',
+    questionId: 'xm1TjaXENJRwsPW9WVBj',
     shouldBeRandomized: false,
     answers: [
       { text: 'the maximum length of values they can hold', id: 0 },
@@ -102,6 +108,7 @@ const Ch2Questions = [
   },
   {
     question: 'Which of the following is an array property?',
+    questionId: 'UES97vdZK2mmm8ToaH6F',
     shouldBeRandomized: false,
     answers: [
       { text: 'values', id: 0 },
@@ -117,6 +124,7 @@ const Ch2Questions = [
   },
   {
     question: 'What is the most appropriate use of an object?',
+    questionId: 'QKS6JMErKG7gBovreaea',
     shouldBeRandomized: false,
     answers: [
       { text: 'to have numeric properties (keys)', id: 0 },
@@ -135,6 +143,7 @@ const Ch2Questions = [
   {
     question:
       'What are the types of coercion (conversion from one type to another)?',
+    questionId: '2UBMmJJRCxauBzqOivcs',
     shouldBeRandomized: false,
     answers: [
       { text: 'natural and unnatural', id: 0 },
@@ -152,6 +161,7 @@ const Ch2Questions = [
   {
     question:
       'Which of these next statments is an implicit coercion (conversion from one type to another)?',
+    questionId: 'KVa9gyVWvT9ymLmIeeGm',
     shouldBeRandomized: false,
     answers: [
       { text: 'var b = Number( "5" );', id: 0 },
@@ -168,6 +178,7 @@ const Ch2Questions = [
   {
     question:
       'If var a = 42 and var b = "42", will the statements a === b AND a == b return ...?',
+    questionId: 'w5G9jSN6Hj9UD4VcfsFV',
     shouldBeRandomized: false,
     answers: [
       { text: 'true / true', id: 0 },
@@ -187,6 +198,7 @@ const Ch2Questions = [
   {
     question:
       'What happens when you assign a variable that has not yet been declared?',
+    questionId: 'hq6prlUl9zMipsNYvvwZ',
     shouldBeRandomized: false,
     answers: [
       {
@@ -210,6 +222,7 @@ const Ch2Questions = [
   {
     question:
       'In which of these cases we would probably be safe using == rather than === for comparison?',
+    questionId: 'XGobn8UO1CAa0GGempf4',
     shouldBeRandomized: false,
     answers: [
       {
@@ -240,6 +253,7 @@ const Ch2Questions = [
   {
     question:
       'If a === 5, which of the following is a correct use of the ternary operator AND returns true?',
+    questionId: 'eJGjIHoFLjFgwBCVMfE0',
     shouldBeRandomized: false,
     answers: [
       { text: 'a < 20 ? true : false', id: 0 },
@@ -256,6 +270,7 @@ const Ch2Questions = [
   },
   {
     question: 'Which of these next variable names is NOT a valid identifier?',
+    questionId: 'aaLv016yFLO62Wg8NMIe',
     shouldBeRandomized: false,
     answers: [
       { text: 'var counter; ', id: 0 },
@@ -271,6 +286,7 @@ const Ch2Questions = [
   },
   {
     question: 'Which of these next statements is true about scopes?',
+    questionId: 'syt9S06LI4zL2sdXamxq',
     shouldBeRandomized: false,
     answers: [
       {
@@ -304,6 +320,7 @@ const Ch2Questions = [
   {
     question:
       "What will happen if you try to access a variable's value in a scope where it's not available?",
+    questionId: 'FI4eixvGsXC1CcVfk9EU',
     shouldBeRandomized: false,
     answers: [
       { text: 'StntaxError', id: 0 },
@@ -321,6 +338,7 @@ const Ch2Questions = [
   },
   {
     question: 'Which of these statements is NOT true about strict mode?',
+    questionId: 'ui7eyeSaCe31okGiUO0k',
     shouldBeRandomized: false,
     answers: [
       {
@@ -351,6 +369,7 @@ const Ch2Questions = [
   },
   {
     question: 'Which of these will immediately print "Hello" to the console?',
+    questionId: 'pdnSBOr7Cy4Q6TeZeOpI',
     shouldBeRandomized: false,
     answers: [
       { text: '(function IIFE(){ console( "Hello!" ); })();', id: 0 },
@@ -367,6 +386,7 @@ const Ch2Questions = [
   },
   {
     question: 'What is Polyfilling?',
+    questionId: '7Ol2G2u5bzLOHlVt8mLq',
     shouldBeRandomized: false,
     answers: [
       {
@@ -399,6 +419,7 @@ const Ch2Questions = [
   },
   {
     question: 'What is Transpiling?',
+    questionId: 'WbQGlDdR3y6TnyrvlqIk',
     shouldBeRandomized: false,
     answers: [
       {

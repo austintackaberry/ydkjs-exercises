@@ -1,6 +1,7 @@
 const Ch1Questions = [
   {
     question: 'Which is a valid JavaScript type for numerical data?',
+    questionId: 'pMUUWcGwln5koHSPych2',
     shouldBeRandomized: false,
     answers: [
       { text: 'int', id: 0 },
@@ -17,6 +18,7 @@ const Ch1Questions = [
   },
   {
     question: 'What is the output of `console.log(typeof [])`?',
+    questionId: '3oBINeHwaPBjQSxrBsAn',
     shouldBeRandomized: false,
     answers: [
       { text: 'undefined', id: 0 },
