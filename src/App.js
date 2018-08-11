@@ -39,7 +39,11 @@ class App extends Component {
         value={{ score: this.state.score, updateScore: this.updateScore }}
       >
         <div className="App">
-          <Sidebar books={books} score={this.state.score} />
+          <Sidebar
+            books={books}
+            score={this.state.score}
+            updateScore={this.updateScore}
+          />
           <div className="main-content">
             <Link style={{ textDecoration: 'none', color: 'black' }} to="/">
               <h1 style={{ fontSize: '55px' }}>YDKJS EXERCISES</h1>

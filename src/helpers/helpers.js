@@ -70,3 +70,20 @@ export const getNewScore = ({
   newScore.incorrect = newScore.incorrect + scoreDiff.incorrect;
   return newScore;
 };
+
+//Restart Score
+
+export const reinitializeScore = newScore => {
+  newScore.correct = 0;
+  newScore.incorrect = 0;
+
+  newScore.books.forEach(book => {
+    book.chapters.forEach(chapter => {
+      chapter.questions.forEach(question => {
+        question.status = 'UNANSWERED';
+      });
+    });
+  });
+
+  return newScore;
+};
