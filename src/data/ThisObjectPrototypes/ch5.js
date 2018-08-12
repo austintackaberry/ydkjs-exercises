@@ -4,7 +4,7 @@ const Ch5Questions = [
 ${'```js'}
 'use strict'
 var anotherObject = {
-	a: 2
+  a: 2
 };
 
 var myObject = Object.create( anotherObject );
@@ -50,7 +50,7 @@ ${'```'}
     question: `What is logged to the console when the following code is executed:
 ${'```js'}
 var anotherObject = {
-	a: 2
+  a: 2
 };
 
 var myObject = Object.create( anotherObject );
@@ -117,12 +117,12 @@ ${'```'}
     shouldBeRandomized: true,
     answers: [
       {
-        text: 'undefined` `ReferenceError`',
+        text: '`undefined` `ReferenceError`',
         id: 0,
       },
-      { text: `"Meow" "sleeping..."`, id: 1 },
-      { text: '"Bark" "sleeping..."', id: 2 },
-      { text: '"Meow" `ReferenceError`', id: 3 },
+      { text: '`"Meow"` `"sleeping..."`', id: 1 },
+      { text: '`"Bark"` `"sleeping..."`', id: 2 },
+      { text: '`"Meow"` `ReferenceError`', id: 3 },
     ],
     correctAnswerId: 1,
     moreInfoUrl:

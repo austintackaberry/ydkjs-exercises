@@ -61,37 +61,37 @@ const Ch1Questions = [
   },
   {
     question: `What is logged to the console in the code below:
-      ${'```js'}
-      function foo() {
-          var a = 2;
-          this.bar();
-        }
-        
-        function bar() {
-            var a = 1
-            console.log( this.a );
-        }
-        
-        foo();   
-        ${'```'}
-        `,
+${'```js'}
+function foo() {
+  var a = 2;
+  this.bar();
+}
+
+function bar() {
+  var a = 1
+  console.log( this.a );
+}
+
+foo();   
+${'```'}
+    `,
     questionId: 'KZIj2gCNtm3T2ceYqaJI',
     shouldBeRandomized: false,
     answers: [
       {
-        text: 'undefined',
+        text: '`undefined`',
         id: 0,
       },
       {
-        text: `null`,
+        text: '`null`',
         id: 1,
       },
       {
-        text: `1`,
+        text: '`1`',
         id: 2,
       },
       {
-        text: `2`,
+        text: '`2`',
         id: 3,
       },
     ],

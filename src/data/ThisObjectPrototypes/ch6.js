@@ -23,7 +23,7 @@ const Ch6Questions = [
   {
     question: `In OLOO design, shadowing is a helpful tool used to make API design more robust`,
     questionId: '9NmJ3HhcsvYsjDk240D7',
-    shouldBeRandomized: true,
+    shouldBeRandomized: false,
     answers: [
       {
         text: `True`,
@@ -39,7 +39,7 @@ const Ch6Questions = [
   {
     question: `In general, with \`[[Prototype]]\` delegation involved, you want state to be on the delegators, not on the delegate`,
     questionId: 'YKfeed7X8PeaP3FqAOA2',
-    shouldBeRandomized: true,
+    shouldBeRandomized: false,
     answers: [
       {
         text: `True`,
@@ -55,7 +55,7 @@ const Ch6Questions = [
   {
     question: `If you make B linked to A, and then try to link A to B, you will get an error.`,
     questionId: 'ecm8D9c10bwlHIQcVqby',
-    shouldBeRandomized: true,
+    shouldBeRandomized: false,
     answers: [
       {
         text: `True`,

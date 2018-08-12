@@ -41,7 +41,7 @@ ${'```js'}
 'use strict'
 function foo() {
   var a = 'pony'
-	console.log( this.a );
+  console.log( this.a );
 }
 
 var a = 'rocket ship';
@@ -71,12 +71,12 @@ ${'```js'}
 'use strict'
 
 function printName() {
-	console.log( this.name );
+  console.log( this.name );
 }
 
 var person = {
-	name: 'Ralphie',
-	printName: printName
+  name: 'Ralphie',
+  printName: printName
 };
 
 person.printName();
@@ -87,8 +87,8 @@ ${'```'}
     questionId: '8YPCKMUjaKTqk2UnNWSO',
     shouldBeRandomized: false,
     answers: [
-      { text: 'undefined', id: 0 },
-      { text: 'null', id: 1 },
+      { text: '`undefined`', id: 0 },
+      { text: '`null`', id: 1 },
       {
         text: `\`"Joanna"\``,
         id: 2,
@@ -118,8 +118,8 @@ ${'```'}
     questionId: 'njma2dew2w1jb06jFxEG',
     shouldBeRandomized: false,
     answers: [
-      { text: 'undefined', id: 0 },
-      { text: 'null', id: 1 },
+      { text: '`undefined`', id: 0 },
+      { text: '`null`', id: 1 },
       {
         text: `\`"Joanna"\``,
         id: 2,
