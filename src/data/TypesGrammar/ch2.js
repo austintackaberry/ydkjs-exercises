@@ -27,6 +27,51 @@ const Ch2Questions = [
     explanation:
       'An oddity of JavaScript, the property `NaN` ("not a number") is actually of type "number".',
   },
+  {
+    question: '',
+    questionId: '4jatWiEr1aVxmEVDH3OK',
+    shouldBeRandomized: true,
+    answers: [
+      { text: '', id: 0 },
+      { text: '', id: 1 },
+      { text: '', id: 2 },
+      { text: '', id: 3 },
+    ],
+    correctAnswerId: 0,
+    moreInfoUrl:
+      'https://github.com/getify/You-Dont-Know-JS/blob/master/types%20%26%20grammar/',
+    explanation: '',
+  },
+  {
+    question: '',
+    questionId: 'vzm8C9Tgio0bfyCbB0TX',
+    shouldBeRandomized: true,
+    answers: [
+      { text: '', id: 0 },
+      { text: '', id: 1 },
+      { text: '', id: 2 },
+      { text: '', id: 3 },
+    ],
+    correctAnswerId: 0,
+    moreInfoUrl:
+      'https://github.com/getify/You-Dont-Know-JS/blob/master/types%20%26%20grammar/',
+    explanation: '',
+  },
+  {
+    question: '',
+    questionId: 'w6xgQc4j8bOgnLmda8ds',
+    shouldBeRandomized: true,
+    answers: [
+      { text: '', id: 0 },
+      { text: '', id: 1 },
+      { text: '', id: 2 },
+      { text: '', id: 3 },
+    ],
+    correctAnswerId: 0,
+    moreInfoUrl:
+      'https://github.com/getify/You-Dont-Know-JS/blob/master/types%20%26%20grammar/',
+    explanation: '',
+  },
 ];
 
 export default Ch2Questions;
