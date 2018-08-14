@@ -1,13 +1,40 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { List, ListItem, ListItemTitle, Divider, Wrapper } from './styled';
-import { Link } from 'react-router-dom';
+import {
+  List,
+  ListItem,
+  ListItemTitle,
+  Divider,
+  Wrapper,
+  FlatButton,
+} from './styled';
+import { Link, withRouter } from 'react-router-dom';
 import ProgressBar from '../ProgressBar';
+import { reinitializeScore } from '../../helpers/helpers';
+
+const ResetButton = props =>
+  withRouter(({ history, resetScore }) => (
+    <FlatButton
+      onClick={() => {
+        resetScore();
+        history.push('/');
+      }}
+    >
+      Reset Progress
+    </FlatButton>
+  ))(props);
 
 class Sidebar extends Component {
   static propTypes = {
     books: PropTypes.array.isRequired,
     score: PropTypes.object.isRequired,
+    updateScore: PropTypes.func.isRequired,
+  };
+
+  resetScore = () => {
+    const { score, updateScore } = this.props;
+    const newScore = reinitializeScore(score);
+    updateScore(newScore);
   };
 
   getBookScores(book) {
@@ -67,6 +94,9 @@ class Sidebar extends Component {
             </Link>
           ))}
         </List>
+        <section>
+          <ResetButton resetScore={this.resetScore} />
+        </section>
       </Wrapper>
     );
   }

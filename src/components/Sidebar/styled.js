@@ -36,3 +36,10 @@ export const Wrapper = styled.div`
   height: 100%;
   z-index: 99999;
 `;
+
+export const FlatButton = styled.button`
+  background-color: lightgrey;
+  border: none;
+  padding: 0.5rem 1.5rem;
+`;
+FlatButton.displayName = 'FlatButton';

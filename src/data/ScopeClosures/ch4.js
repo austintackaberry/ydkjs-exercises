@@ -7,6 +7,7 @@ var a;
 console.log(a)
 ${'```'}
     `,
+    questionId: 'zdBP0pVoTJgenPKexwC9',
     shouldBeRandomized: true,
     answers: [
       { text: '`undefined`', id: 0 },
@@ -26,6 +27,7 @@ console.log(a)
 var a = 3;
 ${'```'}
     `,
+    questionId: 'VPvyB4tV4uYkltN22SLr',
     shouldBeRandomized: true,
     answers: [
       { text: '`undefined`', id: 0 },
@@ -47,6 +49,7 @@ var foo = function() {
 };
 ${'```'}
     `,
+    questionId: 'lR9A2ctkJdYAxPMrOK9k',
     shouldBeRandomized: true,
     answers: [
       { text: "`'hello'`", id: 0 },
@@ -72,6 +75,7 @@ foo = function() {
 };
 ${'```'}
     `,
+    questionId: 'XNrKSbCikeWmmcmPN37Q',
     shouldBeRandomized: false,
     answers: [
       { text: '`1`', id: 0 },
@@ -87,6 +91,7 @@ ${'```'}
   {
     question: `Declarations themselves are hoisted, but assignments, even assignments of function expressions, are not hoisted.
     `,
+    questionId: 'SAaSc02839X47tNaXect',
     shouldBeRandomized: false,
     answers: [{ text: 'True', id: 0 }, { text: 'False', id: 1 }],
     correctAnswerId: 0,

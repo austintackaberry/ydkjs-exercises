@@ -33,7 +33,7 @@ Section.displayName = 'Section';
 
 export const SubmitButton = styled.button`
   display: block;
-  margin: 0 auto;
+  margin: 4px auto;
 `;
 SubmitButton.displayName = 'SubmitButton';
 

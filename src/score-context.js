@@ -12,7 +12,7 @@ const bookScores = books.map(book => {
       return {
         title: chapter.title,
         questions: chapter.questions.map(question => {
-          return { status: UNANSWERED };
+          return { status: UNANSWERED, questionId: question.questionId };
         }),
       };
     }),

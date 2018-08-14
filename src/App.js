@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import NoMatch from './components/NoMatch';
 import { Switch, Route, Link } from 'react-router-dom';
 import './App.css';
+import { mergeScores } from './helpers/helpers';
 
 import { ScoreContext, score } from './score-context';
 
@@ -26,11 +27,16 @@ class App extends Component {
     };
   }
   componentDidMount() {
-    let score = window.localStorage.getItem('score');
-    if (score) {
-      score = JSON.parse(score);
-      this.setState({ score });
+    let lsScore = window.localStorage.getItem('score');
+    let score = this.state.score;
+    if (lsScore) {
+      lsScore = JSON.parse(lsScore);
+      score = mergeScores({
+        lsScore,
+        newScore: this.state.score,
+      });
     }
+    this.setState({ score });
   }
 
   render() {
@@ -39,7 +45,11 @@ class App extends Component {
         value={{ score: this.state.score, updateScore: this.updateScore }}
       >
         <div className="App">
-          <Sidebar books={books} score={this.state.score} />
+          <Sidebar
+            books={books}
+            score={this.state.score}
+            updateScore={this.updateScore}
+          />
           <div className="main-content">
             <Link style={{ textDecoration: 'none', color: 'black' }} to="/">
               <h1 style={{ fontSize: '55px' }}>YDKJS EXERCISES</h1>

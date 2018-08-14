@@ -2,6 +2,7 @@ const Ch3Questions = [
   {
     question:
       'What is going on under the hood when importing modules to prevent collisions?',
+    questionId: 'mTVbHEJN1LbO9Jt8FWOL',
     shouldBeRandomized: true,
     answers: [
       { text: 'They are each wrapped in an IIFE', id: 0 },
@@ -16,6 +17,7 @@ const Ch3Questions = [
   },
   {
     question: 'What is the main reason you should name your functions?',
+    questionId: 'J4uc4jTpBvW0q26zSBX0',
     shouldBeRandomized: true,
     answers: [
       {
@@ -36,6 +38,7 @@ const Ch3Questions = [
   },
   {
     question: 'JavaScript did not have a concept of block scoping before ES6',
+    questionId: '5q00I1WBvBU3WD2Tgu82',
     shouldBeRandomized: false,
     answers: [
       {
@@ -56,6 +59,7 @@ ${'```js'}
 console.log(i)
 ${'```'}
     `,
+    questionId: 'ShCvRiKy6BmEdnOJtj75',
     shouldBeRandomized: true,
     answers: [
       {
@@ -78,6 +82,7 @@ ${'```js'}
 console.log(i)
 ${'```'}
 `,
+    questionId: 'AhiJsYY4y9uHnVVBTYCi',
     shouldBeRandomized: true,
     answers: [
       {
