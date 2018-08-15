@@ -1,3 +1,5 @@
+import Ch2Questions from './ch2';
+
 const ES6BeyondChapters = [
   {
     title: 'Chapter 1: ES? Now and Future',
@@ -7,7 +9,9 @@ const ES6BeyondChapters = [
   {
     title: 'Chapter 2: Syntax',
     url: '/ch2',
-    questions: [],
+    questions: Ch2Questions,
+    chapterLink:
+      'https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20%26%20beyond/ch2.md',
   },
   {
     title: 'Chapter 3: Organization',
