@@ -9,10 +9,10 @@ ${'```'}
     questionId: '5eI0FMHDy4XEeOkzN7Uj',
     shouldBeRandomized: true,
     answers: [
-      { text: '"object"', id: 0 },
-      { text: '"string"', id: 1 },
-      { text: '"function"', id: 2 },
-      { text: '"class', id: 3 },
+      { text: '`"object"`', id: 0 },
+      { text: '`"string"`', id: 1 },
+      { text: '`"function"`', id: 2 },
+      { text: '`"class"`', id: 3 },
     ],
     correctAnswerId: 0,
     moreInfoUrl:

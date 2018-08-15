@@ -43,10 +43,10 @@ ${'```'}
     questionId: 'JusfVHYhYwoarDGU2aMo',
     shouldBeRandomized: false,
     answers: [
-      { text: 'true', id: 0 },
-      { text: 'false', id: 1 },
-      { text: 'undefined', id: 2 },
-      { text: 'TypeError', id: 3 },
+      { text: '`true`', id: 0 },
+      { text: '`false`', id: 1 },
+      { text: '`undefined`', id: 2 },
+      { text: '`TypeError`', id: 3 },
     ],
     correctAnswerId: 0,
     moreInfoUrl:
