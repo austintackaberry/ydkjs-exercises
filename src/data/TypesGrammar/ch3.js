@@ -58,7 +58,7 @@ ${'```'}
     correctAnswerId: 0,
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/types%20%26%20grammar/ch3.md#boxing-wrappers',
-    explanation: `Ever wondered why you can call \`str.length\` or \`str.toUpperCase()\`? Or maybe you just accepted it as fact and didn't think much about it. Primitive types such as \`string\` or \`number\` get automatically coerced into boxing wrappers as needed which have methods such as \`length\` and \`toUpperCase\`.`,
+    explanation: `Ever wondered why you can call \`str.length\` or \`str.toUpperCase()\`? Or maybe you just accepted it as fact and didn't think much about it. Primitive types such as \`string\` or \`number\` get automatically wrapped by boxing wrappers as needed which have methods such as \`length\` and \`toUpperCase\`.`,
   },
   {
     question: 'What is "boxing" and "unboxing"?',
@@ -101,7 +101,7 @@ ${'```'}
     correctAnswerId: 1,
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/types%20%26%20grammar/ch3.md#boxing-wrappers',
-    explanation: `You might think that it would be more performant to use the object wrapper form, so that the engine doesn't have to coerce the primitive. However, engines have been optimizing based on the assumption that almost everyone constructs using primitives, thus they are actually more performant.`,
+    explanation: `You might think that it would be more performant to use the object wrapper form, so that the engine doesn't have to wrap the primitive. However, engines have been optimizing based on the assumption that almost everyone constructs using primitives, thus they are actually more performant.`,
   },
 ];
 
