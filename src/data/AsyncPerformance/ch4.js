@@ -46,7 +46,7 @@ res = it.next(7);
 
 console.log(res.value);
 ${'```'}
-          `,
+    `,
     questionId: '0UGZnk0GYtmh9kERoxbJ',
     shouldBeRandomized: true,
     answers: [
@@ -120,7 +120,7 @@ for (let nextVar of foo()) {
 }
 console.log(sumNextVar);
 ${'```'}
-          `,
+    `,
     questionId: 'eGErZ2NWL1GsyiFCNENi',
     shouldBeRandomized: true,
     answers: [

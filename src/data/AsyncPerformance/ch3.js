@@ -49,7 +49,7 @@ Promise.all([prom1, prom2]).then(function onComplete(results) {
   console.log(sum)
 })
 ${'```'}
-          `,
+    `,
     questionId: 'GA4y3cQ7ni69os1cz7X6',
     shouldBeRandomized: false,
     answers: [
@@ -90,7 +90,7 @@ Promise.all(promArr)
   })
   .catch(err => console.log(err));
 ${'```'}
-          `,
+    `,
     questionId: 'AzGqKEnaNzBF3G6ouNHm',
     shouldBeRandomized: false,
     answers: [
@@ -120,7 +120,7 @@ Promise.race([prom1, prom2]).then(function onComplete(results) {
   console.log(results)
 })
 ${'```'}
-          `,
+    `,
     questionId: 'bqxHeYeDipQbED3xwrEM',
     shouldBeRandomized: false,
     answers: [
@@ -146,7 +146,7 @@ Promise.all([prom1, prom2, prom3])
   .then(results => console.log(results))
   .catch(err => console.log(err));
 ${'```'}
-          `,
+    `,
     questionId: 'SnPgR8WspOlxLcYHaxOS',
     shouldBeRandomized: true,
     answers: [

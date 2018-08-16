@@ -17,7 +17,7 @@ var data = ajax( "https://google.com" );
 
 console.log( data );
 ${'```'}
-        `,
+    `,
     questionId: 'BpY4KEBuBBdeQBlxA3LG',
     shouldBeRandomized: true,
     answers: [
@@ -65,7 +65,6 @@ ${'```'}
       { text: '`callbackFn` will be executed once 1000ms has elapsed.', id: 0 },
       { text: '`callbackFn` will be executed in at least 1000ms.', id: 1 },
       { text: '`callbackFn` will be executed in at most 1000ms.', id: 2 },
-      { text: '', id: 3 },
     ],
     correctAnswerId: 1,
     moreInfoUrl:
