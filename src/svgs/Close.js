@@ -3,14 +3,14 @@ import React from 'react';
 const Close = () => {
   return (
     <svg
-      height="12px"
-      width="12px"
-      viewPort="0 0 12 12"
+      height="25px"
+      width="25px"
+      viewPort="0 0 25 25"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <line x1="1" y1="11" x2="11" y2="1" stroke="black" stroke-width="2" />
-      <line x1="1" y1="1" x2="11" y2="11" stroke="black" stroke-width="2" />
+      <line x1="1" y1="22" x2="22" y2="1" stroke="black" stroke-width="3" />
+      <line x1="1" y1="1" x2="22" y2="22" stroke="black" stroke-width="3" />
     </svg>
   );
 };

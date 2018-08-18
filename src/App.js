@@ -61,7 +61,7 @@ class App extends Component {
 
   render() {
     const { shouldShowSidebar, isNarrowScreen } = this.state;
-    const backgroundColor =
+    const overlayStyle =
       shouldShowSidebar && isNarrowScreen
         ? { backgroundColor: 'rgba(0,0,0,0.5)' }
         : {};
@@ -71,11 +71,13 @@ class App extends Component {
             marginLeft: this.sidebarRef.current.offsetWidth,
           }
         : {};
+    const mainContentStyle =
+      shouldShowSidebar && isNarrowScreen ? { pointerEvents: 'none' } : {};
     return (
       <ScoreContext.Provider
         value={{ score: this.state.score, updateScore: this.updateScore }}
       >
-        <div id="overlay" style={backgroundColor}>
+        <div id="overlay" style={overlayStyle}>
           <div className="App" style={appMargin}>
             {shouldShowSidebar && (
               <Sidebar
@@ -87,7 +89,7 @@ class App extends Component {
                 ref={this.sidebarRef}
               />
             )}
-            <div className="main-content">
+            <div className="main-content" style={mainContentStyle}>
               <MenuContainer
                 shouldShowSidebar={this.state.shouldShowSidebar}
                 handleMenuClick={e => this.handleMenuClick(e)}
