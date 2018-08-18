@@ -19,13 +19,13 @@ body {
 
 html,
 body,
-#root {
+#root,
+#overlay {
   height: 100%;
 }
 
 .App {
   position: relative;
-  margin-left: 15vw;
   height: 100%;
 }
 

@@ -14,7 +14,7 @@ class BookRouter extends Component {
     return (
       <div>
         <Link style={{ textDecoration: 'none', color: 'black' }} to={book.url}>
-          <h2 style={{ fontSize: '40px' }}>{book.title}</h2>
+          <h2 style={{ fontSize: '35px', margin: '10px 0' }}>{book.title}</h2>
         </Link>
         <Switch>
           <Route

@@ -11,6 +11,7 @@ import {
 import { Link, withRouter } from 'react-router-dom';
 import ProgressBar from '../ProgressBar';
 import { reinitializeScore } from '../../helpers/helpers';
+import Close from '../../svgs/Close';
 
 const ResetButton = props =>
   withRouter(({ history, resetScore }) => (
@@ -57,49 +58,74 @@ class Sidebar extends Component {
   }
 
   render() {
-    const score = this.props.score;
-    const books = this.props.books;
+    const {
+      score,
+      books,
+      isNarrowScreen,
+      onCloseClick,
+      forwardedRef,
+    } = this.props;
     const scoreAnswered = score.correct + score.incorrect;
     const scorePct = Math.round((100 * score.correct) / scoreAnswered) || 0;
 
     return (
       <Wrapper>
-        <List>
-          <ListItemTitle>Progress</ListItemTitle>
-          <ListItem>
-            <ProgressBar score={score} />
-          </ListItem>
-          <ListItem>
-            <p>
-              You've answered <strong>{score.correct}</strong> out of{' '}
-              <strong>{scoreAnswered}</strong> (<strong>{scorePct}%</strong>)
-              questions correctly.
-            </p>
-            <p>
-              <strong>{score.possible - scoreAnswered}</strong> left to answer.
-            </p>
-          </ListItem>
+        {isNarrowScreen && (
+          <div
+            onClick={e => onCloseClick(e)}
+            style={{
+              textAlign: 'right',
+              margin: '10px 10px 0 0',
+            }}
+          >
+            <Close />
+          </div>
+        )}
+        <div ref={forwardedRef}>
+          <List>
+            <ListItemTitle>Progress</ListItemTitle>
+            <ListItem>
+              <ProgressBar score={score} />
+            </ListItem>
+            <ListItem>
+              <p>
+                You've answered <strong>{score.correct}</strong> out of{' '}
+                <strong>{scoreAnswered}</strong> (<strong>{scorePct}%</strong>)
+                questions correctly.
+              </p>
+              <p>
+                <strong>{score.possible - scoreAnswered}</strong> left to
+                answer.
+              </p>
+            </ListItem>
 
-          <Divider />
+            <Divider />
 
-          <ListItemTitle>Books</ListItemTitle>
-          {books.map((book, index) => (
-            <Link key={index} style={{ textDecoration: 'none' }} to={book.url}>
-              <ListItem>
-                {`${book.title} (${
-                  this.getBookScores(score.books[index]).correct
-                } /
+            <ListItemTitle>Books</ListItemTitle>
+            {books.map((book, index) => (
+              <Link
+                key={index}
+                style={{ textDecoration: 'none' }}
+                to={book.url}
+              >
+                <ListItem>
+                  {`${book.title} (${
+                    this.getBookScores(score.books[index]).correct
+                  } /
                   ${this.getBookScores(score.books[index]).possible})`}
-              </ListItem>
-            </Link>
-          ))}
-        </List>
-        <section>
-          <ResetButton resetScore={this.resetScore} />
-        </section>
+                </ListItem>
+              </Link>
+            ))}
+          </List>
+          <section>
+            <ResetButton resetScore={this.resetScore} />
+          </section>
+        </div>
       </Wrapper>
     );
   }
 }
 
-export default Sidebar;
+export default React.forwardRef((props, ref) => {
+  return <Sidebar {...props} forwardedRef={ref} />;
+});
