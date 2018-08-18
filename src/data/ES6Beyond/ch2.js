@@ -30,34 +30,41 @@ const Ch2Questions = [
   {
     question: `What will be logged to the console when the following code is executed:
 ${'```js'}
+{
+  const a = 2;
+  a = 3;
+  console.log(a)
+}
 ${'```'}
     `,
     questionId: 'qE8Cy9hGslTCTCt44Sbn',
     shouldBeRandomized: true,
     answers: [
       {
-        text: '',
+        text: '`3`',
         id: 0,
       },
-      { text: '', id: 1 },
+      { text: '`TypeError`', id: 1 },
       {
-        text: '',
+        text: '`2`',
         id: 2,
       },
       {
-        text: '',
+        text: '`SyntaxError`',
         id: 3,
       },
     ],
     correctAnswerId: 0,
-    moreInfoUrl: '',
-    explanation: '',
+    moreInfoUrl:
+      'https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20%26%20beyond/ch2.md#const-declarations',
+    explanation:
+      "You are not allowed to change the value the variable holds once it's been set, at declaration time. A `const` declaration must have an explicit initialization.",
   },
   {
     question: `With ES6, this is valid JavaScript:
 ${'```js'}
-{	let a = 2, b, c;
-	// ..
+{ let a = 2, b, c;
+  // ..
 }
 ${'```'}
     `,
@@ -82,17 +89,13 @@ ${'```js'}
 let a = 2;
 
 if (a > 1) {
-	let b = a * 3;
-	console.log( b );		// 6
+  let b = a * 3;
 
-	for (let i = a; i <= b; i++) {
-		let j = i + 10;
-		console.log( j );
-	}
-	// 12 13 14 15 16
+  for (let i = a; i <= b; i++) {
+    let j = i + 10;
+  }
 
-	let c = a + b;
-	console.log( c );		// 8
+  let c = a + b;
 }
 ${'```'}
     `,
@@ -119,9 +122,9 @@ ${'```'}
     question: `What will be logged to the console when the following code is executed:
 ${'```js'}
 {
-	const a = [1,2,3];
-	a.push( 4 );
-	console.log( a );
+  const a = [1,2,3];
+  a.push( 4 );
+  console.log( a );
 }
 ${'```'}
     `,

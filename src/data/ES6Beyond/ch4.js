@@ -1,11 +1,11 @@
-const Ch2Questions = [
+const Ch4Questions = [
   {
-    question: `What are the two possible outcomes of a Promise?`,
+    question: `What are the two possible outcomes of a \`Promise\`?`,
     questionId: 'vQyG9NbXDGHwOmFAEZv2',
     shouldBeRandomized: true,
     answers: [
       {
-        text: 'Resolved and rejected',
+        text: 'Fulfilled and rejected',
         id: 0,
       },
       { text: 'Completed and in progress', id: 1 },
@@ -47,11 +47,12 @@ ${'```'}
     question: `This is a valid way to construct and consume a promise:
 ${'```js'}
 var p = new Promise((resolve) => {
-  setTimeout(() => resolve(5), 1000)
+  setTimeout(() => resolve(5), 1000);
 } );
+
 p.done(val => {
-  console.log(val)
-})
+  console.log(val);
+});
 ${'```'}
     `,
     questionId: 'tx0ixV3MjqoXXmJkxCRB',
@@ -101,7 +102,7 @@ ${'```js'}
 var p1 = Promise.resolve( 42 );
 
 var p2 = new Promise( function pr(resolve){
-	resolve( 42 );
+  resolve( 42 );
 } );
 ${'```'}
     `,
@@ -122,4 +123,4 @@ ${'```'}
   },
 ];
 
-export default Ch2Questions;
+export default Ch4Questions;

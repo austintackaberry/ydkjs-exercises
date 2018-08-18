@@ -1,4 +1,4 @@
-const Ch2Questions = [
+const Ch3Questions = [
   {
     question: `What will be logged to the console when the following code is executed:
 ${'```js'}
@@ -38,7 +38,7 @@ ${'```js'}
 var a = [1,2,3,4,5];
 
 function foo(x,y,z,w,p) {
-	console.log( x + y + z + w + p );
+  console.log( x + y + z + w + p );
 }
 
 foo( ...a );
@@ -136,4 +136,4 @@ ${'```'}
   },
 ];
 
-export default Ch2Questions;
+export default Ch3Questions;
