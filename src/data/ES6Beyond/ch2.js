@@ -27,6 +27,123 @@ const Ch2Questions = [
     explanation:
       'In ES6+, you can provide a default value for a function parameter. The default value is used if the argument is *undefined* (including if no argument is passed).  It is not used for other falsy values (i.e. 0, NaN, an empty string, etc.).',
   },
+  {
+    question: `What will be logged to the console when the following code is executed:
+${'```js'}
+${'```'}
+    `,
+    questionId: 'qE8Cy9hGslTCTCt44Sbn',
+    shouldBeRandomized: true,
+    answers: [
+      {
+        text: '',
+        id: 0,
+      },
+      { text: '', id: 1 },
+      {
+        text: '',
+        id: 2,
+      },
+      {
+        text: '',
+        id: 3,
+      },
+    ],
+    correctAnswerId: 0,
+    moreInfoUrl: '',
+    explanation: '',
+  },
+  {
+    question: `With ES6, this is valid JavaScript:
+${'```js'}
+{	let a = 2, b, c;
+	// ..
+}
+${'```'}
+    `,
+    questionId: '9vFbLV0HPOB76wPvXkvj',
+    shouldBeRandomized: true,
+    answers: [
+      {
+        text: 'True',
+        id: 0,
+      },
+      { text: 'False', id: 1 },
+    ],
+    correctAnswerId: 0,
+    moreInfoUrl:
+      'https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20%26%20beyond/ch2.md#block-scoped-declarations',
+    explanation:
+      'Block scoping is now possible with the `let` and `const` keywords.',
+  },
+  {
+    question: `What variables are scoped within the \`for\` loop:
+${'```js'}
+let a = 2;
+
+if (a > 1) {
+	let b = a * 3;
+	console.log( b );		// 6
+
+	for (let i = a; i <= b; i++) {
+		let j = i + 10;
+		console.log( j );
+	}
+	// 12 13 14 15 16
+
+	let c = a + b;
+	console.log( c );		// 8
+}
+${'```'}
+    `,
+    questionId: 'N1MFrOhtcAZzGzddk0jF',
+    shouldBeRandomized: true,
+    answers: [
+      {
+        text: '`j`',
+        id: 0,
+      },
+      { text: '`i`, `j`', id: 1 },
+      {
+        text: '`i`, `j`, `a`, `b`',
+        id: 2,
+      },
+    ],
+    correctAnswerId: 1,
+    moreInfoUrl:
+      'https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20%26%20beyond/ch2.md#let-declarations',
+    explanation:
+      '`j` is clearly scoped to the `for` loop, but `i` is not so obvious. A new `i` is scoped to the block for each iteration.',
+  },
+  {
+    question: `What will be logged to the console when the following code is executed:
+${'```js'}
+{
+	const a = [1,2,3];
+	a.push( 4 );
+	console.log( a );
+}
+${'```'}
+    `,
+    questionId: 'msvBBTHtOQSrFGkly2yk',
+    shouldBeRandomized: true,
+    answers: [
+      {
+        text: '`[1, 2, 3, 4]`',
+        id: 0,
+      },
+      { text: '`[1, 2, 3]`', id: 1 },
+      {
+        text: '`TypeError`',
+        id: 2,
+      },
+    ],
+    correctAnswerId: 0,
+    moreInfoUrl:
+      'https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20%26%20beyond/ch2.md#const-declarations',
+    explanation:
+      "Constants are not a restriction on the value itself, but on the variable's assignment of that value. In other words, the value is not frozen or immutable because of `const`, just the assignment of it. If the value is complex, such as an object or array, the contents of the value can still be modified:",
+  },
 ];
 
 export default Ch2Questions;
