@@ -32,7 +32,8 @@ export const Wrapper = styled.div`
   top: 0;
   left: 0;
   background-color: white;
-  width: 15vw;
+  width: 100%;
+  max-width: 250px;
   height: 100%;
   z-index: 99999;
 `;

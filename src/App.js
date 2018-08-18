@@ -10,11 +10,15 @@ import './App.css';
 import { mergeScores } from './helpers/helpers';
 
 import { ScoreContext, score } from './score-context';
+import MenuContainer from './components/MenuContainer';
 
 class App extends Component {
   constructor() {
     super();
 
+    const isNarrowScreen = window.innerWidth < 500;
+    const shouldShowSidebar = !isNarrowScreen;
+    this.sidebarRef = React.createRef();
     // updateScore needs to be defined here, not in score-context.js
     // because it needs to setState
     this.updateScore = newScore => {
@@ -24,6 +28,8 @@ class App extends Component {
 
     this.state = {
       score,
+      shouldShowSidebar,
+      isNarrowScreen,
     };
   }
   componentDidMount() {
@@ -39,37 +45,75 @@ class App extends Component {
     this.setState({ score });
   }
 
+  handleMenuClick(event) {
+    const { shouldShowSidebar } = this.state;
+    this.setState({
+      shouldShowSidebar: !shouldShowSidebar,
+    });
+  }
+
+  handleCloseClick(event) {
+    const { shouldShowSidebar } = this.state;
+    this.setState({
+      shouldShowSidebar: !shouldShowSidebar,
+    });
+  }
+
   render() {
+    const { shouldShowSidebar, isNarrowScreen } = this.state;
+    const backgroundColor =
+      shouldShowSidebar && isNarrowScreen
+        ? { backgroundColor: 'rgba(0,0,0,0.5)' }
+        : {};
+    const appMargin =
+      this.sidebarRef.current && !isNarrowScreen
+        ? {
+            marginLeft: this.sidebarRef.current.offsetWidth,
+          }
+        : {};
     return (
       <ScoreContext.Provider
         value={{ score: this.state.score, updateScore: this.updateScore }}
       >
-        <div className="App">
-          <Sidebar
-            books={books}
-            score={this.state.score}
-            updateScore={this.updateScore}
-          />
-          <div className="main-content">
-            <Link style={{ textDecoration: 'none', color: 'black' }} to="/">
-              <h1 style={{ fontSize: '55px' }}>YDKJS EXERCISES</h1>
-            </Link>
-            <Switch>
-              <Route exact path="/" render={() => <Home books={books} />} />
-              {books.map((book, index) => {
-                book.id = index;
-                return (
-                  <Route
-                    key={index}
-                    path={book.url}
-                    render={() => <BookRouter book={book} />}
-                  />
-                );
-              })}
-              <Route component={NoMatch} />
-            </Switch>
+        <div id="overlay" style={backgroundColor}>
+          <div className="App" style={appMargin}>
+            {shouldShowSidebar && (
+              <Sidebar
+                books={books}
+                score={this.state.score}
+                updateScore={this.updateScore}
+                isNarrowScreen={this.state.isNarrowScreen}
+                onCloseClick={e => this.handleCloseClick(e)}
+                ref={this.sidebarRef}
+              />
+            )}
+            <div className="main-content">
+              <MenuContainer
+                shouldShowSidebar={this.state.shouldShowSidebar}
+                handleMenuClick={e => this.handleMenuClick(e)}
+              />
+              <Link style={{ textDecoration: 'none', color: 'black' }} to="/">
+                <h1 style={{ fontSize: '45px', margin: '10px 0' }}>
+                  YDKJS EXERCISES
+                </h1>
+              </Link>
+              <Switch>
+                <Route exact path="/" render={() => <Home books={books} />} />
+                {books.map((book, index) => {
+                  book.id = index;
+                  return (
+                    <Route
+                      key={index}
+                      path={book.url}
+                      render={() => <BookRouter book={book} />}
+                    />
+                  );
+                })}
+                <Route component={NoMatch} />
+              </Switch>
+            </div>
+            <Footer />
           </div>
-          <Footer />
         </div>
       </ScoreContext.Provider>
     );
