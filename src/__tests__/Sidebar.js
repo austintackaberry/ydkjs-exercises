@@ -8,13 +8,29 @@ import books from '../data';
 
 it('should render the sidebar', () => {
   expect(
-    shallow(<Sidebar books={books} score={score} updateScore={() => {}} />)
+    shallow(
+      <Sidebar
+        books={books}
+        isNarrowScreen={false}
+        score={score}
+        updateScore={() => {}}
+      />
+    )
+      .first()
+      .shallow()
   ).toHaveLength(1);
 });
 
 it('should render a link to each book', () => {
   const comp = shallow(
-    <Sidebar books={books} score={score} updateScore={() => {}} />
-  );
+    <Sidebar
+      books={books}
+      score={score}
+      isNarrowScreen={false}
+      updateScore={() => {}}
+    />
+  )
+    .first()
+    .shallow();
   expect(comp.find(Link)).toHaveLength(books.length);
 });
