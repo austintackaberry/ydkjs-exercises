@@ -2,7 +2,7 @@ const Ch6Questions = [
   {
     question: `All performance optimizations matter and should be seriously evaluated`,
     questionId: 'jV7OHBpkIZaHXEXGYfpU',
-    shouldBeRandomized: true,
+    shouldBeRandomized: false,
     answers: [{ text: 'True', id: 0 }, { text: 'False', id: 1 }],
     correctAnswerId: 1,
     moreInfoUrl:
