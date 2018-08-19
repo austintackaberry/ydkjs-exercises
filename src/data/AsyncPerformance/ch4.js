@@ -166,7 +166,7 @@ ${'```'}
       { text: '`ReferenceError`', id: 2 },
       { text: '`undefined`', id: 3 },
     ],
-    correctAnswerId: 0,
+    correctAnswerId: 1,
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/async%20%26%20performance/ch4.md#generators--promises',
     explanation:
