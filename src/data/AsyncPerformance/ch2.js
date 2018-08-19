@@ -117,7 +117,7 @@ ${'```'}
       { text: '`undefined`', id: 2 },
       { text: '`ReferenceError`', id: 3 },
     ],
-    correctAnswerId: 0,
+    correctAnswerId: 1,
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/async%20%26%20performance/ch2.md#trying-to-save-callbacks',
     explanation:
