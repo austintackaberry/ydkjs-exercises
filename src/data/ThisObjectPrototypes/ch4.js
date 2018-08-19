@@ -16,27 +16,6 @@ const Ch4Questions = [
     explanation: `JavaScript ES6 classes are objects, which allows us to add and remove fields and methods at runtime.`,
   },
   {
-    question: `How do JavaScript classes differ from classes in other, object oriented programming languages?`,
-    questionId: 'UESib3GYVwXJAaz5AS9I',
-    shouldBeRandomized: true,
-    answers: [
-      {
-        text: `They are more or less the same`,
-        id: 0,
-      },
-      {
-        text: `JavaScript does not automatically create copies between objects`,
-        id: 1,
-      },
-      { text: 'JavaScript automatically create copies between objects', id: 2 },
-    ],
-    correctAnswerId: 1,
-    moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch4.md#review-tldr',
-    explanation:
-      'The mixin pattern (both explicit and implicit) is often used to sort of emulate class copy behavior, but this usually leads to ugly and brittle syntax like explicit pseudo-polymorphism (`OtherObj.methodName.call(this, ...)`), which often results in harder to understand and maintain code.',
-  },
-  {
     question: `JavaScript does not provide a native mechanism for "multiple inheritance".`,
     questionId: '1t67cQUrk7gRm4bIdZlp',
     shouldBeRandomized: false,
