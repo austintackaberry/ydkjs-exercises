@@ -44,7 +44,7 @@ ${'```'}
       },
       { text: 'False', id: 1 },
     ],
-    correctAnswerId: 0,
+    correctAnswerId: 1,
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20%26%20beyond/ch5.md#maps',
     explanation:
