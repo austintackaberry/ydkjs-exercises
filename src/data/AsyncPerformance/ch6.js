@@ -78,7 +78,7 @@ ${'```'}
     questionId: 'RWI1RPLjnVPTl5JhnJN9',
     shouldBeRandomized: true,
     answers: [{ text: 'True', id: 0 }, { text: 'False', id: 1 }],
-    correctAnswerId: 0,
+    correctAnswerId: 1,
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/async%20%26%20performance/ch6.md#microperformance',
     explanation:
