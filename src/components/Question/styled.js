@@ -71,7 +71,7 @@ export const QuestionStyle = styled.h4`
 QuestionStyle.displayName = 'QuestionStyle';
 
 export const FlatButton = styled.button`
-  background-color: lightgrey;
+  background-color: ${p => (p.disabled ? 'lightgrey' : 'lightgreen')};
   border: none;
   padding: 0.5rem 1.5rem;
   disabled: ${p => p.disabled};
