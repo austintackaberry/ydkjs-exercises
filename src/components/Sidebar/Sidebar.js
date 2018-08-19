@@ -107,7 +107,7 @@ class Sidebar extends Component {
                 key={index}
                 style={{ textDecoration: 'none' }}
                 to={book.url}
-                onClick={e => onCloseClick(e)}
+                onClick={e => isNarrowScreen && onCloseClick(e)}
               >
                 <ListItem>
                   {`${book.title} (${
