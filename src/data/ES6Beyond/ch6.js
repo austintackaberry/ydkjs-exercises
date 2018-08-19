@@ -51,7 +51,7 @@ const Ch6Questions = [
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20%26%20beyond/ch6.md#numberisnan-static-function',
     explanation:
-      "`isNan() checks for things that are not a number. So that includes `NaN` and any other value that isn't a number.",
+      "`isNaN()` checks for things that are not a number. So that includes `NaN` and any other value that isn't a number.",
   },
   {
     question: `What will be logged to the console when the following code is executed:
