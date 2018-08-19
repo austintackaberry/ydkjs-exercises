@@ -4,7 +4,7 @@ const Ch6Questions = [
     questionId: 'jV7OHBpkIZaHXEXGYfpU',
     shouldBeRandomized: true,
     answers: [{ text: 'True', id: 0 }, { text: 'False', id: 1 }],
-    correctAnswerId: 0,
+    correctAnswerId: 1,
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/async%20%26%20performance/ch6.md#chapter-6-benchmarking--tuning',
     explanation:
