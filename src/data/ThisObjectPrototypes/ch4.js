@@ -1,6 +1,6 @@
 const Ch4Questions = [
   {
-    question: `JavaScript does not have "classes" as they are known in object oriented programming.`,
+    question: `JavaScript has classes. They work like Ruby's and Python's dynamic classes and unlike Java's and C++'s static classes.`,
     questionId: 'Y4iwu68HDhZCPAvqnXQX',
     shouldBeRandomized: true,
     answers: [
@@ -13,7 +13,7 @@ const Ch4Questions = [
     correctAnswerId: 0,
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch4.md#javascript-classes',
-    explanation: `JavaScript ES6 classes are syntactic sugar to give the illusion that JavaScript has classes the way other object oriented languages have classes.`,
+    explanation: `JavaScript ES6 classes are objects, which allows us to add and remove fields and methods at runtime.`,
   },
   {
     question: `How do JavaScript classes differ from classes in other, object oriented programming languages?`,
