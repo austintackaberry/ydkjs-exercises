@@ -29,7 +29,7 @@ const Ch4Questions = [
     correctAnswerId: 0,
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch4.md#multiple-inheritance',
-    explanation: `Multiple-inheritance means that each parent class definition is copied into the child class. JavaScript does not provide a native mechanism for "multiple inheritance". Many see this is a good thing, because the complexity savings more than make up for the "reduced" functionality. But this doesn't stop developers from trying to fake it in various ways.`,
+    explanation: `Multiple-inheritance means that each parent class contributes definitions to the child class. JavaScript does not provide a native mechanism for "multiple inheritance". Many see this is a good thing, because the complexity savings more than make up for the "reduced" functionality. But this doesn't stop developers from trying to fake it in various ways.`,
   },
   {
     question: `What is the main difference between an explicit mixin and an implicit mixin?`,
