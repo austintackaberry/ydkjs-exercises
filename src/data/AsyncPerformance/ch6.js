@@ -76,7 +76,7 @@ ${'```'}
   {
     question: `The browser will always execute your code as you wrote it`,
     questionId: 'RWI1RPLjnVPTl5JhnJN9',
-    shouldBeRandomized: true,
+    shouldBeRandomized: false,
     answers: [{ text: 'True', id: 0 }, { text: 'False', id: 1 }],
     correctAnswerId: 1,
     moreInfoUrl:
