@@ -51,7 +51,7 @@ const Ch2Questions = [
   },
   {
     question:
-      "What is the return value of: typeof `[1,2,3] === typeof {val: 'a', val: 'b', val: 'c'};` ?",
+      "What is the return value of: `typeof [1,2,3] === typeof {val: 'a', val: 'b', val: 'c'};` ?",
     questionId: '6jXvxXQQTnwPLsSayrJS',
     shouldBeRandomized: false,
     answers: [
