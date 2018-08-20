@@ -1,6 +1,6 @@
 const Ch4Questions = [
   {
-    question: `JavaScript does not have "classes" as they are known in object oriented programming.`,
+    question: `JavaScript has classes. They work like Ruby's and Python's dynamic classes and unlike Java's and C++'s static classes.`,
     questionId: 'Y4iwu68HDhZCPAvqnXQX',
     shouldBeRandomized: true,
     answers: [
@@ -13,28 +13,7 @@ const Ch4Questions = [
     correctAnswerId: 0,
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch4.md#javascript-classes',
-    explanation: `JavaScript ES6 classes are syntactic sugar to give the illusion that JavaScript has classes the way other object oriented languages have classes.`,
-  },
-  {
-    question: `How do JavaScript classes differ from classes in other, object oriented programming languages?`,
-    questionId: 'UESib3GYVwXJAaz5AS9I',
-    shouldBeRandomized: true,
-    answers: [
-      {
-        text: `They are more or less the same`,
-        id: 0,
-      },
-      {
-        text: `JavaScript does not automatically create copies between objects`,
-        id: 1,
-      },
-      { text: 'JavaScript automatically create copies between objects', id: 2 },
-    ],
-    correctAnswerId: 1,
-    moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch4.md#review-tldr',
-    explanation:
-      'The mixin pattern (both explicit and implicit) is often used to sort of emulate class copy behavior, but this usually leads to ugly and brittle syntax like explicit pseudo-polymorphism (`OtherObj.methodName.call(this, ...)`), which often results in harder to understand and maintain code.',
+    explanation: `JavaScript ES6 classes are objects, which allows us to add and remove fields and methods at runtime.`,
   },
   {
     question: `JavaScript does not provide a native mechanism for "multiple inheritance".`,
@@ -50,7 +29,7 @@ const Ch4Questions = [
     correctAnswerId: 0,
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch4.md#multiple-inheritance',
-    explanation: `Multiple-inheritance means that each parent class definition is copied into the child class. JavaScript does not provide a native mechanism for "multiple inheritance". Many see this is a good thing, because the complexity savings more than make up for the "reduced" functionality. But this doesn't stop developers from trying to fake it in various ways.`,
+    explanation: `Multiple-inheritance means that each parent class contributes definitions to the child class. JavaScript does not provide a native mechanism for "multiple inheritance". Many see this is a good thing, because the complexity savings more than make up for the "reduced" functionality. But this doesn't stop developers from trying to fake it in various ways.`,
   },
   {
     question: `What is the main difference between an explicit mixin and an implicit mixin?`,
