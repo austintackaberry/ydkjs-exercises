@@ -62,17 +62,20 @@ ${'```'}
         text: '`TypeError`',
         id: 0,
       },
-      { text: '`{change: {a: 3}}`', id: 1 },
       {
-        text: '`"change"`',
+        text: '`{name: "a", object: obj, type: "update", oldValue: 1}`',
+        id: 1,
+      },
+      {
+        text: '`"update"`',
         id: 2,
       },
       {
-        text: '`[{change: {a: 3}}]`',
+        text: '`[{name: "a", object: obj, type: "update", oldValue: 1}]`',
         id: 3,
       },
     ],
-    correctAnswerId: 0,
+    correctAnswerId: 1,
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20%26%20beyond/ch8.md#objectobserve',
     explanation:
