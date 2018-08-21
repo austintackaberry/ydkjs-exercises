@@ -1,8 +1,8 @@
 const Ch4Questions = [
   {
-    question: `JavaScript has classes. They work like Ruby's and Python's dynamic classes and unlike Java's and C++'s static classes.`,
+    question: `JavaScript classes work like Ruby's and Python's dynamic classes and unlike Java's and C++'s static classes.`,
     questionId: 'Y4iwu68HDhZCPAvqnXQX',
-    shouldBeRandomized: true,
+    shouldBeRandomized: false,
     answers: [
       {
         text: `True`,
