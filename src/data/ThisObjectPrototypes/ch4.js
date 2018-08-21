@@ -16,6 +16,34 @@ const Ch4Questions = [
     explanation: `JavaScript ES6 classes are objects, which allows us to add and remove fields and methods at runtime.`,
   },
   {
+    question: `Which of the following is true about classes in JavaScript?`,
+    questionId: 'UESib3GYVwXJAaz5AS9I',
+    shouldBeRandomized: true,
+    answers: [
+      {
+        text: `By default, when a child class inherits from a parent class, the child has a copy of the parent's behaviors.`,
+        id: 0,
+      },
+      {
+        text: `By default, changing the parent's behaviors does not change the child's behaviors.`,
+        id: 1,
+      },
+      {
+        text: `It's not possible to inherit behaviors in JavaScript because classes are an abstraction over objects.`,
+        id: 2,
+      },
+      {
+        text: `In a child class, we can store copies of the parent's behaviors if we explicitly program them in.`,
+        id: 3,
+      },
+    ],
+    correctAnswerId: 3,
+    moreInfoUrl:
+      'https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch4.md#review-tldr',
+    explanation:
+      'By default, inheritance in JavaScript is by reference (linking), not by value (copying). The mixin pattern (both explicit and implicit) is often used to sort of emulate class copy behavior, but this usually leads to ugly and brittle syntax like explicit pseudo-polymorphism (`OtherObj.methodName.call(this, ...)`), which often results in harder to understand and maintain code.',
+  },
+  {
     question: `JavaScript does not provide a native mechanism for "multiple inheritance".`,
     questionId: '1t67cQUrk7gRm4bIdZlp',
     shouldBeRandomized: false,
