@@ -201,7 +201,7 @@ ${'```'}
       { text: 'They are not readable', id: 2 },
       { text: 'They are not implemented in all browsers', id: 3 },
     ],
-    correctAnswerId: 0,
+    correctAnswerId: 1,
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch2.md#performance',
     explanation: `If the Engine finds an \`eval(..)\` or \`with\` in the code, it essentially has to assume that all its awareness of identifier location may be invalid, because it cannot know at lexing time exactly what code you may pass to \`eval(..)\` to modify the lexical scope, or the contents of the object you may pass to \`with\` to create a new lexical scope to be consulted.`,
