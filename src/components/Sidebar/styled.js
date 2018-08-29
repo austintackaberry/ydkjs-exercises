@@ -39,13 +39,15 @@ export const FlatButton = styled.button`
 `;
 
 export const SidebarGridChild = styled.div`
-  grid-area: sidebar;
+  position: sticky;
+  top: 0;
   background-color: white;
-  text-align: center;
+  grid-area: sidebar;
   padding: ${props => (props.shouldShow ? 'auto' : '0 0.5rem')};
+  text-align: center;
+  transition: 0.2s cubic-bezier(0.03, 0.86, 0.59, 0.45);
   width: ${props =>
     props.shouldShow ? (props.isNarrowScreen ? '80vw' : '20vw') : '2rem'};
-  transition: 0.2s cubic-bezier(0.03, 0.86, 0.59, 0.45);
 `;
 
 FlatButton.displayName = 'FlatButton';
