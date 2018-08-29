@@ -4,7 +4,7 @@ import { FooterGridChild } from './styled';
 class Footer extends Component {
   render() {
     return (
-      <FooterGridChild>
+      <FooterGridChild name="Footer">
         <p>
           {' '}
           YDKJS Exercises is created and maintained by learners like you! To

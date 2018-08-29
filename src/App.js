@@ -15,15 +15,14 @@ import { ScoreContext, score } from './score-context';
 
 const AppGrid = styled.div`
   display: grid;
-  grid-template-columns: auto 1fr;
-  grid-template-rows: 1.25fr 80vh 0.75fr;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: 1fr auto 1fr;
   grid-template-areas:
     'sidebar header'
     'sidebar main'
     'sidebar footer';
   grid-gap: 0.5rem;
   height: 100%;
-  max-height: 100%;
   overflow-x: hidden;
 `;
 
