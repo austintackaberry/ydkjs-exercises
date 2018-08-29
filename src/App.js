@@ -29,6 +29,7 @@ const AppGrid = styled.div`
 const MainContentGridChild = styled.div`
   grid-area: main;
   text-align: center;
+  min-height: 60vh;
   width: 100%;
   transition: 0.2s cubic-bezier(0.03, 0.86, 0.59, 0.45);
 `;
