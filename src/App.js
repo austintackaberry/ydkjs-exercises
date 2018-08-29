@@ -30,6 +30,7 @@ class App extends Component {
       score,
       shouldShowSidebar,
       isNarrowScreen,
+      showInstallBtn: false,
     };
   }
   componentDidMount() {

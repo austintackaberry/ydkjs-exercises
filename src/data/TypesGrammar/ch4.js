@@ -26,7 +26,7 @@ ${'```'}
       { text: '`"6"`', id: 2 },
       { text: '`42`', id: 3 },
     ],
-    correctAnswerId: 2,
+    correctAnswerId: 0,
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/types%20%26%20grammar/ch4.md#implicit-coercion',
     explanation: '`+` means concatenation when any of the operands are strings',
