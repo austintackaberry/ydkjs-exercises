@@ -28,14 +28,8 @@ export const ListItem = styled.li`
 `;
 
 export const Wrapper = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
   background-color: white;
-  width: 100%;
-  max-width: 250px;
-  height: 100%;
-  z-index: 99999;
+  z-index: 10;
 `;
 
 export const FlatButton = styled.button`
@@ -43,4 +37,15 @@ export const FlatButton = styled.button`
   border: none;
   padding: 0.5rem 1.5rem;
 `;
+
+export const SidebarGridChild = styled.div`
+  grid-area: sidebar;
+  background-color: white;
+  text-align: center;
+  padding: ${props => (props.shouldShow ? 'auto' : '0 0.5rem')};
+  width: ${props =>
+    props.shouldShow ? (props.isNarrowScreen ? '80vw' : '20vw') : '2rem'};
+  transition: 0.2s cubic-bezier(0.03, 0.86, 0.59, 0.45);
+`;
+
 FlatButton.displayName = 'FlatButton';

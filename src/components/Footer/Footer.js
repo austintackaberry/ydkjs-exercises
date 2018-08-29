@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import '../App.css';
+import { FooterGridChild } from './styled';
 
 class Footer extends Component {
   render() {
     return (
-      <div className="Footer">
+      <FooterGridChild>
         <p>
           {' '}
           YDKJS Exercises is created and maintained by learners like you! To
@@ -15,7 +15,7 @@ class Footer extends Component {
             https://github.com/austintackaberry/ydkjs-exercises
           </a>
         </p>
-      </div>
+      </FooterGridChild>
     );
   }
 }

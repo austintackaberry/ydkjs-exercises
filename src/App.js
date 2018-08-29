@@ -1,30 +1,52 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
+import './App.css';
 import BookRouter from './components/BookRouter';
 import Home from './components/Home';
 import Sidebar from './components/Sidebar';
 import books from './data';
+import Header from './components/Header';
 import Footer from './components/Footer';
 import NoMatch from './components/NoMatch';
-import { Switch, Route, Link } from 'react-router-dom';
-import './App.css';
+import { Switch, Route } from 'react-router-dom';
 import { mergeScores } from './helpers/helpers';
 
 import { ScoreContext, score } from './score-context';
-import MenuContainer from './components/MenuContainer';
+
+const AppGrid = styled.div`
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 1.25fr 80vh 0.75fr;
+  grid-template-areas:
+    'sidebar header'
+    'sidebar main'
+    'sidebar footer';
+  grid-gap: 0.5rem;
+  height: 100%;
+  max-height: 100%;
+  overflow-x: hidden;
+`;
+
+const MainContentGridChild = styled.div`
+  grid-area: main;
+  text-align: center;
+  width: 100%;
+  transition: 0.2s cubic-bezier(0.03, 0.86, 0.59, 0.45);
+`;
 
 class App extends Component {
   constructor() {
     super();
 
-    const isNarrowScreen = window.innerWidth < 500;
+    const isNarrowScreen = window.innerHeight > window.innerWidth;
     const shouldShowSidebar = !isNarrowScreen;
-    this.sidebarRef = React.createRef();
     // updateScore needs to be defined here, not in score-context.js
     // because it needs to setState
     this.updateScore = newScore => {
       window.localStorage.setItem('score', JSON.stringify(newScore));
       this.setState({ score: newScore });
     };
+    this.handleResize = this.handleResize.bind(this);
 
     this.state = {
       score,
@@ -34,6 +56,7 @@ class App extends Component {
     };
   }
   componentDidMount() {
+    window.addEventListener('resize', this.handleResize);
     let lsScore = window.localStorage.getItem('score');
     let score = this.state.score;
     if (lsScore) {
@@ -46,60 +69,46 @@ class App extends Component {
     this.setState({ score });
   }
 
-  handleMenuClick(event) {
-    const { shouldShowSidebar } = this.state;
+  componentWillUnmount = () => {
+    window.removeEventListener('resize', this.handleResize);
+  };
+
+  handleResize() {
     this.setState({
-      shouldShowSidebar: !shouldShowSidebar,
+      isNarrowScreen: window.innerHeight > window.innerWidth,
     });
   }
 
-  handleCloseClick(event) {
+  handleSidebarToggle(event) {
     const { shouldShowSidebar } = this.state;
+    console.log('ouch');
     this.setState({
       shouldShowSidebar: !shouldShowSidebar,
     });
   }
 
   render() {
-    const { shouldShowSidebar, isNarrowScreen } = this.state;
-    const overlayStyle =
-      shouldShowSidebar && isNarrowScreen
-        ? { backgroundColor: 'rgba(0,0,0,0.5)' }
-        : {};
-    const appMargin =
-      this.sidebarRef.current && !isNarrowScreen
-        ? {
-            marginLeft: this.sidebarRef.current.offsetWidth,
-          }
-        : {};
-    const mainContentStyle =
-      shouldShowSidebar && isNarrowScreen ? { pointerEvents: 'none' } : {};
     return (
       <ScoreContext.Provider
         value={{ score: this.state.score, updateScore: this.updateScore }}
       >
-        <div id="overlay" style={overlayStyle}>
-          <div className="App" style={appMargin}>
-            {shouldShowSidebar && (
-              <Sidebar
-                books={books}
-                score={this.state.score}
-                updateScore={this.updateScore}
-                isNarrowScreen={this.state.isNarrowScreen}
-                onCloseClick={e => this.handleCloseClick(e)}
-                ref={this.sidebarRef}
-              />
-            )}
-            <div className="main-content" style={mainContentStyle}>
-              <MenuContainer
-                shouldShowSidebar={this.state.shouldShowSidebar}
-                handleMenuClick={e => this.handleMenuClick(e)}
-              />
-              <Link style={{ textDecoration: 'none', color: 'black' }} to="/">
-                <h1 style={{ fontSize: '45px', margin: '10px 0' }}>
-                  YDKJS EXERCISES
-                </h1>
-              </Link>
+        <div id="overlay">
+          <AppGrid name="App">
+            <Sidebar
+              name="Sidebar"
+              books={books}
+              score={this.state.score}
+              updateScore={this.updateScore}
+              isNarrowScreen={this.state.isNarrowScreen}
+              shouldShow={this.state.shouldShowSidebar}
+              onMenuClick={e => this.handleSidebarToggle(e)}
+              ref={this.sidebarRef}
+            />
+            <Header />
+            <MainContentGridChild
+              name="Main"
+              sidebar={this.state.shouldShowSidebar}
+            >
               <Switch>
                 <Route exact path="/" render={() => <Home books={books} />} />
                 {books.map((book, index) => {
@@ -114,9 +123,9 @@ class App extends Component {
                 })}
                 <Route component={NoMatch} />
               </Switch>
-            </div>
+            </MainContentGridChild>
             <Footer />
-          </div>
+          </AppGrid>
         </div>
       </ScoreContext.Provider>
     );
