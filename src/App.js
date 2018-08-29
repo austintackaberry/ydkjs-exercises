@@ -31,7 +31,6 @@ class App extends Component {
       shouldShowSidebar,
       isNarrowScreen,
       showInstallBtn: false,
-      deferredPrompt: null,
     };
   }
   componentDidMount() {
@@ -45,14 +44,6 @@ class App extends Component {
       });
     }
     this.setState({ score });
-
-    window.addEventListener('beforeinstallprompt', e => {
-      this.setState({ showInstallBtn: true });
-      // Prevent Chrome 67 and earlier from automatically showing the prompt
-      e.preventDefault();
-      // Stash the event so it can be triggered later.
-      this.setState({ deferredPrompt: e });
-    });
   }
 
   handleMenuClick(event) {
@@ -69,25 +60,8 @@ class App extends Component {
     });
   }
 
-  handlePwaInstallClick(event) {
-    // hide our user interface that shows our A2HS button
-    this.setState({ showInstallBtn: false });
-    const { deferredPrompt } = this.state;
-    // Show the prompt
-    deferredPrompt.prompt();
-    // Wait for the user to respond to the prompt
-    deferredPrompt.userChoice.then(choiceResult => {
-      if (choiceResult.outcome === 'accepted') {
-        console.log('User accepted the A2HS prompt');
-      } else {
-        console.log('User dismissed the A2HS prompt');
-      }
-      this.setState({ deferredPrompt: null });
-    });
-  }
-
   render() {
-    const { shouldShowSidebar, isNarrowScreen, showInstallBtn } = this.state;
+    const { shouldShowSidebar, isNarrowScreen } = this.state;
     const overlayStyle =
       shouldShowSidebar && isNarrowScreen
         ? { backgroundColor: 'rgba(0,0,0,0.5)' }
@@ -100,18 +74,12 @@ class App extends Component {
         : {};
     const mainContentStyle =
       shouldShowSidebar && isNarrowScreen ? { pointerEvents: 'none' } : {};
-
-    const pwaInstallBtnStyle = showInstallBtn ? {} : { display: 'none' };
     return (
       <ScoreContext.Provider
         value={{ score: this.state.score, updateScore: this.updateScore }}
       >
         <div id="overlay" style={overlayStyle}>
           <div className="App" style={appMargin}>
-            <button
-              onClick={e => this.handlePwaInstallClick(e)}
-              style={pwaInstallBtnStyle}
-            />
             {shouldShowSidebar && (
               <Sidebar
                 books={books}
