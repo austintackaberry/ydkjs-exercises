@@ -21,43 +21,36 @@ const AppGrid = styled.div`
     'sidebar header'
     'sidebar main'
     'sidebar footer';
-  grid-gap: 0.5rem;
+  grid-row-gap: 0.5rem;
   height: 100%;
   overflow-x: hidden;
+  overflow-y: ${props =>
+    props.shouldShowSidebar && props.isNarrowScreen ? 'hidden' : 'scroll'};
+  z-index: 0;
 
-  /** 
-   * the following rule adds a dark overlay to the main content when the sidebar is shown on mobile
-   * however it results in a noticeable performance hit. still including
-   * to refactor later 
-   */
-  ${'' /* &:before {
+  &:before {
     content: '';
-    display: block;
-    position: absolute;
-    background-color: ${props =>
-      props.shouldShowSidebar && props.isNarrowScreen
-        ? 'rgba(0, 0, 0, 0.5)'
-        : 'transparent'};
+    display: 'block';
+    background-color: rgba(0, 0, 0, 0.5);
     height: 100%;
-    left: ${props =>
-      props.shouldShowSidebar
-        ? props.isNarrowScreen
-          ? '80vw'
-          : '20vw'
-        : '3rem'};
-    top: 0;
+    opacity: ${props =>
+      props.shouldShowSidebar && props.isNarrowScreen ? 1 : 0};
+    position: absolute;
     width: 100%;
-  } */};
+    transition: var(--easing-standard);
+    z-index: ${props =>
+      props.shouldShowSidebar && props.isNarrowScreen ? 10 : -1};
+  }
 `;
 
 const MainContentGridChild = styled.div`
   position: relative;
   display: block;
   grid-area: main;
-  text-align: center;
   place-self: start stretch;
+  text-align: center;
+  transition: var(--easing-standard);
   width: 100%;
-  transition: 0.2s cubic-bezier(0.03, 0.86, 0.59, 0.45);
 `;
 
 class App extends Component {
@@ -99,6 +92,14 @@ class App extends Component {
     window.removeEventListener('resize', this.handleResize);
   };
 
+  handleClick(e) {
+    const name = e.target.dataset.name;
+    const { isNarrowScreen, shouldShowSidebar } = this.state;
+    if (isNarrowScreen && shouldShowSidebar && name === 'App') {
+      this.handleSidebarToggle();
+    }
+  }
+
   handleResize() {
     this.setState({
       isNarrowScreen: window.innerHeight > window.innerWidth,
@@ -107,7 +108,6 @@ class App extends Component {
 
   handleSidebarToggle(event) {
     const { shouldShowSidebar } = this.state;
-    console.log('ouch');
     this.setState({
       shouldShowSidebar: !shouldShowSidebar,
     });
@@ -119,12 +119,13 @@ class App extends Component {
         value={{ score: this.state.score, updateScore: this.updateScore }}
       >
         <AppGrid
-          name="App"
+          data-name="App"
           isNarrowScreen={this.state.isNarrowScreen}
           shouldShowSidebar={this.state.shouldShowSidebar}
+          onClick={e => this.handleClick(e)}
         >
           <Sidebar
-            name="Sidebar"
+            data-name="Sidebar"
             books={books}
             score={this.state.score}
             updateScore={this.updateScore}
@@ -134,7 +135,10 @@ class App extends Component {
             ref={this.sidebarRef}
           />
           <Header />
-          <MainContentGridChild name="Main">
+          <MainContentGridChild
+            data-name="Main"
+            onClick={e => this.handleClick(e)}
+          >
             <Switch>
               <Route exact path="/" render={() => <Home books={books} />} />
               {books.map((book, index) => {

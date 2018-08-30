@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <HeaderGridChild name="Header">
+    <HeaderGridChild data-name="Header">
       <Link style={{ textDecoration: 'none', color: 'black' }} to="/">
         <Marquee>{`YDKJS EXERCISES`}</Marquee>
       </Link>

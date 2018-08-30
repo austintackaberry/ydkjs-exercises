@@ -27,11 +27,6 @@ export const ListItem = styled.li`
   padding: 0.5rem 0.3rem;
 `;
 
-export const Wrapper = styled.div`
-  background-color: white;
-  z-index: 10;
-`;
-
 export const FlatButton = styled.button`
   background-color: lightgrey;
   border: none;
@@ -41,13 +36,20 @@ export const FlatButton = styled.button`
 export const SidebarGridChild = styled.div`
   position: sticky;
   top: 0;
+  height: 100vh;
   background-color: white;
   grid-area: sidebar;
-  padding: ${props => (props.shouldShow ? 'auto' : '0 0.5rem')};
   text-align: center;
-  transition: 0.2s cubic-bezier(0.03, 0.86, 0.59, 0.45);
+  transition: ${props =>
+    props.shouldShow ? 'var(--easing-decelerate)' : 'var(--easing-accelerate)'};
   width: ${props =>
-    props.shouldShow ? (props.isNarrowScreen ? '80vw' : '20vw') : '2rem'};
+    props.shouldShow ? (props.isNarrowScreen ? '80vw' : '20vw') : '0'};
+  z-index: 11;
+
+  svg {
+    padding-left: ${props => (props.shouldShow ? 'none' : '1rem')};
+    cursor: pointer;
+  }
 `;
 
 FlatButton.displayName = 'FlatButton';
