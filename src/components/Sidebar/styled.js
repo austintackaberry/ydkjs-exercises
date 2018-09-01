@@ -27,20 +27,29 @@ export const ListItem = styled.li`
   padding: 0.5rem 0.3rem;
 `;
 
-export const Wrapper = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: white;
-  width: 100%;
-  max-width: 250px;
-  height: 100%;
-  z-index: 99999;
-`;
-
 export const FlatButton = styled.button`
   background-color: lightgrey;
   border: none;
   padding: 0.5rem 1.5rem;
 `;
+
+export const SidebarGridChild = styled.div`
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  background-color: white;
+  grid-area: sidebar;
+  text-align: center;
+  transition: ${props =>
+    props.shouldShow ? 'var(--easing-decelerate)' : 'var(--easing-accelerate)'};
+  width: ${props =>
+    props.shouldShow ? (props.isNarrowScreen ? '80vw' : '20vw') : '0'};
+  z-index: 11;
+
+  svg {
+    padding-left: ${props => (props.shouldShow ? 'none' : '1rem')};
+    cursor: pointer;
+  }
+`;
+
 FlatButton.displayName = 'FlatButton';

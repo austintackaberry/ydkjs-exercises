@@ -13,6 +13,7 @@ it('should render the sidebar', () => {
         books={books}
         isNarrowScreen={false}
         score={score}
+        shouldShow={true}
         updateScore={() => {}}
       />
     )
@@ -27,6 +28,7 @@ it('should render a link to each book', () => {
       books={books}
       score={score}
       isNarrowScreen={false}
+      shouldShow={true}
       updateScore={() => {}}
     />
   )

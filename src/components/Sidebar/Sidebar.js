@@ -5,13 +5,14 @@ import {
   ListItem,
   ListItemTitle,
   Divider,
-  Wrapper,
   FlatButton,
+  SidebarGridChild,
 } from './styled';
 import { Link, withRouter } from 'react-router-dom';
 import ProgressBar from '../ProgressBar';
 import { reinitializeScore } from '../../helpers/helpers';
 import Close from '../../svgs/Close';
+import Menu from '../../svgs/Menu';
 
 const ResetButton = props =>
   withRouter(({ history, resetScore }) => (
@@ -25,7 +26,7 @@ const ResetButton = props =>
     </FlatButton>
   ))(props);
 
-class Sidebar extends Component {
+export default class Sidebar extends Component {
   static propTypes = {
     books: PropTypes.array.isRequired,
     score: PropTypes.object.isRequired,
@@ -62,26 +63,28 @@ class Sidebar extends Component {
       score,
       books,
       isNarrowScreen,
-      onCloseClick,
-      forwardedRef,
+      onMenuClick,
+      shouldShow,
     } = this.props;
     const scoreAnswered = score.correct + score.incorrect;
     const scorePct = Math.round((100 * score.correct) / scoreAnswered) || 0;
 
     return (
-      <Wrapper>
-        {isNarrowScreen && (
-          <div
-            onClick={e => onCloseClick(e)}
-            style={{
-              textAlign: 'right',
-              margin: '10px 10px 0 0',
-            }}
-          >
-            <Close />
-          </div>
-        )}
-        <div ref={forwardedRef}>
+      <SidebarGridChild
+        name="Sidebar"
+        isNarrowScreen={isNarrowScreen}
+        shouldShow={shouldShow}
+      >
+        <div
+          onClick={e => onMenuClick(e)}
+          style={{
+            textAlign: 'right',
+            margin: '10px 10px 0 0',
+          }}
+        >
+          {shouldShow ? <Close /> : <Menu />}
+        </div>
+        {shouldShow && (
           <List>
             <ListItemTitle>Progress</ListItemTitle>
             <ListItem>
@@ -107,7 +110,7 @@ class Sidebar extends Component {
                 key={index}
                 style={{ textDecoration: 'none' }}
                 to={book.url}
-                onClick={e => isNarrowScreen && onCloseClick(e)}
+                onClick={e => isNarrowScreen && onMenuClick(e)}
               >
                 <ListItem>
                   {`${book.title} (${
@@ -118,15 +121,13 @@ class Sidebar extends Component {
               </Link>
             ))}
           </List>
+        )}
+        {shouldShow && (
           <section>
             <ResetButton resetScore={this.resetScore} />
           </section>
-        </div>
-      </Wrapper>
+        )}
+      </SidebarGridChild>
     );
   }
 }
-
-export default React.forwardRef((props, ref) => {
-  return <Sidebar {...props} forwardedRef={ref} />;
-});
