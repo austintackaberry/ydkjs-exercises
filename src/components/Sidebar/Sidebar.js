@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import {
   List,
@@ -8,9 +8,11 @@ import {
   FlatButton,
   SidebarGridChild,
 } from './styled';
-import { Link, withRouter } from 'react-router-dom';
+import DrawerMenu from '../DrawerMenu';
+import { withRouter } from 'react-router-dom';
 import ProgressBar from '../ProgressBar';
 import { reinitializeScore } from '../../helpers/helpers';
+import Toggle from '../Toggle';
 import Close from '../../svgs/Close';
 import Menu from '../../svgs/Menu';
 
@@ -70,64 +72,126 @@ export default class Sidebar extends Component {
     const scorePct = Math.round((100 * score.correct) / scoreAnswered) || 0;
 
     return (
-      <SidebarGridChild
-        name="Sidebar"
-        isNarrowScreen={isNarrowScreen}
-        shouldShow={shouldShow}
-      >
-        <div
-          onClick={e => onMenuClick(e)}
-          style={{
-            textAlign: 'right',
-            margin: '10px 10px 0 0',
-          }}
-        >
-          {shouldShow ? <Close /> : <Menu />}
-        </div>
-        {shouldShow && (
-          <List>
-            <ListItemTitle>Progress</ListItemTitle>
-            <ListItem>
-              <ProgressBar score={score} />
-            </ListItem>
-            <ListItem>
-              <p>
-                You've answered <strong>{score.correct}</strong> out of{' '}
-                <strong>{scoreAnswered}</strong> (<strong>{scorePct}%</strong>)
-                questions correctly.
-              </p>
-              <p>
-                <strong>{score.possible - scoreAnswered}</strong> left to
-                answer.
-              </p>
-            </ListItem>
-
-            <Divider />
-
-            <ListItemTitle>Books</ListItemTitle>
-            {books.map((book, index) => (
-              <Link
-                key={index}
-                style={{ textDecoration: 'none' }}
-                to={book.url}
-                onClick={e => isNarrowScreen && onMenuClick(e)}
+      <Toggle show={shouldShow} updaters={[onMenuClick]}>
+        {({ show, toggle }) => (
+          <Fragment>
+            {!show && (
+              <div
+                onClick={toggle}
+                style={{
+                  position: 'fixed',
+                  cursor: 'pointer',
+                  margin: '.5rem',
+                }}
               >
-                <ListItem>
-                  {`${book.title} (${
-                    this.getBookScores(score.books[index]).correct
-                  } /
-                  ${this.getBookScores(score.books[index]).possible})`}
-                </ListItem>
-              </Link>
-            ))}
-          </List>
+                <Menu />
+              </div>
+            )}
+            <SidebarGridChild
+              name="Sidebar"
+              isNarrowScreen={isNarrowScreen}
+              shouldShow={show}
+            >
+              <div
+                onClick={toggle}
+                style={{
+                  textAlign: 'right',
+                  margin: '10px 10px 0 0',
+                }}
+              >
+                <Close />
+              </div>
+              {show && (
+                <List>
+                  <ListItemTitle>Progress</ListItemTitle>
+                  <ListItem>
+                    <ProgressBar score={score} />
+                  </ListItem>
+                  <ListItem>
+                    <p>
+                      You've answered <strong>{score.correct}</strong> out of{' '}
+                      <strong>{scoreAnswered}</strong> (<strong>
+                        {scorePct}%
+                      </strong>) questions correctly.
+                    </p>
+                    <p>
+                      <strong>{score.possible - scoreAnswered}</strong> left to
+                      answer.
+                    </p>
+                  </ListItem>
+
+                  <Divider />
+
+                  <ListItemTitle>Books</ListItemTitle>
+
+                  {books.map((book, index) => {
+                    const { correct, possible } = this.getBookScores(
+                      score.books[index]
+                    );
+
+                    return (
+                      <DrawerMenu
+                        id={'b' + index}
+                        to={book.url}
+                        nest={1}
+                        menuText={
+                          <span style={{ fontSize: '1rem' }}>{`${
+                            book.title
+                          } (${correct} /
+                  ${possible})`}</span>
+                        }
+                      >
+                        {() =>
+                          book.chapters.map((chapter, index) => {
+                            const to = `${book.url}${chapter.url}/q1`;
+                            return (
+                              <DrawerMenu
+                                id={'c' + index}
+                                to={to}
+                                nest={2}
+                                menuText={
+                                  <span style={{ fontSize: '.9rem' }}>
+                                    {chapter.title}
+                                  </span>
+                                }
+                              >
+                                {() =>
+                                  chapter.questions.map((question, index) => {
+                                    const to = `${book.url}${
+                                      chapter.url
+                                    }/q${index + 1}`;
+                                    return (
+                                      <DrawerMenu
+                                        id={'q' + index}
+                                        to={to}
+                                        nest={3}
+                                        menuText={
+                                          <span
+                                            style={{ fontSize: '.75rem' }}
+                                          >{`Question ${index + 1}`}</span>
+                                        }
+                                      />
+                                    );
+                                  })
+                                }
+                              </DrawerMenu>
+                            );
+                          })
+                        }
+                      </DrawerMenu>
+                    );
+                  })}
+                </List>
+              )}
+              {show && (
+                <section>
+                  <ResetButton resetScore={this.resetScore} />
+                </section>
+              )}
+            </SidebarGridChild>
+          </Fragment>
         )}
-        {shouldShow && (
-          <section>
-            <ResetButton resetScore={this.resetScore} />
-          </section>
-        )}
-      </SidebarGridChild>
+      </Toggle>
     );
   }
 }

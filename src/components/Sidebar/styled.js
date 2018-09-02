@@ -13,6 +13,13 @@ export const List = styled.ul`
   padding: 1rem 0;
 `;
 
+export const MenuItem = styled.li`
+  list-style: none;
+  width: 100%;
+  margin: 0 ${props => (props.nestLevel ? props.NestLevel : '1rem')};
+  padding: 1rem 0;
+`;
+
 export const ListItemTitle = styled.li`
   list-style: none;
   font-size: 16px;
@@ -44,6 +51,7 @@ export const SidebarGridChild = styled.div`
     props.shouldShow ? 'var(--easing-decelerate)' : 'var(--easing-accelerate)'};
   width: ${props =>
     props.shouldShow ? (props.isNarrowScreen ? '80vw' : '20vw') : '0'};
+  overflow-y: scroll;
   z-index: 11;
 
   svg {

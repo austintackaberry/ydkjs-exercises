@@ -106,7 +106,7 @@ class App extends Component {
     });
   }
 
-  handleSidebarToggle(event) {
+  handleSidebarToggle() {
     const { shouldShowSidebar } = this.state;
     this.setState({
       shouldShowSidebar: !shouldShowSidebar,
