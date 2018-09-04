@@ -15,7 +15,7 @@ class BookHome extends Component {
         {book.chapters.map(chapter => (
           <Link
             key={book.id + chapter.url}
-            style={{ textDecoration: 'none' }}
+            style={{ textDecoration: 'none', textAlign: 'left' }}
             to={book.url + chapter.url}
           >
             <ListItem>{chapter.title}</ListItem>
