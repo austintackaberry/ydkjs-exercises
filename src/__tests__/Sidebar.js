@@ -1,38 +1,21 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { score } from '../score-context';
-import { Link } from 'react-router-dom';
-
 import Sidebar from '../components/Sidebar';
 import books from '../data';
 
 it('should render the sidebar', () => {
-  expect(
-    shallow(
-      <Sidebar
-        books={books}
-        isNarrowScreen={false}
-        score={score}
-        shouldShow={true}
-        updateScore={() => {}}
-      />
-    )
-      .first()
-      .shallow()
-  ).toHaveLength(1);
-});
-
-it('should render a link to each book', () => {
   const comp = shallow(
     <Sidebar
+      data-name="Sidebar"
       books={books}
-      score={score}
       isNarrowScreen={false}
+      score={score}
       shouldShow={true}
       updateScore={() => {}}
+      onMenuClick={() => {}}
     />
-  )
-    .first()
-    .shallow();
-  expect(comp.find(Link)).toHaveLength(books.length);
+  );
+  const fragment = comp.instance().render();
+  expect(shallow(<div>{fragment}</div>).getElement()).toMatchSnapshot();
 });

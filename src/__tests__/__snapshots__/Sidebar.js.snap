@@ -1,0 +1,1178 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render the sidebar 1`] = `
+<div>
+  <React.Fragment>
+    <styled.div
+      isNarrowScreen={false}
+      shouldShow={true}
+    >
+      <div
+        onClick={[Function]}
+        style={
+          Object {
+            "margin": "10px 10px 0 0",
+            "textAlign": "right",
+          }
+        }
+      >
+        <Close
+          data-name="svg"
+        />
+      </div>
+      <styled.ul>
+        <styled.li>
+          Progress
+        </styled.li>
+        <styled.li>
+          <ProgressBar
+            score={
+              Object {
+                "books": Array [
+                  Object {
+                    "chapters": Array [
+                      Object {
+                        "questions": Array [
+                          Object {
+                            "questionId": "Wdbb9JW9sN2oYU1dcTHB",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "0kMgoiRFhdMGoZGPREgy",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "arLlte0WGjBfHdtP4cc3",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "SyrKBdRNm8qnRnMBbbIq",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "DdMUZgJYx4MWFIDrvERZ",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "vUTGAhPHQ04YbJyL2bIn",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "WXDAKz3JrrVyrZ9jyvKT",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "O5a9FcYfysMIlnCglUfK",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "JKQnIvClbwetSWw9L09F",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "zRcsGCwSLJGzFuxbIbrD",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "6MbAIQi1P0UgAazCImSM",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "JdFJJbwrqFkeuJIKI8rM",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "WfYtOiRdq3ka12suPaZi",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "tLjdPnckzEpzxDj4bs9C",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "f2v9MPqpQs0JEaMnVJjS",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "Lm2dlA3e3Kr5cHhfa1Eg",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "HO6TLxfyBRvysdmA72RR",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "5inbO1OYyYBMNkdvqGnF",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "OaslHejOxZmz4rfKSfGz",
+                            "status": "UNANSWERED",
+                          },
+                        ],
+                        "title": "Chapter 1: Into Programming",
+                      },
+                      Object {
+                        "questions": Array [
+                          Object {
+                            "questionId": "leOlkX8knO7YPxijZryq",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "IUAAVvd4jgoDxIs8cQih",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "ejGyTF0mYJ1Z90lnzk55",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "6jXvxXQQTnwPLsSayrJS",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "m3SMrBwpfwBRFfuQFJHy",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "xm1TjaXENJRwsPW9WVBj",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "UES97vdZK2mmm8ToaH6F",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "QKS6JMErKG7gBovreaea",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "2UBMmJJRCxauBzqOivcs",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "KVa9gyVWvT9ymLmIeeGm",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "w5G9jSN6Hj9UD4VcfsFV",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "hq6prlUl9zMipsNYvvwZ",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "XGobn8UO1CAa0GGempf4",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "eJGjIHoFLjFgwBCVMfE0",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "aaLv016yFLO62Wg8NMIe",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "syt9S06LI4zL2sdXamxq",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "FI4eixvGsXC1CcVfk9EU",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "ui7eyeSaCe31okGiUO0k",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "pdnSBOr7Cy4Q6TeZeOpI",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "7Ol2G2u5bzLOHlVt8mLq",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "WbQGlDdR3y6TnyrvlqIk",
+                            "status": "UNANSWERED",
+                          },
+                        ],
+                        "title": "Chapter 2: Into JavaScript",
+                      },
+                    ],
+                    "title": "Up & Going",
+                  },
+                  Object {
+                    "chapters": Array [
+                      Object {
+                        "questions": Array [
+                          Object {
+                            "questionId": "VZwCST0WyEIUQYvUE6KU",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "jSYBDPCqlwv8ZrZGHvAw",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "jur05a1YBHYX85whROMF",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "s9D398qeGLpug0SSfQOs",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "dD9jisRqzgTC2oKTACTS",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "qKyC5jIwSluNdBgBodAW",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "gH3E86se9GXXpWJvxW2e",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "F65nDl791y7QRfBSE7Tq",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "FfDoQtMBOaFAyFmGBIDe",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "9yhxzvgu71NjZhC46soN",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "qhtuUqyMS6d4r6F67wKx",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "qJye44oG77frNCWMzhKV",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "VIlFAV1xDf5EBxW6hYGs",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "vKlM2DHJyc8mpQORzeVV",
+                            "status": "UNANSWERED",
+                          },
+                        ],
+                        "title": "Chapter 1: What is Scope?",
+                      },
+                      Object {
+                        "questions": Array [
+                          Object {
+                            "questionId": "sHdc0pwtUUaKAEQPErQo",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "2CAjGHEG3DvpmjgVje0F",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "DpWaV7KlSdyHzU7eg2UY",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "JvRx9TArKCYdoBXBzkHN",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "W03hO2GqPSsPM2rI1Ium",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "MocNDOmweVA02PzqJsOQ",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "nBTrlZr4sUq0FsDaiToa",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "gbwVLppPBTODdzlZeqH3",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "MtRzxo7UUHil5a6Nfu8c",
+                            "status": "UNANSWERED",
+                          },
+                        ],
+                        "title": "Chapter 2: Lexical Scope",
+                      },
+                      Object {
+                        "questions": Array [
+                          Object {
+                            "questionId": "mTVbHEJN1LbO9Jt8FWOL",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "J4uc4jTpBvW0q26zSBX0",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "5q00I1WBvBU3WD2Tgu82",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "ShCvRiKy6BmEdnOJtj75",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "AhiJsYY4y9uHnVVBTYCi",
+                            "status": "UNANSWERED",
+                          },
+                        ],
+                        "title": "Chapter 3: Function vs Block Scope",
+                      },
+                      Object {
+                        "questions": Array [
+                          Object {
+                            "questionId": "zdBP0pVoTJgenPKexwC9",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "VPvyB4tV4uYkltN22SLr",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "lR9A2ctkJdYAxPMrOK9k",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "XNrKSbCikeWmmcmPN37Q",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "SAaSc02839X47tNaXect",
+                            "status": "UNANSWERED",
+                          },
+                        ],
+                        "title": "Chapter 4: Hoisting",
+                      },
+                      Object {
+                        "questions": Array [
+                          Object {
+                            "questionId": "f1j0ZgapoWxgpb3km4Na",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "NKIiGI5OpsyB79BnF3PB",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "Y978oS5NQMr0PHld59po",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "N73X0YmuT2uB6tOnN8Sx",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "ygptM8kOJlCNPvp9iU7E",
+                            "status": "UNANSWERED",
+                          },
+                        ],
+                        "title": "Chapter 5: Scope Closures",
+                      },
+                    ],
+                    "title": "Scope & Closures",
+                  },
+                  Object {
+                    "chapters": Array [
+                      Object {
+                        "questions": Array [
+                          Object {
+                            "questionId": "vShYeb3HLWDUmsDGI6m3",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "tm6ZdFGdHdysXk5QaBvq",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "xSQLd5HMVCcEaxDBMppV",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "KZIj2gCNtm3T2ceYqaJI",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "kfO4HXJNbw3pbZAgKTeK",
+                            "status": "UNANSWERED",
+                          },
+                        ],
+                        "title": "Chapter 1: this or That?",
+                      },
+                      Object {
+                        "questions": Array [
+                          Object {
+                            "questionId": "n4iaUrZcvCkLaNuqbOrR",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "IKfGQeBvEMLy0pzJPFkZ",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "LVwS4msdB01i9FRa5HT8",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "8YPCKMUjaKTqk2UnNWSO",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "njma2dew2w1jb06jFxEG",
+                            "status": "UNANSWERED",
+                          },
+                        ],
+                        "title": "Chapter 2: this All Makes Sense Now",
+                      },
+                      Object {
+                        "questions": Array [
+                          Object {
+                            "questionId": "9nHFYpQ9Zewn3efPkDh8",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "1ELRUPuXgJFmPL1ANffo",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "NrodGoGYdoWma1olCoih",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "1yQ856CkKjE1gKgQp5vq",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "mcF2sHTruzTxkLT1NlAw",
+                            "status": "UNANSWERED",
+                          },
+                        ],
+                        "title": "Chapter 3: Objects",
+                      },
+                      Object {
+                        "questions": Array [
+                          Object {
+                            "questionId": "Y4iwu68HDhZCPAvqnXQX",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "UESib3GYVwXJAaz5AS9I",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "1t67cQUrk7gRm4bIdZlp",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "cKWfiiULXkqv2DM0Tb8L",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "Wf4giVL54w2w0QORiKYh",
+                            "status": "UNANSWERED",
+                          },
+                        ],
+                        "title": "Chapter 4: Mixing (Up) \\"Class\\" Objects",
+                      },
+                      Object {
+                        "questions": Array [
+                          Object {
+                            "questionId": "fg3H6YFz6yMvjAszXWJc",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "S1721nV1G9a91T2Gf0OS",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "FOaeVC3vKIygUO814QQ8",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "rurmvSFgCGiDxAKFdWwR",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "lXB2dL0zVkY3KaXU6Smu",
+                            "status": "UNANSWERED",
+                          },
+                        ],
+                        "title": "Chapter 5: Prototypes",
+                      },
+                      Object {
+                        "questions": Array [
+                          Object {
+                            "questionId": "8D4P9iGWn4dvo4nV9AvY",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "9NmJ3HhcsvYsjDk240D7",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "YKfeed7X8PeaP3FqAOA2",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "ecm8D9c10bwlHIQcVqby",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "DSZvtrx3LZTIZUChMxAZ",
+                            "status": "UNANSWERED",
+                          },
+                        ],
+                        "title": "Chapter 6: Behavior Delegation",
+                      },
+                    ],
+                    "title": "this & Object Prototypes",
+                  },
+                  Object {
+                    "chapters": Array [
+                      Object {
+                        "questions": Array [
+                          Object {
+                            "questionId": "pMUUWcGwln5koHSPych2",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "3oBINeHwaPBjQSxrBsAn",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "JusfVHYhYwoarDGU2aMo",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "RVhgX62FTiCZoX7gswGE",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "vcCj5uxXMet4CnxLW96V",
+                            "status": "UNANSWERED",
+                          },
+                        ],
+                        "title": "Chapter 1: Types",
+                      },
+                      Object {
+                        "questions": Array [
+                          Object {
+                            "questionId": "qc3GXTSatbgIGcGRV3w1",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "fPLg0latZ9YhufnLb8Jq",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "4jatWiEr1aVxmEVDH3OK",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "vzm8C9Tgio0bfyCbB0TX",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "w6xgQc4j8bOgnLmda8ds",
+                            "status": "UNANSWERED",
+                          },
+                        ],
+                        "title": "Chapter 2: Values",
+                      },
+                      Object {
+                        "questions": Array [
+                          Object {
+                            "questionId": "5eI0FMHDy4XEeOkzN7Uj",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "oCrqcim3wMds6djUjgk5",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "5JeWO9haidtfa3QV6agU",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "Kni4heV7QP6BbHt2mvJE",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "GJY8a7aQDwO0E90oeJtv",
+                            "status": "UNANSWERED",
+                          },
+                        ],
+                        "title": "Chapter 3: Natives",
+                      },
+                      Object {
+                        "questions": Array [
+                          Object {
+                            "questionId": "OV9QsXmtCrQQipouXzhV",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "SXUXXeo97joh0BieYx2s",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "mCQSAuetDK2s6sxgV8rr",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "TK5eSs8QDufrIWgr4Xd6",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "ZkoD5dNNo8SGQIhiSApZ",
+                            "status": "UNANSWERED",
+                          },
+                        ],
+                        "title": "Chapter 4: Coercion",
+                      },
+                      Object {
+                        "questions": Array [
+                          Object {
+                            "questionId": "29W8dbdao07NYgzzz7LL",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "GSv67dFUBTnEJc3srokl",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "yrdwEyVgpqnGeQZIHUID",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "Q9YYAcT3dzDJJ3Qr5QYZ",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "Xijvr7OO22EJd6zmJ8AX",
+                            "status": "UNANSWERED",
+                          },
+                        ],
+                        "title": "Chapter 5: Grammar",
+                      },
+                    ],
+                    "title": "Types & Grammar",
+                  },
+                  Object {
+                    "chapters": Array [
+                      Object {
+                        "questions": Array [
+                          Object {
+                            "questionId": "DezUGg37iH44NXzdLo3i",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "BpY4KEBuBBdeQBlxA3LG",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "vjpxPlelT1ljEtKFO90e",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "m6QM7gCTkPglIfbbPGVX",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "0IR8uGxobATrQNdrpC4g",
+                            "status": "UNANSWERED",
+                          },
+                        ],
+                        "title": "Chapter 1: Asynchrony: Now & Later",
+                      },
+                      Object {
+                        "questions": Array [
+                          Object {
+                            "questionId": "nSPhyh2SfQ7quD1NwsrI",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "NSQiVkB3AQG8TCIBrDi4",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "sYKlDn1UsRvWQEf9zkKQ",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "TcT8PRxOpTSleXGlYjT9",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "Eng4KzwkESa93yv0aPmG",
+                            "status": "UNANSWERED",
+                          },
+                        ],
+                        "title": "Chapter 2: Callbacks",
+                      },
+                      Object {
+                        "questions": Array [
+                          Object {
+                            "questionId": "yKfPtJA7hI14xcZpmrNb",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "GA4y3cQ7ni69os1cz7X6",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "AzGqKEnaNzBF3G6ouNHm",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "bqxHeYeDipQbED3xwrEM",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "SnPgR8WspOlxLcYHaxOS",
+                            "status": "UNANSWERED",
+                          },
+                        ],
+                        "title": "Chapter 3: Promises",
+                      },
+                      Object {
+                        "questions": Array [
+                          Object {
+                            "questionId": "3oiWwVcpBDArVgTfqIQ8",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "0UGZnk0GYtmh9kERoxbJ",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "rhNUHne4lSbC4BuU4Ru9",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "eGErZ2NWL1GsyiFCNENi",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "R0jD4PsCg1N7sCoypENG",
+                            "status": "UNANSWERED",
+                          },
+                        ],
+                        "title": "Chapter 4: Generators",
+                      },
+                      Object {
+                        "questions": Array [
+                          Object {
+                            "questionId": "fSSc7ml4RBdQfi3VnoUO",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "RX9UbMNWGimlnv8cm0eZ",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "yv2ZLXD01gYvdeHfWOes",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "7eg8p9TGqQ8TuMwYzmUv",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "JUHvf1PXk9rQmgxaqHhq",
+                            "status": "UNANSWERED",
+                          },
+                        ],
+                        "title": "Chapter 5: Program Performance",
+                      },
+                      Object {
+                        "questions": Array [
+                          Object {
+                            "questionId": "jV7OHBpkIZaHXEXGYfpU",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "fM5TvIRl5kSaEDrSIFf3",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "x2XGf4rgGgIRLW5FBVXG",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "fCSIAMJzQf9k1zx7Eekg",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "RWI1RPLjnVPTl5JhnJN9",
+                            "status": "UNANSWERED",
+                          },
+                        ],
+                        "title": "Chapter 6: Benchmarking & Tuning",
+                      },
+                    ],
+                    "title": "Async & Performance",
+                  },
+                  Object {
+                    "chapters": Array [
+                      Object {
+                        "questions": Array [
+                          Object {
+                            "questionId": "75UiJmfNC9vbygun85TI",
+                            "status": "UNANSWERED",
+                          },
+                        ],
+                        "title": "Chapter 1: ES? Now and Future",
+                      },
+                      Object {
+                        "questions": Array [
+                          Object {
+                            "questionId": "B981780c3855a89e0073",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "qE8Cy9hGslTCTCt44Sbn",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "9vFbLV0HPOB76wPvXkvj",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "N1MFrOhtcAZzGzddk0jF",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "msvBBTHtOQSrFGkly2yk",
+                            "status": "UNANSWERED",
+                          },
+                        ],
+                        "title": "Chapter 2: Syntax",
+                      },
+                      Object {
+                        "questions": Array [
+                          Object {
+                            "questionId": "KamNLrqJT5ImdRfQ35nr",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "plIwdAz8DJRNR1o8PpD6",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "gaZ7o3VlCIMcxmIjrIk0",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "wRGNTWtsY1C1XfENF28c",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "SVWaRgCKQkULReUt92ct",
+                            "status": "UNANSWERED",
+                          },
+                        ],
+                        "title": "Chapter 3: Organization",
+                      },
+                      Object {
+                        "questions": Array [
+                          Object {
+                            "questionId": "vQyG9NbXDGHwOmFAEZv2",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "zYQmqVpBfiwgFlWm4nWi",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "tx0ixV3MjqoXXmJkxCRB",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "fw3mKgWDPvDorEt1J7gi",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "gojOcgD1qa8s8MnltIZQ",
+                            "status": "UNANSWERED",
+                          },
+                        ],
+                        "title": "Chapter 4: Async Flow Control",
+                      },
+                      Object {
+                        "questions": Array [
+                          Object {
+                            "questionId": "0epU8G0UpfrdT0RvnLMV",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "9BC25l8DHoyymcBZhbJV",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "bHMEwg8mKijiWv7K1xyP",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "hl8suixZavQFzxEHH9dJ",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "Uh3I0xxkQbLS9JIsXAb3",
+                            "status": "UNANSWERED",
+                          },
+                        ],
+                        "title": "Chapter 5: Collections",
+                      },
+                      Object {
+                        "questions": Array [
+                          Object {
+                            "questionId": "xR2HL1TPvvTd5nmJlfRe",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "jt5LRbhdlIRSzpaJLvpo",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "Oprc9dKIJ4dDXkoLXLVh",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "6yY82qYTLN9uCnqk0IIi",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "GVw5GFLNiaqFVGMRozom",
+                            "status": "UNANSWERED",
+                          },
+                        ],
+                        "title": "Chapter 6: API Additions",
+                      },
+                      Object {
+                        "questions": Array [
+                          Object {
+                            "questionId": "xyMfs00r4Ew4NsduVP2D",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "p1no0t7amJoaqRdjXvs9",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "cPBJLPjXTuyHGrI2QSiV",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "4TbWDRqm9vDpkKWJ7Ron",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "q0AQVG36cgff7ku4ySjz",
+                            "status": "UNANSWERED",
+                          },
+                        ],
+                        "title": "Chapter 7: Meta Programming",
+                      },
+                      Object {
+                        "questions": Array [
+                          Object {
+                            "questionId": "G4i5r5HFBq6kkhTidJny",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "bSSsrnNhAw9mJ5xsWaBu",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "5EOzpJgToRQkNTtROMHl",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "vyOCeqkXC5bQy9XPaDVt",
+                            "status": "UNANSWERED",
+                          },
+                          Object {
+                            "questionId": "kEl1ZHRrZOw0TA8bu966",
+                            "status": "UNANSWERED",
+                          },
+                        ],
+                        "title": "Chapter 8: Beyond ES6",
+                      },
+                    ],
+                    "title": "ES6 & Beyond",
+                  },
+                ],
+                "correct": 0,
+                "incorrect": 0,
+                "possible": 199,
+              }
+            }
+          />
+        </styled.li>
+        <styled.li>
+          <p>
+            You've answered 
+            <strong>
+              0
+            </strong>
+             out of
+             
+            <strong>
+              0
+            </strong>
+             (
+            <strong>
+              0
+              %
+            </strong>
+            ) questions correctly.
+          </p>
+          <p>
+            <strong>
+              199
+            </strong>
+             left to answer.
+          </p>
+        </styled.li>
+        <styled.hr />
+        <styled.li>
+          Books
+        </styled.li>
+        <DrawerMenu
+          id="b0"
+          nest={1}
+          title={
+            <span
+              style={
+                Object {
+                  "fontSize": "1rem",
+                }
+              }
+            >
+              Up & Going (0 /
+                  40)
+            </span>
+          }
+          to="/up-going"
+        >
+          [Function]
+        </DrawerMenu>
+        <DrawerMenu
+          id="b1"
+          nest={1}
+          title={
+            <span
+              style={
+                Object {
+                  "fontSize": "1rem",
+                }
+              }
+            >
+              Scope & Closures (0 /
+                  38)
+            </span>
+          }
+          to="/scope-closures"
+        >
+          [Function]
+        </DrawerMenu>
+        <DrawerMenu
+          id="b2"
+          nest={1}
+          title={
+            <span
+              style={
+                Object {
+                  "fontSize": "1rem",
+                }
+              }
+            >
+              this & Object Prototypes (0 /
+                  30)
+            </span>
+          }
+          to="/this-object-prototypes"
+        >
+          [Function]
+        </DrawerMenu>
+        <DrawerMenu
+          id="b3"
+          nest={1}
+          title={
+            <span
+              style={
+                Object {
+                  "fontSize": "1rem",
+                }
+              }
+            >
+              Types & Grammar (0 /
+                  25)
+            </span>
+          }
+          to="/types-grammar"
+        >
+          [Function]
+        </DrawerMenu>
+        <DrawerMenu
+          id="b4"
+          nest={1}
+          title={
+            <span
+              style={
+                Object {
+                  "fontSize": "1rem",
+                }
+              }
+            >
+              Async & Performance (0 /
+                  30)
+            </span>
+          }
+          to="/async-performance"
+        >
+          [Function]
+        </DrawerMenu>
+        <DrawerMenu
+          id="b5"
+          nest={1}
+          title={
+            <span
+              style={
+                Object {
+                  "fontSize": "1rem",
+                }
+              }
+            >
+              ES6 & Beyond (0 /
+                  36)
+            </span>
+          }
+          to="/es6-beyond"
+        >
+          [Function]
+        </DrawerMenu>
+      </styled.ul>
+      <section>
+        <ResetButton
+          resetScore={[Function]}
+        />
+      </section>
+    </styled.div>
+  </React.Fragment>
+</div>
+`;

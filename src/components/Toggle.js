@@ -4,14 +4,13 @@ import PropTypes from 'prop-types';
 export default class Toggle extends Component {
   static propTypes = {
     children: PropTypes.func.isRequired,
+    show: PropTypes.bool,
   };
 
   state = { show: this.props.show };
 
   handleToggle() {
-    const { updaters } = this.props;
     this.setState(prevState => {
-      updaters && updaters.forEach(updater => updater());
       return {
         show: !prevState.show,
       };

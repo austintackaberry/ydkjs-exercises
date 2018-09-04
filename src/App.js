@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import './App.css';
 import BookRouter from './components/BookRouter';
 import Home from './components/Home';
+import Toggle from './components/Toggle';
 import Sidebar from './components/Sidebar';
 import books from './data';
 import Header from './components/Header';
@@ -58,7 +59,6 @@ class App extends Component {
     super();
 
     const isNarrowScreen = window.innerHeight > window.innerWidth;
-    const shouldShowSidebar = !isNarrowScreen;
     // updateScore needs to be defined here, not in score-context.js
     // because it needs to setState
     this.updateScore = newScore => {
@@ -69,7 +69,6 @@ class App extends Component {
 
     this.state = {
       score,
-      shouldShowSidebar,
       isNarrowScreen,
       showInstallBtn: false,
     };
@@ -92,24 +91,9 @@ class App extends Component {
     window.removeEventListener('resize', this.handleResize);
   };
 
-  handleClick(e) {
-    const name = e.target.dataset.name;
-    const { isNarrowScreen, shouldShowSidebar } = this.state;
-    if (isNarrowScreen && shouldShowSidebar && name === 'App') {
-      this.handleSidebarToggle();
-    }
-  }
-
   handleResize() {
     this.setState({
       isNarrowScreen: window.innerHeight > window.innerWidth,
-    });
-  }
-
-  handleSidebarToggle() {
-    const { shouldShowSidebar } = this.state;
-    this.setState({
-      shouldShowSidebar: !shouldShowSidebar,
     });
   }
 
@@ -118,44 +102,49 @@ class App extends Component {
       <ScoreContext.Provider
         value={{ score: this.state.score, updateScore: this.updateScore }}
       >
-        <AppGrid
-          data-name="App"
-          isNarrowScreen={this.state.isNarrowScreen}
-          shouldShowSidebar={this.state.shouldShowSidebar}
-          onClick={e => this.handleClick(e)}
-        >
-          <Sidebar
-            data-name="Sidebar"
-            books={books}
-            score={this.state.score}
-            updateScore={this.updateScore}
-            isNarrowScreen={this.state.isNarrowScreen}
-            shouldShow={this.state.shouldShowSidebar}
-            onMenuClick={e => this.handleSidebarToggle(e)}
-            ref={this.sidebarRef}
-          />
-          <Header />
-          <MainContentGridChild
-            data-name="Main"
-            onClick={e => this.handleClick(e)}
-          >
-            <Switch>
-              <Route exact path="/" render={() => <Home books={books} />} />
-              {books.map((book, index) => {
-                book.id = index;
-                return (
-                  <Route
-                    key={index}
-                    path={book.url}
-                    render={() => <BookRouter book={book} />}
-                  />
-                );
-              })}
-              <Route component={NoMatch} />
-            </Switch>
-          </MainContentGridChild>
-          <Footer />
-        </AppGrid>
+        <Toggle show={!this.state.isNarrowScreen}>
+          {({ show, toggle }) => (
+            <AppGrid
+              data-name="App"
+              isNarrowScreen={this.state.isNarrowScreen}
+              shouldShowSidebar={show}
+              onClick={e => {
+                e.target.dataset.name === 'App' &&
+                  this.state.isNarrowScreen &&
+                  show &&
+                  toggle();
+              }}
+            >
+              <Sidebar
+                data-name="Sidebar"
+                books={books}
+                score={this.state.score}
+                updateScore={this.updateScore}
+                isNarrowScreen={this.state.isNarrowScreen}
+                shouldShow={show}
+                onMenuClick={toggle}
+              />
+              <Header />
+              <MainContentGridChild data-name="Main">
+                <Switch>
+                  <Route exact path="/" render={() => <Home books={books} />} />
+                  {books.map((book, index) => {
+                    book.id = index;
+                    return (
+                      <Route
+                        key={index}
+                        path={book.url}
+                        render={() => <BookRouter book={book} />}
+                      />
+                    );
+                  })}
+                  <Route component={NoMatch} />
+                </Switch>
+              </MainContentGridChild>
+              <Footer />
+            </AppGrid>
+          )}
+        </Toggle>
       </ScoreContext.Provider>
     );
   }

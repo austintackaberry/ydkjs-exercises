@@ -46,6 +46,7 @@ export const SidebarGridChild = styled.div`
   height: 100vh;
   background-color: white;
   grid-area: sidebar;
+  padding-bottom: 1rem;
   text-align: center;
   transition: ${props =>
     props.shouldShow ? 'var(--easing-decelerate)' : 'var(--easing-accelerate)'};

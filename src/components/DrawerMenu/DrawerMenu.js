@@ -1,27 +1,29 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Toggle from '../Toggle';
+import ChevronDown from '../../svgs/ChevronDown';
+import ChevronRight from '../../svgs/ChevronRight';
 import { Link } from 'react-router-dom';
-import { ListItem } from './styled';
+import { ListItem, DrawerMenuParent, DrawerMenuChild } from './styled';
 
 const DrawerMenu = props => {
-  const { children, id, to, menuText, nest } = props;
+  const { children, id, to, title, nest } = props;
   return (
     <Toggle>
       {({ show, toggle }) => (
-        <Fragment>
-          <ListItem nest={nest}>
-            <Link key={id} to={to} style={{ textDecoration: 'none' }}>
-              {menuText}
-            </Link>&nbsp;
-            {children && (
-              <button type="button" onClick={toggle}>
-                {show ? '⬆' : '⬇'}
-              </button>
-            )}
+        <DrawerMenuParent>
+          <ListItem key={id} nest={nest} onClick={toggle}>
+            <span style={{ marginRight: '.5rem', cursor: 'pointer' }}>
+              {children && (show ? <ChevronDown /> : <ChevronRight />)}
+            </span>
+            <Link to={to} style={{ textDecoration: 'none' }}>
+              {title}
+            </Link>
           </ListItem>
-          {show && children && children()}
-        </Fragment>
+          <DrawerMenuChild show={show}>
+            {children && children()}
+          </DrawerMenuChild>
+        </DrawerMenuParent>
       )}
     </Toggle>
   );
@@ -29,8 +31,10 @@ const DrawerMenu = props => {
 
 DrawerMenu.propTypes = {
   children: PropTypes.func,
-  key: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
   to: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  nest: PropTypes.number.isRequired,
 };
 
 export default DrawerMenu;
