@@ -21,8 +21,8 @@ export default class CodeInline extends React.PureComponent {
         style={tomorrowNightEighties}
         customStyle={{
           display: 'inline',
-          padding: '0.3em',
-          borderRadius: '1px',
+          padding: '0.3em 0.3em calc(0.3em + 1px)',
+          borderRadius: '0.15em',
         }}
         language={language}
       >

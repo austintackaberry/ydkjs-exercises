@@ -51,7 +51,7 @@ const Ch2Questions = [
   },
   {
     question:
-      "What is the return value of: typeof [1,2,3] === typeof {val: 'a', val: 'b', val: 'c'}; ?",
+      "What is the return value of: `typeof [1,2,3] === typeof {val: 'a', val: 'b', val: 'c'};` ?",
     questionId: '6jXvxXQQTnwPLsSayrJS',
     shouldBeRandomized: false,
     answers: [
@@ -164,10 +164,10 @@ const Ch2Questions = [
     questionId: 'KVa9gyVWvT9ymLmIeeGm',
     shouldBeRandomized: false,
     answers: [
-      { text: 'var b = Number( "5" );', id: 0 },
-      { text: 'var b = "5" * 1;', id: 1 },
-      { text: 'var b= "Hello, world" * 1;', id: 2 },
-      { text: 'var b= String( 5 )', id: 3 },
+      { text: '`var b = Number( "5" );`', id: 0 },
+      { text: '`var b = "5" * 1;`', id: 1 },
+      { text: '`var b = "Hello, world" * 1;`', id: 2 },
+      { text: '`var b = String( 5 );`', id: 3 },
     ],
     correctAnswerId: 1,
     moreInfoUrl:
@@ -177,7 +177,7 @@ const Ch2Questions = [
   },
   {
     question:
-      'If var a = 42 and var b = "42", will the statements a === b AND a == b return ...?',
+      'If var a = 42 and var b = "42", what will the statements a === b AND a == b return?',
     questionId: 'w5G9jSN6Hj9UD4VcfsFV',
     shouldBeRandomized: false,
     answers: [
@@ -372,10 +372,10 @@ const Ch2Questions = [
     questionId: 'pdnSBOr7Cy4Q6TeZeOpI',
     shouldBeRandomized: false,
     answers: [
-      { text: '(function IIFE(){ console( "Hello!" ); })();', id: 0 },
-      { text: 'function IIFE(){ console.log( "Hello!" ); }();', id: 1 },
-      { text: 'function IIFE(){ console.log( "Hello!" ); }', id: 2 },
-      { text: '(function IIFE(){ console.log( "Hello!" ); })();', id: 3 },
+      { text: '`(function IIFE(){ console( "Hello!" ); })();`', id: 0 },
+      { text: '`function IIFE(){ console.log( "Hello!" ); }();`', id: 1 },
+      { text: '`function IIFE(){ console.log( "Hello!" ); }`', id: 2 },
+      { text: '`(function IIFE(){ console.log( "Hello!" ); })();`', id: 3 },
     ],
     correctAnswerId: 3,
     moreInfoUrl:

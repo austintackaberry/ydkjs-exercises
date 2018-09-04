@@ -19,7 +19,11 @@ export default class CodeBlock extends React.PureComponent {
     return (
       <SyntaxHighlighter
         style={tomorrowNightEighties}
-        customStyle={{ borderRadius: '2px', textAlign: 'left' }}
+        customStyle={{
+          borderRadius: '0.25em',
+          textAlign: 'left',
+          padding: '0.3em 0.3em calc(0.3em + 1px)',
+        }}
         language={language}
       >
         {value}

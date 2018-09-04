@@ -353,7 +353,7 @@ const Ch1Questions = [
       },
       {
         text:
-          'The code: "if true { console.log("this is true!"); }" is writtent in valid syntax and will print out the string.',
+          'The code: "if true { console.log("this is true!"); }" is written in valid syntax and will print out the string.',
         id: 3,
       },
     ],

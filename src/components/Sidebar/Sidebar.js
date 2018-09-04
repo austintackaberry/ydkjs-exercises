@@ -5,12 +5,14 @@ import {
   ListItem,
   ListItemTitle,
   Divider,
-  Wrapper,
   FlatButton,
+  SidebarGridChild,
 } from './styled';
 import { Link, withRouter } from 'react-router-dom';
 import ProgressBar from '../ProgressBar';
 import { reinitializeScore } from '../../helpers/helpers';
+import Close from '../../svgs/Close';
+import Menu from '../../svgs/Menu';
 
 const ResetButton = props =>
   withRouter(({ history, resetScore }) => (
@@ -24,7 +26,7 @@ const ResetButton = props =>
     </FlatButton>
   ))(props);
 
-class Sidebar extends Component {
+export default class Sidebar extends Component {
   static propTypes = {
     books: PropTypes.array.isRequired,
     score: PropTypes.object.isRequired,
@@ -57,49 +59,75 @@ class Sidebar extends Component {
   }
 
   render() {
-    const score = this.props.score;
-    const books = this.props.books;
+    const {
+      score,
+      books,
+      isNarrowScreen,
+      onMenuClick,
+      shouldShow,
+    } = this.props;
     const scoreAnswered = score.correct + score.incorrect;
     const scorePct = Math.round((100 * score.correct) / scoreAnswered) || 0;
 
     return (
-      <Wrapper>
-        <List>
-          <ListItemTitle>Progress</ListItemTitle>
-          <ListItem>
-            <ProgressBar score={score} />
-          </ListItem>
-          <ListItem>
-            <p>
-              You've answered <strong>{score.correct}</strong> out of{' '}
-              <strong>{scoreAnswered}</strong> (<strong>{scorePct}%</strong>)
-              questions correctly.
-            </p>
-            <p>
-              <strong>{score.possible - scoreAnswered}</strong> left to answer.
-            </p>
-          </ListItem>
+      <SidebarGridChild
+        name="Sidebar"
+        isNarrowScreen={isNarrowScreen}
+        shouldShow={shouldShow}
+      >
+        <div
+          onClick={e => onMenuClick(e)}
+          style={{
+            textAlign: 'right',
+            margin: '10px 10px 0 0',
+          }}
+        >
+          {shouldShow ? <Close /> : <Menu />}
+        </div>
+        {shouldShow && (
+          <List>
+            <ListItemTitle>Progress</ListItemTitle>
+            <ListItem>
+              <ProgressBar score={score} />
+            </ListItem>
+            <ListItem>
+              <p>
+                You've answered <strong>{score.correct}</strong> out of{' '}
+                <strong>{scoreAnswered}</strong> (<strong>{scorePct}%</strong>)
+                questions correctly.
+              </p>
+              <p>
+                <strong>{score.possible - scoreAnswered}</strong> left to
+                answer.
+              </p>
+            </ListItem>
 
-          <Divider />
+            <Divider />
 
-          <ListItemTitle>Books</ListItemTitle>
-          {books.map((book, index) => (
-            <Link key={index} style={{ textDecoration: 'none' }} to={book.url}>
-              <ListItem>
-                {`${book.title} (${
-                  this.getBookScores(score.books[index]).correct
-                } /
+            <ListItemTitle>Books</ListItemTitle>
+            {books.map((book, index) => (
+              <Link
+                key={index}
+                style={{ textDecoration: 'none' }}
+                to={book.url}
+                onClick={e => isNarrowScreen && onMenuClick(e)}
+              >
+                <ListItem>
+                  {`${book.title} (${
+                    this.getBookScores(score.books[index]).correct
+                  } /
                   ${this.getBookScores(score.books[index]).possible})`}
-              </ListItem>
-            </Link>
-          ))}
-        </List>
-        <section>
-          <ResetButton resetScore={this.resetScore} />
-        </section>
-      </Wrapper>
+                </ListItem>
+              </Link>
+            ))}
+          </List>
+        )}
+        {shouldShow && (
+          <section>
+            <ResetButton resetScore={this.resetScore} />
+          </section>
+        )}
+      </SidebarGridChild>
     );
   }
 }
-
-export default Sidebar;
