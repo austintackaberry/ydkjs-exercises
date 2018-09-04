@@ -33,7 +33,10 @@ DrawerMenu.propTypes = {
   children: PropTypes.func,
   id: PropTypes.string.isRequired,
   to: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
+  title: PropTypes.oneOfType([
+    PropTypes.string.isRequired,
+    PropTypes.object.isRequired,
+  ]),
   nest: PropTypes.number.isRequired,
 };
 

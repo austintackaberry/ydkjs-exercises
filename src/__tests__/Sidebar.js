@@ -6,16 +6,17 @@ import books from '../data';
 
 it('should render the sidebar', () => {
   const comp = shallow(
-    <Sidebar
-      data-name="Sidebar"
-      books={books}
-      isNarrowScreen={false}
-      score={score}
-      shouldShow={true}
-      updateScore={() => {}}
-      onMenuClick={() => {}}
-    />
+    <div>
+      <Sidebar
+        data-name="Sidebar"
+        books={books}
+        isNarrowScreen={false}
+        score={score}
+        shouldShow={true}
+        updateScore={() => {}}
+        onMenuClick={() => {}}
+      />
+    </div>
   );
-  const fragment = comp.instance().render();
-  expect(shallow(<div>{fragment}</div>).getElement()).toMatchSnapshot();
+  expect(comp.first().shallow()).toHaveLength(1);
 });
