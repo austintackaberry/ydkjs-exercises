@@ -72,6 +72,7 @@ class App extends Component {
       shouldShowSidebar,
       isNarrowScreen,
       showInstallBtn: false,
+      showReset: false,
     };
   }
   componentDidMount() {
