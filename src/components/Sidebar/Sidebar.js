@@ -15,18 +15,6 @@ import { reinitializeScore } from '../../helpers/helpers';
 import Menu from '../../svgs/Menu';
 import Close from '../../svgs/Close';
 
-const ResetButton = props =>
-  withRouter(({ history, resetScore }) => (
-    <FlatButton
-      onClick={() => {
-        resetScore();
-        history.push('/');
-      }}
-    >
-      Reset Progress
-    </FlatButton>
-  ))(props);
-
 export default class Sidebar extends Component {
   static propTypes = {
     books: PropTypes.array.isRequired,
@@ -182,7 +170,9 @@ export default class Sidebar extends Component {
           )}
           {shouldShow && (
             <section>
-              <ResetButton resetScore={this.resetScore} />
+              <FlatButton onClick={this.props.handleShowReset}>
+                Reset Progress
+              </FlatButton>
             </section>
           )}
         </SidebarGridChild>

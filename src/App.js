@@ -9,6 +9,7 @@ import books from './data';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import NoMatch from './components/NoMatch';
+import ResetModal from './components/ResetModal';
 import { Switch, Route } from 'react-router-dom';
 import { mergeScores } from './helpers/helpers';
 
@@ -66,11 +67,13 @@ class App extends Component {
       this.setState({ score: newScore });
     };
     this.handleResize = this.handleResize.bind(this);
+    this.handleShowReset = this.handleShowReset.bind(this);
 
     this.state = {
       score,
       isNarrowScreen,
       showInstallBtn: false,
+      showReset: false,
     };
   }
   componentDidMount() {
@@ -97,6 +100,13 @@ class App extends Component {
     });
   }
 
+  handleShowReset() {
+    const showReset = this.state.showReset;
+    this.setState({
+      showReset: !showReset,
+    });
+  }
+
   render() {
     return (
       <ScoreContext.Provider
@@ -115,6 +125,13 @@ class App extends Component {
                   toggle();
               }}
             >
+              {this.state.showReset && (
+                <ResetModal
+                  handleShowReset={this.handleShowReset}
+                  updateScore={this.updateScore}
+                  score={this.state.score}
+                />
+              )}
               <Sidebar
                 data-name="Sidebar"
                 books={books}
