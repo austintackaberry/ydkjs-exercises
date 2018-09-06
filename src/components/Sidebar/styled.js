@@ -52,6 +52,7 @@ export const SidebarGridChild = styled.div`
     props.shouldShow ? 'var(--easing-decelerate)' : 'var(--easing-accelerate)'};
   width: ${props =>
     props.shouldShow ? (props.isNarrowScreen ? '80vw' : '20vw') : '0'};
+  overflow-x: hidden;
   overflow-y: scroll;
   z-index: 11;
   &:-webkit-scrollbar {
