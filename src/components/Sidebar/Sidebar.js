@@ -8,23 +8,11 @@ import {
   FlatButton,
   SidebarGridChild,
 } from './styled';
-import { Link, withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import ProgressBar from '../ProgressBar';
 import { reinitializeScore } from '../../helpers/helpers';
 import Close from '../../svgs/Close';
 import Menu from '../../svgs/Menu';
-
-const ResetButton = props =>
-  withRouter(({ history, resetScore }) => (
-    <FlatButton
-      onClick={() => {
-        resetScore();
-        history.push('/');
-      }}
-    >
-      Reset Progress
-    </FlatButton>
-  ))(props);
 
 export default class Sidebar extends Component {
   static propTypes = {
@@ -124,7 +112,9 @@ export default class Sidebar extends Component {
         )}
         {shouldShow && (
           <section>
-            <ResetButton resetScore={this.resetScore} />
+            <FlatButton onClick={this.props.handleShowReset}>
+              Reset Progress
+            </FlatButton>
           </section>
         )}
       </SidebarGridChild>
