@@ -134,10 +134,13 @@ class App extends Component {
           shouldShowSidebar={this.state.shouldShowSidebar}
           onClick={e => this.handleClick(e)}
         >
-          <ResetModal
-            showReset={this.state.showReset}
-            handleShowReset={this.handleShowReset}
-          />
+          {this.state.showReset && (
+            <ResetModal
+              handleShowReset={this.handleShowReset}
+              updateScore={this.updateScore}
+              score={this.state.score}
+            />
+          )}
           <Sidebar
             data-name="Sidebar"
             books={books}
@@ -147,6 +150,7 @@ class App extends Component {
             shouldShow={this.state.shouldShowSidebar}
             onMenuClick={e => this.handleSidebarToggle(e)}
             ref={this.sidebarRef}
+            handleShowReset={this.handleShowReset}
           />
           <Header />
           <MainContentGridChild
