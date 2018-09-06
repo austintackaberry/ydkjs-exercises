@@ -55,9 +55,8 @@ export const SidebarGridChild = styled.div`
   overflow-x: hidden;
   overflow-y: scroll;
   z-index: 11;
-  &:-webkit-scrollbar {
-    width: 0px;
-    background: transparent;
+  &::-webkit-scrollbar {
+    display: none;
   }
 
   svg {
