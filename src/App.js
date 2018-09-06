@@ -137,6 +137,7 @@ class App extends Component {
                 books={books}
                 score={this.state.score}
                 updateScore={this.updateScore}
+                handleShowReset={this.handleShowReset}
                 isNarrowScreen={this.state.isNarrowScreen}
                 shouldShow={show}
                 onMenuClick={toggle}
