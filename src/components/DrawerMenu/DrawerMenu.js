@@ -12,8 +12,11 @@ const DrawerMenu = props => {
     <Toggle>
       {({ show, toggle }) => (
         <DrawerMenuParent>
-          <ListItem key={id} nest={nest} onClick={toggle}>
-            <span style={{ marginRight: '.5rem', cursor: 'pointer' }}>
+          <ListItem key={id} nest={nest}>
+            <span
+              style={{ marginRight: '.5rem', cursor: 'pointer' }}
+              onClick={toggle}
+            >
               {children && (show ? <ChevronDown /> : <ChevronRight />)}
             </span>
             <Link to={to} style={{ textDecoration: 'none' }}>

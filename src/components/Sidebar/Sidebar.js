@@ -12,7 +12,6 @@ import DrawerMenu from '../DrawerMenu';
 import { withRouter } from 'react-router-dom';
 import ProgressBar from '../ProgressBar';
 import { reinitializeScore } from '../../helpers/helpers';
-import Close from '../../svgs/Close';
 import Menu from '../../svgs/Menu';
 
 const ResetButton = props =>
@@ -88,15 +87,6 @@ export default class Sidebar extends Component {
           isNarrowScreen={isNarrowScreen}
           shouldShow={shouldShow}
         >
-          <div
-            onClick={onMenuClick}
-            style={{
-              textAlign: 'right',
-              margin: '10px 10px 0 0',
-            }}
-          >
-            <Close data-name="svg" />
-          </div>
           {shouldShow && (
             <List>
               <ListItemTitle>Progress</ListItemTitle>

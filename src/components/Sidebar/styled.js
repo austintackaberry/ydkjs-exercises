@@ -54,6 +54,10 @@ export const SidebarGridChild = styled.div`
     props.shouldShow ? (props.isNarrowScreen ? '80vw' : '20vw') : '0'};
   overflow-y: scroll;
   z-index: 11;
+  &:-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
 
   svg {
     padding-left: ${props => (props.shouldShow ? 'none' : '1rem')};
