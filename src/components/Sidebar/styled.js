@@ -21,6 +21,7 @@ export const ListItemTitle = styled.li`
   padding: 0.5rem 0;
 `;
 export const ListItem = styled.li`
+  color: black;
   list-style: none;
   font-size: 12px;
   line-height: 12px;
