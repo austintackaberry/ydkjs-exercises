@@ -9,7 +9,6 @@ import {
   SidebarGridChild,
 } from './styled';
 import DrawerMenu from '../DrawerMenu';
-import { withRouter } from 'react-router-dom';
 import ProgressBar from '../ProgressBar';
 import { reinitializeScore } from '../../helpers/helpers';
 import Menu from '../../svgs/Menu';
