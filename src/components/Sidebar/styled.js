@@ -13,6 +13,13 @@ export const List = styled.ul`
   padding: 1rem 0;
 `;
 
+export const MenuItem = styled.li`
+  list-style: none;
+  width: 100%;
+  margin: 0 ${props => (props.nestLevel ? props.NestLevel : '1rem')};
+  padding: 1rem 0;
+`;
+
 export const ListItemTitle = styled.li`
   list-style: none;
   font-size: 16px;
@@ -40,12 +47,18 @@ export const SidebarGridChild = styled.div`
   height: 100vh;
   background-color: white;
   grid-area: sidebar;
+  padding-bottom: 1rem;
   text-align: center;
   transition: ${props =>
     props.shouldShow ? 'var(--easing-decelerate)' : 'var(--easing-accelerate)'};
   width: ${props =>
     props.shouldShow ? (props.isNarrowScreen ? '80vw' : '20vw') : '0'};
+  overflow-x: hidden;
+  overflow-y: scroll;
   z-index: 11;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   svg {
     padding-left: ${props => (props.shouldShow ? 'none' : '1rem')};
