@@ -158,19 +158,19 @@ const Ch1Questions = [
     shouldBeRandomized: true,
     answers: [
       {
-        text: 'var even = 4 ;',
+        text: '`var even = 4;`',
         id: 0,
       },
       {
-        text: 'var farm = "cat" + "dog" + "cow" ; ',
+        text: '`var farm = "cat" + "dog" + "cow";`',
         id: 1,
       },
       {
-        text: 'var counter += 1 ;',
+        text: '`var counter += 1;`',
         id: 2,
       },
       {
-        text: 'var bool = 5 > minimum ;',
+        text: '`var bool = 5 > minimum;`',
         id: 3,
       },
     ],
@@ -189,21 +189,21 @@ const Ch1Questions = [
     answers: [
       {
         text:
-          'Using alert() will block your user from interacting with your web page until the alert is closed.',
+          'Using `alert()` will block your user from interacting with your web page until the alert is closed.',
         id: 0,
       },
       {
-        text: 'The user cannot view more than one alert() message at a time.',
+        text: 'The user cannot view more than one `alert()` message at a time.',
         id: 1,
       },
       {
         text:
-          'The user cannot view more than one console.log() message at a time.',
+          'The user cannot view more than one `console.log()` message at a time.',
         id: 2,
       },
       {
         text:
-          'console.log() statements often have an interactive pointer to the line of code that issued the logged statement.',
+          '`console.log()` statements often have an interactive pointer to the line of code that issued the logged statement.',
         id: 3,
       },
     ],
@@ -219,19 +219,19 @@ const Ch1Questions = [
     shouldBeRandomized: true,
     answers: [
       {
-        text: 'var age = console.log("What is your name? ");',
+        text: '`var age = console.log("What is your name? ");`',
         id: 0,
       },
       {
-        text: 'var age = alert("What is your name? ");',
+        text: '`var age = alert("What is your name? ");`',
         id: 1,
       },
       {
-        text: 'var age = console.get("What is your name? ");',
+        text: '`var age = console.get("What is your name? ");`',
         id: 2,
       },
       {
-        text: 'var age = prompt("What is your name? ");',
+        text: '`var age = prompt("What is your name? ");`',
         id: 3,
       },
     ],
@@ -244,7 +244,7 @@ const Ch1Questions = [
   },
   {
     question:
-      'Fill in the blanks: In the expression "var num = 20; ", the operator = is used to ______ the literal value 20 to the _______ num. The keyword var is used to _______ the variable. ',
+      'Fill in the blanks: In the expression `var num = 20; `, the operator `=` is used to ______ the literal value `20` to the _______ num. The keyword `var` is used to _______ the variable. ',
     questionId: 'zRcsGCwSLJGzFuxbIbrD',
     shouldBeRandomized: true,
     answers: [
@@ -276,19 +276,19 @@ const Ch1Questions = [
     shouldBeRandomized: true,
     answers: [
       {
-        text: 'var even *= 2; ',
+        text: '`var even *= 2; `',
         id: 0,
       },
       {
-        text: 'var counter += 1; ',
+        text: '`var counter += 1; `',
         id: 1,
       },
       {
-        text: 'var diff -= 2; ',
+        text: '`var diff -= 2; `',
         id: 2,
       },
       {
-        text: 'b == a; ',
+        text: '`b == a; `',
         id: 3,
       },
     ],
@@ -301,24 +301,24 @@ const Ch1Questions = [
   },
   {
     question:
-      'Which of these next equations will output the boolean value false? Remember, you can open the console in your browser and experiment.',
+      'Which of these next equations will output the boolean value `false`? Remember, you can open the console in your browser and experiment.',
     questionId: 'JdFJJbwrqFkeuJIKI8rM',
     shouldBeRandomized: true,
     answers: [
       {
-        text: '99 === Number("99"); ',
+        text: '`99 === Number("99"); `',
         id: 0,
       },
       {
-        text: '-"99" == 99; ',
+        text: '`-"99" == 99; `',
         id: 1,
       },
       {
-        text: '-"99" == -99.00; ',
+        text: '`-"99" == -99.00; `',
         id: 2,
       },
       {
-        text: '99 == "99.00"; ',
+        text: '`99 == "99.00"; `',
         id: 3,
       },
     ],
@@ -338,22 +338,22 @@ const Ch1Questions = [
     answers: [
       {
         text:
-          'The if statement requires an expression that can be treated as either true or false. ',
+          'The if statement requires an expression that can be treated as either `true` or `false`. ',
         id: 0,
       },
       {
         text:
-          'You can provide an alternative if the condition is not true, called an else clause.',
+          'You can provide an alternative if the condition is not `true`, called an else clause.',
         id: 1,
       },
       {
         text:
-          'JavaScript defines a list of specific values that are considered "falsy" (e.g: 0, ""). Any other value not on the "falsy" list is automatically "truthy" (e.g: 99.99, "free")',
+          'JavaScript defines a list of specific values that are considered "falsy" (e.g: `0`, `""`). Any other value not on the "falsy" list is automatically "truthy" (e.g: `99.99`, `"free"`)',
         id: 2,
       },
       {
         text:
-          'The code: "if true { console.log("this is true!"); }" is written in valid syntax and will print out the string.',
+          'The code: `if true { console.log("this is true!"); }` is written in valid syntax and will print out the string.',
         id: 3,
       },
     ],
