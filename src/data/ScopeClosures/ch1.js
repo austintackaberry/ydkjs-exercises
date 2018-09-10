@@ -85,7 +85,7 @@ const Ch1Questions = [
   },
   {
     question:
-      "Two distinct actions are taken for a variable assignment such as 'var a = 2; '",
+      'Two distinct actions are taken for a variable assignment such as `var a = 2; `',
     questionId: 'dD9jisRqzgTC2oKTACTS',
     shouldBeRandomized: false,
     answers: [
@@ -123,31 +123,30 @@ const Ch1Questions = [
     answers: [
       {
         text:
-          'LHS and RHS meaning "left/right-hand side of an assignment" always literally mean "left/right side of the = assignment operator"',
+          'LHS and RHS meaning "left/right-hand side of an assignment" always literally mean "left/right side of the `=` assignment operator"',
         id: 0,
       },
       {
         text:
-          "The reference to 'a' in the statements 'console.log( a );' and in 'a = 2; ' is an LHS statement.",
+          'The reference to `a` in the statements `console.log( a );` and in `a = 2; ` is an LHS statement.',
         id: 1,
       },
       {
         text:
-          "In 'console.log( a );' the reference to 'a' is an LHS reference, while in 'a = 2; ' the reference to 'a' is an RHS statement.",
+          'In `console.log( a );` the reference to `a` is an LHS reference, while in `a = 2; ` the reference to `a` is an RHS statement.',
         id: 2,
       },
       {
         text:
-          "In 'console.log( a );' the reference to 'a' is an RHS reference, while in 'a = 2; ' the reference to 'a' is an LHS statement.",
+          'In `console.log( a );` the reference to `a` is an RHS reference, while in `a = 2; ` the reference to `a` is an LHS statement.',
         id: 3,
       },
     ],
     correctAnswerId: 3,
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch1.md#compiler-speak',
-    explanation: `The reference to 'a' in 'console.log( a );' is an RHS reference, because nothing is being assigned to a here.
-    By contrast, in 'a = 2;' the reference to 'a' is an LHS reference, because we don't actually care what the current value is.
-    We simply want to find the variable as 'a' target for the '= 2' assignment operation.`,
+    explanation:
+      'The reference to `a` in `console.log( a );` is an RHS reference, because nothing is being assigned to a here. By contrast, in `a = 2;` the reference to `a` is an LHS reference, because we don&#39;t actually care what the current value is. We simply want to find the variable as `a` target for the `= 2` assignment operation.',
   },
   {
     question:
@@ -189,7 +188,7 @@ const Ch1Questions = [
     answers: [
       {
         text:
-          'Because these two types of look-ups behave differently when the variable has been declared and assigned the value "undefined".',
+          'Because these two types of look-ups behave differently when the variable has been declared and assigned the value `undefined`.',
         id: 0,
       },
       {
@@ -204,17 +203,15 @@ const Ch1Questions = [
       },
       {
         text:
-          'If an LHS look-up fails to ever find a variable, anywhere in the nested Scopes, this results in a ReferenceError being thrown by the Engine.',
+          'If an LHS look-up fails to ever find a variable, anywhere in the nested Scopes, this results in a `ReferenceError` being thrown by the Engine.',
         id: 3,
       },
     ],
     correctAnswerId: 2,
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch1.md#errors',
-    explanation: `The names matter because these two types of look-ups behave differently in the circumstance where the variable has not yet been declared
-    (is not found in any consulted Scope). If an RHS look-up fails to ever find a variable, this results in a ReferenceError being thrown by the Engine.
-    By contrast, if the Engine is performing an LHS look-up and arrives at the top floor (global Scope) without finding it,
-    and if the program is not running in "Strict Mode", then the global Scope will create a new variable of that name in the global scope.`,
+    explanation:
+      'The names matter because these two types of look-ups behave differently in the circumstance where the variable has not yet been declared (is not found in any consulted Scope). If an RHS look-up fails to ever find a variable, this results in a `ReferenceError` being thrown by the Engine. By contrast, if the Engine is performing an LHS look-up and arrives at the top floor (global Scope) without finding it, and if the program is not running in "Strict Mode", then the global Scope will create a new variable of that name in the global scope.',
   },
   {
     question: 'What is Parsing?',
@@ -302,13 +299,14 @@ const Ch1Questions = [
   },
   {
     question: `How many LHS look-ups are in the code below:
-    function foo(a) {
-      var b = a;
-      return a + b;
-    }
+${'```js'}
+function foo(a){
+  var b = a; 
+  return a + b
+}
 
-    var c = foo( 2 );
-
+var c = foo( 2 );
+${'```'}
     `,
     questionId: 'qJye44oG77frNCWMzhKV',
     shouldBeRandomized: false,
@@ -333,17 +331,18 @@ const Ch1Questions = [
     correctAnswerId: 2,
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch1.md#quiz-answers',
-    explanation: `c = .., a = 2 (implicit param assignment) and b = ..`,
+    explanation: '`c = ..`, `a = 2` (implicit param assignment) and `b = ..`',
   },
   {
     question: `How many RHS look-ups are in the code below:
-    function foo(a) {
-      var b = a;
-      return a + b;
-    }
+${'```js'}
+function foo(a){
+  var b = a; 
+  return a + b
+}
 
-    var c = foo( 2 );
-
+var c = foo( 2 );
+${'```'}
     `,
     questionId: 'VIlFAV1xDf5EBxW6hYGs',
     shouldBeRandomized: false,
@@ -368,7 +367,7 @@ const Ch1Questions = [
     correctAnswerId: 3,
     moreInfoUrl:
       'https://github.co/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch1.md#quiz-answers',
-    explanation: `foo(2.., = a;, a + .. and .. + b`,
+    explanation: '`foo(2..`, `= a;`, `a + ..` and `.. + b`',
   },
   {
     question: `If an RHS look-up fails to find a variable, what kind of error is thrown?`,
@@ -376,19 +375,19 @@ const Ch1Questions = [
     shouldBeRandomized: true,
     answers: [
       {
-        text: 'SyntaxError',
+        text: '`SyntaxError`',
         id: 0,
       },
       {
-        text: 'ReferenceError',
+        text: '`ReferenceError`',
         id: 1,
       },
       {
-        text: 'TypeError',
+        text: '`TypeError`',
         id: 2,
       },
       {
-        text: 'EvalError',
+        text: '`EvalError`',
         id: 3,
       },
     ],
