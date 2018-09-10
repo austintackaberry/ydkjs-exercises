@@ -9,6 +9,7 @@ export const List = styled.ul`
 List.displayName = 'List';
 
 export const ListItem = styled.li`
+  color: black;
   fontsize: 25px;
   lineheight: 25px;
   padding: 0.8rem;
