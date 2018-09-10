@@ -177,9 +177,8 @@ const Ch1Questions = [
     correctAnswerId: 0,
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch1.md#statements',
-    explanation: `Characters like = and * are called operators. They perform actions with the values and variables such as assignment and mathematic multiplication.
-    Variables are like simple boxes you can store any of your stuff in, and should be declared before they are used. In programs, variables hold values to be used by the program.
-    By contrast to variables, literal values are the value itself. For example, 4 or 'cat' is a literal value. In other words, it stands alone without being stored in a variable.`,
+    explanation:
+      'Characters like `=` and `*` are called operators. They perform actions with the values and variables such as assignment and mathematic multiplication. Variables are like simple boxes you can store any of your stuff in, and should be declared before they are used. In programs, variables hold values to be used by the program. By contrast to variables, literal values are the value itself. For example, `4` or `"cat"` is a literal value. In other words, it stands alone without being stored in a variable.',
   },
   {
     question:
@@ -210,8 +209,8 @@ const Ch1Questions = [
     correctAnswerId: 2,
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch1.md#output',
-    explanation: `This statement is not true, because the console can display many log() messages simultaneously (unlike the alert() method, which only displays one at a time).
-    This is what makes console.log() a great tool for debugging your code, and for finding out what's going on under the hood.`,
+    explanation:
+      'This statement is not true, because the console can display many `log()` messages simultaneously (unlike the `alert()` method, which only displays one at a time). This is what makes `console.log()` a great tool for debugging your code, and for finding out what&#39;s going on under the hood.',
   },
   {
     question: 'Which is the correct way to get input from the user?',
@@ -238,9 +237,8 @@ const Ch1Questions = [
     correctAnswerId: 3,
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch1.md#input',
-    explanation: `The prompt() method displays a dialog box that prompts the visitor for input.
-    A prompt box is often used if you want the user to input a value before entering a page.
-    The prompt() method returns the input value if the user clicks "OK". If the user clicks "cancel" the method returns null.`,
+    explanation:
+      'The `prompt()` method displays a dialog box that prompts the visitor for input. A prompt box is often used if you want the user to input a value before entering a page. The `prompt()` method returns the input value if the user clicks "OK". If the user clicks "cancel" the method returns `null`.',
   },
   {
     question:
@@ -268,7 +266,8 @@ const Ch1Questions = [
     correctAnswerId: 0,
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch1.md#operators',
-    explanation: `In the expression "var num = 20; ", the operator = is used to assign the literal value 20 to the variable num. The keyword var is used to declare the variable. `,
+    explanation:
+      'In the expression `var num = 20; `, the operator `=` is used to assign the literal value `20` to the variable `num`. The keyword `var` is used to declare the variable. ',
   },
   {
     question: 'Which of these next expressions is NOT a compound assignment?',
@@ -295,9 +294,8 @@ const Ch1Questions = [
     correctAnswerId: 3,
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch1.md#operators',
-    explanation: `Compound Assignment examples:
-    -=, *=, and += are compound operators that combine a math operation with assignment, as in a += 2 (same as a = a + 2).
-    The double equal sign == is used to check equality.`,
+    explanation:
+      'Compound Assignment examples: `-=`, `*=`, and `+=` are compound operators that combine a math operation with assignment, as in `a += 2` (same as `a = a + 2`). The double equal sign `==` is used to check equality.',
   },
   {
     question:
@@ -325,11 +323,8 @@ const Ch1Questions = [
     correctAnswerId: 1,
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch1.md#converting-between-types',
-    explanation: `When we use the == loose equals operator to make the comparison like "99.00" == 99.00,
-    JavaScript will convert the left-hand side "99.99" to its number equivalent 99.99.
-    The comparison then becomes 99.99 == 99.99, which is of course true.
-    This is even true when the negative sign is outside of the double quotes, like so: -"99" == -99.00; .
-    However, comparing negative and positive values returns false even when using the loose equals (==).`,
+    explanation:
+      'When we use the`==` loose equals operator to make the comparison like `"99.00" == 99.00`, JavaScript will convert the left-hand side `"99.99"` to its number equivalent `99.99`. The comparison then becomes `99.99 == 99.99`, which is of course `true`. This is even true when the negative sign is outside of the double quotes, like so: `-"99" == -99.00`; . However, comparing negative and positive values returns false even when using the loose equals `==`.',
   },
   {
     question: 'Which of these next statements is false?',
@@ -360,9 +355,8 @@ const Ch1Questions = [
     correctAnswerId: 3,
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch1.md#conditionals',
-    explanation: `JavaScript requires wrapping the conditional in parentheses, otherwise it returns a syntax error.
-    You can test this by running the code "if true { console.log("this is true!"); }" in your browser console.
-    Remember to also try running the same code with parentheses around the conditional.`,
+    explanation:
+      'JavaScript requires wrapping the conditional in parentheses, otherwise it returns a syntax error. You can test this by running the code `if true { console.log("this is true!"); }` in your browser console. Remember to also try running the same code with parentheses around the conditional.',
   },
   {
     question:
