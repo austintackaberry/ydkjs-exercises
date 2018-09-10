@@ -21,10 +21,10 @@ const Ch2Questions = [
     questionId: 'IUAAVvd4jgoDxIs8cQih',
     shouldBeRandomized: false,
     answers: [
-      { text: 'var', id: 0 },
-      { text: 'obj', id: 1 },
-      { text: 'typeof', id: 2 },
-      { text: 'return', id: 3 },
+      { text: '`var`', id: 0 },
+      { text: '`obj`', id: 1 },
+      { text: '`typeof`', id: 2 },
+      { text: '`return`', id: 3 },
     ],
     correctAnswerId: 2,
     moreInfoUrl:
@@ -34,20 +34,20 @@ const Ch2Questions = [
              That is, typeof "abc" returns "string", not string.`,
   },
   {
-    question: 'What is the return value of: typeof null?',
+    question: 'What is the return value of: `typeof null`?',
     questionId: 'ejGyTF0mYJ1Z90lnzk55',
     shouldBeRandomized: false,
     answers: [
-      { text: 'boolean', id: 0 },
-      { text: 'object', id: 1 },
-      { text: 'undefined', id: 2 },
-      { text: 'number', id: 3 },
+      { text: '`boolean`', id: 0 },
+      { text: '`object`', id: 1 },
+      { text: '`undefined`', id: 2 },
+      { text: '`number`', id: 3 },
     ],
     correctAnswerId: 1,
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md#values--types',
-    explanation: `typeof null is an interesting case, because it errantly returns "object", when you'd expect it to return "null" 
-    (just like 'typeof undefined' returns 'undefined'). You can run this command in your console and see for yourself.`,
+    explanation:
+      'typeof null is an interesting case, because it errantly returns "object", when you&#39;d expect it to return "null" (just like `typeof undefined` returns `undefined`). You can run this command in your console and see for yourself.',
   },
   {
     question:
@@ -63,8 +63,8 @@ const Ch2Questions = [
     correctAnswerId: 0,
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md#arrays',
-    explanation: `Arrays are special objects, so the typeof of both expressions are 'objects' and the return value is 'true'.
-    Run both expressions in your console to see that the return value of 'typeof [1,2,3]' and 'typeof {1, 2, 3}' is 'object'.`,
+    explanation:
+      'Arrays are special objects, so the typeof of both expressions are objects and the return value is `true`. Run both expressions in your console to see that the return value of `typeof [1,2,3]` and `typeof {1, 2, 3}` is object.',
   },
   {
     question: 'In which ways can properties be accessed in an object?',
@@ -177,23 +177,20 @@ const Ch2Questions = [
   },
   {
     question:
-      'If var a = 42 and var b = "42", what will the statements a === b AND a == b return?',
+      'If `var a = 42` and `var b = "42"`, what will the statements `a === b` AND `a == b` return?',
     questionId: 'w5G9jSN6Hj9UD4VcfsFV',
     shouldBeRandomized: false,
     answers: [
-      { text: 'true / true', id: 0 },
-      { text: 'false / true', id: 1 },
-      { text: 'true / false', id: 2 },
-      { text: 'false / false', id: 3 },
+      { text: '`true` / `true`', id: 0 },
+      { text: '`false` / `true`', id: 1 },
+      { text: '`true` / `false`', id: 2 },
+      { text: '`false` / `false`', id: 3 },
     ],
     correctAnswerId: 1,
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md#equality',
-    explanation: `== checks for value equality with coercion allowed, and === checks for value equality without allowing coercion;
-            === is often called "strict equality" for this reason. In the a == b comparison, JS notices that the types do not match,
-            so it goes through an ordered series of steps to coerce one or both values to a different type until the types match,
-            where then a simple value equality can be checked. The a === b produces false, because the coercion is not allowed, so
-            the simple value comparison obviously fails. `,
+    explanation:
+      '`==` checks for value equality with coercion allowed, and `===` checks for value equality without allowing coercion; `===` is often called "strict equality" for this reason. In the `a == b` comparison, JS notices that the types do not match, so it goes through an ordered series of steps to coerce one or both values to a different type until the types match, where then a simple value equality can be checked. The `a === b` produces false, because the coercion is not allowed, so the simple value comparison obviously fails. ',
   },
   {
     question:
@@ -221,62 +218,58 @@ const Ch2Questions = [
   },
   {
     question:
-      'In which of these cases we would probably be safe using == rather than === for comparison?',
+      'In which of these cases we would probably be safe using `==` rather than `===` for comparison?',
     questionId: 'XGobn8UO1CAa0GGempf4',
     shouldBeRandomized: false,
     answers: [
       {
         text:
-          'If either value (aka side) in a comparison could be the true or false value.',
+          'If either value (aka side) in a comparison could be the `true` or `false` value.',
         id: 0,
       },
-      { text: 'If either value in a comparison could be 0.', id: 1 },
+      { text: 'If either value in a comparison could be `0`.', id: 1 },
       {
-        text: 'If either value in a comparison could be undefined.',
+        text: 'If either value in a comparison could be `undefined`.',
         id: 2,
       },
       {
         text:
-          'If either value in a comparison could be an empty string ("") or an empty array ([]).',
+          'If either value in a comparison could be an empty string `""` or an empty array `[]`.',
         id: 3,
       },
     ],
     correctAnswerId: 2,
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md#equality',
-    explanation: `You should avoid using == and use === in these incidents: 
-    (1) If either value (aka side) in a comparison could be the true or false value.
-    (2) If either value in a comparison could be of these specific values: 0, "", or [] -- empty array. 
-    In all other cases, you're safe to use ==. 
-    Not only is it safe, but in many cases it simplifies your code in a way that improves readability.`,
+    explanation:
+      'You should avoid using `==` and use `===` in these incidents: (1) If either value (aka side) in a comparison could be the `true` or `false` value. (2) If either value in a comparison could be of these specific values: `0`, `""`, or `[]` -- empty array.  In all other cases, you&#39;re safe to use `==`. Not only is it safe, but in many cases it simplifies your code in a way that improves readability.',
   },
   {
     question:
-      'If a === 5, which of the following is a correct use of the ternary operator AND returns true?',
+      'If `a === 5`, which of the following is a correct use of the ternary operator `AND` returns `true`?',
     questionId: 'eJGjIHoFLjFgwBCVMfE0',
     shouldBeRandomized: false,
     answers: [
-      { text: 'a < 20 ? true : false', id: 0 },
-      { text: 'a < 20 : false ? true', id: 1 },
-      { text: 'a < 20 : true : false', id: 2 },
-      { text: 'a < 20 ? false : true', id: 3 },
+      { text: '`a < 20 ? true : false`', id: 0 },
+      { text: '`a < 20 : false ? true`', id: 1 },
+      { text: '`a < 20 : true : false`', id: 2 },
+      { text: '`a < 20 ? false : true`', id: 3 },
     ],
     correctAnswerId: 0,
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md#conditionals',
-    explanation: `Another form of conditional in JavaScript is the "conditional operator," often called the "ternary operator."
-            It's like a more concise form of a single if..else statement. If the test expression evaluates as true, the first clause
-            (true) results, otherwise the second clause (false) results.`,
+    explanation:
+      'Another form of conditional in JavaScript is the "conditional operator," often called the "ternary operator. It&#39;s like a more concise form of a single `if`..`else` statement. If the test expression evaluates as `true`, the first clause `true` results, otherwise the second clause `false` results.',
   },
   {
     question: 'Which of these next variable names is NOT a valid identifier?',
     questionId: 'aaLv016yFLO62Wg8NMIe',
     shouldBeRandomized: false,
     answers: [
-      { text: 'var counter; ', id: 0 },
-      { text: 'var _sumOf5; ', id: 1 },
-      { text: 'var 5thItem;', id: 2 },
-      { text: 'var $amount;', id: 3 },
+      { text: '`var counter;`', id: 0 },
+      { text: '`var _sumOf5;`', id: 1 },
+      { text: '`var 5thItem;`', id: 2 },
+      { text: '`var $amount;`', id: 3 },
     ],
     correctAnswerId: 2,
     moreInfoUrl:
@@ -323,10 +316,10 @@ const Ch2Questions = [
     questionId: 'FI4eixvGsXC1CcVfk9EU',
     shouldBeRandomized: false,
     answers: [
-      { text: 'StntaxError', id: 0 },
-      { text: 'ReferenceError', id: 1 },
-      { text: 'InternalError', id: 2 },
-      { text: 'TypeError', id: 3 },
+      { text: '`StntaxError`', id: 0 },
+      { text: '`ReferenceError`', id: 1 },
+      { text: '`InternalError`', id: 2 },
+      { text: '`TypeError`', id: 3 },
     ],
     correctAnswerId: 1,
     moreInfoUrl:
@@ -348,12 +341,12 @@ const Ch2Questions = [
       },
       {
         text:
-          'One key difference (improvement!) with strict mode is disallowing the implicit auto-global variable declaration from omitting the var.',
+          'One key difference (improvement!) with strict mode is disallowing the implicit auto-global variable declaration from omitting the `var`.',
         id: 1,
       },
       {
         text:
-          'To invoke strict mode for an entire script, put the exact statement "use strict mode"; (or "use strict mode";) before any other statements.',
+          'To invoke strict mode for an entire script, put the exact statement `use strict mode`; (or `use strict mode;`) before any other statements.',
         id: 2,
       },
       {
@@ -365,10 +358,11 @@ const Ch2Questions = [
     correctAnswerId: 2,
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md#strict-mode',
-    explanation: `To invoke strict mode for an entire script, put the exact statement "use strict";`,
+    explanation:
+      'To invoke strict mode for an entire script, put the exact statement `use strict`;',
   },
   {
-    question: 'Which of these will immediately print "Hello" to the console?',
+    question: 'Which of these will immediately print `Hello` to the console?',
     questionId: 'pdnSBOr7Cy4Q6TeZeOpI',
     shouldBeRandomized: false,
     answers: [
@@ -380,9 +374,8 @@ const Ch2Questions = [
     correctAnswerId: 3,
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md#immediately-invoked-function-expressions-iifes',
-    explanation: `Immediately Invoked Function Expressions (IIFE) is a way to execute a function expression.
-    It requires an outer set of parentheses ( .. ) that surrounds the function expression.
-    It also requires a final set of parentheses at the end of the expression, which is what actually executes the function expression referenced immediately before it.`,
+    explanation:
+      'Immediately Invoked Function Expressions (IIFE) is a way to execute a function expression. It requires an outer set of parentheses `( .. )` that surrounds the function expression. It also requires a final set of parentheses at the end of the expression, which is what actually executes the function expression referenced immediately before it.',
   },
   {
     question: 'What is Polyfilling?',
