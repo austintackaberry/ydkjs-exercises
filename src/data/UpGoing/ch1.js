@@ -182,7 +182,7 @@ const Ch1Questions = [
   },
   {
     question:
-      'Which of these next statements is NOT true about alert() and console.log()? Remember, you can open the console in your browser and experiment.',
+      'Which of these next statements is NOT true about `alert()` and `console.log()`? Remember, you can open the console in your browser and experiment.',
     questionId: 'O5a9FcYfysMIlnCglUfK',
     shouldBeRandomized: true,
     answers: [
@@ -242,7 +242,7 @@ const Ch1Questions = [
   },
   {
     question:
-      'Fill in the blanks: In the expression `var num = 20; `, the operator `=` is used to ______ the literal value `20` to the _______ num. The keyword `var` is used to _______ the variable. ',
+      'Fill in the blanks: In the expression `var num = 20; `, the operator `=` is used to ______ the literal value `20` to the _______ `num`. The keyword `var` is used to _______ the variable. ',
     questionId: 'zRcsGCwSLJGzFuxbIbrD',
     shouldBeRandomized: true,
     answers: [
