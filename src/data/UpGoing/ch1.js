@@ -158,28 +158,27 @@ const Ch1Questions = [
     shouldBeRandomized: true,
     answers: [
       {
-        text: 'var even = 4 ;',
+        text: '`var even = 4;`',
         id: 0,
       },
       {
-        text: 'var farm = "cat" + "dog" + "cow" ; ',
+        text: '`var farm = "cat" + "dog" + "cow";`',
         id: 1,
       },
       {
-        text: 'var counter += 1 ;',
+        text: '`var counter += 1;`',
         id: 2,
       },
       {
-        text: 'var bool = 5 > minimum ;',
+        text: '`var bool = 5 > minimum;`',
         id: 3,
       },
     ],
     correctAnswerId: 0,
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch1.md#statements',
-    explanation: `Characters like = and * are called operators. They perform actions with the values and variables such as assignment and mathematic multiplication.
-    Variables are like simple boxes you can store any of your stuff in, and should be declared before they are used. In programs, variables hold values to be used by the program.
-    By contrast to variables, literal values are the value itself. For example, 4 or 'cat' is a literal value. In other words, it stands alone without being stored in a variable.`,
+    explanation:
+      'Characters like `=` and `*` are called operators. They perform actions with the values and variables such as assignment and mathematic multiplication. Variables are like simple boxes you can store any of your stuff in, and should be declared before they are used. In programs, variables hold values to be used by the program. By contrast to variables, literal values are the value itself. For example, `4` or `"cat"` is a literal value. In other words, it stands alone without being stored in a variable.',
   },
   {
     question:
@@ -189,29 +188,29 @@ const Ch1Questions = [
     answers: [
       {
         text:
-          'Using alert() will block your user from interacting with your web page until the alert is closed.',
+          'Using `alert()` will block your user from interacting with your web page until the alert is closed.',
         id: 0,
       },
       {
-        text: 'The user cannot view more than one alert() message at a time.',
+        text: 'The user cannot view more than one `alert()` message at a time.',
         id: 1,
       },
       {
         text:
-          'The user cannot view more than one console.log() message at a time.',
+          'The user cannot view more than one `console.log()` message at a time.',
         id: 2,
       },
       {
         text:
-          'console.log() statements often have an interactive pointer to the line of code that issued the logged statement.',
+          '`console.log()` statements often have an interactive pointer to the line of code that issued the logged statement.',
         id: 3,
       },
     ],
     correctAnswerId: 2,
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch1.md#output',
-    explanation: `This statement is not true, because the console can display many log() messages simultaneously (unlike the alert() method, which only displays one at a time).
-    This is what makes console.log() a great tool for debugging your code, and for finding out what's going on under the hood.`,
+    explanation:
+      'This statement is not true, because the console can display many `log()` messages simultaneously (unlike the `alert()` method, which only displays one at a time). This is what makes `console.log()` a great tool for debugging your code, and for finding out what&#39;s going on under the hood.',
   },
   {
     question: 'Which is the correct way to get input from the user?',
@@ -219,32 +218,31 @@ const Ch1Questions = [
     shouldBeRandomized: true,
     answers: [
       {
-        text: 'var age = console.log("What is your name? ");',
+        text: '`var age = console.log("What is your name? ");`',
         id: 0,
       },
       {
-        text: 'var age = alert("What is your name? ");',
+        text: '`var age = alert("What is your name? ");`',
         id: 1,
       },
       {
-        text: 'var age = console.get("What is your name? ");',
+        text: '`var age = console.get("What is your name? ");`',
         id: 2,
       },
       {
-        text: 'var age = prompt("What is your name? ");',
+        text: '`var age = prompt("What is your name? ");`',
         id: 3,
       },
     ],
     correctAnswerId: 3,
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch1.md#input',
-    explanation: `The prompt() method displays a dialog box that prompts the visitor for input.
-    A prompt box is often used if you want the user to input a value before entering a page.
-    The prompt() method returns the input value if the user clicks "OK". If the user clicks "cancel" the method returns null.`,
+    explanation:
+      'The `prompt()` method displays a dialog box that prompts the visitor for input. A prompt box is often used if you want the user to input a value before entering a page. The `prompt()` method returns the input value if the user clicks "OK". If the user clicks "cancel" the method returns `null`.',
   },
   {
     question:
-      'Fill in the blanks: In the expression "var num = 20; ", the operator = is used to ______ the literal value 20 to the _______ num. The keyword var is used to _______ the variable. ',
+      'Fill in the blanks: In the expression `var num = 20; `, the operator `=` is used to ______ the literal value `20` to the _______ num. The keyword `var` is used to _______ the variable. ',
     questionId: 'zRcsGCwSLJGzFuxbIbrD',
     shouldBeRandomized: true,
     answers: [
@@ -268,7 +266,8 @@ const Ch1Questions = [
     correctAnswerId: 0,
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch1.md#operators',
-    explanation: `In the expression "var num = 20; ", the operator = is used to assign the literal value 20 to the variable num. The keyword var is used to declare the variable. `,
+    explanation:
+      'In the expression `var num = 20; `, the operator `=` is used to assign the literal value `20` to the variable `num`. The keyword `var` is used to declare the variable. ',
   },
   {
     question: 'Which of these next expressions is NOT a compound assignment?',
@@ -276,60 +275,56 @@ const Ch1Questions = [
     shouldBeRandomized: true,
     answers: [
       {
-        text: 'var even *= 2; ',
+        text: '`var even *= 2; `',
         id: 0,
       },
       {
-        text: 'var counter += 1; ',
+        text: '`var counter += 1; `',
         id: 1,
       },
       {
-        text: 'var diff -= 2; ',
+        text: '`var diff -= 2; `',
         id: 2,
       },
       {
-        text: 'b == a; ',
+        text: '`b == a; `',
         id: 3,
       },
     ],
     correctAnswerId: 3,
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch1.md#operators',
-    explanation: `Compound Assignment examples:
-    -=, *=, and += are compound operators that combine a math operation with assignment, as in a += 2 (same as a = a + 2).
-    The double equal sign == is used to check equality.`,
+    explanation:
+      'Compound Assignment examples: `-=`, `*=`, and `+=` are compound operators that combine a math operation with assignment, as in `a += 2` (same as `a = a + 2`). The double equal sign `==` is used to check equality.',
   },
   {
     question:
-      'Which of these next equations will output the boolean value false? Remember, you can open the console in your browser and experiment.',
+      'Which of these next equations will output the boolean value `false`? Remember, you can open the console in your browser and experiment.',
     questionId: 'JdFJJbwrqFkeuJIKI8rM',
     shouldBeRandomized: true,
     answers: [
       {
-        text: '99 === Number("99"); ',
+        text: '`99 === Number("99"); `',
         id: 0,
       },
       {
-        text: '-"99" == 99; ',
+        text: '`-"99" == 99; `',
         id: 1,
       },
       {
-        text: '-"99" == -99.00; ',
+        text: '`-"99" == -99.00; `',
         id: 2,
       },
       {
-        text: '99 == "99.00"; ',
+        text: '`99 == "99.00"; `',
         id: 3,
       },
     ],
     correctAnswerId: 1,
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch1.md#converting-between-types',
-    explanation: `When we use the == loose equals operator to make the comparison like "99.00" == 99.00,
-    JavaScript will convert the left-hand side "99.99" to its number equivalent 99.99.
-    The comparison then becomes 99.99 == 99.99, which is of course true.
-    This is even true when the negative sign is outside of the double quotes, like so: -"99" == -99.00; .
-    However, comparing negative and positive values returns false even when using the loose equals (==).`,
+    explanation:
+      'When we use the`==` loose equals operator to make the comparison like `"99.00" == 99.00`, JavaScript will convert the left-hand side `"99.99"` to its number equivalent `99.99`. The comparison then becomes `99.99 == 99.99`, which is of course `true`. This is even true when the negative sign is outside of the double quotes, like so: `-"99" == -99.00`; . However, comparing negative and positive values returns false even when using the loose equals `==`.',
   },
   {
     question: 'Which of these next statements is false?',
@@ -338,31 +333,30 @@ const Ch1Questions = [
     answers: [
       {
         text:
-          'The if statement requires an expression that can be treated as either true or false. ',
+          'The if statement requires an expression that can be treated as either `true` or `false`. ',
         id: 0,
       },
       {
         text:
-          'You can provide an alternative if the condition is not true, called an else clause.',
+          'You can provide an alternative if the condition is not `true`, called an else clause.',
         id: 1,
       },
       {
         text:
-          'JavaScript defines a list of specific values that are considered "falsy" (e.g: 0, ""). Any other value not on the "falsy" list is automatically "truthy" (e.g: 99.99, "free")',
+          'JavaScript defines a list of specific values that are considered "falsy" (e.g: `0`, `""`). Any other value not on the "falsy" list is automatically "truthy" (e.g: `99.99`, `"free"`)',
         id: 2,
       },
       {
         text:
-          'The code: "if true { console.log("this is true!"); }" is written in valid syntax and will print out the string.',
+          'The code: `if true { console.log("this is true!"); }` is written in valid syntax and will print out the string.',
         id: 3,
       },
     ],
     correctAnswerId: 3,
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch1.md#conditionals',
-    explanation: `JavaScript requires wrapping the conditional in parentheses, otherwise it returns a syntax error.
-    You can test this by running the code "if true { console.log("this is true!"); }" in your browser console.
-    Remember to also try running the same code with parentheses around the conditional.`,
+    explanation:
+      'JavaScript requires wrapping the conditional in parentheses, otherwise it returns a syntax error. You can test this by running the code `if true { console.log("this is true!"); }` in your browser console. Remember to also try running the same code with parentheses around the conditional.',
   },
   {
     question:
