@@ -215,6 +215,7 @@ export class Question extends Component {
                         flexDirection: 'row',
                         alignItems: 'center',
                         justifyContent: 'flex-start',
+                        padding: '3px 0',
                       }}
                       htmlFor={i}
                     >
@@ -257,7 +258,7 @@ export class Question extends Component {
                   >
                     Hide Explanation
                   </button>
-                  <div className="explanation">
+                  <div className="explanation" style={{ lineHeight: '2' }}>
                     <ReactMarkdown
                       renderers={{
                         code: CodeBlock,

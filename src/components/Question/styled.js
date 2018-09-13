@@ -55,6 +55,7 @@ Header3.displayName = 'Header3';
 
 export const QuestionStyle = styled.h4`
   margin: 0;
+  line-height: 2.2;
   div {
     display: flex;
     flex-direction: column;
