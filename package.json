@@ -59,6 +59,7 @@
     "translate": "node scripts/translate.js",
     "lintold": "eslint src",
     "lint": "eslint src",
+    "optIn": "node scripts/optIn.js",
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate",
     "precommit": "pretty-quick --staged"
