@@ -10,15 +10,6 @@ class BookRouter extends Component {
     book: PropTypes.object.isRequired,
   };
 
-  getNextChapterUrl = (chapterIndex, bookUrl) => {
-    if (chapterIndex + 1 === this.props.book.chapters.length) {
-      // last chapter
-      return '/';
-    }
-
-    return bookUrl + this.props.book.chapters[chapterIndex + 1].url;
-  };
-
   render() {
     const { book } = this.props;
     return (
@@ -53,7 +44,6 @@ class BookRouter extends Component {
                     chapterId={index}
                     bookUrl={book.url}
                     chapter={chapter}
-                    nextChapterUrl={this.getNextChapterUrl(index, book.url)}
                   />
                 )}
               />

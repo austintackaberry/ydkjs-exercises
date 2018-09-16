@@ -139,3 +139,63 @@ export const mergeScores = ({ lsScore, newScore }) => {
   newScore.incorrect = incorrect;
   return newScore;
 };
+
+export const initializeBooks = books => {
+  return books.map((book, bookIndex) => {
+    return {
+      ...book,
+      chapters: book.chapters.map((chapter, chapterIndex) => {
+        return {
+          ...chapter,
+          questions: chapter.questions.map((question, questionIndex) => {
+            let nextUrl;
+            let nextButtonLabel;
+            if (questionIndex < chapter.questions.length - 1) {
+              nextUrl = `${book.url + chapter.url}/q${questionIndex + 2}`;
+              nextButtonLabel = 'Next';
+            } else if (chapterIndex < book.chapters.length - 1) {
+              nextUrl = `${book.url + book.chapters[chapterIndex + 1].url}/q1`;
+              nextButtonLabel = 'Next Chapter';
+            } else if (bookIndex < books.length - 1) {
+              nextUrl = `${books[bookIndex + 1].url +
+                books[bookIndex + 1].chapters[0].url}/q1`;
+              nextButtonLabel = 'Next Book';
+            } else {
+              nextUrl = '/';
+              nextButtonLabel = 'Home';
+            }
+
+            let prevUrl;
+            let prevButtonLabel;
+            if (questionIndex > 0) {
+              prevUrl = `${book.url + chapter.url}/q${questionIndex}`;
+              prevButtonLabel = 'Previous';
+            } else if (chapterIndex > 0) {
+              prevUrl = `${book.url + book.chapters[chapterIndex - 1].url}/q${
+                book.chapters[chapterIndex - 1].questions.length
+              }`;
+              prevButtonLabel = 'Previous Chapter';
+            } else if (bookIndex > 0) {
+              const book = books[bookIndex - 1];
+              const chapter = book.chapters[book.chapters.length - 1];
+              const questionUrl = `/q${chapter.questions.length}`;
+              prevUrl = book.url + chapter.url + questionUrl;
+              prevButtonLabel = 'Previous Book';
+            } else {
+              prevUrl = null;
+              prevButtonLabel = 'Previous';
+            }
+
+            return {
+              ...question,
+              nextUrl,
+              prevUrl,
+              nextButtonLabel,
+              prevButtonLabel,
+            };
+          }),
+        };
+      }),
+    };
+  });
+};

@@ -4,8 +4,8 @@ import { score } from '../score-context';
 import { Question } from '../components/Question';
 import books from '../data';
 
-const upGoingCh1Q1 = books[0].chapters[0].questions[0];
-const typesGrammarCh2Q1 = books[3].chapters[1].questions[0];
+const [upGoingCh1Q1] = books[0].chapters[0].questions;
+const [typesGrammarCh2Q1] = books[3].chapters[1].questions;
 const baseUrl = '/up-going/ch1';
 const index = 1;
 const bookId = 0;

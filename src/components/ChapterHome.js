@@ -8,7 +8,7 @@ class ChapterHome extends Component {
   };
   render() {
     const { currentUrl } = this.props;
-    return <Redirect to={currentUrl + '/q1'} />;
+    return <Redirect to={`${currentUrl}/q1`} />;
   }
 }
 

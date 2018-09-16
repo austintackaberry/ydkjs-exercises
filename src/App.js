@@ -5,15 +5,16 @@ import BookRouter from './components/BookRouter';
 import Home from './components/Home';
 import Toggle from './components/Toggle';
 import Sidebar from './components/Sidebar';
-import books from './data';
+import rawBooks from './data';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import NoMatch from './components/NoMatch';
 import ResetModal from './components/ResetModal';
 import { Switch, Route } from 'react-router-dom';
-import { mergeScores } from './helpers/helpers';
+import { mergeScores, initializeBooks } from './helpers/helpers';
 
 import { ScoreContext, score } from './score-context';
+const books = initializeBooks(rawBooks);
 
 const AppGrid = styled.div`
   display: grid;
@@ -79,7 +80,7 @@ class App extends Component {
   componentDidMount() {
     window.addEventListener('resize', this.handleResize);
     let lsScore = window.localStorage.getItem('score');
-    let score = this.state.score;
+    let { score } = this.state;
     if (lsScore) {
       lsScore = JSON.parse(lsScore);
       score = mergeScores({
@@ -101,7 +102,7 @@ class App extends Component {
   }
 
   handleShowReset() {
-    const showReset = this.state.showReset;
+    const { showReset } = this.state;
     this.setState({
       showReset: !showReset,
     });

@@ -113,8 +113,8 @@ export default class Sidebar extends Component {
 
                 return (
                   <DrawerMenu
-                    key={'b' + index}
-                    id={'b' + index}
+                    key={`b${index}`}
+                    id={`b${index}`}
                     to={book.url}
                     nest={1}
                     title={
@@ -129,8 +129,8 @@ export default class Sidebar extends Component {
                         const to = `${book.url}${chapter.url}/q1`;
                         return (
                           <DrawerMenu
-                            key={'c' + index}
-                            id={'c' + index}
+                            key={`c${index}`}
+                            id={`c${index}`}
                             to={to}
                             nest={2}
                             title={
@@ -145,8 +145,8 @@ export default class Sidebar extends Component {
                                   1}`;
                                 return (
                                   <DrawerMenu
-                                    key={'q' + index}
-                                    id={'q' + index}
+                                    key={`q${index}`}
+                                    id={`q${index}`}
                                     to={to}
                                     nest={3}
                                     title={

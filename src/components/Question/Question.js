@@ -50,7 +50,6 @@ export class Question extends Component {
     }).isRequired,
     score: PropTypes.object.isRequired,
     updateScore: PropTypes.func.isRequired,
-    nextChapterUrl: PropTypes.string.isRequired,
   };
   constructor(props) {
     super(props);
@@ -60,17 +59,6 @@ export class Question extends Component {
       error: false,
       correctAnswer: null,
       explanationRequested: false,
-      navigation: {
-        previous: {
-          enabled: this.props.index > 1,
-          url: this.props.baseUrl + '/q' + (this.props.index - 1),
-        },
-        next: {
-          label: this.getNextButtonLabel(),
-          enabled: true,
-          url: this.getNextButtonUrl(),
-        },
-      },
     };
 
     this.handleKeyDown = this.handleKeyDown.bind(this);
@@ -96,29 +84,9 @@ export class Question extends Component {
     updateScore(newScore);
   }
 
-  getNextButtonLabel = () => {
-    if (this.props.index < this.props.numberOfQuestions) {
-      return 'Next';
-    }
-
-    if (this.props.nextChapterUrl === '/') {
-      return 'Books Overview';
-    }
-
-    return 'Next Chapter';
-  };
-
-  getNextButtonUrl = () => {
-    if (this.props.index === this.props.numberOfQuestions) {
-      // If last question
-      return this.props.nextChapterUrl;
-    }
-
-    return this.props.baseUrl + '/q' + (this.props.index + 1);
-  };
-
   handleSubmit(event) {
-    let currentAnswer = this.props.question.answers.find(
+    const { question } = this.props;
+    let currentAnswer = question.answers.find(
       a => a.id == this.state.userAnswerId
     );
 
@@ -131,13 +99,10 @@ export class Question extends Component {
         {
           answerSubmitted: true,
           error: false,
-          correctAnswer:
-            this.props.question.correctAnswerId === currentAnswer.id,
+          correctAnswer: question.correctAnswerId === currentAnswer.id,
         },
         () => {
-          this.calcNewScore(
-            this.props.question.correctAnswerId === currentAnswer.id
-          );
+          this.calcNewScore(question.correctAnswerId === currentAnswer.id);
         }
       );
     }
@@ -154,23 +119,17 @@ export class Question extends Component {
 
   handleKeyDown(event) {
     /* assign navigation variables */
-    const { previous, next } = this.state.navigation;
+    const { question } = this.props;
     const actions = {
-      ArrowLeft: { route: previous },
-      ArrowRight: { route: next },
+      ArrowLeft: question.prevUrl,
+      ArrowRight: question.nextUrl,
     };
 
     /* handle navigation */
-    if (actions.hasOwnProperty(event.key)) {
-      const { route } = actions[event.key];
-      if (route.enabled) {
-        this.props.history.push(route.url);
-        return;
-      }
+    const url = actions[event.key];
+    if (url) {
+      this.props.history.push(url);
     }
-
-    /* re-register listener if navigation did not occur */
-    window.addEventListener('keydown', this.handleKeyDown);
   }
 
   toggleExplanationRequest() {
@@ -188,7 +147,6 @@ export class Question extends Component {
   render() {
     const { answerSubmitted, userAnswerId, explanationRequested } = this.state;
     const { question, numberOfQuestions, index } = this.props;
-    const navigation = this.state.navigation;
     let message;
     if (this.state.error) {
       message = 'Please select an answer';
@@ -316,14 +274,14 @@ export class Question extends Component {
 
         <Section>
           <NavigationButton
-            label="Previous"
-            destination={navigation.previous.url}
-            enabled={navigation.previous.enabled}
+            label={question.prevButtonLabel}
+            destination={question.prevUrl}
+            enabled={question.prevUrl}
           />
           <NavigationButton
-            label={navigation.next.label}
-            enabled={navigation.next.enabled}
-            destination={navigation.next.url}
+            label={question.nextButtonLabel}
+            enabled={true}
+            destination={question.nextUrl}
           />
         </Section>
       </React.Fragment>
