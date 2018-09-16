@@ -50,6 +50,7 @@ export class Question extends Component {
     }).isRequired,
     score: PropTypes.object.isRequired,
     updateScore: PropTypes.func.isRequired,
+    nextChapterUrl: PropTypes.string.isRequired,
   };
   constructor(props) {
     super(props);
@@ -65,8 +66,9 @@ export class Question extends Component {
           url: this.props.baseUrl + '/q' + (this.props.index - 1),
         },
         next: {
-          enabled: this.props.index < this.props.numberOfQuestions,
-          url: this.props.baseUrl + '/q' + (this.props.index + 1),
+          label: this.getNextButtonLabel(),
+          enabled: true,
+          url: this.getNextButtonUrl(),
         },
       },
     };
@@ -93,6 +95,27 @@ export class Question extends Component {
 
     updateScore(newScore);
   }
+
+  getNextButtonLabel = () => {
+    if (this.props.index < this.props.numberOfQuestions) {
+      return 'Next';
+    }
+
+    if (this.props.nextChapterUrl === '/') {
+      return 'Books Overview';
+    }
+
+    return 'Next Chapter';
+  };
+
+  getNextButtonUrl = () => {
+    if (this.props.index === this.props.numberOfQuestions) {
+      // If last question
+      return this.props.nextChapterUrl;
+    }
+
+    return this.props.baseUrl + '/q' + (this.props.index + 1);
+  };
 
   handleSubmit(event) {
     let currentAnswer = this.props.question.answers.find(
@@ -290,7 +313,7 @@ export class Question extends Component {
           </form>
           <MessageWrapper>{message}</MessageWrapper>
         </Wrapper>
-        {/* className="navigation" */}
+
         <Section>
           <NavigationButton
             label="Previous"
@@ -298,9 +321,9 @@ export class Question extends Component {
             enabled={navigation.previous.enabled}
           />
           <NavigationButton
-            label="Next"
-            destination={navigation.next.url}
+            label={navigation.next.label}
             enabled={navigation.next.enabled}
+            destination={navigation.next.url}
           />
         </Section>
       </React.Fragment>
