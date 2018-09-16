@@ -13,9 +13,10 @@ class ChapterRouter extends Component {
     bookUrl: PropTypes.string.isRequired,
     chapter: PropTypes.object.isRequired,
     chapterId: PropTypes.number.isRequired,
+    nextChapterUrl: PropTypes.string.isRequired,
   };
   render() {
-    const { chapter, bookUrl, bookId, chapterId } = this.props;
+    const { chapter, bookUrl, bookId, chapterId, nextChapterUrl } = this.props;
 
     let displayQuestions;
     let chapterPath = bookUrl + chapter.url;
@@ -40,6 +41,7 @@ class ChapterRouter extends Component {
                     numberOfQuestions={chapter.questions.length}
                     score={score}
                     updateScore={updateScore}
+                    nextChapterUrl={nextChapterUrl}
                   />
                 )}
               </ScoreContext.Consumer>

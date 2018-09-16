@@ -128,7 +128,7 @@ const Ch1Questions = [
       },
       {
         text:
-          'The reference to `a` in the statements `console.log( a );` and in `a = 2; ` is an LHS statement.',
+          'The reference to `a` in the statements `console.log( a );` and in `a = 2; ` is a LHS statement.',
         id: 1,
       },
       {
