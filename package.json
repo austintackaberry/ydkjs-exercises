@@ -59,10 +59,9 @@
     "translate": "node scripts/translate.js",
     "lintold": "eslint src",
     "lint": "eslint src",
-    "optIn": "node scripts/optIn.js",
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate",
-    "precommit": "node scripts/optIn.js && pretty-quick --staged"
+    "precommit": "node scripts/precommit.js"
   },
   "devDependencies": {
     "all-contributors-cli": "^4.11.1",

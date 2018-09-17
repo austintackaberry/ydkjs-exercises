@@ -5,6 +5,13 @@ process.env.PUBLIC_URL = '';
 
 const readline = require('readline');
 const { execSync } = require('child_process');
+const handleError = (error, stdout, stderr) => {
+  if (error) {
+    console.log('ERR: Exiting with code', error.code);
+    console.log(stderr.toString());
+    process.exit(1);
+  }
+};
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -15,19 +22,7 @@ const runScript = function(prompt, script) {
   return new Promise((res, rej) => {
     rl.question(prompt, function(answer) {
       if (answer.toLowerCase() === 'y') {
-        execSync(
-          script,
-          {
-            stdio: 'inherit',
-          },
-          function(error, stdout, stderr) {
-            if (error) {
-              console.log('ERR: Exiting with code', error.code);
-              console.log(stderr.toString());
-              process.exit(1);
-            }
-          }
-        );
+        execSync(script, { stdio: 'inherit' }, handleError);
       }
       res(0);
     });
@@ -42,7 +37,7 @@ runScript(
     '[PRECOMMIT] Test optimized production build? (Y/n) ',
     'npm run build'
   ).then(() => {
+    execSync('pretty-quick --staged', { stdio: 'inherit' }, handleError);
     rl.close();
-    process.exit(0);
   });
 });
