@@ -11,38 +11,38 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
-new Promise(function(resolve, reject) {
-  rl.question('[PRECOMMIT] Run all test suites? (Y/n) ', function(answer) {
-    if (answer.toLowerCase() === 'y') {
-      execSync('npm run test -- precommit', { stdio: 'inherit' }, function(
-        error,
-        stdout,
-        stderr
-      ) {
-        if (error) {
-          console.log('ERR: Exiting with code', error.code);
-          console.log(stderr.toString());
-        }
-      });
-    }
-    rl.question('[PRECOMMIT] Test optimized production build? (Y/n) ', function(
-      answer
-    ) {
+const runScript = function(prompt, script) {
+  return new Promise((res, rej) => {
+    rl.question(prompt, function(answer) {
       if (answer.toLowerCase() === 'y') {
-        execSync('npm run build', { stdio: 'inherit' }, function(
-          error,
-          stdout,
-          stderr
-        ) {
-          if (error) {
-            console.log('ERR: Exiting with code', error.code);
-            console.log(stderr.toString());
+        execSync(
+          script,
+          {
+            stdio: 'inherit',
+          },
+          function(error, stdout, stderr) {
+            if (error) {
+              console.log('ERR: Exiting with code', error.code);
+              console.log(stderr.toString());
+              process.exit(1);
+            }
           }
-        });
+        );
       }
-      rl.close();
+      res(0);
     });
   });
-}).then(function() {
-  console.log('Running pretty-quick');
+};
+
+runScript(
+  '[PRECOMMIT] Run all test suites? (Y/n) ',
+  'npm test -- precommit'
+).then(() => {
+  runScript(
+    '[PRECOMMIT] Test optimized production build? (Y/n) ',
+    'npm run build'
+  ).then(() => {
+    rl.close();
+    process.exit(0);
+  });
 });

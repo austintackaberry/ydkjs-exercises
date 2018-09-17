@@ -62,7 +62,7 @@
     "optIn": "node scripts/optIn.js",
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate",
-    "precommit": "pretty-quick --staged"
+    "precommit": "node scripts/optIn.js && pretty-quick --staged"
   },
   "devDependencies": {
     "all-contributors-cli": "^4.11.1",
