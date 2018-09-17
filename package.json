@@ -61,7 +61,7 @@
     "lint": "eslint src",
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate",
-    "precommit": "node scripts/precommit.js && pretty-quick --staged < /dev/tty"
+    "precommit": "node scripts/precommit.js < /dev/tty && pretty-quick --staged "
   },
   "devDependencies": {
     "all-contributors-cli": "^4.11.1",
