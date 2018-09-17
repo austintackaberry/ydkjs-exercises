@@ -18,9 +18,9 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
-const runScript = function(prompt, script) {
+const runScript = (prompt, script) => {
   return new Promise((res, rej) => {
-    rl.question(prompt, function(answer) {
+    rl.question(prompt, answer => {
       if (answer.toLowerCase() === 'y') {
         execSync(script, { stdio: 'inherit' }, handleError);
       }
