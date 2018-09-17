@@ -22,7 +22,7 @@ export default class CodeBlock extends React.PureComponent {
         customStyle={{
           borderRadius: '0.25em',
           textAlign: 'left',
-          padding: '0.3em 0.3em calc(0.3em + 1px)',
+          padding: '0.6em 2em calc(0.6em + 1px)',
         }}
         language={language}
       >
