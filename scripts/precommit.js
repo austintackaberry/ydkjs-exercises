@@ -37,11 +37,12 @@ runScript(
     '[PRECOMMIT] Test optimized production build? (Y/n) ',
     'npm run build'
   ).then(() => {
-    const prettyQuick = exec(
-      'pretty-quick --staged',
-      { stdio: 'inherit' },
-      handleError
-    );
-    prettyQuick.on('exit', () => rl.close());
+    // const prettyQuick = exec(
+    //   'pretty-quick --staged',
+    //   { stdio: 'inherit' },
+    //   handleError
+    // );
+    rl.close();
+    // prettyQuick.on('exit', () => rl.close());
   });
 });
