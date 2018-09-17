@@ -4,7 +4,7 @@ process.env.NODE_ENV = 'test';
 process.env.PUBLIC_URL = '';
 
 const readline = require('readline');
-const { exec, execSync } = require('child_process');
+const { execSync } = require('child_process');
 const handleError = (error, stdout, stderr) => {
   if (error) {
     console.log('ERR: Exiting with code', error.code);
@@ -37,12 +37,6 @@ runScript(
     '[PRECOMMIT] Test optimized production build? (Y/n) ',
     'npm run build'
   ).then(() => {
-    // const prettyQuick = exec(
-    //   'pretty-quick --staged',
-    //   { stdio: 'inherit' },
-    //   handleError
-    // );
     rl.close();
-    // prettyQuick.on('exit', () => rl.close());
   });
 });
