@@ -196,6 +196,7 @@ export class Question extends Component {
                         flexDirection: 'row',
                         alignItems: 'center',
                         justifyContent: 'flex-start',
+                        padding: '3px 0',
                       }}
                       htmlFor={i}
                     >

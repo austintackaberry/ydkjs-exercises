@@ -8,7 +8,7 @@ export default class Paragraph extends React.PureComponent {
           display: 'inline-block',
           margin: '0',
           height: 'auto',
-          lineHeight: '22px',
+          lineHeight: '1.7',
         }}
       >
         {this.props.children}

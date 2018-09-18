@@ -10,6 +10,9 @@ export const Wrapper = styled.div`
   min-height: 16em;
   position: relative;
   padding: 20px 10px;
+  form {
+    line-height: 2;
+  }
 `;
 Wrapper.displayName = 'Wrapper';
 
@@ -55,6 +58,7 @@ Header3.displayName = 'Header3';
 
 export const QuestionStyle = styled.h4`
   margin: 0;
+  line-height: 2.2;
   div {
     display: flex;
     flex-direction: column;
