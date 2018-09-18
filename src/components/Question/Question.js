@@ -258,7 +258,7 @@ export class Question extends Component {
                   >
                     Hide Explanation
                   </button>
-                  <div className="explanation" style={{ lineHeight: '2' }}>
+                  <div className="explanation">
                     <ReactMarkdown
                       renderers={{
                         code: CodeBlock,

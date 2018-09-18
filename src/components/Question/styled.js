@@ -10,6 +10,9 @@ export const Wrapper = styled.div`
   min-height: 16em;
   position: relative;
   padding: 20px 10px;
+  form {
+    line-height: 2;
+  }
 `;
 Wrapper.displayName = 'Wrapper';
 
