@@ -33,11 +33,10 @@ runScript(
   '[PRECOMMIT] Run all test suites? (Y/n) ',
   'npm test -- precommit'
 ).then(() => {
-  runScript(
-    '[PRECOMMIT] Test optimized production build? (Y/n) ',
-    'npm run build'
-  ).then(() => {
-    execSync('pretty-quick --staged', { stdio: 'inherit' }, handleError);
-    rl.close();
-  });
+  runScript('[PRECOMMIT] Generate a local build? (Y/n) ', 'npm run build').then(
+    () => {
+      execSync('pretty-quick --staged', { stdio: 'inherit' }, handleError);
+      rl.close();
+    }
+  );
 });
