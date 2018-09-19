@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import {
   Fieldset,
   FlatButton,
@@ -19,18 +19,6 @@ import Root from '../markdown-renderers/Root';
 import Paragraph from '../markdown-renderers/Paragraph';
 import { getNewScore } from '../../helpers/helpers';
 const ReactMarkdown = require('react-markdown');
-
-const NavigationButton = props =>
-  withRouter(({ history }) => (
-    <FlatButton
-      disabled={!props.enabled}
-      onClick={() => {
-        history.push(props.destination);
-      }}
-    >
-      {props.label}
-    </FlatButton>
-  ))(props);
 
 export class Question extends Component {
   static propTypes = {
@@ -274,16 +262,18 @@ export class Question extends Component {
         </Wrapper>
 
         <Section>
-          <NavigationButton
-            label={question.prevButtonLabel}
-            destination={question.prevUrl}
-            enabled={question.prevUrl}
-          />
-          <NavigationButton
-            label={question.nextButtonLabel}
-            enabled={true}
-            destination={question.nextUrl}
-          />
+          {question.prevUrl ? (
+            <Link to={question.prevUrl}>
+              <FlatButton disabled={false}>
+                {question.prevButtonLabel}
+              </FlatButton>
+            </Link>
+          ) : (
+            <FlatButton disabled={true}>{question.prevButtonLabel}</FlatButton>
+          )}
+          <Link to={question.nextUrl}>
+            <FlatButton disabled={false}>{question.nextButtonLabel}</FlatButton>
+          </Link>
         </Section>
       </React.Fragment>
     );

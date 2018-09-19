@@ -67,7 +67,6 @@ it('should render question 1', () => {
       .props().source
   ).toBe('Four');
   expect(comp.find('SubmitButton').length).toBe(1);
-  expect(comp.find('NavigationButton').length).toBe(2);
 });
 
 it('should render question 2', () => {
@@ -93,7 +92,6 @@ it('should render question 2', () => {
       .props().source
   ).toBe('True');
   expect(comp.find('SubmitButton').length).toBe(1);
-  expect(comp.find('NavigationButton').length).toBe(2);
 });
 it('should set answer state', () => {
   const comp = shallow(<Question {...generateTestProps(upGoingCh1Q1)} />);
