@@ -107,7 +107,7 @@ export class Question extends Component {
 
   handleKeyDown(event) {
     /* assign navigation variables */
-    const { question } = this.props;
+    const { question, history } = this.props;
     const actions = {
       ArrowLeft: question.prevUrl,
       ArrowRight: question.nextUrl,
@@ -116,7 +116,7 @@ export class Question extends Component {
     /* handle navigation */
     const url = actions[event.key];
     if (url) {
-      this.props.history.push(url);
+      history.push(url);
     }
   }
 
@@ -133,14 +133,20 @@ export class Question extends Component {
   }
 
   render() {
-    const { answerSubmitted, userAnswerId, explanationRequested } = this.state;
+    const {
+      answerSubmitted,
+      userAnswerId,
+      explanationRequested,
+      error,
+      correctAnswer,
+    } = this.state;
     const { question, numberOfQuestions, index } = this.props;
     let message;
-    if (this.state.error) {
+    if (error) {
       message = 'Please select an answer';
-    } else if (this.state.correctAnswer) {
+    } else if (correctAnswer) {
       message = 'Correct!';
-    } else if (this.state.correctAnswer === false) {
+    } else if (correctAnswer === false) {
       // not undefined
       message = 'Incorrect! Try Again!';
     }
