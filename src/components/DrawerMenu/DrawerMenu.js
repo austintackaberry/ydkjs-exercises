@@ -4,7 +4,12 @@ import Toggle from '../Toggle';
 import ChevronDown from '../../svgs/ChevronDown';
 import ChevronRight from '../../svgs/ChevronRight';
 import { Link } from 'react-router-dom';
-import { ListItem, DrawerMenuParent, DrawerMenuChild } from './styled';
+import {
+  ListItem,
+  DrawerMenuParent,
+  DrawerMenuChild,
+  ArrowButton,
+} from './styled';
 
 const DrawerMenu = props => {
   const { children, id, to, title, nest } = props;
@@ -13,12 +18,9 @@ const DrawerMenu = props => {
       {({ show, toggle }) => (
         <DrawerMenuParent>
           <ListItem key={id} nest={nest}>
-            <span
-              style={{ marginRight: '.5rem', cursor: 'pointer' }}
-              onClick={toggle}
-            >
+            <ArrowButton onClick={toggle}>
               {children && (show ? <ChevronDown /> : <ChevronRight />)}
-            </span>
+            </ArrowButton>
             <Link to={to} style={{ textDecoration: 'none' }}>
               {title}
             </Link>

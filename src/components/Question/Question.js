@@ -76,24 +76,23 @@ export class Question extends Component {
   handleSubmit(event) {
     const { question } = this.props;
     const { userAnswerId } = this.state;
-    let currentAnswer = question.answers.find(a => a.id == userAnswerId);
+    const currentAnswer = question.answers.find(a => a.id == userAnswerId);
 
+    // User did not select an answer
     if (userAnswerId === null) {
       this.setState({
         error: true,
       });
     } else {
-      this.setState(
-        {
-          answerSubmitted: true,
-          error: false,
-          correctAnswer: question.correctAnswerId === currentAnswer.id,
-        },
-        () => {
-          this.calcNewScore(question.correctAnswerId === currentAnswer.id);
-        }
-      );
+      const userAnswerIsCorrect = question.correctAnswerId === currentAnswer.id;
+      this.setState({
+        answerSubmitted: true,
+        error: false,
+        correctAnswer: userAnswerIsCorrect,
+      });
+      this.calcNewScore(userAnswerIsCorrect);
     }
+
     event.preventDefault();
   }
 
@@ -106,14 +105,12 @@ export class Question extends Component {
   }
 
   handleKeyDown(event) {
-    /* assign navigation variables */
     const { question, history } = this.props;
     const actions = {
       ArrowLeft: question.prevUrl,
       ArrowRight: question.nextUrl,
     };
 
-    /* handle navigation */
     const url = actions[event.key];
     if (url) {
       history.push(url);
@@ -141,6 +138,7 @@ export class Question extends Component {
       error,
       correctAnswer,
     } = this.state;
+
     let message;
     if (error) {
       message = 'Please select an answer';

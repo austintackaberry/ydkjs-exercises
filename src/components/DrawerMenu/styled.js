@@ -6,7 +6,21 @@ export const ListItem = styled.li`
   text-align: left;
 
   &:hover {
-    background-color: rgba(200, 200, 200, 0.5);
+    background: rgba(200, 200, 200, 0.5);
+  }
+`;
+
+export const ArrowButton = styled.button`
+  marginright: 0.5rem;
+  border: 0;
+  background: transparent;
+
+  &:hover {
+    background: transparent;
+  }
+
+  &:focus {
+    outline: none;
   }
 `;
 
