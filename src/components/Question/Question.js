@@ -39,11 +39,12 @@ export class Question extends Component {
     score: PropTypes.object.isRequired,
     updateScore: PropTypes.func.isRequired,
   };
+
   constructor(props) {
     super(props);
     this.state = {
       userAnswerId: null,
-      answerSubmitted: null,
+      answerSubmitted: false,
       error: false,
       correctAnswer: null,
       explanationRequested: false,
@@ -74,11 +75,10 @@ export class Question extends Component {
 
   handleSubmit(event) {
     const { question } = this.props;
-    let currentAnswer = question.answers.find(
-      a => a.id == this.state.userAnswerId
-    );
+    const { userAnswerId } = this.state;
+    let currentAnswer = question.answers.find(a => a.id == userAnswerId);
 
-    if (this.state.userAnswerId === null) {
+    if (userAnswerId === null) {
       this.setState({
         error: true,
       });
@@ -133,6 +133,7 @@ export class Question extends Component {
   }
 
   render() {
+    const { question, numberOfQuestions, index } = this.props;
     const {
       answerSubmitted,
       userAnswerId,
@@ -140,7 +141,6 @@ export class Question extends Component {
       error,
       correctAnswer,
     } = this.state;
-    const { question, numberOfQuestions, index } = this.props;
     let message;
     if (error) {
       message = 'Please select an answer';
