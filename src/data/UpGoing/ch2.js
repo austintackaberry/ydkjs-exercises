@@ -362,14 +362,15 @@ const Ch2Questions = [
       'To invoke strict mode for an entire script, put the exact statement `use strict`;',
   },
   {
-    question: 'Which of these will immediately print `Hello` to the console?',
+    question:
+      'Which of the lines below will print `"Hello"` to the console when executed?',
     questionId: 'pdnSBOr7Cy4Q6TeZeOpI',
     shouldBeRandomized: false,
     answers: [
-      { text: '`(function IIFE(){ console( "Hello!" ); })();`', id: 0 },
-      { text: '`function IIFE(){ console.log( "Hello!" ); }();`', id: 1 },
-      { text: '`function IIFE(){ console.log( "Hello!" ); }`', id: 2 },
-      { text: '`(function IIFE(){ console.log( "Hello!" ); })();`', id: 3 },
+      { text: '`(function (){ console( "Hello!" ); })();`', id: 0 },
+      { text: '`function (){ console.log( "Hello!" ); }();`', id: 1 },
+      { text: '`function (){ console.log( "Hello!" ); }`', id: 2 },
+      { text: '`(function (){ console.log( "Hello!" ); })();`', id: 3 },
     ],
     correctAnswerId: 3,
     moreInfoUrl:
