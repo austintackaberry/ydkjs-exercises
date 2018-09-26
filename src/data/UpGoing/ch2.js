@@ -246,7 +246,7 @@ const Ch2Questions = [
   },
   {
     question:
-      'If `a === 5`, which of the following is a correct use of the ternary operator `AND` returns `true`?',
+      'If `a === 5`, which of the following is a correct use of the ternary operator and returns `true`?',
     questionId: 'eJGjIHoFLjFgwBCVMfE0',
     shouldBeRandomized: false,
     answers: [
@@ -316,7 +316,7 @@ const Ch2Questions = [
     questionId: 'FI4eixvGsXC1CcVfk9EU',
     shouldBeRandomized: false,
     answers: [
-      { text: '`StntaxError`', id: 0 },
+      { text: '`SyntaxError`', id: 0 },
       { text: '`ReferenceError`', id: 1 },
       { text: '`InternalError`', id: 2 },
       { text: '`TypeError`', id: 3 },
