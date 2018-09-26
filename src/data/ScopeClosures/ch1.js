@@ -117,7 +117,7 @@ const Ch1Questions = [
     and second, when executing, Engine looks up the variable in Scope and assigns to it, if found.`,
   },
   {
-    question: 'Which of these next statements are true?',
+    question: 'Which of the statements below are true?',
     questionId: 'qKyC5jIwSluNdBgBodAW',
     shouldBeRandomized: false,
     answers: [
