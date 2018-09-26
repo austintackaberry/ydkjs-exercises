@@ -316,7 +316,7 @@ const Ch2Questions = [
     questionId: 'FI4eixvGsXC1CcVfk9EU',
     shouldBeRandomized: false,
     answers: [
-      { text: '`StntaxError`', id: 0 },
+      { text: '`SyntaxError`', id: 0 },
       { text: '`ReferenceError`', id: 1 },
       { text: '`InternalError`', id: 2 },
       { text: '`TypeError`', id: 3 },
