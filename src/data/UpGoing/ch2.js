@@ -218,7 +218,7 @@ const Ch2Questions = [
   },
   {
     question:
-      'In which of these cases we would probably be safe using `==` rather than `===` for comparison?',
+      'In which of these cases would we probably be safe using == rather than === for comparison?',
     questionId: 'XGobn8UO1CAa0GGempf4',
     shouldBeRandomized: false,
     answers: [
