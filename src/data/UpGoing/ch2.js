@@ -448,7 +448,7 @@ const Ch2Questions = [
     question:
       'Which of the following expressions is controlled by JavaScript specification?',
     questionId: 'g05Klu0UEqgXh9BLBY8c',
-    shouldBeRandomized: false,
+    shouldBeRandomized: true,
     answers: [
       {
         text: '`var el = document.getElementById( "foo" );`',
