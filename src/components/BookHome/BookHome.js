@@ -13,13 +13,17 @@ class BookHome extends Component {
     return (
       <List>
         {book.chapters.map(chapter => (
-          <Link
+          <ListItem
             key={book.id + chapter.url}
-            style={{ textDecoration: 'none', textAlign: 'left' }}
-            to={book.url + chapter.url}
-          >
-            <ListItem>{chapter.title}</ListItem>
-          </Link>
+            style={{ textAlign: 'left' }}
+            >
+            <Link 
+              to={book.url + chapter.url}
+              style={{ textDecoration: 'none', color: '#000' }}
+              >
+              {chapter.title}
+            </Link>
+          </ListItem>
         ))}
       </List>
     );
