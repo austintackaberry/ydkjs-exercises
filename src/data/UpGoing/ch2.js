@@ -444,6 +444,36 @@ const Ch2Questions = [
     Essentially, your source code is authored in the new syntax form, but what you deploy to the browser is the transpiled code in old syntax form. 
     You typically insert the transpiler into your build process, similar to your code linter or your minifier.`,
   },
+  {
+    question:
+      'Which of the following expressions is controlled by JavaScript specification?',
+    questionId: 'g05Klu0UEqgXh9BLBY8c',
+    shouldBeRandomized: true,
+    answers: [
+      {
+        text: '`var el = document.getElementById( "foo" );`',
+        id: 0,
+      },
+      {
+        text: '`console.log("Hello World!");`',
+        id: 1,
+      },
+      {
+        text: '`alert(document.URL);`',
+        id: 2,
+      },
+      {
+        text: '`var a = Object.assign({}, { foo : "bar"})`',
+        id: 3,
+      },
+    ],
+    correctAnswerId: 3,
+    moreInfoUrl:
+      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md#non-javascript',
+    explanation: `The document variable exists as a global variable when your code is running in a browser. It's not provided by the JS engine, nor is it particularly controlled by the JavaScript specification.
+    Similarly alert(..) and console.log(..) is provided to your JS program by the browser, not by the JS engine itself. The call you make sends the message to the browser internals and it handles drawing, displaying the message box or logging the message to console. 
+    `,
+  },
 ];
 
 export default Ch2Questions;
