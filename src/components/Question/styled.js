@@ -12,6 +12,7 @@ export const Wrapper = styled.div`
   padding: 20px 10px;
   form {
     line-height: 2;
+    overflow-x: auto;
   }
 `;
 Wrapper.displayName = 'Wrapper';
@@ -46,7 +47,7 @@ export const Fieldset = styled.fieldset`
   text-align: left;
   border: none;
   div {
-    margin: 7px;
+    margin: 5px 7px 0;
   }
 `;
 Fieldset.displayName = 'Fieldset';

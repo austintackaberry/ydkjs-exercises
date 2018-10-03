@@ -189,10 +189,11 @@ export class Question extends Component {
                         alignItems: 'center',
                         justifyContent: 'flex-start',
                         padding: '3px 0',
+                        maxWidth: '100%',
                       }}
                       htmlFor={i}
                     >
-                      <div style={{ height: '13px' }}>
+                      <div>
                         <input
                           type="radio"
                           name={index}
