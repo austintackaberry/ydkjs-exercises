@@ -17,8 +17,8 @@ class BookRouter extends Component {
         <Link style={{ textDecoration: 'none', color: 'black' }} to={book.url}>
           <h2
             style={{
-              fontSize: '35px',
-              margin: '10px 0',
+              fontSize: '1.8rem',
+              margin: '0 0 10px',
               textDecoration: 'underline',
             }}
           >

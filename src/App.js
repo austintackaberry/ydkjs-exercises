@@ -19,7 +19,7 @@ const books = initializeBooks(rawBooks);
 const AppGrid = styled.div`
   display: grid;
   grid-template-columns: auto 1fr auto;
-  grid-template-rows: minmax(15vh, min-content) 1fr minmax(15vh, min-content);
+  grid-template-rows: minmax(10vh, min-content) 1fr minmax(15vh, min-content);
   grid-template-areas:
     'sidebar header'
     'sidebar main'
@@ -53,7 +53,7 @@ const MainContentGridChild = styled.div`
   place-self: start stretch;
   text-align: center;
   transition: var(--easing-standard);
-  width: 100%;
+  min-width: 100%;
 `;
 
 class App extends Component {

@@ -53,7 +53,9 @@ class ChapterRouter extends Component {
 
     return (
       <div>
-        <h3 style={{ fontSize: '24px' }}>{chapter.title}</h3>
+        <h3 style={{ fontSize: '24px', margin: '12.5px auto 22.5px' }}>
+          {chapter.title}
+        </h3>
         <Switch>
           <Route
             exact
