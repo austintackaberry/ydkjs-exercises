@@ -5,4 +5,5 @@ export const FooterGridChild = styled.div`
   place-self: center stretch;
   font-style: italic;
   text-align: center;
+  padding: 10px;
 `;
