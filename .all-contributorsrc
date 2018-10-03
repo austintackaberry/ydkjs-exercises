@@ -223,6 +223,51 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "randelldawson",
+      "name": "Randell Dawson",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/5313213?v=4",
+      "profile": "http://onepathtech.com",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "eritscher",
+      "name": "Evan Ritscher",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/37910116?v=4",
+      "profile": "https://github.com/eritscher",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "dgca",
+      "name": "Daniel Cortes",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/3639170?v=4",
+      "profile": "https://codepen.io/dgca/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "hagnerd",
+      "name": "Matt Hagner",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/6313764?v=4",
+      "profile": "http://www.matthagner.com",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "kshitijpurwar",
+      "name": "Kshitij Purwar",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/9314776?v=4",
+      "profile": "https://github.com/kshitijpurwar",
+      "contributions": [
+        "code"
+      ]
     }
   ]
 }
