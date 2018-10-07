@@ -12,7 +12,7 @@ class BookHome extends Component {
     return (
       <List>
         {book.chapters.map(chapter => (
-          <ListItem key={book.id + chapter.url} style={{ textAlign: 'left' }}>
+          <ListItem key={book.id + chapter.url}>
             <StyledLink to={book.url + chapter.url}>{chapter.title}</StyledLink>
           </ListItem>
         ))}
