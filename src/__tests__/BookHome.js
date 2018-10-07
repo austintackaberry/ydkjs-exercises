@@ -43,12 +43,16 @@ it('should render the book chapters', () => {
       .find('ListItem')
       .at(0)
       .children()
+      .at(0)
+      .children()
       .text()
   ).toBe('Chapter 1: Into Programming');
   expect(
     comp
       .find('ListItem')
       .at(1)
+      .children()
+      .at(0)
       .children()
       .text()
   ).toBe('Chapter 2: Into JavaScript');
