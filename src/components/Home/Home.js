@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { List, ListItem } from './styled';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+`;
 
 class Home extends Component {
   static propTypes = {
@@ -12,9 +17,9 @@ class Home extends Component {
     return (
       <List>
         {books.map(book => (
-          <Link key={book.id} style={{ textDecoration: 'none' }} to={book.url}>
+          <StyledLink key={book.id} to={book.url}>
             <ListItem>{book.title}</ListItem>
-          </Link>
+          </StyledLink>
         ))}
       </List>
     );

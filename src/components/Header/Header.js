@@ -1,13 +1,19 @@
 import React from 'react';
 import { HeaderGridChild, Marquee } from './styled';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: black;
+`;
 
 const Header = () => {
   return (
     <HeaderGridChild data-name="Header">
-      <Link style={{ textDecoration: 'none', color: 'black' }} to="/">
+      <StyledLink to="/">
         <Marquee>{`YDKJS EXERCISES`}</Marquee>
-      </Link>
+      </StyledLink>
     </HeaderGridChild>
   );
 };

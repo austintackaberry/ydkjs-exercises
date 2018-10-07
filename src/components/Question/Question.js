@@ -18,7 +18,24 @@ import CodeInline from '../markdown-renderers/CodeInline';
 import Root from '../markdown-renderers/Root';
 import Paragraph from '../markdown-renderers/Paragraph';
 import { getNewScore } from '../../helpers/helpers';
+import styled from 'styled-components';
 const ReactMarkdown = require('react-markdown');
+
+const StyledLabel = styled.label`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 3px 0;
+`;
+
+const StyledDiv = styled.div`
+  height: 13px;
+`;
+
+const StyledInput = styled.input`
+  margin-top: 0;
+`;
 
 export class Question extends Component {
   static propTypes = {
@@ -51,6 +68,14 @@ export class Question extends Component {
     };
 
     this.handleKeyDown = this.handleKeyDown.bind(this);
+  }
+
+  componentDidMount() {
+    window.addEventListener('keydown', this.handleKeyDown);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('keydown', this.handleKeyDown);
   }
 
   calcNewScore(isCorrect) {
@@ -122,12 +147,6 @@ export class Question extends Component {
       explanationRequested: !this.state.explanationRequested,
     });
   }
-  componentDidMount() {
-    window.addEventListener('keydown', this.handleKeyDown);
-  }
-  componentWillUnmount() {
-    window.removeEventListener('keydown', this.handleKeyDown);
-  }
 
   render() {
     const { question, numberOfQuestions, index } = this.props;
@@ -182,28 +201,18 @@ export class Question extends Component {
                 }
                 return (
                   <div key={answer.id}>
-                    <label
-                      style={{
-                        display: 'flex',
-                        flexDirection: 'row',
-                        alignItems: 'center',
-                        justifyContent: 'flex-start',
-                        padding: '3px 0',
-                      }}
-                      htmlFor={i}
-                    >
-                      <div style={{ height: '13px' }}>
-                        <input
+                    <StyledLabel htmlFor={i}>
+                      <StyledDiv>
+                        <StyledInput
                           type="radio"
                           name={index}
                           id={i}
                           value={answer.id}
-                          style={{ marginTop: '0' }}
                           onChange={event => {
                             this.handleAnswerChange(event);
                           }}
                         />
-                      </div>
+                      </StyledDiv>
                       <span style={answerColor}>
                         <ReactMarkdown
                           renderers={{
@@ -215,7 +224,7 @@ export class Question extends Component {
                           source={answer.text}
                         />
                       </span>
-                    </label>
+                    </StyledLabel>
                   </div>
                 );
               })}

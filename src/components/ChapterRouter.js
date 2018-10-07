@@ -6,6 +6,11 @@ import ChapterHome from './ChapterHome';
 import Question from './Question';
 import NoQuestions from './NoQuestions';
 import { ScoreContext } from '../score-context';
+import styled from 'styled-components';
+
+const StyledH3 = styled.h3`
+  font-size: 24px;
+`;
 
 class ChapterRouter extends Component {
   static propTypes = {
@@ -53,7 +58,7 @@ class ChapterRouter extends Component {
 
     return (
       <div>
-        <h3 style={{ fontSize: '24px' }}>{chapter.title}</h3>
+        <StyledH3>{chapter.title}</StyledH3>
         <Switch>
           <Route
             exact

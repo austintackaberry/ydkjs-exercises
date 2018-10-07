@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 import Menu from '../svgs/Menu';
+import styled from 'styled-components';
+
+const StyledDiv = styled.div`
+  text-align: left;
+  margin: 10px 0 0 10px;
+`;
 
 class MenuContainer extends Component {
   handleClick(event) {
@@ -12,14 +18,13 @@ class MenuContainer extends Component {
     return (
       <React.Fragment>
         {!shouldShowSidebar && (
-          <div
-            style={{ textAlign: 'left', margin: '10px 0 0 10px' }}
+          <StyledDiv
             onClick={e => {
               this.handleClick(e);
             }}
           >
             <Menu />
-          </div>
+          </StyledDiv>
         )}
       </React.Fragment>
     );

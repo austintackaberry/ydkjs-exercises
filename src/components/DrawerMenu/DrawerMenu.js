@@ -4,6 +4,7 @@ import Toggle from '../Toggle';
 import ChevronDown from '../../svgs/ChevronDown';
 import ChevronRight from '../../svgs/ChevronRight';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 import {
   ListItem,
   DrawerMenuParent,
@@ -11,6 +12,9 @@ import {
   ArrowButton,
 } from './styled';
 
+const StyledLink = styled(Link)`
+  text-decoration: none;
+`;
 const DrawerMenu = props => {
   const { children, id, to, title, nest } = props;
   return (
@@ -21,9 +25,7 @@ const DrawerMenu = props => {
             <ArrowButton onClick={toggle}>
               {children && (show ? <ChevronDown /> : <ChevronRight />)}
             </ArrowButton>
-            <Link to={to} style={{ textDecoration: 'none' }}>
-              {title}
-            </Link>
+            <StyledLink to={to}>{title}</StyledLink>
           </ListItem>
           <DrawerMenuChild show={show}>
             {children && children()}
