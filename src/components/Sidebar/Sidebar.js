@@ -7,6 +7,10 @@ import {
   Divider,
   FlatButton,
   SidebarGridChild,
+  StyledButton1,
+  StyledButton2,
+  StyledSpan1,
+  StyledSpan2,
 } from './styled';
 import DrawerMenu from '../DrawerMenu';
 import ProgressBar from '../ProgressBar';
@@ -60,36 +64,17 @@ export default class Sidebar extends Component {
     return (
       <Fragment>
         {!shouldShow && (
-          <button
-            onClick={onMenuClick}
-            style={{
-              position: 'fixed',
-              cursor: 'pointer',
-              margin: '.5rem',
-              border: 0,
-              background: 'transparent',
-            }}
-          >
+          <StyledButton1 onClick={onMenuClick}>
             <Menu />
-          </button>
+          </StyledButton1>
         )}
         <SidebarGridChild
           isNarrowScreen={isNarrowScreen}
           shouldShow={shouldShow}
         >
-          <button
-            onClick={onMenuClick}
-            style={{
-              textAlign: 'right',
-              marginTop: '10px',
-              border: 0,
-              background: 'transparent',
-              position: 'absolute',
-              right: '10px',
-            }}
-          >
+          <StyledButton2 onClick={onMenuClick}>
             <Close data-name="svg" />
-          </button>
+          </StyledButton2>
           {shouldShow && (
             <List>
               <ListItemTitle>Progress</ListItemTitle>
@@ -124,10 +109,8 @@ export default class Sidebar extends Component {
                     to={book.url}
                     nest={1}
                     title={
-                      <span style={{ fontSize: '1rem' }}>{`${
-                        book.title
-                      } (${correct} /
-                  ${possible})`}</span>
+                      <StyledSpan1>{`${book.title} (${correct} /
+                  ${possible})`}</StyledSpan1>
                     }
                   >
                     {() =>
@@ -139,11 +122,7 @@ export default class Sidebar extends Component {
                             id={`c${index}`}
                             to={to}
                             nest={2}
-                            title={
-                              <span style={{ fontSize: '.9rem' }}>
-                                {chapter.title}
-                              </span>
-                            }
+                            title={<StyledSpan2>{chapter.title}</StyledSpan2>}
                           >
                             {() =>
                               chapter.questions.map((question, index) => {
@@ -156,9 +135,9 @@ export default class Sidebar extends Component {
                                     to={to}
                                     nest={3}
                                     title={
-                                      <span style={{ fontSize: '.9rem' }}>
+                                      <StyledSpan2>
                                         {`Question ${index + 1}`}
-                                      </span>
+                                      </StyledSpan2>
                                     }
                                   />
                                 );

@@ -10,6 +10,12 @@ import {
   Section,
   SubmitButton,
   Wrapper,
+  StyledLabel,
+  StyledDiv,
+  StyledInput,
+  StyledSpan,
+  StyledButton,
+  StyledLink,
 } from './styled';
 
 import './styles.css';
@@ -18,24 +24,7 @@ import CodeInline from '../markdown-renderers/CodeInline';
 import Root from '../markdown-renderers/Root';
 import Paragraph from '../markdown-renderers/Paragraph';
 import { getNewScore } from '../../helpers/helpers';
-import styled from 'styled-components';
 const ReactMarkdown = require('react-markdown');
-
-const StyledLabel = styled.label`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 3px 0;
-`;
-
-const StyledDiv = styled.div`
-  height: 13px;
-`;
-
-const StyledInput = styled.input`
-  margin-top: 0;
-`;
 
 export class Question extends Component {
   static propTypes = {
@@ -190,13 +179,13 @@ export class Question extends Component {
                     userAnswerId == answer.id &&
                     question.correctAnswerId === answer.id
                   ) {
-                    answerColor = { color: 'green' };
+                    answerColor = 'green';
                   }
                   if (
                     userAnswerId == answer.id &&
                     !(question.correctAnswerId === answer.id)
                   ) {
-                    answerColor = { color: 'red' };
+                    answerColor = 'red';
                   }
                 }
                 return (
@@ -213,7 +202,7 @@ export class Question extends Component {
                           }}
                         />
                       </StyledDiv>
-                      <span style={answerColor}>
+                      <StyledSpan answerColor={answerColor}>
                         <ReactMarkdown
                           renderers={{
                             code: CodeBlock,
@@ -223,7 +212,7 @@ export class Question extends Component {
                           }}
                           source={answer.text}
                         />
-                      </span>
+                      </StyledSpan>
                     </StyledLabel>
                   </div>
                 );
@@ -233,13 +222,12 @@ export class Question extends Component {
             {answerSubmitted &&
               explanationRequested && (
                 <div>
-                  <button
+                  <StyledButton
                     className="explanationButton"
                     onClick={event => this.toggleExplanationRequest()}
-                    style={{ margin: '4px auto' }}
                   >
                     Hide Explanation
-                  </button>
+                  </StyledButton>
                   <div className="explanation">
                     <ReactMarkdown
                       renderers={{
@@ -249,26 +237,21 @@ export class Question extends Component {
                       source={question.explanation}
                     />
                     <br />
-                    <a
-                      href={question.moreInfoUrl}
-                      target="_blank"
-                      style={{ textDecoration: 'underline', color: 'black' }}
-                    >
+                    <StyledLink href={question.moreInfoUrl} target="_blank">
                       More information here
-                    </a>
+                    </StyledLink>
                   </div>
                 </div>
               )}
 
             {answerSubmitted &&
               !explanationRequested && (
-                <button
+                <StyledButton
                   className="explanationButton"
                   onClick={event => this.toggleExplanationRequest()}
-                  style={{ margin: '4px auto' }}
                 >
                   Show Explanation
-                </button>
+                </StyledButton>
               )}
           </form>
           <MessageWrapper>{message}</MessageWrapper>

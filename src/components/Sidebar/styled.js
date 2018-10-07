@@ -67,3 +67,28 @@ export const SidebarGridChild = styled.div`
 `;
 
 FlatButton.displayName = 'FlatButton';
+
+export const StyledButton1 = styled.button`
+  position: fixed;
+  cursor: ååpointer;
+  margin: 0.5rem;
+  border: 0;
+  background: transparent;
+`;
+
+export const StyledButton2 = styled.button`
+  text-align: right;
+  margin-top: 10px;
+  border: 0;
+  background: transparent;
+  position: absolute;
+  right: 10px;
+`;
+
+export const StyledSpan1 = styled.span`
+  font-size: 1rem;
+`;
+
+export const StyledSpan2 = styled.span`
+  font-size: 0.9rem;
+`;

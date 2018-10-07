@@ -81,3 +81,32 @@ export const FlatButton = styled.button`
   disabled: ${p => p.disabled};
 `;
 FlatButton.displayName = 'FlatButton';
+
+export const StyledLabel = styled.label`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 3px 0;
+`;
+
+export const StyledDiv = styled.div`
+  height: 13px;
+`;
+
+export const StyledInput = styled.input`
+  margin-top: 0;
+`;
+
+export const StyledSpan = styled.span`
+  color: ${props => props.answerColor || 'black'};
+`;
+
+export const StyledButton = styled.button`
+  margin: 4px auto;
+`;
+
+export const StyledLink = styled.a`
+  text-decoration: underlined;
+  color: black;
+`;
