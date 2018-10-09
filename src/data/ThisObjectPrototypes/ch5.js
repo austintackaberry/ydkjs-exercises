@@ -77,22 +77,6 @@ ${'```'}
     explanation: `Though it may appear that \`myObject.a++\` should (via delegation) look-up and just increment the \`anotherObject.a\` property itself in place, instead the \`++\` operation corresponds to \`myObject.a = myObject.a + 1\`. The result is \`[[Get]]\` looking up a property via \`[[Prototype]]\` to get the current value \`2\` from \`anotherObject.a\`, incrementing the value by one, then \`[[Put]]\` assigning the \`3\` value to a new shadowed property \`a\` on \`myObject\`.`,
   },
   {
-    question: `It is better to think about object oriented programming in JavaScript as Object Links than Classes`,
-    questionId: 'rurmvSFgCGiDxAKFdWwR',
-    shouldBeRandomized: true,
-    answers: [
-      {
-        text: `True`,
-        id: 0,
-      },
-      { text: `False`, id: 1 },
-    ],
-    correctAnswerId: 0,
-    moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch5.md#createing-links',
-    explanation: `JavaScript simply does not have classes. ES6 classes are syntactic sugar on top of what are simply just objects.`,
-  },
-  {
     question: `What will be logged to the console when the following code is executed:
 ${'```js'}
 var Dog = {
