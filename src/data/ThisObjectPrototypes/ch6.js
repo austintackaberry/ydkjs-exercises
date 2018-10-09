@@ -1,26 +1,5 @@
 const Ch6Questions = [
   {
-    question: `What is the main fundamental concept of Delegation-Oriented Design in comparison to the traditional Object-Oriented Design?`,
-    questionId: '8D4P9iGWn4dvo4nV9AvY',
-    shouldBeRandomized: true,
-    answers: [
-      {
-        text: `There is no idea of parent and child, just object linkages`,
-        id: 0,
-      },
-      {
-        text: `Delegation-Oriented Design involves explicit and implicit mixins`,
-        id: 1,
-      },
-      { text: 'It bridges the gap with the help of ES6 classes', id: 2 },
-      { text: 'Functions are delegated as objects', id: 3 },
-    ],
-    correctAnswerId: 0,
-    moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch6.md#towards-delegation-oriented-design',
-    explanation: `Fundamentally, the prototype chain does not have a concept of "copying" or "parent creating child". All it does is chain objects together.`,
-  },
-  {
     question: `In OLOO design, shadowing is a helpful tool used to make API design more robust`,
     questionId: '9NmJ3HhcsvYsjDk240D7',
     shouldBeRandomized: false,
