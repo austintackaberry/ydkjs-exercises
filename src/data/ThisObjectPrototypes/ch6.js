@@ -68,28 +68,6 @@ const Ch6Questions = [
       'https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch6.md#mutual-delegation-disallowed',
     explanation: `You cannot create a cycle where two or more objects are mutually delegated (bi-directionally) to each other.`,
   },
-  {
-    question: `Which statement below best describes why OLOO is a better mental model than OOD in JavaScript`,
-    questionId: 'DSZvtrx3LZTIZUChMxAZ',
-    shouldBeRandomized: true,
-    answers: [
-      {
-        text: `There are no real classes in JavaScript, so true OOD is not possible. The language naturally lends itself to OLOO given its focus on objects.`,
-        id: 0,
-      },
-      { text: `OLOO is a cleaner design than OOD in general`, id: 1 },
-      { text: 'ES6 is not supported by all browsers', id: 2 },
-      {
-        text:
-          "It's not a better mental model because OOD and OLOO are the same thing",
-        id: 3,
-      },
-    ],
-    correctAnswerId: 0,
-    moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch6.md#mental-models-compared',
-    explanation: `With OLOO there are just objects linked to each other, without needing all the cruft and confusion of things that look (but don't behave!) like classes, with constructors and prototypes and \`new\` calls. Ask yourself: if I can get the same functionality with OLOO style code as I do with "class" style code, but OLOO is simpler and has less things to think about, isn't OLOO better?`,
-  },
 ];
 
 export default Ch6Questions;
