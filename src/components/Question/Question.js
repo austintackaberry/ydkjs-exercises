@@ -153,7 +153,7 @@ export class Question extends Component {
       <React.Fragment>
         <Wrapper>
           <Header3>{`Question ${index} of ${numberOfQuestions}`}</Header3>
-          <QuestionStyle>
+          <QuestionStyle data-testid="question">
             <ReactMarkdown
               renderers={{
                 code: CodeBlock,
@@ -181,7 +181,7 @@ export class Question extends Component {
                   }
                 }
                 return (
-                  <div key={answer.id}>
+                  <div key={answer.id} data-testid="answer">
                     <label
                       style={{
                         display: 'flex',
@@ -198,6 +198,7 @@ export class Question extends Component {
                           name={index}
                           id={i}
                           value={answer.id}
+                          data-testid={`answer-${answer.id}`}
                           style={{ marginTop: '0' }}
                           onChange={event => {
                             this.handleAnswerChange(event);
@@ -231,7 +232,7 @@ export class Question extends Component {
                   >
                     Hide Explanation
                   </button>
-                  <div className="explanation">
+                  <div className="explanation" data-testid="explanation">
                     <ReactMarkdown
                       renderers={{
                         code: CodeBlock,
