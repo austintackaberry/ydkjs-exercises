@@ -11,7 +11,7 @@ export const ListItem = styled.li`
 `;
 
 export const ArrowButton = styled.button`
-  marginright: 0.5rem;
+  margin-right: 0.5rem;
   border: 0;
   background: transparent;
 

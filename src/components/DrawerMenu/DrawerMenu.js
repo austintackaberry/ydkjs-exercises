@@ -25,7 +25,7 @@ const DrawerMenu = props => {
               {title}
             </Link>
           </ListItem>
-          <DrawerMenuChild show={show}>
+          <DrawerMenuChild data-testid={`${id}-children`} show={show}>
             {children && children()}
           </DrawerMenuChild>
         </DrawerMenuParent>

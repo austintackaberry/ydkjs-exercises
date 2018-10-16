@@ -7,7 +7,7 @@ export default class Toggle extends Component {
     show: PropTypes.bool,
   };
 
-  state = { show: this.props.show };
+  state = { show: this.props.show || false };
 
   handleToggle() {
     this.setState(prevState => {

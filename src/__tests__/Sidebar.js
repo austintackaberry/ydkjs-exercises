@@ -1,22 +1,29 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { renderWithRouter } from 'test-utils';
 import { score } from '../score-context';
 import Sidebar from '../components/Sidebar';
-import books from '../data';
+import rawBooks from '../data';
+import { initializeBooks } from '../helpers/helpers';
+import { toHaveStyle } from 'jest-dom';
+
+expect.extend({ toHaveStyle });
+
+const books = initializeBooks(rawBooks);
 
 it('should render the sidebar', () => {
-  const comp = shallow(
-    <div>
-      <Sidebar
-        data-name="Sidebar"
-        books={books}
-        isNarrowScreen={false}
-        score={score}
-        shouldShow={true}
-        updateScore={() => {}}
-        onMenuClick={() => {}}
-      />
-    </div>
+  const { getByText, getByTestId } = renderWithRouter(
+    <Sidebar
+      data-name="Sidebar"
+      books={books}
+      isNarrowScreen={false}
+      score={score}
+      shouldShow={true}
+      updateScore={() => {}}
+      onMenuClick={() => {}}
+    />
   );
-  expect(comp.first().shallow()).toHaveLength(1);
+  expect(getByText('Progress')).toBeTruthy();
+  expect(getByText(/Up & Going/)).toBeTruthy();
+  // Children of the first book should be hidden
+  expect(getByTestId('b0-children')).toHaveStyle('max-height: 1px');
 });
