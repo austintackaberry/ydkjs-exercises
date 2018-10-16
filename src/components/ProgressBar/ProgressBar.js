@@ -10,8 +10,16 @@ const ProgressBar = props => {
   );
   return (
     <Bar>
-      <Segment backgroundColor="correct" width={`${correctWidth}%`} />
-      <Segment backgroundColor="incorrect" width={`${incorrectWidth}%`} />
+      <Segment
+        data-testid="correct"
+        backgroundColor="correct"
+        width={`${correctWidth}%`}
+      />
+      <Segment
+        data-testid="incorrect"
+        backgroundColor="incorrect"
+        width={`${incorrectWidth}%`}
+      />
     </Bar>
   );
 };
