@@ -324,7 +324,7 @@ const Ch1Questions = [
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch1.md#converting-between-types',
     explanation:
-      'When we use the`==` loose equals operator to make the comparison like `"99.00" == 99.00`, JavaScript will convert the left-hand side `"99.99"` to its number equivalent `99.99`. The comparison then becomes `99.99 == 99.99`, which is of course `true`. This is even true when the negative sign is outside of the double quotes, like so: `-"99" == -99.00`; . However, comparing negative and positive values returns false even when using the loose equals `==`.',
+      'When we use the`==` loose equals operator to make the comparison like `"99.00" == 99.00`, JavaScript will convert the left-hand side `"99.00"` to its number equivalent `99.00`. The comparison then becomes `99.00 == 99.00`, which is of course `true`. This is even true when the negative sign is outside of the double quotes, like so: `-"99" == -99.00`; . However, comparing negative and positive values returns false even when using the loose equals `==`.',
   },
   {
     question: 'Which of these next statements is false?',
