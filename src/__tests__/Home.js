@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { renderWithRouter } from 'test-utils';
 
 import Home from '../components/Home';
 
@@ -19,33 +19,10 @@ const books = [
 ];
 
 it('should render Home view', () => {
-  const comp = shallow(<Home books={books} />);
-  expect(comp.find('Link').length).toBe(2);
-  expect(comp.find('ListItem').length).toBe(2);
-  expect(
-    comp
-      .find('Link')
-      .at(0)
-      .prop('to')
-  ).toBe('/up-going');
-  expect(
-    comp
-      .find('Link')
-      .at(1)
-      .prop('to')
-  ).toBe('/scope-closures');
-  expect(
-    comp
-      .find('ListItem')
-      .at(0)
-      .children()
-      .text()
-  ).toBe('Up & Going');
-  expect(
-    comp
-      .find('ListItem')
-      .at(1)
-      .children()
-      .text()
-  ).toBe('Scope & Closures');
+  const { getByText, getByTestId } = renderWithRouter(<Home books={books} />);
+  expect(getByText('Scope & Closures')).toBeTruthy();
+  expect(getByText('Up & Going')).toBeTruthy();
+  const url = getByTestId('upGoing').href.split('/');
+  const pathname = `/${url[url.length - 1]}`;
+  expect(pathname).toBe('/up-going');
 });
