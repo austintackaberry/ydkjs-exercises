@@ -1,86 +1,51 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { renderWithRouter } from 'test-utils';
+import { ScoreContext, score } from '../score-context';
+import rawBooks from '../data';
+import { initializeBooks } from '../helpers/helpers';
 
 import ChapterRouter from '../components/ChapterRouter';
 
-const questions = [
-  {
-    question:
-      'How many expressions are there in the following statement: a = b * 2;',
-    answers: [
-      { answer: 'One', isCorrect: false },
-      { answer: 'Two', isCorrect: false },
-      { answer: 'Three', isCorrect: false },
-      { answer: 'Four', isCorrect: true },
-    ],
-  },
-];
-const chapter = {
-  title: 'Chapter 1: Into Programming',
-  url: '/ch1',
-  questions,
-};
-const bookUrl = '/up-going';
-const bookId = 0;
-const chapterId = 0;
+const books = initializeBooks(rawBooks);
 
-const chapterWithoutQuestions = {
-  title: 'Chapter 1: Into Programming',
-  url: '/ch1',
+const generateTestData = ({ bookId, chapterId, questionId }) => {
+  const book = books[bookId];
+  const bookUrl = book.url;
+  const chapter = book.chapters[chapterId];
+  const questionPathname = `${bookUrl}${chapter.url}/q${questionId + 1}`;
+
+  return {
+    props: {
+      bookId,
+      bookUrl,
+      chapter,
+      chapterId,
+    },
+    route: questionPathname,
+  };
 };
 
-it('should render the chapters', () => {
-  const comp = shallow(
-    <ChapterRouter
-      bookId={bookId}
-      bookUrl={bookUrl}
-      chapter={chapter}
-      chapterId={chapterId}
-    />
+it('should render the first question of Up & Going, Ch1', () => {
+  const bookId = 0;
+  const chapterId = 0;
+  const questionId = 0;
+  const { props, route } = generateTestData({
+    bookId,
+    chapterId,
+    questionId,
+  });
+  const { getByText } = renderWithRouter(
+    <ScoreContext.Provider value={{ score, updateScore: () => {} }}>
+      <ChapterRouter {...props} />
+    </ScoreContext.Provider>,
+    { route }
   );
-  expect(comp.find('h3').length).toBe(1);
-  expect(
-    comp
-      .find('h3')
-      .at(0)
-      .text()
-  ).toBe('Chapter 1: Into Programming');
-  expect(
-    comp
-      .find('Route')
-      .at(0)
-      .prop('path')
-  ).toBe('/up-going/ch1');
-  expect(
-    comp
-      .find('Route')
-      .at(1)
-      .prop('path')
-  ).toBe('/up-going/ch1/q1');
-});
+  expect(getByText(props.chapter.title)).toBeTruthy();
 
-it('should render no questions if chapter has none', () => {
-  const comp = shallow(
-    <ChapterRouter
-      bookId={bookId}
-      bookUrl={bookUrl}
-      chapter={chapterWithoutQuestions}
-      chapterId={chapterId}
-    />
-  );
-
-  expect(comp.find('h3').length).toBe(1);
+  const {
+    chapter: { questions },
+  } = props;
   expect(
-    comp
-      .find('h3')
-      .at(0)
-      .text()
-  ).toBe('Chapter 1: Into Programming');
-  expect(
-    comp
-      .find('Route')
-      .at(0)
-      .prop('path')
-  ).toBe('/up-going/ch1');
-  expect(comp.find('NoQuestions').length).toBe(1);
+    getByText(`Question ${questionId + 1} of ${questions.length}`)
+  ).toBeTruthy();
 });

@@ -16,7 +16,6 @@ class ChapterRouter extends Component {
   };
   render() {
     const { chapter, bookUrl, bookId, chapterId } = this.props;
-
     let displayQuestions;
     let chapterPath = bookUrl + chapter.url;
 
