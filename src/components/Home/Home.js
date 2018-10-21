@@ -12,7 +12,12 @@ class Home extends Component {
     return (
       <List>
         {books.map(book => (
-          <Link key={book.id} style={{ textDecoration: 'none' }} to={book.url}>
+          <Link
+            key={book.id}
+            data-testid={book.id}
+            style={{ textDecoration: 'none' }}
+            to={book.url}
+          >
             <ListItem>{book.title}</ListItem>
           </Link>
         ))}

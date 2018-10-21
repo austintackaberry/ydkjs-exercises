@@ -1,5 +1,6 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { renderWithRouter } from 'test-utils';
+import { Route } from 'react-router-dom';
 
 import ChapterHome from '../components/ChapterHome';
 
@@ -7,8 +8,22 @@ const props = {
   currentUrl: '/testroute',
 };
 
-it('should render redirect', () => {
-  const comp = shallow(<ChapterHome {...props} />);
-  expect(comp.find('Redirect').length).toBe(1);
-  expect(comp.find('Redirect').at(0).prop('to')).toBe('/testroute/q1');
+it('should redirect to q1', () => {
+  const { getByTestId } = renderWithRouter(
+    <div>
+      <Route
+        path={`${props.currentUrl}/q1`}
+        render={() => <div data-testid="q1-redirect" />}
+      />
+      <Route
+        exact
+        path={props.currentUrl}
+        render={() => {
+          return <ChapterHome {...props} />;
+        }}
+      />
+    </div>,
+    { route: props.currentUrl }
+  );
+  expect(getByTestId('q1-redirect')).toBeTruthy();
 });
