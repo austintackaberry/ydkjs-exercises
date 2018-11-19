@@ -69,6 +69,7 @@ export default class Sidebar extends Component {
               border: 0,
               background: 'transparent',
             }}
+            data-testid="openSidebar"
           >
             <Menu />
           </button>
@@ -87,6 +88,7 @@ export default class Sidebar extends Component {
               position: 'absolute',
               right: '10px',
             }}
+            data-testid="closeSidebar"
           >
             <Close data-name="svg" />
           </button>
