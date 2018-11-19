@@ -18,7 +18,7 @@ const Ch3Questions = [
     explanation: `Arrays are also a form of objects, with extra behavior. The organization of contents in arrays is slightly more structured than for general objects.`,
   },
   {
-    question: 'What is `typeof function`?',
+    question: 'What is `typeof function () {}`?',
     questionId: '1ELRUPuXgJFmPL1ANffo',
     shouldBeRandomized: true,
     answers: [
@@ -34,7 +34,7 @@ const Ch3Questions = [
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch3.md#type',
     explanation:
-      'Functions are technically callable objects, thus they are a type of an object. `typeof function` will return "function".',
+      'Functions are technically callable objects, thus they are a type of an object. `typeof function () {}` will return "function".',
   },
   {
     question: 'What is `String` in JavaScript?',
