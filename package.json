@@ -1,5 +1,5 @@
 {
-  "name": "ydkjs",
+  "name": "ydkjs-exercises",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -35,9 +35,9 @@
     "postcss-loader": "2.0.8",
     "promise": "8.0.1",
     "raf": "3.4.0",
-    "react": "^16.5.2",
+    "react": "^16.6.3",
     "react-dev-utils": "^5.0.2",
-    "react-dom": "^16.4.0",
+    "react-dom": "^16.6.3",
     "react-markdown": "^3.4.1",
     "react-router-dom": "^4.2.2",
     "react-syntax-highlighter": "^8.0.1",
