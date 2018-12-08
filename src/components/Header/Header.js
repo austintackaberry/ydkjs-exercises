@@ -24,18 +24,18 @@ const Header = ({ show, toggle }) => {
           </button>
         </div>
       )}
-      <Link
-        style={{
-          textDecoration: 'none',
-          color: 'black',
-          textAlign: 'center',
-          flexGrow: '1',
-          marginTop: '2vh',
-        }}
-        to="/"
-      >
-        <Marquee>{`You Don't Know JS Exercises`}</Marquee>
-      </Link>
+      <div style={{ flexGrow: '1', marginTop: '2vh' }}>
+        <Link
+          style={{
+            textDecoration: 'none',
+            color: 'black',
+            textAlign: 'center',
+          }}
+          to="/"
+        >
+          <Marquee>{`You Don't Know JS Exercises`}</Marquee>
+        </Link>
+      </div>
     </HeaderGridChild>
   );
 };
