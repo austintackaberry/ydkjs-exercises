@@ -11,7 +11,6 @@ import {
 import DrawerMenu from '../DrawerMenu';
 import ProgressBar from '../ProgressBar';
 import { reinitializeScore } from '../../helpers/helpers';
-import Menu from '../../svgs/Menu';
 import Close from '../../svgs/Close';
 
 export default class Sidebar extends Component {
@@ -59,21 +58,6 @@ export default class Sidebar extends Component {
 
     return (
       <Fragment>
-        {!shouldShow && (
-          <button
-            onClick={onMenuClick}
-            style={{
-              position: 'fixed',
-              cursor: 'pointer',
-              margin: '.5rem',
-              border: 0,
-              background: 'transparent',
-            }}
-            data-testid="openSidebar"
-          >
-            <Menu />
-          </button>
-        )}
         <SidebarGridChild
           isNarrowScreen={isNarrowScreen}
           shouldShow={shouldShow}

@@ -143,7 +143,7 @@ class App extends Component {
                 shouldShow={show}
                 onMenuClick={toggle}
               />
-              <Header />
+              <Header show={show} toggle={toggle} />
               <MainContentGridChild data-name="Main">
                 <Switch>
                   <Route exact path="/" render={() => <Home books={books} />} />

@@ -3,11 +3,11 @@ import styled from 'styled-components';
 export const HeaderGridChild = styled.div`
   grid-area: header;
   padding: 0.5rem;
-  place-self: center stretch;
   text-align: center;
+  display: inline-flex;
 `;
 
 export const Marquee = styled.span`
-  font-size: 3rem;
+  font-size: calc(1.5vw + 20px);
   font-weight: bolder;
 `;
