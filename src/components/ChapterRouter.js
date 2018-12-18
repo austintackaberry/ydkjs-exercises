@@ -4,7 +4,6 @@ import { Route, Switch } from 'react-router-dom';
 import NoMatch from './NoMatch';
 import ChapterHome from './ChapterHome';
 import Question from './Question';
-import NoQuestions from './NoQuestions';
 import { ScoreContext } from '../score-context';
 
 class ChapterRouter extends Component {
@@ -19,36 +18,32 @@ class ChapterRouter extends Component {
     let displayQuestions;
     let chapterPath = bookUrl + chapter.url;
 
-    if (chapter.questions) {
-      displayQuestions = chapter.questions.map((question, index) => {
-        let questionPath = `${chapterPath}/q${index + 1}`;
+    displayQuestions = chapter.questions.map((question, index) => {
+      let questionPath = `${chapterPath}/q${index + 1}`;
 
-        return (
-          <Route
-            key={questionPath}
-            path={questionPath}
-            render={() => (
-              <ScoreContext.Consumer>
-                {({ score, updateScore }) => (
-                  <Question
-                    bookId={bookId}
-                    chapterId={chapterId}
-                    baseUrl={chapterPath}
-                    index={index + 1}
-                    question={question}
-                    numberOfQuestions={chapter.questions.length}
-                    score={score}
-                    updateScore={updateScore}
-                  />
-                )}
-              </ScoreContext.Consumer>
-            )}
-          />
-        );
-      });
-    } else {
-      displayQuestions = <NoQuestions />;
-    }
+      return (
+        <Route
+          key={questionPath}
+          path={questionPath}
+          render={() => (
+            <ScoreContext.Consumer>
+              {({ score, updateScore }) => (
+                <Question
+                  bookId={bookId}
+                  chapterId={chapterId}
+                  baseUrl={chapterPath}
+                  index={index + 1}
+                  question={question}
+                  numberOfQuestions={chapter.questions.length}
+                  score={score}
+                  updateScore={updateScore}
+                />
+              )}
+            </ScoreContext.Consumer>
+          )}
+        />
+      );
+    });
 
     return (
       <div>
