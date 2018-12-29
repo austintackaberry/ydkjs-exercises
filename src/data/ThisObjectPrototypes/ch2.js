@@ -56,14 +56,14 @@ ${'```'}
         text: `undefined`,
         id: 0,
       },
-      { text: `null`, id: 1 },
+      { text: `TypeError`, id: 1 },
       { text: 'pony', id: 2 },
       { text: 'rocket ship', id: 3 },
     ],
-    correctAnswerId: 0,
+    correctAnswerId: 1,
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch2.md#default-binding',
-    explanation: `When not in strict mode, default binding rules are valid which means \`this\` would be the global object, and the answer would be 'rocket ship'. However, since we are in strict mode, default binding rules do not apply, so \`this\` is undefined.`,
+    explanation: `When not in strict mode, default binding rules are valid which means \`this\` would be the global object, and the answer would be 'rocket ship'. However, since we are in strict mode, default binding rules do not apply, so \`this\` is undefined. Accessing a property of \`undefined\` results TypeError.`,
   },
   {
     question: `What is logged to the console when the following code is executed:
