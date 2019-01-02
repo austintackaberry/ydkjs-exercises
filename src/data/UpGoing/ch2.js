@@ -363,7 +363,7 @@ const Ch2Questions = [
   },
   {
     question:
-      'Which of the lines below will print `"Hello"` to the console when executed?',
+      'Which of the lines below will print `"Hello!"` to the console when executed?',
     questionId: 'pdnSBOr7Cy4Q6TeZeOpI',
     shouldBeRandomized: false,
     answers: [
