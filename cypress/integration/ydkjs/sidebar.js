@@ -3,6 +3,8 @@
 /// <reference types="Cypress" />
 
 context('Sidebar', () => {
+  const select = (id) => `[data-testid="${id}"]`; 
+  
   beforeEach(() => {
     cy.visit('/');
     cy.contains('Progress').should('exist');
@@ -23,7 +25,7 @@ context('Sidebar', () => {
   });
 
   it('navigates to /scope-closures when Scope & Closures is picked', () => {
-    cy.get(':nth-child(7) > .lgeVyg').click();
+    cy.get(select('/scope-closures')).click({ force: true });
     cy.url().should('include', '/scope-closures');
 
     cy.contains('Chapter 1: What is Scope?').should('exist');
@@ -34,7 +36,7 @@ context('Sidebar', () => {
   });
 
   it('navigates to /this-object-prototypes when this & Object Prototypes is picked', () => {
-    cy.get(':nth-child(8) > .lgeVyg').click();
+    cy.get(select('/this-object-prototypes')).click({ force: true });
     cy.url().should('include', '/this-object-prototypes');
 
     cy.contains('Chapter 1: this or That?').should('exist');
@@ -45,7 +47,7 @@ context('Sidebar', () => {
   });
 
   it('navigates to /types-grammar when Types & Grammar is picked', () => {
-    cy.get(':nth-child(9) > .lgeVyg').click();
+    cy.get(select('/types-grammar')).click({ force: true });
     cy.url().should('include', '/types-grammar');
 
     cy.contains('Chapter 1: Types').should('exist');
@@ -56,7 +58,7 @@ context('Sidebar', () => {
   });
 
   it('navigates to /async-performance when Async & Performance is picked', () => {
-    cy.get(':nth-child(10) > .lgeVyg').click();
+    cy.get(select('/async-performance')).click({ force: true });
     cy.url().should('include', '/async-performance');
 
     cy.contains('Chapter 1: Asynchrony: Now & Later').should('exist');
@@ -67,7 +69,7 @@ context('Sidebar', () => {
   });
 
   it('navigates to /es6-beyond when ES6 & Beyond is picked', () => {
-    cy.get(':nth-child(11) > .lgeVyg').click();
+    cy.get(select('/es6-beyond')).click({ force: true });
     cy.url().should('include', '/es6-beyond');
 
     cy.contains('Chapter 1:').should('exist');
