@@ -102,8 +102,7 @@ export default class Sidebar extends Component {
                 const { correct, possible } = this.getBookScores(
                   score.books[index]
                 );
-                  // eslint-disable-next-line no-console
-                  console.log(book.url);
+                                  
                 return (
                   <DrawerMenu
                     key={`b${index}`}
