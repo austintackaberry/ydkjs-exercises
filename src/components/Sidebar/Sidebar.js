@@ -102,7 +102,7 @@ export default class Sidebar extends Component {
                 const { correct, possible } = this.getBookScores(
                   score.books[index]
                 );
-
+                                  
                 return (
                   <DrawerMenu
                     key={`b${index}`}
@@ -110,7 +110,7 @@ export default class Sidebar extends Component {
                     to={book.url}
                     nest={1}
                     title={
-                      <span style={{ fontSize: '1rem' }}>{`${
+                      <span data-testid={book.url} style={{ fontSize: '1rem' }}>{`${
                         book.title
                       } (${correct} /
                   ${possible})`}</span>
