@@ -106,7 +106,7 @@ ${'```'}
 ${'```js'}
 var firstName = 'Joanna';
 function printFirstName() {
-  console.log(this.firstName);
+  return this.firstName;
 }
 
 var person = {
