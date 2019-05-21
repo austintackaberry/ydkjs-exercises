@@ -5,7 +5,7 @@ const Ch1Questions = [
     shouldBeRandomized: false,
     answers: [
       { text: 'The ability for a program to execute', id: 0 },
-      { text: 'The abiliy for a program to be compiled', id: 1 },
+      { text: 'The ability for a program to be compiled', id: 1 },
       {
         text: 'The ability to store values and pull values out of variables',
         id: 2,
@@ -146,7 +146,7 @@ const Ch1Questions = [
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch1.md#compiler-speak',
     explanation:
-      'The reference to `a` in `console.log( a );` is an RHS reference, because nothing is being assigned to a here. By contrast, in `a = 2;` the reference to `a` is an LHS reference, because we don&#39;t actually care what the current value is. We simply want to find the variable as `a` target for the `= 2` assignment operation.',
+      'The reference to `a` in `console.log( a );` is an RHS reference, because nothing is being assigned to it here. By contrast, in `a = 2;` the reference to `a` is an LHS reference, because we don&#39;t actually care what the current value is. We simply want to find the variable as `a` target for the `= 2` assignment operation.',
   },
   {
     question:
