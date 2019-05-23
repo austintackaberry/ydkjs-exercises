@@ -192,14 +192,13 @@ export class Question extends Component {
                       }}
                       htmlFor={i}
                     >
-                      <div style={{ height: '13px' }}>
+                      <div>
                         <input
                           type="radio"
                           name={index}
                           id={i}
                           value={answer.id}
                           data-testid={`answer-${answer.id}`}
-                          style={{ marginTop: '0' }}
                           onChange={event => {
                             this.handleAnswerChange(event);
                           }}
