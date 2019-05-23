@@ -26,7 +26,7 @@ const AppGrid = styled.div`
     'sidebar footer';
   grid-row-gap: 0.5rem;
   height: 100%;
-  overflow-x: hidden;
+  overflow-x: scroll;
   overflow-y: ${props =>
     props.shouldShowSidebar && props.isNarrowScreen ? 'hidden' : 'scroll'};
   z-index: 0;
