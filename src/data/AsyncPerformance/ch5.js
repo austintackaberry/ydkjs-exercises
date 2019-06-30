@@ -71,7 +71,7 @@ const Ch5Questions = [
       { text: 'High-traffic network communications', id: 2 },
       { text: 'DOM diffing algorithm', id: 3 },
     ],
-    correctAnswerId: 0,
+    correctAnswerId: 3,
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/async%20%26%20performance/ch5.md#worker-environment',
     explanation: 'Web workers do not have access to the DOM',
