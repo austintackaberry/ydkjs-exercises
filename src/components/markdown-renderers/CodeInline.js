@@ -23,6 +23,7 @@ export default class CodeInline extends React.PureComponent {
           display: 'inline',
           padding: '0.3em 0.3em calc(0.3em + 1px)',
           borderRadius: '0.15em',
+          whiteSpace: 'pre-wrap',
         }}
         language={language}
       >
