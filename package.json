@@ -5,7 +5,7 @@
   "dependencies": {
     "animated": "^0.2.2",
     "autoprefixer": "7.1.6",
-    "babel-core": "6.26.0",
+    "babel-core": "^6.26.3",
     "babel-eslint": "7.2.3",
     "babel-jest": "20.0.3",
     "babel-loader": "^7.1.4",
@@ -67,7 +67,7 @@
   "devDependencies": {
     "all-contributors-cli": "^4.11.1",
     "babel-preset-env": "^1.7.0",
-    "cypress": "^3.1.1",
+    "cypress": "^3.4.0",
     "cz-conventional-changelog": "^2.1.0",
     "husky": "^0.14.3",
     "jest": "^23.1.0",
