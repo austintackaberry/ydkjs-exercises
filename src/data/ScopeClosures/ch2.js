@@ -116,7 +116,7 @@ ${'```'}
     correctAnswerId: 0,
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch2.md#lex-time',
-    explanation: `\`bar\` does not have \`a\` in its scope, so the engine looks in its outer scope, the global scope. It does not sees \`a\`, but notices that there is no value assigned to it, thus it is \`undefined\`.`,
+    explanation: `\`bar\` does not have \`a\` in its scope, so the engine looks in its outer scope, the global scope. It sees \`a\`, but notices that there is no value assigned to it, thus it is \`undefined\`.`,
   },
   {
     question: `What is logged to the console when the following code is executed and the user clicks the button:
