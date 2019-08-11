@@ -28,7 +28,7 @@ ${'```'}
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/async%20%26%20performance/ch1.md#a-program-in-chunks',
     explanation:
-      'Because `ajax` is asynchronous, `data` will be undefined will not yet be defined when it is logged to the console.',
+      'Because `ajax` is asynchronous, `data` will not yet be defined when it is logged to the console.',
   },
   {
     question: `Until ES6, JavaScript itself has actually never had any direct notion of asynchrony built into it.`,
@@ -55,7 +55,7 @@ ${'```'}
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/master/async%20%26%20performance/ch1.md#event-loop',
     explanation:
-      'The event loop is FIFO, or first-in-first-out, which is similar to that of a queue',
+      'The event loop is FIFO, or first-in-first-out, which is similar to that of a queue.',
   },
   {
     question: `What statement about \`setTimeout(callbackFn, 1000)\` below is the most accurate.`,
