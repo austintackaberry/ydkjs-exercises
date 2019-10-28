@@ -19,7 +19,7 @@ const Ch5Questions = [
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch5.md#nitty-gritty',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/scope%20%26%20closures/ch5.md#nitty-gritty',
     explanation: `Another way to explain closure is to say that functions always have access to their lexical scope, no matter how or when they are called.`,
   },
   {
@@ -57,7 +57,7 @@ ${'```'}
     ],
     correctAnswerId: 3,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch5.md#nitty-gritty',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/scope%20%26%20closures/ch5.md#nitty-gritty',
     explanation: `\`foo\` returns the function \`bar\` which is assigned to \`baz\`. \`bar\` still has access to a in \`foo\` even after \`foo\` has been called because of closure.`,
   },
   {
@@ -78,7 +78,7 @@ ${'```'}
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch5.md#nitty-gritty',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/scope%20%26%20closures/ch5.md#nitty-gritty',
     explanation: `Because closure is just a function accessing lexical scope when it's executed outside of its lexical scope, that can only happen if the function is passed around as a variable`,
   },
   {
@@ -106,7 +106,7 @@ ${'```'}
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch5.md#now-i-can-see',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/scope%20%26%20closures/ch5.md#now-i-can-see',
     explanation: `\`wait\` gets executed immediately, but \`timer\` executes every 1000ms, and it still can access \`message\`.`,
   },
   {
@@ -132,7 +132,7 @@ ${'```'}
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch5.md#loops-closure',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/scope%20%26%20closures/ch5.md#loops-closure',
     explanation: ` \`setTimeout\` is executed immediately which means the \`i\` in \`i*1000\` is what you would expect. However, \`timer\` does not get executed immediately. By the time \`timer\` is executed, the loop is finished, and \`i\` has a value of 6.`,
   },
 ];

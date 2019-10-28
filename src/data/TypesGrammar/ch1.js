@@ -12,7 +12,7 @@ const Ch1Questions = [
     ],
     correctAnswerId: 2,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/types%20%26%20grammar/ch1.md#values-as-types',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/types%20%26%20grammar/ch1.md#values-as-types',
     explanation:
       'Unlike many coding languages, JavaScript has only one primitve numerical type: `number`. This is used for both integers and floating point values.',
   },
@@ -28,7 +28,7 @@ const Ch1Questions = [
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/types%20%26%20grammar/ch1.md#built-in-types',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/types%20%26%20grammar/ch1.md#built-in-types',
     explanation:
       'In JavaScript, arrays are a type of `object`. There is no "array" type.',
   },
@@ -50,7 +50,7 @@ ${'```'}
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/types%20%26%20grammar/ch1.md#built-in-types',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/types%20%26%20grammar/ch1.md#built-in-types',
     explanation: `It would have been nice if \`typeof null\` returned "null", but this original bug in JS has persisted for nearly two decades, and will likely never be fixed because there's too much existing web content that relies on its buggy behavior that "fixing" the bug would create more "bugs" and break a lot of web software.`,
   },
   {
@@ -74,7 +74,7 @@ ${'```'}
     ],
     correctAnswerId: 3,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/types%20%26%20grammar/ch1.md#built-in-types',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/types%20%26%20grammar/ch1.md#built-in-types',
     explanation:
       'The function object has a length property set to the number of formal parameters it is declared with.',
   },
@@ -91,7 +91,7 @@ ${'```'}
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/types%20%26%20grammar/ch1.md#typeof-undeclared',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/types%20%26%20grammar/ch1.md#typeof-undeclared',
     explanation:
       'All of the other options will throw an error if `a` has not been declared.',
   },

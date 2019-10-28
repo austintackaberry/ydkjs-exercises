@@ -17,7 +17,7 @@ ${'```'}
     ],
     correctAnswerId: 2,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch4.md#chicken-or-the-egg',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/scope%20%26%20closures/ch4.md#chicken-or-the-egg',
     explanation: `\`var a\` is "hoisted" before the other lines of code are executed, thus by the time the engine executes the assignment and console logging, \`var a\` will have been declared and available.`,
   },
   {
@@ -37,7 +37,7 @@ ${'```'}
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch4.md#chicken-or-the-egg',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/scope%20%26%20closures/ch4.md#chicken-or-the-egg',
     explanation: `\`var a\` is "hoisted" before the other lines of code are executed. By the time the engine executes the \`console.log\`, \`var a\` will have been declared, but the definition will not have occurred.`,
   },
   {
@@ -59,7 +59,7 @@ ${'```'}
     ],
     correctAnswerId: 2,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch4.md#the-compiler-strikes-again',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/scope%20%26%20closures/ch4.md#the-compiler-strikes-again',
     explanation: `\`var foo\` is "hoisted" but the function is not. By the time the engine executes the first line, \`var foo\` will have been declared, so it is not a \`ReferenceError\`. We try to call it as a function, but its value is undefined which leaves us with a \`TypeError\`.`,
   },
   {
@@ -85,7 +85,7 @@ ${'```'}
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch4.md#functions-first',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/scope%20%26%20closures/ch4.md#functions-first',
     explanation: `Because functions are "hoisted" before variables, \`function foo\` gets hoisted before \`var foo\`, and ultimately \`var foo\` is ignored.`,
   },
   {
@@ -96,7 +96,7 @@ ${'```'}
     answers: [{ text: 'True', id: 0 }, { text: 'False', id: 1 }],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch4.md#review-tldr',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/scope%20%26%20closures/ch4.md#review-tldr',
     explanation: `The compiler does a first pass through your code to determine lexical scope. This is what is known as "hoisting".`,
   },
 ];

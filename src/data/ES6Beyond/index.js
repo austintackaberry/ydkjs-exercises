@@ -18,7 +18,7 @@ const ES6BeyondChapters = [
     url: '/ch2',
     questions: Ch2Questions,
     chapterLink:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20%26%20beyond/ch2.md',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/es6%20%26%20beyond/ch2.md',
   },
   {
     title: 'Chapter 3: Organization',

@@ -20,7 +20,7 @@ const Ch5Questions = [
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20%26%20beyond/ch5.md#chapter-5-collections',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/es6%20%26%20beyond/ch5.md#chapter-5-collections',
     explanation:
       'Maps were added in ES6 and are just like objects except the keys can be anything, even arrays or objects!',
   },
@@ -46,7 +46,7 @@ ${'```'}
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20%26%20beyond/ch5.md#maps',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/es6%20%26%20beyond/ch5.md#maps',
     explanation:
       'Maps do not support the `[]` syntax. `set` operations must be done like `m.set(x, y)`.',
   },
@@ -77,7 +77,7 @@ ${'```'}
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20%26%20beyond/ch5.md#sets',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/es6%20%26%20beyond/ch5.md#sets',
     explanation:
       'Sets can be constructed with iterators such as arrays, and they only store unique values. They are kind of like objects with keys but no values.',
   },
@@ -107,7 +107,7 @@ ${'```'}
     ],
     correctAnswerId: 3,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20%26%20beyond/ch5.md#sets',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/es6%20%26%20beyond/ch5.md#sets',
     explanation:
       'The constructor is the only way to make a new set, and it will copy values from the set into a new set.',
   },
@@ -145,7 +145,7 @@ ${'```'}
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20%26%20beyond/ch5.md#map-keys',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/es6%20%26%20beyond/ch5.md#map-keys',
     explanation:
       '`newMap.keys()` will create an iterator of the keys. `newMap.forEach()` iterates over the values, and `entries()` creates a two dimensional array of keys and values.',
   },

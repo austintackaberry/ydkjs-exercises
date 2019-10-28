@@ -20,7 +20,7 @@ const Ch8Questions = [
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20%26%20beyond/ch8.md#async-functions',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/es6%20%26%20beyond/ch8.md#async-functions',
     explanation:
       '`async` functions return a promise which can then be consumed via `await` or with `.then()`.',
   },
@@ -37,7 +37,7 @@ const Ch8Questions = [
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20%26%20beyond/ch8.md#async-functions',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/es6%20%26%20beyond/ch8.md#async-functions',
     explanation:
       'The `await` expression causes `async` function execution to pause until a `Promise` is resolved, that is fulfilled or rejected, and to resume execution of the `async` function after fulfillment. When resumed, the value of the `await` expression is that of the fulfilled `Promise`.',
   },
@@ -74,7 +74,7 @@ ${'```'}
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20%26%20beyond/ch8.md#objectobserve',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/es6%20%26%20beyond/ch8.md#objectobserve',
     explanation:
       'Trick question! `Object.observe()` has been deprecated. ES6 Proxies are recommended as an alternative.',
   },
@@ -107,7 +107,7 @@ ${'```'}
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20%26%20beyond/ch8.md#objects-properties-and-',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/es6%20%26%20beyond/ch8.md#objects-properties-and-',
     explanation: 'The spread operator here works similar to that with arrays.',
   },
   {
@@ -132,7 +132,7 @@ ${'```'}
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20%26%20beyond/ch8.md#arrayincludes',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/es6%20%26%20beyond/ch8.md#arrayincludes',
     explanation:
       '`Array.prototype.includes(x)` simply checks to see if an element value is equal to `x`',
   },

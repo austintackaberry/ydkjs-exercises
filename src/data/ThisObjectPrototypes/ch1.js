@@ -12,7 +12,7 @@ const Ch1Questions = [
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch1.md#confusions',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/this%20%26%20object%20prototypes/ch1.md#confusions',
     explanation: `\`this\` can refer to many different elements depending on how the function is called.`,
   },
   {
@@ -28,7 +28,7 @@ const Ch1Questions = [
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch1.md#its-scope',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/this%20%26%20object%20prototypes/ch1.md#its-scope',
     explanation: `\`this\` can refer to many different elements depending on how the function is called.`,
   },
   {
@@ -56,7 +56,7 @@ const Ch1Questions = [
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch1.md#why-this',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/this%20%26%20object%20prototypes/ch1.md#why-this',
     explanation: `The more complex your usage pattern is, the more clearly you'll see that passing context around as an explicit parameter is often messier than passing around a \`this\` context. `,
   },
   {
@@ -97,7 +97,7 @@ ${'```'}
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch1.md#its-scope',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/this%20%26%20object%20prototypes/ch1.md#its-scope',
     explanation: `In both uses of the keyword \`this\`, it refers to the global object. Because there is no \`a\` in the global object, it is undefined. `,
   },
   {
@@ -116,7 +116,7 @@ ${'```'}
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch1.md#review-tldr',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/this%20%26%20object%20prototypes/ch1.md#review-tldr',
     explanation: `Because \`this\` changes depending on HOW the function was called, its value is unknown at the time the function is defined. It is not like lexical scope which is determined at function definition.`,
   },
 ];

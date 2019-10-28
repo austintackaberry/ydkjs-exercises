@@ -14,7 +14,7 @@ const Ch1Questions = [
     ],
     correctAnswerId: 2,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch1.md#chapter-1-what-is-scope',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/scope%20%26%20closures/ch1.md#chapter-1-what-is-scope',
     explanation: `A program is described as stateful if it is designed to remember preceding events or user interactions.
                     The remembered information is called the state. Without state, a program could perform some tasks, but
                     they would be extremely limited in functionality.`,
@@ -32,7 +32,7 @@ const Ch1Questions = [
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch1.md#compiler-theory',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/scope%20%26%20closures/ch1.md#compiler-theory',
     explanation: `Tokenizing/Lexing is the process of breaking up a string of characters into meaningful chunks called tokens.
                     Parsing is the act of taking a stream of tokens and turning it into a tree of nested elements which represent
                     the structure of the program. Code-Generation is the process of taking the tree and turning it into executable code.`,
@@ -50,7 +50,7 @@ const Ch1Questions = [
     ],
     correctAnswerId: 3,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch1.md#compiler-theory',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/scope%20%26%20closures/ch1.md#compiler-theory',
     explanation: `E. A string of characters is broken into meaningful chuncks during the tokenization/lexing phase. A token is a
                     string with an assigned meaning. It is structured as a pair consisting of a token name and optional token value.
                     Some common token names include: Identifiers, Keywords, Separators, operators, and literals.`,
@@ -79,7 +79,7 @@ const Ch1Questions = [
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch1.md#the-cast',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/scope%20%26%20closures/ch1.md#the-cast',
     explanation: `The Scope is responsible for maintaing a look-up list of all declared identifiers and enforcing a strict set of
                     rules as to how these are accessible to currently executing code.`,
   },
@@ -112,7 +112,7 @@ const Ch1Questions = [
     ],
     correctAnswerId: 2,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch1.md#back--forth',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/scope%20%26%20closures/ch1.md#back--forth',
     explanation: `Two distinct actions are taken for a variable assignment: First, Compiler declares a variable (if not previously declared in the current scope),
     and second, when executing, Engine looks up the variable in Scope and assigns to it, if found.`,
   },
@@ -144,7 +144,7 @@ const Ch1Questions = [
     ],
     correctAnswerId: 3,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch1.md#compiler-speak',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/scope%20%26%20closures/ch1.md#compiler-speak',
     explanation:
       'The reference to `a` in `console.log( a );` is an RHS reference, because nothing is being assigned to `a` here. By contrast, in `a = 2;` the reference to `a` is an LHS reference, because we don&#39;t actually care what the current value is. We simply want to find the variable as `a` target for the `= 2` assignment operation.',
   },
@@ -177,7 +177,7 @@ const Ch1Questions = [
     ],
     correctAnswerId: 3,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch1.md#nested-scope',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/scope%20%26%20closures/ch1.md#nested-scope',
     explanation: `Engine starts at the currently executing Scope, looks for the variable there, then if not found, keeps going up one level, and so on.
     If the outermost global scope is reached, the search stops, whether it finds the variable or not.`,
   },
@@ -209,7 +209,7 @@ const Ch1Questions = [
     ],
     correctAnswerId: 2,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch1.md#errors',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/scope%20%26%20closures/ch1.md#errors',
     explanation:
       'The names matter because these two types of look-ups behave differently in the circumstance where the variable has not yet been declared (is not found in any consulted Scope). If an RHS look-up fails to ever find a variable, this results in a `ReferenceError` being thrown by the Engine. By contrast, if the Engine is performing an LHS look-up and arrives at the top floor (global Scope) without finding it, and if the program is not running in "Strict Mode", then the global Scope will create a new variable of that name in the global scope.',
   },
@@ -236,7 +236,7 @@ const Ch1Questions = [
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch1.md#compiler-theory',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/scope%20%26%20closures/ch1.md#compiler-theory',
     explanation: `Parsing is typically thought of as taking a string of text and making sense of it. However, the string of text is actually converted into tokens first. Parsing is actually taking the tokens and making them useful by converting them into an abstract syntax tree`,
   },
   {
@@ -264,7 +264,7 @@ const Ch1Questions = [
     ],
     correctAnswerId: 2,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch1.md#the-cast',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/scope%20%26%20closures/ch1.md#the-cast',
     explanation: `The engine is the entirety of what reads and executes your code. Each browser has their own engine as does Node (built on Chrome's V8 JavaScript engine).`,
   },
   {
@@ -294,7 +294,7 @@ const Ch1Questions = [
     ],
     correctAnswerId: 3,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch1.md#compiler-speak',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/scope%20%26%20closures/ch1.md#compiler-speak',
     explanation: `LHS stands for "left hand side", and RHS stands for "right hand side". For a = b, the RHS looks for the value of b, and the LHS looks for the location of a in memory, so that it can update its value.`,
   },
   {
@@ -330,7 +330,7 @@ ${'```'}
     ],
     correctAnswerId: 2,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch1.md#quiz-answers',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/scope%20%26%20closures/ch1.md#quiz-answers',
     explanation: '`c = ..`, `a = 2` (implicit param assignment) and `b = ..`',
   },
   {
@@ -393,7 +393,7 @@ ${'```'}
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch1.md#errors',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/scope%20%26%20closures/ch1.md#errors',
     explanation: `A ReferenceError is thrown when trying to dereference a variable that has not been declared. The only way for an RHS look-up to fail is if the variable has not been declared.`,
   },
 ];

@@ -16,7 +16,7 @@ const Ch4Questions = [
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20%26%20beyond/ch4.md#promises',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/es6%20%26%20beyond/ch4.md#promises',
     explanation:
       'If there are no errors, then the Promise will get resolved, but if an error occurs typically the Promise will get rejected.',
   },
@@ -39,7 +39,7 @@ ${'```'}
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20%26%20beyond/ch4.md#making-and-using-promises',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/es6%20%26%20beyond/ch4.md#making-and-using-promises',
     explanation:
       'There are a couple things wrong with this code. For one, `setTimeout` does not return the return value of the callback. `fn` in `new Promise(fn)` needs to have an argument, such as `resolve`, which you call on your desired return value.',
   },
@@ -66,7 +66,7 @@ ${'```'}
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20%26%20beyond/ch4.md#making-and-using-promises',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/es6%20%26%20beyond/ch4.md#making-and-using-promises',
     explanation:
       '`done` is not a valid method for a Promise. The code above would be valid if it were replaced with `.then()`',
   },
@@ -92,7 +92,7 @@ ${'```'}
     ],
     correctAnswerId: 2,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20%26%20beyond/ch4.md#thenables',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/es6%20%26%20beyond/ch4.md#thenables',
     explanation:
       'Any object (or function) with a `then(..)` function on it is assumed to be a thenable. Any place where the Promise mechanisms can accept and adopt the state of a genuine promise, they can also handle a thenable.',
   },
@@ -117,7 +117,7 @@ ${'```'}
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20%26%20beyond/ch4.md#promise-api',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/es6%20%26%20beyond/ch4.md#promise-api',
     explanation:
       '`Promise.resolve` creates a resolved promise. To access the value `42`, you need to call `.then()`',
   },

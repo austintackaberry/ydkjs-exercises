@@ -12,7 +12,7 @@ const Ch3Questions = [
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch3.md#functions-as-scopes',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/scope%20%26%20closures/ch3.md#functions-as-scopes',
     explanation: `IIFEs are used to "insert" code without collisions. The IIFE gives each module its own scope which allows it to use whatever non-global variables it wants without side effects. `,
   },
   {
@@ -33,7 +33,7 @@ const Ch3Questions = [
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch3.md#anonymous-vs-named',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/scope%20%26%20closures/ch3.md#anonymous-vs-named',
     explanation: `If you are debugging an error, you might check the stack trace. If you encounter an anonymous function in the stack trace, you can't easily know which function it is referring to.`,
   },
   {
@@ -49,7 +49,7 @@ const Ch3Questions = [
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch3.md#anonymous-vs-named',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/scope%20%26%20closures/ch3.md#anonymous-vs-named',
     explanation: `Technically, it had block scoping in \`catch\` blocks as early as ES3. Standard block scoping was introduced in ES6 via \`let\` and \`const\`.`,
   },
   {
@@ -72,7 +72,7 @@ ${'```'}
     ],
     correctAnswerId: 3,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch3.md#let-loops',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/scope%20%26%20closures/ch3.md#let-loops',
     explanation: `Because \`let\` is block scoped, \`i\` is only within scope inside the curly braces in the first line, not in the global scope. `,
   },
   {
@@ -95,7 +95,7 @@ ${'```'}
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch3.md#blocks-as-scopes',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/scope%20%26%20closures/ch3.md#blocks-as-scopes',
     explanation: `Because \`var\` is not block scoped, \`i\` is stored in the global scope.`,
   },
 ];

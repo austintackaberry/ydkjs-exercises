@@ -26,7 +26,7 @@ ${'```'}
     ],
     correctAnswerId: 2,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch5.md#prototype',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/this%20%26%20object%20prototypes/ch5.md#prototype',
     explanation:
       '`var myObject = Object.create( anotherObject );` links `myObject` with `anotherObject` via the prototype chain. If a key does not exist in `myObject`, it follows its prototype chain and looks for the key in `anotherObject`.',
   },
@@ -43,7 +43,7 @@ ${'```'}
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch5.md#prototype',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/this%20%26%20object%20prototypes/ch5.md#prototype',
     explanation: `It also iterates over all enumerable properties in its prototype chain.`,
   },
   {
@@ -73,7 +73,7 @@ ${'```'}
     ],
     correctAnswerId: 2,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch5.md#setting--shadowing-properties',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/this%20%26%20object%20prototypes/ch5.md#setting--shadowing-properties',
     explanation: `Though it may appear that \`myObject.a++\` should (via delegation) look-up and just increment the \`anotherObject.a\` property itself in place, instead the \`++\` operation corresponds to \`myObject.a = myObject.a + 1\`. The result is \`[[Get]]\` looking up a property via \`[[Prototype]]\` to get the current value \`2\` from \`anotherObject.a\`, incrementing the value by one, then \`[[Put]]\` assigning the \`3\` value to a new shadowed property \`a\` on \`myObject\`.`,
   },
   {
@@ -89,7 +89,7 @@ ${'```'}
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch5.md#createing-links',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/this%20%26%20object%20prototypes/ch5.md#createing-links',
     explanation: `JavaScript simply does not have classes. ES6 classes are syntactic sugar on top of what are simply just objects.`,
   },
   {
@@ -126,7 +126,7 @@ ${'```'}
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch5.md#createing-links',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/this%20%26%20object%20prototypes/ch5.md#createing-links',
     explanation:
       '`Cat` has a property `speak`, but it does not have a property `sleep`. Because `Cat` was linked to `Dog` via `Object.create()`, and `Dog` has a property `sleep`, `Dog`s `sleep` property was called.',
   },

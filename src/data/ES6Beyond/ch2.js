@@ -23,7 +23,7 @@ const Ch2Questions = [
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20%26%20beyond/ch2.md#default-parameter-values',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/es6%20%26%20beyond/ch2.md#default-parameter-values',
     explanation:
       'In ES6+, you can provide a default value for a function parameter. The default value is used if the argument is *undefined* (including if no argument is passed).  It is not used for other falsy values (i.e. 0, NaN, an empty string, etc.).',
   },
@@ -56,7 +56,7 @@ ${'```'}
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20%26%20beyond/ch2.md#const-declarations',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/es6%20%26%20beyond/ch2.md#const-declarations',
     explanation:
       "You are not allowed to change the value the variable holds once it's been set, at declaration time. A `const` declaration must have an explicit initialization.",
   },
@@ -79,7 +79,7 @@ ${'```'}
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20%26%20beyond/ch2.md#block-scoped-declarations',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/es6%20%26%20beyond/ch2.md#block-scoped-declarations',
     explanation:
       'Block scoping is now possible with the `let` and `const` keywords.',
   },
@@ -114,7 +114,7 @@ ${'```'}
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20%26%20beyond/ch2.md#let-declarations',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/es6%20%26%20beyond/ch2.md#let-declarations',
     explanation:
       '`j` is clearly scoped to the `for` loop, but `i` is not so obvious. A new `i` is scoped to the block for each iteration.',
   },
@@ -143,7 +143,7 @@ ${'```'}
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20%26%20beyond/ch2.md#const-declarations',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/es6%20%26%20beyond/ch2.md#const-declarations',
     explanation:
       "Constants are not a restriction on the value itself, but on the variable's assignment of that value. In other words, the value is not frozen or immutable because of `const`, just the assignment of it. If the value is complex, such as an object or array, the contents of the value can still be modified:",
   },

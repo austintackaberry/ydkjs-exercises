@@ -7,7 +7,7 @@ const Ch2Questions = [
     answers: [{ text: 'True', id: 0 }, { text: 'False', id: 1 }],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/types%20%26%20grammar/ch2.md#arrays',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/types%20%26%20grammar/ch2.md#arrays',
     explanation:
       'In JS, arrays are simple containers that can hold any combination of types, including all primitive types, objects, other arrays, and even functions.',
   },
@@ -23,7 +23,7 @@ const Ch2Questions = [
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/types%20%26%20grammar/ch2.md#special-numbers',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/types%20%26%20grammar/ch2.md#special-numbers',
     explanation:
       'An oddity of JavaScript, the property `NaN` ("not a number") is actually of type "number".',
   },
@@ -34,7 +34,7 @@ const Ch2Questions = [
     answers: [{ text: '`true`', id: 0 }, { text: '`false`', id: 1 }],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/types%20%26%20grammar/ch2.md#small-decimal-values',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/types%20%26%20grammar/ch2.md#small-decimal-values',
     explanation:
       'The most (in)famous side effect of using binary floating-point numbers (which, remember, is true of all languages that use IEEE 754 -- not just JavaScript as many assume/pretend) is that representations of decimals are not exact.',
   },
@@ -45,7 +45,7 @@ const Ch2Questions = [
     answers: [{ text: 'True', id: 0 }, { text: 'False', id: 1 }],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/types%20%26%20grammar/ch2.md#strings',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/types%20%26%20grammar/ch2.md#strings',
     explanation:
       'You might have thought of string methods as mutating the original string. However, all of the string methods that alter its contents must create and return new strings.',
   },
@@ -61,7 +61,7 @@ const Ch2Questions = [
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/types%20%26%20grammar/ch2.md#infinities',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/types%20%26%20grammar/ch2.md#infinities',
     explanation:
       'In JS, this operation is well-defined and results in the value Infinity (aka Number.POSITIVE_INFINITY).',
   },
