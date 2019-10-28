@@ -27,7 +27,7 @@ ${'```'}
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/async%20%26%20performance/ch4.md#breaking-run-to-completion',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/async%20%26%20performance/ch4.md#breaking-run-to-completion',
     explanation:
       'The first time `bar.next` is called `foo` is run until `yield`. The second time, `bar.next` is called, `foo` is run until completion.',
   },
@@ -57,7 +57,7 @@ ${'```'}
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/async%20%26%20performance/ch4.md#iteration-messaging',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/async%20%26%20performance/ch4.md#iteration-messaging',
     explanation:
       'The first `it.next()` starts `foo`, and the second one replaces `"Hello"` with `7`, thus `y` is `42`.',
   },
@@ -97,7 +97,7 @@ ${'```'}
     ],
     correctAnswerId: 2,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/async%20%26%20performance/ch4.md#multiple-iterators',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/async%20%26%20performance/ch4.md#multiple-iterators',
     explanation:
       'The answer ends up being `x` of `it1` plus `x` of `it2` which is just `val1` + `val2`.',
   },
@@ -131,7 +131,7 @@ ${'```'}
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/async%20%26%20performance/ch4.md#generator-iterator',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/async%20%26%20performance/ch4.md#generator-iterator',
     explanation:
       '`for..of` will keep calling `next()` until the function returns. Because we have an infinte loop in `foo`, we need to manually stop our `for..of` loop, otherwise it will not stop.',
   },
@@ -168,7 +168,7 @@ ${'```'}
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/async%20%26%20performance/ch4.md#generators--promises',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/async%20%26%20performance/ch4.md#generators--promises',
     explanation:
       '`it.next().value` starts `main` and gets the value from `foo(500, 1)` which is a promise. We then resolve the promise, and then continue running `main`.',
   },

@@ -22,7 +22,7 @@ const Ch2Questions = [
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/async%20%26%20performance/ch2.md#nestedchained-callbacks',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/async%20%26%20performance/ch2.md#nestedchained-callbacks',
     explanation:
       'But the brittle nature of manually hardcoded callbacks (even with hardcoded error handling) is often far less graceful. Once you end up specifying (aka pre-planning) all the various eventualities/paths, the code becomes so convoluted that it\'s hard to ever maintain or update it. **That** is what "callback hell" is all about! The nesting/indentation are basically a side show, a red herring.',
   },
@@ -49,7 +49,7 @@ ${'```'}
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/async%20%26%20performance/ch2.md#tale-of-five-callbacks',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/async%20%26%20performance/ch2.md#tale-of-five-callbacks',
     explanation:
       'This library could run this critical callback 1 time or 0 times or many times.',
   },
@@ -72,7 +72,7 @@ ${'```'}
     ],
     correctAnswerId: 3,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/async%20%26%20performance/ch2.md#tale-of-five-callbacks',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/async%20%26%20performance/ch2.md#tale-of-five-callbacks',
     explanation:
       'Once the callback is run, any issue in your code is not the fault of the callback.',
   },
@@ -96,7 +96,7 @@ ${'```'}
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/async%20%26%20performance/ch2.md#trying-to-save-callbacks',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/async%20%26%20performance/ch2.md#trying-to-save-callbacks',
     explanation:
       '`setTimeout` is handled by the web API, and once the timer is up, it pushes the callback onto the event loop.',
   },
@@ -119,7 +119,7 @@ ${'```'}
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/async%20%26%20performance/ch2.md#trying-to-save-callbacks',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/async%20%26%20performance/ch2.md#trying-to-save-callbacks',
     explanation:
       "The callback gets pushed onto the event loop immediately, but it doesn't run until the call stack is empty which occurs after the for loop and after `a++` is executed.",
   },
