@@ -28,7 +28,7 @@ ${'```'}
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20%26%20beyond/ch3.md#next-iteration',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/es6%20%26%20beyond/ch3.md#next-iteration',
     explanation:
       'Each time the method located at `Symbol.iterator` (see Chapters 2 and 7) is invoked on this `arr` value, it will produce a new fresh iterator. Most structures will do the same, including all the built-in data structures in JS.',
   },
@@ -63,7 +63,7 @@ ${'```'}
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20%26%20beyond/ch3.md#iterator-consumption',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/es6%20%26%20beyond/ch3.md#iterator-consumption',
     explanation: 'The `...` spread operator fully exhausts an iterator.',
   },
   {
@@ -92,7 +92,7 @@ ${'```'}
     ],
     correctAnswerId: 3,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20%26%20beyond/ch3.md#moving-forward',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/es6%20%26%20beyond/ch3.md#moving-forward',
     explanation:
       'Modules are no different from other ES6 features in that they should be used, but polyfills might be needed for older browsers.',
   },
@@ -114,7 +114,7 @@ ${'```'}
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20%26%20beyond/ch3.md#importing-api-members',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/es6%20%26%20beyond/ch3.md#importing-api-members',
     explanation:
       'As the name suggests, the default export is the default export for that module, whereas named exports need to be imported by name.',
   },
@@ -131,7 +131,7 @@ ${'```'}
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20%26%20beyond/ch3.md#the-new-way',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/es6%20%26%20beyond/ch3.md#the-new-way',
     explanation: 'They must appear outside of all blocks and functions.',
   },
 ];

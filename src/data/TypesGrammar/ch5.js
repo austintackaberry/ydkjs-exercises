@@ -9,7 +9,7 @@ const Ch5Questions = [
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/types%20%26%20grammar/ch5.md#statements--expressions',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/types%20%26%20grammar/ch5.md#statements--expressions',
     explanation:
       'Statements are to English sentences as expressions are to English phrases',
   },
@@ -31,7 +31,7 @@ ${'```'}
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/types%20%26%20grammar/ch5.md#expression-side-effects',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/types%20%26%20grammar/ch5.md#expression-side-effects',
     explanation:
       '`a++` increments `a` by 1, but the return value of `a++` is the previous value of `a`. So when we get to line 3, `a` has a value of `43` and `b` has a value of `42`.',
   },
@@ -56,7 +56,7 @@ ${'```'}
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/types%20%26%20grammar/ch5.md#short-circuited',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/types%20%26%20grammar/ch5.md#short-circuited',
     explanation:
       "The `&&` operator doesn't actually return `true` if both operands are truthy. It returns the last value. Ever get an error when you try to access `a.length` when `a` is undefined? You could instead try `a && a.length`.",
   },
@@ -83,7 +83,7 @@ ${'```'}
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/types%20%26%20grammar/ch5.md#error-correction',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/types%20%26%20grammar/ch5.md#error-correction',
     explanation:
       'There are many opinions on whether semicolons should be used in JavaScript. Per the spec, ASI is an error fixing mechanism which suggests that developers should use semicolons.',
   },
@@ -112,7 +112,7 @@ ${'```'}
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/types%20%26%20grammar/ch5.md#operator-precedence',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/types%20%26%20grammar/ch5.md#operator-precedence',
     explanation:
       'You might expect JavaScript expressions to work left to right with the exception that everything in parentheses gets executed first. That is not the case. You might know that, in math, the "*" operator executes before "+". So, 1 + 1 * 5 = 6, not 7. Similarly, in JavaScript, the `&&` operator executes before `||`.',
   },

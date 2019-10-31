@@ -16,7 +16,7 @@ ${'```'}
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/types%20%26%20grammar/ch3.md#chapter-3-natives',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/types%20%26%20grammar/ch3.md#chapter-3-natives',
     explanation:
       'The result of the constructor form of value creation `(new String("abc"))` is an object wrapper around the primitive (`"abc"`) value. Importantly, `typeof` shows that these objects are not their own special types, but more appropriately they are subtypes of the `object` type.',
   },
@@ -32,7 +32,7 @@ ${'```'}
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/types%20%26%20grammar/ch3.md#chapter-3-natives',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/types%20%26%20grammar/ch3.md#chapter-3-natives',
     explanation: '`Symbol()` was added in ES6',
   },
   {
@@ -57,7 +57,7 @@ ${'```'}
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/types%20%26%20grammar/ch3.md#boxing-wrappers',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/types%20%26%20grammar/ch3.md#boxing-wrappers',
     explanation: `Ever wondered why you can call \`str.length\` or \`str.toUpperCase()\`? Or maybe you just accepted it as fact and didn't think much about it. Primitive types such as \`string\` or \`number\` get automatically wrapped by boxing wrappers as needed which have methods such as \`length\` and \`toUpperCase\`.`,
   },
   {
@@ -88,7 +88,7 @@ ${'```'}
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/types%20%26%20grammar/ch3.md#boxing-wrappers',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/types%20%26%20grammar/ch3.md#boxing-wrappers',
     explanation:
       'Boxing is wrapping a primitive value, and unboxing is extracting the primitive value from a wrapper. Boxing/Unboxing can be done explicitly or implicitly.',
   },
@@ -100,7 +100,7 @@ ${'```'}
     answers: [{ text: 'True', id: 0 }, { text: 'False', id: 1 }],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/types%20%26%20grammar/ch3.md#boxing-wrappers',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/types%20%26%20grammar/ch3.md#boxing-wrappers',
     explanation: `You might think that it would be more performant to use the object wrapper form, so that the engine doesn't have to wrap the primitive. However, engines have been optimizing based on the assumption that almost everyone constructs using primitives, thus they are actually more performant.`,
   },
 ];

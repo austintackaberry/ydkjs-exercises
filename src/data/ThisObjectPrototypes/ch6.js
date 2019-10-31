@@ -17,7 +17,7 @@ const Ch6Questions = [
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch6.md#towards-delegation-oriented-design',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/this%20%26%20object%20prototypes/ch6.md#towards-delegation-oriented-design',
     explanation: `Fundamentally, the prototype chain does not have a concept of "copying" or "parent creating child". All it does is chain objects together.`,
   },
   {
@@ -33,7 +33,7 @@ const Ch6Questions = [
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch6.md#delegation-theory',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/this%20%26%20object%20prototypes/ch6.md#delegation-theory',
     explanation: `Having name collisions creates awkward/brittle syntax to disambiguate references (see Chapter 4), and we want to avoid that if we can.`,
   },
   {
@@ -49,7 +49,7 @@ const Ch6Questions = [
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch6.md#delegation-theory',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/this%20%26%20object%20prototypes/ch6.md#delegation-theory',
     explanation: `In OOD, it is easy to relatively access the state of the parent. In OLOO, this is not the case. There is no easy way to specifically access state relatively, so it makes sense to hold state on the delegators.`,
   },
   {
@@ -65,7 +65,7 @@ const Ch6Questions = [
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch6.md#mutual-delegation-disallowed',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/this%20%26%20object%20prototypes/ch6.md#mutual-delegation-disallowed',
     explanation: `You cannot create a cycle where two or more objects are mutually delegated (bi-directionally) to each other.`,
   },
   {
@@ -87,7 +87,7 @@ const Ch6Questions = [
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch6.md#mental-models-compared',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/this%20%26%20object%20prototypes/ch6.md#mental-models-compared',
     explanation: `With OLOO there are just objects linked to each other, without needing all the cruft and confusion of things that look (but don't behave!) like classes, with constructors and prototypes and \`new\` calls. Ask yourself: if I can get the same functionality with OLOO style code as I do with "class" style code, but OLOO is simpler and has less things to think about, isn't OLOO better?`,
   },
 ];

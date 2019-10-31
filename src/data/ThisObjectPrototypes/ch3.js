@@ -14,7 +14,7 @@ const Ch3Questions = [
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch3.md#type',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/this%20%26%20object%20prototypes/ch3.md#type',
     explanation: `Arrays are also a form of objects, with extra behavior. The organization of contents in arrays is slightly more structured than for general objects.`,
   },
   {
@@ -32,7 +32,7 @@ const Ch3Questions = [
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch3.md#type',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/this%20%26%20object%20prototypes/ch3.md#type',
     explanation:
       'Functions are technically callable objects, thus they are a type of an object. `typeof function () {}` will return "function".',
   },
@@ -51,7 +51,7 @@ const Ch3Questions = [
     ],
     correctAnswerId: 2,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch3.md#built-in-objects',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/this%20%26%20object%20prototypes/ch3.md#built-in-objects',
     explanation:
       'strings in JavaScript are immutable and have no properties/methods. When you run `str.length` or `str.charAt(3)`, `str` is coerced into the object `String` which has properties `length` and method `charAt`.',
   },
@@ -70,7 +70,7 @@ const Ch3Questions = [
     ],
     correctAnswerId: 2,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch3.md#contents',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/this%20%26%20object%20prototypes/ch3.md#contents',
     explanation:
       'Values in key-value pairs are not actually stored in the object. The object stores the key and a reference to the value. Exactly how/where it is stored is dependent on the engine implementation.',
   },
@@ -87,7 +87,7 @@ const Ch3Questions = [
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch3.md#contents',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/this%20%26%20object%20prototypes/ch3.md#contents',
     explanation: `If you use any other value besides a string (primitive) as the property, it will first be converted to a string. This even includes numbers, which are commonly used as array indexes, so be careful not to confuse the use of numbers between objects and arrays.`,
   },
 ];

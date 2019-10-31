@@ -9,7 +9,7 @@ const Ch2Questions = [
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch2.md#lex-time',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/scope%20%26%20closures/ch2.md#lex-time',
     explanation: `In JavaScript, scoping is lexical. It is based on where variables and blocks of scope are authored, by you, at write time, and thus is (mostly) set in stone by the time the lexer processes your code.`,
   },
   {
@@ -35,7 +35,7 @@ ${'```'}
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch2.md#look-ups',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/scope%20%26%20closures/ch2.md#look-ups',
     explanation: `\`c\` is scoped to \`bar\`, \`a\` and \`b\` are scoped to \`foo\`. \`bar\` looks for \`a\` and \`b\` in its local scope, but can't find it, so checks its outer scope, \`foo\`, where it finds variables \`a\` and \`b\`.  \`bar\` looks for \`c\` in its local scope, and finds it.`,
   },
   {
@@ -62,7 +62,7 @@ ${'```'}
     ],
     correctAnswerId: 3,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch2.md#lex-time',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/scope%20%26%20closures/ch2.md#lex-time',
     explanation: `\`a\` is scoped to \`foo\`. \`bar\` looks for \`a\` in its local scope, but can't find it, so checks its outer scope, \`foo\`, where it finds \`a\` with a value of 2.`,
   },
   {
@@ -88,7 +88,7 @@ ${'```'}
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch2.md#lex-time',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/scope%20%26%20closures/ch2.md#lex-time',
     explanation: `\`bar\` does not have \`a\` in its scope, so the engine looks in its outer scope, the global scope. It does not see an \`a\`, so it throws a \`ReferenceError\`.`,
   },
   {
@@ -115,7 +115,7 @@ ${'```'}
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch2.md#lex-time',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/scope%20%26%20closures/ch2.md#lex-time',
     explanation: `\`bar\` does not have \`a\` in its scope, so the engine looks in its outer scope, the global scope. It sees \`a\`, but notices that there is no value assigned to it, thus it is \`undefined\`.`,
   },
   {
@@ -140,7 +140,7 @@ ${'```'}
     ],
     correctAnswerId: 3,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch2.md#lex-time',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/scope%20%26%20closures/ch2.md#lex-time',
     explanation: `\`bar\` never gets called, so \`console.log(b)\` is never executed.`,
   },
   {
@@ -169,7 +169,7 @@ ${'```'}
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch2.md#lex-time',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/scope%20%26%20closures/ch2.md#lex-time',
     explanation: `We first call \`foo\` with a value of 4. Inside \`foo\`, \`a\`'s value is changed from 4 to 5. We then try to call \`baz\`. \`baz\` is not in \`foo\`'s scope, so the engine looks at the outer scope, the global scope. It does not find \`baz\`, so it throws a \`ReferenceError\`.`,
   },
   {
@@ -184,7 +184,7 @@ ${'```'}
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch2.md#review-tldr',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/scope%20%26%20closures/ch2.md#review-tldr',
     explanation: ` \`with\` and \`eval\` are the only mechanisms that allow code to be executed dynamically which means they can "cheat" lexical scope.`,
   },
   {
@@ -203,7 +203,7 @@ ${'```'}
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch2.md#performance',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/scope%20%26%20closures/ch2.md#performance',
     explanation: `If the Engine finds an \`eval(..)\` or \`with\` in the code, it essentially has to assume that all its awareness of identifier location may be invalid, because it cannot know at lexing time exactly what code you may pass to \`eval(..)\` to modify the lexical scope, or the contents of the object you may pass to \`with\` to create a new lexical scope to be consulted.`,
   },
 ];

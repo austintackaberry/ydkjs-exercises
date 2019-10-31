@@ -27,7 +27,7 @@ ${'```'}
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20%26%20beyond/ch7.md#function-names',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/es6%20%26%20beyond/ch7.md#function-names',
     explanation:
       'The `name` property of a function will refer to the lexical binding name if it exists. In this case, it is `"def"`. If the function was anonymous, the name property would be `"abc"`.',
   },
@@ -63,7 +63,7 @@ ${'```'}
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20%26%20beyond/ch7.md#property-ordering',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/es6%20%26%20beyond/ch7.md#property-ordering',
     explanation: `The ordering is:
 
 1. First, enumerate any owned properties that are integer indexes, in ascending numeric order.
@@ -105,7 +105,7 @@ ${'```'}
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20%26%20beyond/ch7.md#symboliterator',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/es6%20%26%20beyond/ch7.md#symboliterator',
     explanation:
       'The generator defines how to iterate through values in `arr`. We defined it to return the value `3` for each element in the array.',
   },
@@ -140,7 +140,7 @@ ${'```'}
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20%26%20beyond/ch7.md#symboltostringtag-and-symbolhasinstance',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/es6%20%26%20beyond/ch7.md#symboltostringtag-and-symbolhasinstance',
     explanation:
       '`obj1.toString()` is `"foo"` and `obj2.toString()` is `"[object foo]"`',
   },
@@ -175,7 +175,7 @@ ${'```'}
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20%26%20beyond/ch7.md#symboltoprimitive',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/es6%20%26%20beyond/ch7.md#symboltoprimitive',
     explanation:
       '`toPrimitive` is used when an object must be coerced to a primitive value. We are overriding its typical functionality for `arr` and forcing it to be `5`.',
   },

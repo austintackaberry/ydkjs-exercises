@@ -12,7 +12,7 @@ const Ch4Questions = [
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch4.md#javascript-classes',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/this%20%26%20object%20prototypes/ch4.md#javascript-classes',
     explanation: `JavaScript ES6 classes are objects, which allows us to add and remove fields and methods at runtime.`,
   },
   {
@@ -39,7 +39,7 @@ const Ch4Questions = [
     ],
     correctAnswerId: 3,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch4.md#review-tldr',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/this%20%26%20object%20prototypes/ch4.md#review-tldr',
     explanation:
       'By default, inheritance in JavaScript works by linking two classes (objects) together, not by copying one over to another. Class copy behavior can be emulated using the mixin pattern (both explicit and implicit), but this usually leads to ugly and brittle syntax like explicit pseudo-polymorphism (`OtherObj.methodName.call(this, ...)`), which often results in harder to understand and maintain code.',
   },
@@ -56,7 +56,7 @@ const Ch4Questions = [
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch4.md#multiple-inheritance',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/this%20%26%20object%20prototypes/ch4.md#multiple-inheritance',
     explanation: `Multiple-inheritance means that each parent class contributes definitions to the child class. JavaScript does not provide a native mechanism for "multiple inheritance". Many see this is a good thing, because the complexity savings more than make up for the "reduced" functionality. But this doesn't stop developers from trying to fake it in various ways.`,
   },
   {
@@ -81,7 +81,7 @@ const Ch4Questions = [
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch4.md#mixins',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/this%20%26%20object%20prototypes/ch4.md#mixins',
     explanation:
       "Implicit mixin is when there isn't an explicit mixin function that copies all of the properties from the parent to the child. Rather, it is when the parent method is called with the `this` bound to the child's `this`",
   },
@@ -103,7 +103,7 @@ const Ch4Questions = [
     ],
     correctAnswerId: 2,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch4.md#mixins',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/this%20%26%20object%20prototypes/ch4.md#mixins',
     explanation: `Implicit mixins always require absolutely referring to the parent, and explicit mixins require absolutely referring to the parent when shadowing is desired.`,
   },
 ];

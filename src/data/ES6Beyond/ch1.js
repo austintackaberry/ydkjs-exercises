@@ -22,7 +22,7 @@ const Ch1Questions = [
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20%26%20beyond/ch1.md#shimspolyfills',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/es6%20%26%20beyond/ch1.md#shimspolyfills',
     explanation:
       'Transpiling with polyfills allows you to develop using the latest JavaScript APIs without worrying about breaking your app in certain browsers.',
   },

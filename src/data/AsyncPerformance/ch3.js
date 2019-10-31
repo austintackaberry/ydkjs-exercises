@@ -27,7 +27,7 @@ const Ch3Questions = [
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/async%20%26%20performance/ch3.md#chapter-3-promises',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/async%20%26%20performance/ch3.md#chapter-3-promises',
     explanation:
       'Promises allow you to remain in control when you make a request to a third party library.',
   },
@@ -60,7 +60,7 @@ ${'```'}
     ],
     correctAnswerId: 3,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/async%20%26%20performance/ch3.md#promise-value',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/async%20%26%20performance/ch3.md#promise-value',
     explanation:
       "`Promise.all()` creates a single promise that resolves when all of the input promises resolve. In the example above, `onComplete` won't run until `prom1` and `prom2` have resolved.",
   },
@@ -101,7 +101,7 @@ ${'```'}
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/async%20%26%20performance/ch3.md#promiseall--',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/async%20%26%20performance/ch3.md#promiseall--',
     explanation:
       "If one promise rejects in `Promise.all`, then they all fail. Even though 10 of the promises passed to `Promise.all` resolved, we don't have access to the resolved data if one fails.",
   },
@@ -131,7 +131,7 @@ ${'```'}
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/async%20%26%20performance/ch3.md#promiserace--',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/async%20%26%20performance/ch3.md#promiserace--',
     explanation:
       'With `Promise.race()`, as soon as the first promise resolves, the resolved value is sent to `onComplete`. Because `prom2`s timer was for less time than `prom1`, `prom2` won the race.',
   },
@@ -157,7 +157,7 @@ ${'```'}
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/async%20%26%20performance/ch3.md#promiseall--',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/async%20%26%20performance/ch3.md#promiseall--',
     explanation:
       'The error that gets sent to `Promise.all.catch()` is the rejected value of the first promise to reject. In this case that would be `prom2`.',
   },

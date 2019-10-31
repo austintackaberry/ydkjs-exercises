@@ -49,7 +49,7 @@ const Ch6Questions = [
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20%26%20beyond/ch6.md#numberisnan-static-function',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/es6%20%26%20beyond/ch6.md#numberisnan-static-function',
     explanation:
       "`isNaN()` checks for things that are not a number. So that includes `NaN` and any other value that isn't a number.",
   },
@@ -81,7 +81,7 @@ ${'```'}
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20%26%20beyond/ch6.md#objectassign-static-function',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/es6%20%26%20beyond/ch6.md#objectassign-static-function',
     explanation:
       '`Object.assign(obj1, obj2)` takes `obj2` and merges it into `obj1`. In the example above, after the merge, the attribute `"b"` actually references `obj1` itself recursively.',
   },
@@ -110,7 +110,7 @@ ${'```'}
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20%26%20beyond/ch6.md#fill-prototype-method',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/es6%20%26%20beyond/ch6.md#fill-prototype-method',
     explanation:
       '`Array(4)` creates an array with 4 spots, and `fill(3)` fills them with the value 3',
   },
@@ -143,7 +143,7 @@ ${'```'}
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20%26%20beyond/ch6.md#find-prototype-method',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/es6%20%26%20beyond/ch6.md#find-prototype-method',
     explanation:
       '`foo.find()` returns the first value for which the comparison is truthy, so `"2"` at index 1. `1` is then coerced into `"1"` and added to `"2"` which is `"21"`.',
   },

@@ -14,7 +14,7 @@ const Ch5Questions = [
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/async%20%26%20performance/ch5.md#chapter-5-program-performance',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/async%20%26%20performance/ch5.md#chapter-5-program-performance',
     explanation:
       'Our code would be very slow if all of our requests were blocking.',
   },
@@ -41,7 +41,7 @@ const Ch5Questions = [
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/async%20%26%20performance/ch5.md#web-workers',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/async%20%26%20performance/ch5.md#web-workers',
     explanation:
       'An environment like your browser can easily provide multiple instances of the JavaScript engine, each on its own thread, and let you run a different program in each thread. Each of those separate threaded pieces of your program is called a "(Web) Worker." This type of parallelism is called "task parallelism," as the emphasis is on splitting up chunks of your program to run in parallel.',
   },
@@ -57,7 +57,7 @@ const Ch5Questions = [
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/async%20%26%20performance/ch5.md#web-workers',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/async%20%26%20performance/ch5.md#web-workers',
     explanation:
       'Workers do not share any scope or resources with each other or the main program -- that would bring all the nightmares of threaded programming to the forefront -- but instead have a basic event messaging mechanism connecting them called the `postMessage` API.',
   },
@@ -73,7 +73,7 @@ const Ch5Questions = [
     ],
     correctAnswerId: 3,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/async%20%26%20performance/ch5.md#worker-environment',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/async%20%26%20performance/ch5.md#worker-environment',
     explanation: 'Web workers do not have access to the DOM',
   },
   {
@@ -83,7 +83,7 @@ const Ch5Questions = [
     answers: [{ text: 'True', id: 0 }, { text: 'False', id: 1 }],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/async%20%26%20performance/ch5.md#shared-workers',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/async%20%26%20performance/ch5.md#shared-workers',
     explanation:
       'If your site or app allows for loading multiple tabs of the same page (a common feature), you may very well want to reduce the resource usage of their system by preventing duplicate dedicated Workers and using a Shared Worker.',
   },

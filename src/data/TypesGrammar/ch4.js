@@ -7,7 +7,7 @@ const Ch4Questions = [
     answers: [{ text: 'True', id: 0 }, { text: 'False', id: 1 }],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/types%20%26%20grammar/ch4.md#chapter-4-coercion',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/types%20%26%20grammar/ch4.md#chapter-4-coercion',
     explanation: `There are rules for linters to disallow implicit coercion because it can happen unexpectedly if the developer isn't careful. Implicit coercion is a valuable tool once you fully understand how it works.`,
   },
   {
@@ -28,7 +28,7 @@ ${'```'}
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/types%20%26%20grammar/ch4.md#implicit-coercion',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/types%20%26%20grammar/ch4.md#implicit-coercion',
     explanation: '`+` means concatenation when any of the operands are strings',
   },
   {
@@ -49,7 +49,7 @@ ${'```'}
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/types%20%26%20grammar/ch4.md#falsy-values',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/types%20%26%20grammar/ch4.md#falsy-values',
     explanation: 'There is no such thing as a falsy object in JavaScript',
   },
   {
@@ -68,7 +68,7 @@ ${'```'}
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/types%20%26%20grammar/',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/types%20%26%20grammar/',
     explanation: '`+` means concatenation when any of the operands are strings',
   },
   {
@@ -95,7 +95,7 @@ ${'```'}
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/types%20%26%20grammar/',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/types%20%26%20grammar/',
     explanation:
       "`0` is actually falsy which can be unexpected. If you have a list of values and you want to make sure none of them are `undefined` or `null` you can't just check if they are truthy.",
   },
