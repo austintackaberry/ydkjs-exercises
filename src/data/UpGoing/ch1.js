@@ -218,19 +218,19 @@ const Ch1Questions = [
     shouldBeRandomized: true,
     answers: [
       {
-        text: '`var age = console.log("What is your name? ");`',
+        text: '`var name = console.log("What is your name? ");`',
         id: 0,
       },
       {
-        text: '`var age = alert("What is your name? ");`',
+        text: '`var name = alert("What is your name? ");`',
         id: 1,
       },
       {
-        text: '`var age = console.get("What is your name? ");`',
+        text: '`var name = console.get("What is your name? ");`',
         id: 2,
       },
       {
-        text: '`var age = prompt("What is your name? ");`',
+        text: '`var name = prompt("What is your name? ");`',
         id: 3,
       },
     ],
