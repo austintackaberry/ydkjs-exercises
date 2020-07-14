@@ -49,7 +49,7 @@ const Ch3Questions = [
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/scope%20%26%20closures/ch3.md#anonymous-vs-named',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/scope%20%26%20closures/ch3.md#blocks-as-scopes',
     explanation: `Technically, it had block scoping in \`catch\` blocks as early as ES3. Standard block scoping was introduced in ES6 via \`let\` and \`const\`.`,
   },
   {
