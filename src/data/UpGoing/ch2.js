@@ -11,7 +11,7 @@ const Ch2Questions = [
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md#values--types',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/up%20%26%20going/ch2.md#values--types',
     explanation: `JavaScript has typed values, not typed variables. The following built-in types are available:
             string, number, boolean, null and undefined, object, symbol (new to ES6)`,
   },
@@ -28,7 +28,7 @@ const Ch2Questions = [
     ],
     correctAnswerId: 2,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md#values--types',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/up%20%26%20going/ch2.md#values--types',
     explanation: `JavaScript provides a typeof operator that can examine a value and tell you what type it is.
              The return value from the typeof operator is always one of six (seven as of ES6! - the "symbol" type) string values.
              That is, typeof "abc" returns "string", not string.`,
@@ -45,7 +45,7 @@ const Ch2Questions = [
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md#values--types',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/up%20%26%20going/ch2.md#values--types',
     explanation:
       'typeof null is an interesting case, because it errantly returns "object", when you&#39;d expect it to return "null" (just like `typeof undefined` returns `undefined`). You can run this command in your console and see for yourself.',
   },
@@ -62,7 +62,7 @@ const Ch2Questions = [
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md#arrays',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/up%20%26%20going/ch2.md#arrays',
     explanation:
       'Arrays are special objects, so the typeof of both expressions are objects and the return value is `true`. Run both expressions in your console to see that the return value of `typeof [1,2,3]` and `typeof {1, 2, 3}` is object.',
   },
@@ -78,7 +78,7 @@ const Ch2Questions = [
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md#objects',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/up%20%26%20going/ch2.md#objects',
     explanation: `Properties can either be accessed with dot notation (i.e., obj.a) or bracket notation (i.e., obj["a"]).
             Dot notation is shorter and generally easier to read, and is thus preferred when possible.`,
   },
@@ -102,7 +102,7 @@ const Ch2Questions = [
     ],
     correctAnswerId: 2,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md#arrays',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/up%20%26%20going/ch2.md#arrays',
     explanation: `An array is an object that holds values (of any type) not particularly in named properties/keys, but rather in numerically
             indexed positions. Languages that start counting at zero, like JS does, use 0 as the index of the first element in the array.`,
   },
@@ -118,7 +118,7 @@ const Ch2Questions = [
     ],
     correctAnswerId: 3,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md#arrays',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/up%20%26%20going/ch2.md#arrays',
     explanation: `Because arrays are special objects (as typeof implies), they can also have properties, including the automatically
             updated length property.`,
   },
@@ -134,7 +134,7 @@ const Ch2Questions = [
     ],
     correctAnswerId: 2,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md#arrays',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/up%20%26%20going/ch2.md#arrays',
     explanation: `You theoretically could use an array as a normal object with your own named properties, or you could use an object but
             only give it numeric properties (0, 1, etc.) similar to an array. However, this would generally be considered improper
             usage of the respective types. The best and most natural approach is to use arrays for numerically positioned values
@@ -153,7 +153,7 @@ const Ch2Questions = [
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md#coercion',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/up%20%26%20going/ch2.md#coercion',
     explanation: `Coercion comes in two forms in JavaScript: explicit and implicit. Explicit coercion is simply that you can see
             obviously from the code that a conversion from one type to another will occur, whereas implicit coercion is when the
             type conversion can happen as more of a non-obvious side effect of some other operation.`,
@@ -171,7 +171,7 @@ const Ch2Questions = [
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md#coercion',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/up%20%26%20going/ch2.md#coercion',
     explanation: `Implicit coercion is when the type conversion can happen as more of a non-obvious side effect of some other operation, 
     such as multiplication by 1 in the second answer.`,
   },
@@ -188,7 +188,7 @@ const Ch2Questions = [
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md#equality',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/up%20%26%20going/ch2.md#equality',
     explanation:
       '`==` checks for value equality with coercion allowed, and `===` checks for value equality without allowing coercion; `===` is often called "strict equality" for this reason. In the `a == b` comparison, JS notices that the types do not match, so it goes through an ordered series of steps to coerce one or both values to a different type until the types match, where then a simple value equality can be checked. The `a === b` produces false, because the coercion is not allowed, so the simple value comparison obviously fails. ',
   },
@@ -212,7 +212,7 @@ const Ch2Questions = [
     ],
     correctAnswerId: 2,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md#nested-scopes',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/up%20%26%20going/ch2.md#nested-scopes',
     explanation: `If you try to set a variable that hasn't been declared, you'll either end up creating a variable in the top-level global
             scope (bad!) or getting an error, depending on "strict mode" (see "Strict Mode").`,
   },
@@ -240,7 +240,7 @@ const Ch2Questions = [
     ],
     correctAnswerId: 2,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md#equality',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/up%20%26%20going/ch2.md#equality',
     explanation:
       'You should avoid using `==` and use `===` in these incidents: (1) If either value (aka side) in a comparison could be the `true` or `false` value. (2) If either value in a comparison could be of these specific values: `0`, `""`, or `[]` -- empty array.  In all other cases, you&#39;re safe to use `==`. Not only is it safe, but in many cases it simplifies your code in a way that improves readability.',
   },
@@ -257,7 +257,7 @@ const Ch2Questions = [
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md#conditionals',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/up%20%26%20going/ch2.md#conditionals',
     explanation:
       'Another form of conditional in JavaScript is the "conditional operator," often called the "ternary operator. It&#39;s like a more concise form of a single `if`..`else` statement. If the test expression evaluates as `true`, the first clause `true` results, otherwise the second clause `false` results.',
   },
@@ -273,7 +273,7 @@ const Ch2Questions = [
     ],
     correctAnswerId: 2,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md#variables',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/up%20%26%20going/ch2.md#variables',
     explanation: `An identifier must start with a-z, A-Z, $, or _. 
     It can then contain any of those characters plus the numerals 0-9.`,
   },
@@ -305,7 +305,7 @@ const Ch2Questions = [
     ],
     correctAnswerId: 3,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md#nested-scopes',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/up%20%26%20going/ch2.md#nested-scopes',
     explanation: `When you declare a variable, it is available anywhere in that scope, as well as any lower/inner scopes.
     This means that if you declare a function within a function, the outer function is able to access the vairables declared inside it's child function. 
     However, the child/inner function cannot access it's parent/outer function's scope.`,
@@ -323,7 +323,7 @@ const Ch2Questions = [
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md#nested-scopes',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/up%20%26%20going/ch2.md#nested-scopes',
     explanation: `If you try to access a variable's value in a scope where it's not available, you'll get a ReferenceError thrown.
     The ReferenceError object represents an error when a non-existent variable is referenced.
     If you try to set a variable that hasn't been declared, you'll either end up creating a variable in the top-level global scope (bad!) or getting an error (depending on "strict mode"). 
@@ -357,7 +357,7 @@ const Ch2Questions = [
     ],
     correctAnswerId: 2,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md#strict-mode',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/up%20%26%20going/ch2.md#strict-mode',
     explanation:
       'To invoke strict mode for an entire script, put the exact statement `use strict`;',
   },
@@ -374,7 +374,7 @@ const Ch2Questions = [
     ],
     correctAnswerId: 3,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md#immediately-invoked-function-expressions-iifes',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/up%20%26%20going/ch2.md#immediately-invoked-function-expressions-iifes',
     explanation:
       'Immediately Invoked Function Expressions (IIFE) is a way to execute a function expression. It requires an outer set of parentheses `( .. )` that surrounds the function expression. It also requires a final set of parentheses at the end of the expression, which is what actually executes the function expression referenced immediately before it.',
   },
@@ -406,7 +406,7 @@ const Ch2Questions = [
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md#polyfilling',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/up%20%26%20going/ch2.md#polyfilling',
     explanation: `The word "polyfill" is an invented term used to refer to taking the definition of a newer feature and producing a piece of code that's equivalent to the behavior, but is able to run in older JS environments.
     For example, ES6 defines a utility called Number.isNaN(..) to provide an accurate non-buggy check for NaN values, deprecating the original isNaN(..) utility. 
     But it's easy to polyfill that utility so that you can start using it in your code regardless of whether the end user is in an ES6 browser or not.`,
@@ -439,7 +439,7 @@ const Ch2Questions = [
     ],
     correctAnswerId: 3,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md#transpiling',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/up%20%26%20going/ch2.md#transpiling',
     explanation: `Transpiling is using a tool that converts your newer code into older code equivalents. The term combines the terms for transforming + compiling. 
     Essentially, your source code is authored in the new syntax form, but what you deploy to the browser is the transpiled code in old syntax form. 
     You typically insert the transpiler into your build process, similar to your code linter or your minifier.`,
@@ -469,7 +469,7 @@ const Ch2Questions = [
     ],
     correctAnswerId: 3,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch2.md#non-javascript',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/up%20%26%20going/ch2.md#non-javascript',
     explanation: `The document variable exists as a global variable when your code is running in a browser. It's not provided by the JS engine, nor is it particularly controlled by the JavaScript specification.
     Similarly alert(..) and console.log(..) is provided to your JS program by the browser, not by the JS engine itself. The call you make sends the message to the browser internals and it handles drawing, displaying the message box or logging the message to console. 
     `,
