@@ -12,7 +12,7 @@ const Ch1Questions = [
     ],
     correctAnswerId: 3,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch1.md#expressions',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/up%20%26%20going/ch1.md#expressions',
     explanation: `This statement has four expressions in it:
       2 is a literal value expression;
       b is a variable expression, which means to retrieve its current value;
@@ -43,7 +43,7 @@ const Ch1Questions = [
       to perform. Usually code is saved in a text file, although with JavaScript you can also type code directly into a developer
       console in a browser.`,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch1.md#code',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/up%20%26%20going/ch1.md#code',
   },
   {
     question: 'What is a computer language (syntax)?',
@@ -66,7 +66,7 @@ const Ch1Questions = [
     explanation: `The rules for valid format and combinations of instructions is called a computer language, sometimes referred to as its syntax,
     much the same as English tells you how to spell words and how to create valid sentences using words and punctuation.`,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch1.md#code',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/up%20%26%20going/ch1.md#code',
   },
   {
     question: 'What is an expression?',
@@ -89,7 +89,7 @@ const Ch1Questions = [
     explanation: `Statements are made up of one or more expressions.
     An expression is any reference to a variable or value, or a set of variable(s) and value(s) combined with operators.`,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch1.md#expressions',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/up%20%26%20going/ch1.md#expressions',
   },
   {
     question: 'Interpreting the code is when... ?',
@@ -120,7 +120,7 @@ const Ch1Questions = [
       For some computer languages, this translation of commands is typically done from top to bottom, line by line, every time the program
       is run, which is usually called interpreting the code.`,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch1.md#executing-a-program',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/up%20%26%20going/ch1.md#executing-a-program',
   },
   {
     question: 'Compiling is when... ?',
@@ -149,7 +149,7 @@ const Ch1Questions = [
       But that's not entirely accurate. The JavaScript engine actually compiles the program on the fly and then immediately runs the
       compiled code.`,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch1.md#executing-a-program',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/up%20%26%20going/ch1.md#executing-a-program',
   },
   {
     question:
@@ -176,7 +176,7 @@ const Ch1Questions = [
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch1.md#statements',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/up%20%26%20going/ch1.md#statements',
     explanation:
       'Characters like `=` and `*` are called operators. They perform actions with the values and variables such as assignment and mathematic multiplication. Variables are like simple boxes you can store any of your stuff in, and should be declared before they are used. In programs, variables hold values to be used by the program. By contrast to variables, literal values are the value itself. For example, `4` or `"cat"` is a literal value. In other words, it stands alone without being stored in a variable.',
   },
@@ -208,7 +208,7 @@ const Ch1Questions = [
     ],
     correctAnswerId: 2,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch1.md#output',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/up%20%26%20going/ch1.md#output',
     explanation:
       'This statement is not true, because the console can display many `log()` messages simultaneously (unlike the `alert()` method, which only displays one at a time). This is what makes `console.log()` a great tool for debugging your code, and for finding out what&#39;s going on under the hood.',
   },
@@ -236,7 +236,7 @@ const Ch1Questions = [
     ],
     correctAnswerId: 3,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch1.md#input',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/up%20%26%20going/ch1.md#input',
     explanation:
       'The `prompt()` method displays a dialog box that prompts the visitor for input. A prompt box is often used if you want the user to input a value before entering a page. The `prompt()` method returns the input value if the user clicks "OK". If the user clicks "cancel" the method returns `null`.',
   },
@@ -265,7 +265,7 @@ const Ch1Questions = [
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch1.md#operators',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/up%20%26%20going/ch1.md#operators',
     explanation:
       'In the expression `var num = 20; `, the operator `=` is used to assign the literal value `20` to the variable `num`. The keyword `var` is used to declare the variable. ',
   },
@@ -293,7 +293,7 @@ const Ch1Questions = [
     ],
     correctAnswerId: 3,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch1.md#operators',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/up%20%26%20going/ch1.md#operators',
     explanation:
       'Compound Assignment examples: `-=`, `*=`, and `+=` are compound operators that combine a math operation with assignment, as in `a += 2` (same as `a = a + 2`). The double equal sign `==` is used to check equality.',
   },
@@ -322,7 +322,7 @@ const Ch1Questions = [
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch1.md#converting-between-types',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/up%20%26%20going/ch1.md#converting-between-types',
     explanation:
       'When we use the`==` loose equals operator to make the comparison like `"99.00" == 99.00`, JavaScript will convert the left-hand side `"99.00"` to its number equivalent `99.00`. The comparison then becomes `99.00 == 99.00`, which is of course `true`. This is even true when the negative sign is outside of the double quotes, like so: `-"99" == -99.00`; . However, comparing negative and positive values returns false even when using the loose equals `==`.',
   },
@@ -354,7 +354,7 @@ const Ch1Questions = [
     ],
     correctAnswerId: 3,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch1.md#conditionals',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/up%20%26%20going/ch1.md#conditionals',
     explanation:
       'JavaScript requires wrapping the conditional in parentheses, otherwise it returns a syntax error. You can test this by running the code `if true { console.log("this is true!"); }` in your browser console. Remember to also try running the same code with parentheses around the conditional.',
   },
@@ -386,7 +386,7 @@ const Ch1Questions = [
     ],
     correctAnswerId: 3,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch1.md#functions',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/up%20%26%20going/ch1.md#functions',
     explanation: `A function does not have to include a loop in order to save us time and make our code more readable.
       Some functions only have one line of code, for example console.log() (as shown in the chapter's examples)`,
   },
@@ -415,7 +415,7 @@ const Ch1Questions = [
     ],
     correctAnswerId: 0,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch1.md#statements',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/up%20%26%20going/ch1.md#statements',
     explanation: `The =, +, /, and * characters are examples of operators.
     They perform actions with the values and variables such as assignment, summation, division and mathematic multiplication.`,
   },
@@ -444,7 +444,7 @@ const Ch1Questions = [
     ],
     correctAnswerId: 2,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch1.md#statements',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/up%20%26%20going/ch1.md#statements',
     explanation: `Variables are like simple boxes you can store any of your stuff in.
     In programs, variables hold values (like the number 42) to be used by the program.
     Think of them as symbolic placeholders for the values themselves.`,
@@ -473,7 +473,7 @@ const Ch1Questions = [
     ],
     correctAnswerId: 2,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch1.md#conditionals',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/up%20%26%20going/ch1.md#conditionals',
     explanation: `Conditionals are just simple "yes or no" questions used to make decisions.
     Does my account have enough balance to purchase this?. The most common conditional is an if statement.`,
   },
@@ -502,7 +502,7 @@ const Ch1Questions = [
     ],
     correctAnswerId: 1,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch1.md#loops',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/up%20%26%20going/ch1.md#loops',
     explanation: `Repeating a set of actions until a certain condition fails -- in other words, repeating only while the condition holds --
     is the job of programming loops. Loops can take different forms, but they all satisfy this basic behavior.`,
   },
@@ -531,7 +531,7 @@ const Ch1Questions = [
     ],
     correctAnswerId: 2,
     moreInfoUrl:
-      'https://github.com/getify/You-Dont-Know-JS/blob/master/up%20%26%20going/ch1.md#functions',
+      'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/up%20%26%20going/ch1.md#functions',
     explanation: `A function is generally a named section of code that can be "called" by name, and the code inside it will be run each time.
     Functions are often used for code that you plan to call multiple times, but they can also be useful just to organize related bits of code into named collections, even if you only plan to call them once.`,
   },
