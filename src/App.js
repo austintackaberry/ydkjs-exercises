@@ -50,7 +50,7 @@ const MainContentGridChild = styled.div`
   position: relative;
   display: block;
   grid-area: main;
-  place-self: start stretch;
+  place-self: center stretch;
   text-align: center;
   transition: var(--easing-standard);
   width: 100%;

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { List, ListItem } from './styled';
+import { List, ListItem, ListTitle } from './styled';
 import { Link } from 'react-router-dom';
 
 class Home extends Component {
@@ -11,6 +11,7 @@ class Home extends Component {
     const { books } = this.props;
     return (
       <List>
+        <ListTitle>Books:</ListTitle>
         {books.map(book => (
           <Link
             key={book.id}
