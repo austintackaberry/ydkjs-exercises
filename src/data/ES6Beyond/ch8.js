@@ -79,6 +79,29 @@ ${'```'}
       'Trick question! `Object.observe()` has been deprecated. ES6 Proxies are recommended as an alternative.',
   },
   {
+    question: `What will be logged to the console when the following code is executed?
+  ${'```js'}
+  let a = 2;
+  console.log(a ** 4 === Math.pow(a, 4));
+  ${'```'}  
+    `,
+    questionId: 'XUN6Mw3Sjw7g6NALueA6',
+    shouldBeRandomized: false,
+    answers: [
+      {
+        text: '`true`',
+        id: 0
+      },
+      {
+        text: '`false`',
+        id: 1
+      }
+    ],
+    correctAnswerId: 0,
+    moreInfoUrl: 'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/es6%20%26%20beyond/ch8.md#exponentiation-operator',
+    explanation: "The `**` operator has been proposed for JavaScript to perform exponentiation in the same way that `Math.pow(..)` does"
+  },
+  {
     question: `What will be logged to the console when the following code is executed:
 ${'```js'}
 var o1 = { a: 1, b: 2 },
@@ -112,6 +135,38 @@ ${'```'}
   },
   {
     question: `What will be logged to the console when the following code is executed:
+  ${'```js'}
+  let o1 = {a: 1, b: 2, c: 3};
+  let {b, ...o2} = o1;
+  console.log(o2);
+  ${'```'}  
+    `,
+    questionId: '8XT3LEI20C8VmaWUUdsq',
+    shouldBeRandomized: true,
+    answers: [
+      {
+        text: '`{a: 1, c: 3}`',
+        id: 0
+      },
+      {
+        text: '`{b: 2, c: 3}`',
+        id: 1
+      },
+      {
+        text: '`{a: 1, b: 2, c: 3}`',
+        id: 2
+      },
+      {
+        text: '`{a: 1, b: 2}`',
+        id: 3
+      }
+    ],
+    correctAnswerId: 0,
+    moreInfoUrl: 'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/es6%20%26%20beyond/ch8.md#objects-properties-and-',
+    explanation: "The `...` operator might also be used to gather an object's destructured properties back into an object"
+  },
+  {
+    question: `What will be logged to the console when the following code is executed:
 ${'```js'}
 var arr = [1, 2, 3, 'hello'];
 console.log(arr.includes('hello'));
@@ -136,6 +191,32 @@ ${'```'}
     explanation:
       '`Array.prototype.includes(x)` simply checks to see if an element value is equal to `x`',
   },
+  {
+    question: 'What is WebAssembly?',
+    questionId: 'k760jcjEJbUIHY4Iz3JL',
+    shouldBeRandomized: true,
+    answers: [
+      {
+        text: 'A new programming language',
+        id: 0
+      },
+      {
+        text: 'The future replacement of JavaScript',
+        id: 1
+      },
+      {
+        text: 'A new binary represenation of code',
+        id: 2
+      },
+      {
+        text: 'A new JavaScript framework',
+        id: 3
+      }
+    ],
+    correctAnswerId: 2,
+    moreInfoUrl: 'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/es6%20%26%20beyond/ch8.md#webassembly-wasm',
+    explanation: "WebAssembly proposes a format for a binary representation of a highly compressed AST (syntax tree) of code, which can then give instructions directly to the JS engine and its underpinnings, without having to be parsed by JS, or even behave by the rules of JS."
+  }
 ];
 
 export default Ch8Questions;
