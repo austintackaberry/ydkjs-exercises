@@ -160,7 +160,7 @@ const Ch2Questions = [
   },
   {
     question:
-      'Which of these next statments is an implicit coercion (conversion from one type to another)?',
+      'Which of these next statements is an implicit coercion (conversion from one type to another)?',
     questionId: 'KVa9gyVWvT9ymLmIeeGm',
     shouldBeRandomized: false,
     answers: [
