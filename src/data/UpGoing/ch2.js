@@ -307,8 +307,8 @@ const Ch2Questions = [
     moreInfoUrl:
       'https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/up%20%26%20going/ch2.md#nested-scopes',
     explanation: `When you declare a variable, it is available anywhere in that scope, as well as any lower/inner scopes.
-    This means that if you declare a function within a function, the outer function is able to access the vairables declared inside it's child function. 
-    However, the child/inner function cannot access it's parent/outer function's scope.`,
+    This means that if you declare a function within a function, the inner function is able to access the variables declared inside its parent function. 
+    However, the parent/outer function cannot access its child/inner function's scope.`,
   },
   {
     question:
